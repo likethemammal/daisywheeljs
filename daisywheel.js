@@ -23,16 +23,54 @@ var View = {
     numOfPetals: 8,
     
     init: function() {
+        this.setupElements();
         this.setupStyles();
+        this.setupFontStyles();
         this.attachSymbols();
         window.ongamepad = _.bind(this.updateWheel, this);
     },
     
+    setupElements: function() {
+        var flower = document.createElement('div'),
+            petalTemplate = document.createDocumentFragment(),
+            petal = document.createElement('div'),
+            petalInner = document.createElement('div'),
+            buttons = document.createElement('div'),
+            buttonPositions = ['left', 'top', 'right', 'bottom'],
+            button;
+            
+        // Add buttons
+        for (var i = 0; i < buttonPositions.length; i++) {
+            button = document.createElement('div');
+            
+            button.className = 'button button-' + buttonPositions[i];
+            buttons.appendChild(button);
+        }
+        
+        buttons.className = 'buttons';
+        petalInner.className = 'petal-inner';
+        petal.className = 'petal';
+        
+        petalInner.appendChild(buttons);
+        petal.appendChild(petalInner);
+        petalTemplate.appendChild(petal);
+        
+        //Add petals
+        for (var i = 0; i < this.numOfPetals; i++) {
+            
+            petal = petalTemplate.cloneNode(true);
+            
+            flower.appendChild(petal);
+            this.petals.push(petal);
+        }        
+
+        flower.id = 'flower';
+        
+        document.body.insertBefore(flower);
+    },
+    
     setupStyles: function() {
-        var flower = document.getElementById('flower'),
-            div = document.createElement('div'),
-            petalTemplate = document.getElementById('petal-template'),
-            styles = document.createElement('style'),
+        var styles = document.createElement('style'),
             stylesStr = '',
             radius = 208,
             petalDiameter = 160,
@@ -45,15 +83,8 @@ var View = {
 
             var x = Math.round(width/2 + radius * Math.cos(angle) - petalDiameter/2),
                 y = Math.round(height/2 + radius * Math.sin(angle) - petalDiameter/2),
-                rotation = angle * 180 / Math.PI + 135,
-                petal;
+                rotation = angle * 180 / Math.PI + 135;
                 
-            div.innerHTML = petalTemplate.innerHTML;
-            petal = div.childNodes[1];
-                            
-            flower.appendChild(petal);
-            this.petals.push(petal);
-
             stylesStr += ['.petal:nth-of-type(' + (i + 1) + ') {',
                             'top: ' + y + 'px;',
                             'left: ' + x + 'px;',
@@ -74,7 +105,18 @@ var View = {
         styles.innerHTML = stylesStr;
         document.head.appendChild(styles);
     },
-    
+
+    setupFontStyles: function() {
+        var fontLinkStr = 'http://fonts.googleapis.com/css?family=Montserrat',
+            link = document.createElement('link');
+            
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = fontLinkStr;
+        
+        document.head.appendChild(link);
+    },
+
     attachSymbols: function() {
         this.buttons = [].slice.call(document.getElementsByClassName('button'));
         
