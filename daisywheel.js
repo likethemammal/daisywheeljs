@@ -61,7 +61,7 @@ var View = {
             petal = petalTemplate.cloneNode(true);
             
             flower.appendChild(petal);
-            this.petals.push(petal);
+            this.petals.push(petal.children);
         }        
 
         flower.id = 'flower';
@@ -143,7 +143,10 @@ var View = {
     },
     
     setDirection: function(axes) {
+//      console.log(axes)
         var petalNum = this.getPetalNum(axes[0], axes[1], (1/this.numOfPetals)*360/100);
+
+      this.petals = document.getElementsByClassName('petal');
         if (!petalNum) {
           return;
         }
