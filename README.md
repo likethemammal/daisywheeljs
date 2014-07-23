@@ -27,3 +27,4 @@ A live demo can be found [here](http://likethemammal.github.io/daisywheeljs/)
  + multilanguage support
  + controller brand specific button images
  + complex actions (attach to a text editor like [Atom](https://atom.io/) or [Light Table](http://www.lighttable.com/))
+ + emoji support (must include snowman!)
