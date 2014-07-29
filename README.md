@@ -24,6 +24,8 @@ A live demo can be found [here](http://likethemammal.github.io/daisywheeljs/)
 ####todo
  + display controls
  + show daisywheel on input focus
+ + space & backspace
+ + switch trigger buttons to be 'hold down' instead of toggles.
  + multilanguage support
  + controller brand specific button images
  + complex actions (attach to a text editor like [Atom](https://atom.io/) or [Light Table](http://www.lighttable.com/))
