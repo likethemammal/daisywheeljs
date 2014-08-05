@@ -1,18 +1,19 @@
 /* Colors */
 
 /*
-
     lightblue: #3A596B;
     blue: #2B485A;
     darkblue: #1D303E;
     midnightblue: #15232D;
 */
 
+/* Padding/Margin Factor: 11px */
+
 body {
     margin: 0;
     font-family: helvetica,arial,sans-serif;
     color: #fff;
-    background: #1D303E;
+    background: #000;
 }
 
 * {
@@ -20,6 +21,17 @@ body {
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
 }
+
+a {
+    color: #8EC0ED;
+}
+
+a:hover {
+    color: #579FDA;
+}
+
+::selection { background: #579FDA; }
+::-moz-selection { background: #579FDA; }
 
 /*  Navigation  */
 
@@ -65,7 +77,7 @@ body {
     height: 444px;
     position: relative;
     overflow: hidden;
-    border-bottom: 1px solid #15232D;
+    background: #1D303E;
 }
 
 .banner:before {
@@ -146,8 +158,15 @@ body {
 
 /*  Features  */
 
-.features {
-    margin-top: -33px;
+.features:before {
+    position: absolute;
+    top: 33px;
+    bottom: 33px;
+    left: 0;
+    right: 0;
+    background: #1D303E;
+    content: ' ';
+    z-index: -1;
 }
 
 .feature-container {
@@ -199,4 +218,81 @@ body {
 
     background-image: url(imgs/pattern.png);
     background-color: rgba(0,0,0,0.5);
+}
+
+/*  Text  */
+
+.text-band {
+    background: #2B485A;
+    margin-top: -55px;
+    z-index: -1;
+    padding-top: 55px;
+}
+
+.text-section {
+    width: 100%;
+    max-width: 999px;
+    margin: 0 auto;
+    padding: 0 22px;
+    text-align: left;
+    background: #2B485A;
+}
+
+.text-section h3 {
+    margin: 22px 0;
+    font-size: 2em;
+}
+
+.text-section h4 {
+    margin: 44px 0 22px 0;
+    font-size: 1.4em;
+}
+
+.text-section p {
+    padding: 0 22px;
+}
+
+/*  Code  */
+
+.code-block {
+    display: block;
+    margin: 22px 0;
+    padding: 30px 15px;
+    color: #E2E2E2;
+    background-color: #15232D;
+    border: 1px solid #3A596B;
+
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+.code-chars {
+    margin: 0;
+    padding: 0 5px;
+    border: 1px solid #3A596B;
+    background-color: #15232D;
+    color: #E2E2E2;
+
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+code pre {
+    margin: 0;
+}
+
+.green {
+    color: #73E67B;
+}
+
+.blue {
+    color: #579FDA;
+}
+
+.yellow {
+    color: #B8B847;
+}
+
+.bold {
+    font-weight: bold;
 }
