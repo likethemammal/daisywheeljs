@@ -16,24 +16,25 @@
 <body>
 
 <div id="nav" class="container">
-    <div id="logo">ScalableJS</div>
+    <div id="logo">DaisywheelJS</div>
 
     <nav id="desktop-nav">
-        <a class="nav-item" href="#learn">Learn</a>
-        <a class="nav-item" href="http://github.com/likethemammal/scalablejs">Docs</a>
-        <a class="nav-item" href="#community" class="active">Community</a>
+        <a class="nav-item" href="http://github.com/likethemammal/daisywheeljs">Github</a>
         <a class="nav-item" href="#about">About</a>
+        <a class="nav-item active" href="#community">Community</a>
+        <a class="nav-item" href="#docs">Docs</a>
     </nav>
     
     <input id="mobile-nav-open" class="mobile-nav-toggle" type="text" readonly>
     <input id="mobile-nav-close" class="mobile-nav-toggle" type="text" readonly>
 
     <nav id="mobile-nav">
-        <a class="nav-item" href="#learn">Learn</a>
-        <a class="nav-item" href="http://github.com/likethemammal/scalablejs">Docs</a>
-        <a class="nav-item" href="#community" class="active">Community</a>
+        <a class="nav-item" href="http://github.com/likethemammal/daisywheeljs">Github</a>
         <a class="nav-item" href="#about">About</a>
+        <a class="nav-item" href="#community">Community</a>
+        <a class="nav-item" href="#docs">Docs</a>
     </nav>
+
 </div>
 
 <div class="page-content">
@@ -80,31 +81,48 @@
 
         <div class="text-section">
 
+            <h3>Introduction</h3>
+            <p>DaisywheelJS is a UI tool built for HTML5 games and sites that wish to utilize a 'gamepad' as their users' main input device. It is an alternative to the QWERTY keyboard setup which is commonly frustrating for those with a controller in hand.</p>
+            <p>It's radial layout allows the selection of any symbol with just 2 - 3 actions, compared to the QWERTY layout that forces the user to navigate to each symbol individually, taking up to 12 actions.</p>
 
-            <h3>Getting Started</h3>
-            <p>The Scalable library has one simple goal: <span class="bold">Scaling</span>. It’s fast, small, and feature-rich, allowing for minimal implementation and zero long-term maintenance. Scalable breaks down the barriers between development and business, which in turn leads to fewer iterations and less bugs.</p>
-            <h4>Introduction</h4>
-            <p>The philosophy behind Scalable focuses on making development seem easy. Adding new features should only involve writing code. While testing, debugging, and deployment shouldn’t be requirements at all.</p>
-            <p>Because the code is open source and it leverages the power of <a href="http://vanilla-js.com/">Vanilla JS</a>, Scalable is one of the quickest and most intuitive frameworks to learn. A strong community and extensive documentation allow the barriers-to-entry to remain minimal.</p>
-            <h4>Installation</h4>
-            <p>Scalable’s installation is straightforward and easy. Add the script tag below to the bottom of the body tag and set any configuration options in a separate file. Make sure to then reference the config file in the <code class="code-chars">data-scale-config</code> attribute.</p>
-            <p>Remember to download the <a href="https://github.com/likethemammal/scalablejs">latest version</a> of Scalable and include it in the <code class="code-chars">lib</code> directory.</p>
-            <code class="code-block">
-                <span class="green">&lt;script </span>
-                <span class="blue">data-scale-config=</span><span class="yellow">"scale-config.js" </span>
-                <span class="blue">src=</span><span class="yellow">"js/lib/scalable.js"</span>
-                <span class="green">&gt;&lt;/script&gt;</span>
-            </code>
-            <h4>Usage</h4>
-            <p>Scalable can be used without setting any config options by simply not including the config attribute. Otherwise, options can be set by creating a file and naming it the same as the path set in <code class="code-chars">data-scale-config</code>. In the case above the file would be named "scale-config.js".</p>
-            <p>The config options are set much like <a href="http://requirejs.org/docs/api.html#config">RequireJS</a>. In a separate file, call the <code class="code-chars">config</code> function and send in <code class="code-chars">scaleType</code> and the optional <code class="code-chars">scaleTest</code>. These can be set using a single string or an array of strings that define the type of scalableness desired.</p>
-            <code class="code-block">
-            <pre><span class="nx">Scalable</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
-    <span class="nx">scaleType</span><span class="o">:</span> <span class="yellow">'Web2'</span>
-<span class="p">});</span></pre>
-            </code><p>Each <code class="code-chars">scaleType</code> is listed in the <a href="#docs">documentation</a> along with a full explanation.</p>
+            <h3 id="how-it-works">How It Works</h3>
+            <p>This efficiency is achieved by using the left analog stick to choose a group of symbols or a 'petal' and then pressing one of the four colored buttons to select the actual symbol itself. A different set of symbols (numbers/capital letters) can be toggled by pressing the trigger buttons at the back of the controller. Space, backspace, left/right, and up/down each have their own buttons assigned to them.</p>
+            <p>A variety of options allow for custom symbol sets and manually loading the ui. Check out the <a href="#options-and-extensions">options and extensions</a> in the docs for implementation.</p>
 
+            <h3 id="docs">Docs</h3>
+            <h4>Setup</h4>
+            <p>Daisywheel's setup is simple and easily extendable. The most straightforward way to get started is by including the <a href="http://github.com/likethemammal/daisywheeljs">daisywheel.js library</a> in a script tag and then adding the <span class="code-chars">daisywheel</span> css class to whatever input or textarea tag the tool will provide input for.</p>
+            <p>That's it! Whenever the 'focus' event for that input is fired the Daisywheel UI will automatically appear, allowing the user to enter text with their gamepad without having to switch to their keyboard.</p>
 
+            <h4 id="options-and-extensions">Options and Extensions</h4>
+            <h5>Manually loading and unloading</h5>
+            <p>Daisywheel can be manually loaded and unloaded by calling <span class="code-chars">load</span> and <span class="code-chars">unload</span> respectively on the global <span class="code-chars">Daisywheel</span> object. The <span class="code-chars">load</span> function expects a single callback parameter which will return the symbols, as they're selected, to be used as needed.</p>
+
+            <h5>Custom symbol sets</h5>
+            <p>A custom set of symbols can be sent into Daisywheel to add support for multiple languages, emojis, etc. The <span class="code-chars">symbols</span> function expects an array of objects, each with a <span class="code-chars">set</span> and an <span class="code-chars">override</span> attribute.</p>
+            <p>The <span class="code-chars">set</span> property is the array of symbols (a string or an object) that will be displayed. For symbols that are a single character each a single concatinated string can be used. If the symbol is not supported by utf-8 (i.e. emojis) then the <span class="code-chars">image</span> attribute within the symbol's object should be set to the url of the image desired.</p>
+            <p>The <span class="code-chars">override</span> property is a boolean that determines whether the symbol set will 'override' one of the default sets or not, meaning if more than 3 symbol sets have an override property of <span class="code-chars">true</span> the defaults will not be shown at all.</p>
+
+            <h3 id="community">Community</h3>
+            <h4>Contributing</h4>
+            <p>Contributions to the library are welcome and encouraged. The source code for the project can be found on Github.</p>
+
+            <h4>Feature Requests</h4>
+            <p>If there is a particular feature or a change to how the API works you'd like to see discussion is welcomed. Create an issue on the project's repo and include any links or images that might be beneficial to the conversation.</p>
+
+            <h3 id="about">About</h3>
+            <p>DaisywheelJS was inspired by the <a href="http://store.steampowered.com/bigpicture/">Steam "Big Picture"</a> Daisywheel and the fact that there should never be a QWERTY keyboard presented to a user that has a controller in their hand. It was ported to Javascript and CSS, and the Gamepad API attached, so the HTML5 gaming community can use it in their games as a standard library in UI toolkits.</p>
+            <p>An explanation of how it works can be found <a href="#how-it-works">here</a>.</p>
+
+            <h4>Browser Support</h4>
+            <p>As of now, the Gamepad API is only supported by Chrome 21+ and Firefox 29+.</p>
+
+            <h4>Attributions</h4>
+            <p>`gamepad-mod.js` interfaces with the browser API and organizes the data sent over in the controller's events. It was a modification of the `gamepad.js` library in the example code for the <a href="http://www.html5rocks.com/en/tutorials/doodles/gamepad/">HTML5Rocks gamepad tester</a>, found in its original form <a href="https://github.com/html5rocks/www.html5rocks.com/blob/master/content/tutorials/doodles/gamepad/static/gamepad-tester/gamepad.js">here</a>.</p>
+            <p>The Montserrat webfont is used for numbers, letters, and all utf-8 characters. It can be found *here*, accessible through Google webfonts.</p>
+
+            <h4>License</h4>
+            <p>DaisywheelJS is licensed under the --- Apache --- License.</p>
 
         </div>
 

@@ -158,6 +158,10 @@ a:hover {
 
 /*  Features  */
 
+.features {
+    z-index: 2;
+}
+
 .features:before {
     position: absolute;
     top: 33px;
@@ -225,7 +229,7 @@ a:hover {
 .text-band {
     background: #2B485A;
     margin-top: -55px;
-    z-index: -1;
+    z-index: 1;
     padding-top: 55px;
 }
 
@@ -239,16 +243,21 @@ a:hover {
 }
 
 .text-section h3 {
-    margin: 22px 0;
+    margin: 44px 0 22px 0;
     font-size: 2em;
 }
 
 .text-section h4 {
-    margin: 44px 0 22px 0;
+    margin: 33px 0 11px 0;
     font-size: 1.4em;
 }
 
-.text-section p {
+.text-section h5 {
+    margin: 33px 0 11px 0;
+    font-size: 1em;
+}
+
+.text-section p, .text-section h4, .text-section h5 {
     padding: 0 22px;
 }
 
