@@ -101,8 +101,12 @@
 
             <h3 id="docs">Docs</h3>
             <h4>Setup</h4>
-            <p>Daisywheel's setup is simple and easily extendable. The most straightforward way to get started is by including the <a href="http://github.com/likethemammal/daisywheeljs">daisywheel.js library</a> in a script tag and then adding the <span class="code-chars">daisywheel</span> css class to whatever input or textarea tag the tool will provide input for.</p>
+            <p>Daisywheel's setup is simple and easily extendable. The most straightforward way to get started is by including the <a href="http://github.com/likethemammal/daisywheeljs">daisywheel.js library</a> and its <a href="#dependencies">dependencies</a> in script tags and then adding the <span class="code-chars">daisywheel</span> css class to whatever input or textarea tag the tool will provide input for.</p>
             <p>That's it! Whenever the 'focus' event for that input is fired the Daisywheel UI will automatically appear, allowing the user to enter text with their gamepad without having to switch to their keyboard.</p>
+
+            <h4 id="dependencies">Dependencies</h4>
+            <p><a href="http://underscorejs.org/underscore-min.js">Underscore</a>, common javascript utility belt.</p>
+            <p><a href="https://raw.githubusercontent.com/likethemammal/daisywheeljs/master/gamepad-mod.js">Gamepad-mod.js</a>, library that interfaces with the Gamepad API and feeds Daisywheel its data.</p>
 
             <h4 id="options-and-extensions">Options and Extensions</h4>
             <h5>Manually loading and unloading</h5>
