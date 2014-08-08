@@ -1,105 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daisywheel JS</title>
-    
-<!-- Dev -->    
-    <link rel="stylesheet" type="text/css" href="navigation.css">
-    <link rel="stylesheet" type="text/css" href="animation.css">
+    <!--<link rel="stylesheet" type="text/css" href="daisywheel.css">-->
     <link rel="stylesheet" type="text/css" href="styles.css">
-<!--     <link rel="stylesheet" type="text/css" href="daisywheel.css"> -->
 
 </head>
 <body>
-
-<div id="nav" class="container">
-    <div id="logo">ScalableJS</div>
-
-    <nav id="desktop-nav">
-        <a class="nav-item" href="#learn">Learn</a>
-        <a class="nav-item" href="http://github.com/likethemammal/scalablejs">Docs</a>
-        <a class="nav-item" href="#community" class="active">Community</a>
-        <a class="nav-item" href="#about">About</a>
-    </nav>
-    
-    <input id="mobile-nav-open" class="mobile-nav-toggle" type="text" readonly>
-    <input id="mobile-nav-close" class="mobile-nav-toggle" type="text" readonly>
-
-    <nav id="mobile-nav">
-        <a class="nav-item" href="#learn">Learn</a>
-        <a class="nav-item" href="http://github.com/likethemammal/scalablejs">Docs</a>
-        <a class="nav-item" href="#community" class="active">Community</a>
-        <a class="nav-item" href="#about">About</a>
-    </nav>
-</div>
-
-<div class="page-content">
-
-
-    <div class="page-section banner">
-        <ul>
-            <li class="cover"><img src="imgs/banner/ps3_girl_blur2.png" alt="PS3 Controller, Girl"></li>
-    <!--         <li class="cover"><img src="imgs/banner/xbox_white_hamster_mini.jpg" alt="Hamster"></li>
-            <li class="cover"><img src="imgs/banner/xbox_white_mini.jpg" alt="Xbox Controller White"></li>
-            <li class="cover"><img src="imgs/banner/joystick_girl_mini.jpg" alt="Joystick, Girl"></li>
-            <li class="cover"><img src="imgs/banner/xbox_black_girl_mini.jpg" alt="Xbox Controller Black, Girl"></li> -->
-    <!--         <li class="cover"><img src="imgs/banner/psp_boy_mini.jpg" alt="PSP Console, Boy"></li> -->
-        </ul>
-    </div>
-
-    <div class="page-section features">
-
-        <div class="feature-container">
-            <div class="feature"></div>
-        </div>
-
-        <div class="feature-container">
-            <div class="feature"></div>
-        </div>
-
-        <div class="feature-container">
-            <div class="feature"></div>
-        </div>
-
-    </div>
-
-</div>
-
 </body>
-
-<script>
-
-var images = [];
-
-function preload() {
-    for (i = 0; i < preload.arguments.length; i++) {
-        images[i] = new Image();
-        images[i].src = preload.arguments[i]
-    }
-}
-
-preload(
-    "imgs/banner/ps3_girl_blur2.png",
-    "imgs/banner/xbox_white_hamster_mini.jpg",
-    "imgs/banner/xbox_white_mini.jpg",
-    "imgs/banner/joystick_girl_mini.jpg",
-    "imgs/banner/xbox_black_girl_mini.jpg"
-)
-
-
-</script>
 
 
 <!-- Dev -->
-<!-- <script src="../libs/underscore.min.js"></script> -->
+<!--<script src="../libs/underscore.min.js"></script>-->
+<input class="daisywheel">
 
 <!-- Production -->
-<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>  -->
-<!-- <script src="gamepad-mod.js"></script> -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+<script src="gamepad-mod.js"></script>
 
-<!-- <script src="daisywheel.js" ></script> -->
+<script src="daisywheel.js" ></script>
 
 </html>

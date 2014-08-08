@@ -1,4 +1,4 @@
-(function(){
+(function(_){
 
 var getCSS = function() {
     var cssString = "#daisywheel-js{font-family:Montserrat,sans-serif}#daisywheel-js,#daisywheel-js *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}#daisywheel-js #flower{position:relative;height:640px;width:640px;border-radius:50%;border:48px solid #15232d;background:#1d303e;-webkit-transform:scale(.8)}#daisywheel-js #flower:before{content:' ';position:absolute;height:368px;width:368px;left:144px;top:144px;border-radius:50%;background-color:#223846}#daisywheel-js .petal{position:absolute;height:160px;width:160px;background-color:#223846;border-radius:0 50% 50%}#daisywheel-js .petal.selected{background-color:#3A596B}#daisywheel-js .petal-inner{position:absolute;left:-8px;top:-8px;margin:16px}#daisywheel-js .buttons{height:144px;width:144px}#daisywheel-js .button{position:absolute;width:48px;height:48px;border-radius:50%;color:#fff;font-size:22px;line-height:48px;font-weight:500;text-align:center;text-shadow:0 0 2px rgba(0,0,0,1)}#daisywheel-js .selected .button{box-shadow:0 0 10px rgba(0,0,0,.4)}#daisywheel-js .button-left{top:48px;left:8px}#daisywheel-js .selected .button-left{background:#19417F}#daisywheel-js .button-top{top:8px;left:48px}#daisywheel-js .selected .button-top{background:#BD8F1A}#daisywheel-js .button-right{top:48px;left:88px}#daisywheel-js .selected .button-right{background:#A01B10}#daisywheel-js .button-bottom{top:88px;left:48px}#daisywheel-js .selected .button-bottom{background:#5E8D00}";
@@ -37,6 +37,7 @@ var View = {
         this.setupStyles();
         this.setupFontStyles();
         this.attachSymbols();
+        this.setupFocusEvent();
         window.ongamepad = _.bind(this.updateWheel, this);
     },
 
@@ -67,19 +68,23 @@ var View = {
         petalTemplate.appendChild(petal);
 
         //Add petals
-        for (var i = 0; i < this.numOfPetals; i++) {
-
+        for (var j = 0; j < this.numOfPetals; j++) {
             petal = petalTemplate.cloneNode(true);
 
+            if (j === 0) {
+                petal.children[0].className = 'petal selected';
+            }
+
             flower.appendChild(petal);
-            this.petals.push(petal);
         }
+
+        this.petals = document.getElementsByClassName('petal');
 
         flower.id = 'flower';
         daisywheel.id = 'daisywheel-js';
 
         daisywheel.appendChild(flower);
-        document.body.insertBefore(daisywheel);
+        document.body.appendChild(daisywheel);
     },
 
     setupStyles: function() {
@@ -150,6 +155,21 @@ var View = {
         }
     },
 
+    setupFocusEvent: function() {
+        document.body.addEventListener('focus', _.bind(function(ev) {
+            var el = ev.target;
+            if (hasClass(el, 'daisywheel')) {
+                this.inputEl = el;
+                this.load(this.onSymbolSelection);
+            }
+        }, this), true);
+    },
+
+    load: function(callback) {
+        //Overwrite symbol selection if there was/is a callback passed to `load`
+        this.onSymbolSelection = callback;
+    },
+
     updateWheel: function(gamepad) {
         this.setDirection(gamepad.axes);
         this.onButtonPress(gamepad.buttons);
@@ -200,6 +220,12 @@ var View = {
                     case 7:
                         this.toggleSymbols(1);
                         break;
+                    case 12:
+                    case 13:
+                    case 14:
+                    case 15:
+                        this.onDPadPress(i);
+                        break;
                 }
 
                 this.lastButtonDownId = i
@@ -223,7 +249,19 @@ var View = {
 
         console.log(button.innerText);
 
+        this.onSymbolSelection(button.innerText);
+
         this.lastButtonIsUp = false;
+    },
+
+    onSymbolSelection: function(symbol) {
+        var cursorPos = getCursor(this.inputEl),
+            currentText = this.inputEl.value,
+            firstStrPart = currentText.substring(0, cursorPos),
+            secondStrPart = currentText.substring(cursorPos, currentText.length);
+
+        this.inputEl.value = firstStrPart + symbol + secondStrPart;
+        setCursor(this.inputEl, cursorPos + 1);
     },
 
     toggleSymbols: _.throttle(function(symbolSetNumber) {
@@ -237,6 +275,41 @@ var View = {
 
         this.attachSymbols();
     }),
+
+    onDPadPress: function(buttonId) {
+        var directions = {
+                12: 'up',
+                13: 'down',
+                14: 'left',
+                15: 'right'
+            },
+            cursorPos = getCursor(this.inputEl),
+            isInput = this.inputEl.tagName === 'INPUT',
+            isTextArea = this.inputEl.tagName === 'TEXTAREA';
+
+        switch (directions[buttonId]) {
+            case 'up':
+                if (isInput) {
+                    setCursor(this.inputEl, 0);
+                } else if (isTextArea) {
+
+                }
+                break;
+            case 'down':
+                if (isInput) {
+                    setCursor(this.inputEl, this.inputEl.value.length);
+                } else if (isTextArea) {
+
+                }
+                break;
+            case 'left':
+                setCursor(this.inputEl, cursorPos - 1);
+                break;
+            case 'right':
+                setCursor(this.inputEl, cursorPos + 1);
+                break;
+        }
+    },
 
     getPetalNum: function(xAxis, yAxis, ratio) {
         var petal = 0;
@@ -281,10 +354,63 @@ var View = {
             return numGiven >= numToCheck - ratio && numGiven <= numToCheck + ratio;
         }
     }
-}
+};
 
 window.View = View;
 
 View.init();
 
-}());
+
+//Taken from http://stackoverflow.com/questions/1865563/set-cursor-at-a-length-of-14-onfocus-of-a-textbox/1867393#1867393 on 8/8/14
+function setCursor(node,pos){
+
+    var node = (typeof node == "string" || node instanceof String) ? document.getElementById(node) : node;
+
+    if(!node){
+        return false;
+    }else if(node.createTextRange){
+        var textRange = node.createTextRange();
+        textRange.collapse(true);
+        textRange.moveEnd(pos);
+        textRange.moveStart(pos);
+        textRange.select();
+        return true;
+    }else if(node.setSelectionRange){
+        node.setSelectionRange(pos,pos);
+        return true;
+    }
+
+    return false;
+}
+
+//Taken from http://stackoverflow.com/questions/263743/caret-position-in-textarea-in-characters-from-the-start on 8/8/14
+function getCursor(el) {
+    if (el.selectionStart) {
+        return el.selectionStart;
+    } else if (document.selection) {
+        el.focus();
+
+        var r = document.selection.createRange();
+        if (r == null) {
+            return 0;
+        }
+
+        var re = el.createTextRange(),
+            rc = re.duplicate();
+        re.moveToBookmark(r.getBookmark());
+        rc.setEndPoint('EndToStart', re);
+
+        return rc.text.length;
+    }
+    return 0;
+}
+
+//Taken from http://stackoverflow.com/questions/5085567/hasclass-with-javascript-or-site-with-jquery-to-javascript-translation on 8/8/14 and modified
+function hasClass(el, selector) {
+    var className = ' ' + selector + ' ',
+        elClasses = ' ' + el.className + ' ';
+
+    return elClasses.replace(/[\n\t]/g, ' ').indexOf(className) > -1;
+}
+
+}(_));
