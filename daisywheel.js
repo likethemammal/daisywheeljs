@@ -1,5 +1,15 @@
 (function(){
 
+var getCSS = function() {
+    var cssString = "#daisywheel-js{font-family:Montserrat,sans-serif}#daisywheel-js,#daisywheel-js *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}#daisywheel-js #flower{position:relative;height:640px;width:640px;border-radius:50%;border:48px solid #15232d;background:#1d303e;-webkit-transform:scale(.8)}#daisywheel-js #flower:before{content:' ';position:absolute;height:368px;width:368px;left:144px;top:144px;border-radius:50%;background-color:#223846}#daisywheel-js .petal{position:absolute;height:160px;width:160px;background-color:#223846;border-radius:0 50% 50%}#daisywheel-js .petal.selected{background-color:#3A596B}#daisywheel-js .petal-inner{position:absolute;left:-8px;top:-8px;margin:16px}#daisywheel-js .buttons{height:144px;width:144px}#daisywheel-js .button{position:absolute;width:48px;height:48px;border-radius:50%;color:#fff;font-size:22px;line-height:48px;font-weight:500;text-align:center;text-shadow:0 0 2px rgba(0,0,0,1)}#daisywheel-js .selected .button{box-shadow:0 0 10px rgba(0,0,0,.4)}#daisywheel-js .button-left{top:48px;left:8px}#daisywheel-js .selected .button-left{background:#19417F}#daisywheel-js .button-top{top:8px;left:48px}#daisywheel-js .selected .button-top{background:#BD8F1A}#daisywheel-js .button-right{top:48px;left:88px}#daisywheel-js .selected .button-right{background:#A01B10}#daisywheel-js .button-bottom{top:88px;left:48px}#daisywheel-js .selected .button-bottom{background:#5E8D00}";
+    var styleNode = document.createElement('style');
+
+    styleNode.innerHTML = cssString;
+    document.head.appendChild(styleNode);
+};
+
+getCSS();
+
 var View = {
 
     symbols0: "abcdefghijklmnopqrstuvwxyz?!;\\&-".split(''),
@@ -31,7 +41,8 @@ var View = {
     },
 
     setupElements: function() {
-        var flower = document.createElement('div'),
+        var daisywheel = document.createElement('div'),
+            flower = document.createElement('div'),
             petalTemplate = document.createDocumentFragment(),
             petal = document.createElement('div'),
             petalInner = document.createElement('div'),
@@ -59,14 +70,16 @@ var View = {
         for (var i = 0; i < this.numOfPetals; i++) {
 
             petal = petalTemplate.cloneNode(true);
-            
+
             flower.appendChild(petal);
             this.petals.push(petal);
         }
 
         flower.id = 'flower';
+        daisywheel.id = 'daisywheel-js';
 
-        document.body.insertBefore(flower);
+        daisywheel.appendChild(flower);
+        document.body.insertBefore(daisywheel);
     },
 
     setupStyles: function() {
