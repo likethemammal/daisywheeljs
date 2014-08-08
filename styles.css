@@ -61,6 +61,7 @@ a:hover {
 }
 
 #mobile-nav .nav-item {
+    background: #1D303E;
     border-bottom: 1px solid #15232D;
 }
 
@@ -119,7 +120,7 @@ a:hover {
     text-align: left;
     font-size: 18px;
     font-weight: bold;
-    text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
 }
 
 .banner-text h1 {
@@ -171,6 +172,8 @@ a:hover {
     background: #1D303E;
     content: ' ';
     z-index: -1;
+    border-top: 1px solid #15232D;
+    border-bottom: 1px solid #15232D;
 }
 
 .feature-container {
@@ -211,6 +214,17 @@ a:hover {
 
 /*  Dividing Image  */
 
+.diving-img {
+    position: relative;
+    height: 366px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 .diving-img:before {
     position: absolute;
     top: 0;
@@ -224,13 +238,21 @@ a:hover {
     background-color: rgba(0,0,0,0.5);
 }
 
+.ps3-girl {
+    background-image: url(imgs/banner/ps3_girl_blur2.png);
+}
+
+.xbox-hamster {
+    background-image: url(imgs/banner/xbox_white_hamster_mini.jpg);
+}
+
 /*  Text  */
 
 .text-band {
-    background: #2B485A;
-    margin-top: -55px;
+    padding-top: 11px;
+    background: #13232C;
+    border-bottom: 1px solid #15232D;
     z-index: 1;
-    padding-top: 55px;
 }
 
 .text-section {
@@ -239,7 +261,7 @@ a:hover {
     margin: 0 auto;
     padding: 0 22px;
     text-align: left;
-    background: #2B485A;
+    background: #13232C;
 }
 
 .text-section h3 {
@@ -257,8 +279,33 @@ a:hover {
     font-size: 1em;
 }
 
+.text-section h3, .text-section h4 {
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+}
+
 .text-section p, .text-section h4, .text-section h5 {
     padding: 0 22px;
+}
+
+.introduction {
+    margin-top: -55px;
+    padding-top: 44px;
+    padding-bottom: 44px;
+}
+
+.docs {
+    padding-bottom: 44px;
+}
+
+.about {
+    padding-bottom: 44px;
+}
+
+.copyright {
+    padding: 22px 0;
+    background: #1D303E;
+    border-top: 1px solid #15232D;
+    font-size: 1.3em;
 }
 
 /*  Code  */
@@ -279,7 +326,7 @@ a:hover {
     margin: 0;
     padding: 0 5px;
     border: 1px solid #3A596B;
-    background-color: #15232D;
+    background-color: #1D303E;
     color: #E2E2E2;
 
     border-radius: 3px;

@@ -77,7 +77,7 @@
 
     </div>
 
-    <div class="page-section text-band">
+    <div class="page-section text-band introduction">
 
         <div class="text-section">
 
@@ -88,6 +88,16 @@
             <h3 id="how-it-works">How It Works</h3>
             <p>This efficiency is achieved by using the left analog stick to choose a group of symbols or a 'petal' and then pressing one of the four colored buttons to select the actual symbol itself. A different set of symbols (numbers/capital letters) can be toggled by pressing the trigger buttons at the back of the controller. Space, backspace, left/right, and up/down each have their own buttons assigned to them.</p>
             <p>A variety of options allow for custom symbol sets and manually loading the ui. Check out the <a href="#options-and-extensions">options and extensions</a> in the docs for implementation.</p>
+
+        </div>
+
+    </div>
+
+    <div class="diving-img ps3-girl"></div>
+
+    <div class="page-section text-band docs">
+
+        <div class="text-section">
 
             <h3 id="docs">Docs</h3>
             <h4>Setup</h4>
@@ -110,15 +120,25 @@
             <h4>Feature Requests</h4>
             <p>If there is a particular feature or a change to how the API works you'd like to see discussion is welcomed. Create an issue on the project's repo and include any links or images that might be beneficial to the conversation.</p>
 
+        </div>
+
+    </div>
+
+    <div class="diving-img xbox-hamster"></div>
+
+    <div class="page-section text-band about">
+
+        <div class="text-section">
+
             <h3 id="about">About</h3>
             <p>DaisywheelJS was inspired by the <a href="http://store.steampowered.com/bigpicture/">Steam "Big Picture"</a> Daisywheel and the fact that there should never be a QWERTY keyboard presented to a user that has a controller in their hand. It was ported to Javascript and CSS, and the Gamepad API attached, so the HTML5 gaming community can use it in their games as a standard library in UI toolkits.</p>
             <p>An explanation of how it works can be found <a href="#how-it-works">here</a>.</p>
 
             <h4>Browser Support</h4>
-            <p>As of now, the Gamepad API is only supported by Chrome 21+ and Firefox 29+.</p>
+            <p>As of now, the Gamepad API is only supported by <span class="bold">Chrome 21+</span> and <span class="bold">Firefox 29+</span>.</p>
 
             <h4>Attributions</h4>
-            <p>`gamepad-mod.js` interfaces with the browser API and organizes the data sent over in the controller's events. It was a modification of the `gamepad.js` library in the example code for the <a href="http://www.html5rocks.com/en/tutorials/doodles/gamepad/">HTML5Rocks gamepad tester</a>, found in its original form <a href="https://github.com/html5rocks/www.html5rocks.com/blob/master/content/tutorials/doodles/gamepad/static/gamepad-tester/gamepad.js">here</a>.</p>
+            <p><span class="code-chars">gamepad-mod.js</span> interfaces with the browser API and organizes the data sent over in the controller's events. It was a modification of the <span class="code-chars">gamepad.js</span> library in the example code for the <a href="http://www.html5rocks.com/en/tutorials/doodles/gamepad/">HTML5Rocks gamepad tester</a>, found in its original form <a href="https://github.com/html5rocks/www.html5rocks.com/blob/master/content/tutorials/doodles/gamepad/static/gamepad-tester/gamepad.js">here</a>.</p>
             <p>The Montserrat webfont is used for numbers, letters, and all utf-8 characters. It can be found *here*, accessible through Google webfonts.</p>
 
             <h4>License</h4>
@@ -126,6 +146,16 @@
 
         </div>
 
+    </div>
+
+    <div class="page-section text-band copyright">
+
+        <small id="copyright">Copyright 2014 by <a href="http://likethemammal.com">Chris Dolphin</a></small>
+
+        <script>
+            var copyright = document.getElementById('copyright');
+            copyright.innerHTML = 'Copyright ' + new Date().getFullYear() + ' by <a href="http://likethemammal.com">Chris Dolphin</a>';
+        </script>
     </div>
 
 </div>
