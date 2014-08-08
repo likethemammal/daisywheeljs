@@ -1,14 +1,14 @@
 (function(_){
 
-var getCSS = function() {
-    var cssString = "#daisywheel-js{font-family:Montserrat,sans-serif}#daisywheel-js,#daisywheel-js *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}#daisywheel-js #flower{position:relative;height:640px;width:640px;border-radius:50%;border:48px solid #15232d;background:#1d303e;-webkit-transform:scale(.8)}#daisywheel-js #flower:before{content:' ';position:absolute;height:368px;width:368px;left:144px;top:144px;border-radius:50%;background-color:#223846}#daisywheel-js .petal{position:absolute;height:160px;width:160px;background-color:#223846;border-radius:0 50% 50%}#daisywheel-js .petal.selected{background-color:#3A596B}#daisywheel-js .petal-inner{position:absolute;left:-8px;top:-8px;margin:16px}#daisywheel-js .buttons{height:144px;width:144px}#daisywheel-js .button{position:absolute;width:48px;height:48px;border-radius:50%;color:#fff;font-size:22px;line-height:48px;font-weight:500;text-align:center;text-shadow:0 0 2px rgba(0,0,0,1)}#daisywheel-js .selected .button{box-shadow:0 0 10px rgba(0,0,0,.4)}#daisywheel-js .button-left{top:48px;left:8px}#daisywheel-js .selected .button-left{background:#19417F}#daisywheel-js .button-top{top:8px;left:48px}#daisywheel-js .selected .button-top{background:#BD8F1A}#daisywheel-js .button-right{top:48px;left:88px}#daisywheel-js .selected .button-right{background:#A01B10}#daisywheel-js .button-bottom{top:88px;left:48px}#daisywheel-js .selected .button-bottom{background:#5E8D00}";
-    var styleNode = document.createElement('style');
-
-    styleNode.innerHTML = cssString;
-    document.head.appendChild(styleNode);
-};
-
-getCSS();
+//var getCSS = function() {
+//    var cssString = "#daisywheel-js{font-family:Montserrat,sans-serif}#daisywheel-js,#daisywheel-js *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}#daisywheel-js #flower{position:relative;height:640px;width:640px;border-radius:50%;border:48px solid #15232d;background:#1d303e;-webkit-transform:scale(.8)}#daisywheel-js #flower:before{content:' ';position:absolute;height:368px;width:368px;left:144px;top:144px;border-radius:50%;background-color:#223846}#daisywheel-js .petal{position:absolute;height:160px;width:160px;background-color:#223846;border-radius:0 50% 50%}#daisywheel-js .petal.selected{background-color:#3A596B}#daisywheel-js .petal-inner{position:absolute;left:-8px;top:-8px;margin:16px}#daisywheel-js .buttons{height:144px;width:144px}#daisywheel-js .button{position:absolute;width:48px;height:48px;border-radius:50%;color:#fff;font-size:22px;line-height:48px;font-weight:500;text-align:center;text-shadow:0 0 2px rgba(0,0,0,1)}#daisywheel-js .selected .button{box-shadow:0 0 10px rgba(0,0,0,.4)}#daisywheel-js .button-left{top:48px;left:8px}#daisywheel-js .selected .button-left{background:#19417F}#daisywheel-js .button-top{top:8px;left:48px}#daisywheel-js .selected .button-top{background:#BD8F1A}#daisywheel-js .button-right{top:48px;left:88px}#daisywheel-js .selected .button-right{background:#A01B10}#daisywheel-js .button-bottom{top:88px;left:48px}#daisywheel-js .selected .button-bottom{background:#5E8D00}";
+//    var styleNode = document.createElement('style');
+//
+//    styleNode.innerHTML = cssString;
+//    document.head.appendChild(styleNode);
+//};
+//
+//getCSS();
 
 var View = {
 
@@ -39,10 +39,44 @@ var View = {
         this.attachSymbols();
         this.setupFocusEvent();
         window.ongamepad = _.bind(this.updateWheel, this);
+        window.addEventListener('resize', _.throttle(_.bind(this.setupSize, this), 50));
+        window.addEventListener('keyup', _.bind(function(ev) {
+            if (ev.which === 27 && this.loaded) {
+                this.unload();
+                if (this.inputEl) {
+                    this.inputEl.blur();
+                }
+            }
+        }, this));
     },
 
     setupElements: function() {
-        var daisywheel = document.createElement('div'),
+        var daisywheel = document.createElement('div');
+
+        daisywheel.id = 'daisywheel-js';
+
+        document.body.appendChild(daisywheel);
+
+        this.setupModal();
+        this.setupFlower();
+        this.setupSize();
+    },
+
+    setupModal: function() {
+        var daisywheel = document.getElementById('daisywheel-js'),
+            modal = document.createElement('div'),
+            inputContainer = document.createElement('div');
+
+        modal.id = 'daisywheel-modal';
+        inputContainer.id = 'daisywheel-input-container';
+
+        modal.appendChild(inputContainer);
+        daisywheel.appendChild(modal);
+    },
+
+    setupFlower: function() {
+        var modal = document.getElementById('daisywheel-modal'),
+            flowerContainer = document.createElement('div'),
             flower = document.createElement('div'),
             petalTemplate = document.createDocumentFragment(),
             petal = document.createElement('div'),
@@ -81,10 +115,19 @@ var View = {
         this.petals = document.getElementsByClassName('petal');
 
         flower.id = 'flower';
-        daisywheel.id = 'daisywheel-js';
+        flowerContainer.id = 'flower-container';
+        flowerContainer.appendChild(flower);
+        modal.appendChild(flowerContainer);
+    },
 
-        daisywheel.appendChild(flower);
-        document.body.appendChild(daisywheel);
+    setupSize: function() {
+        var flower = document.getElementById('flower'),
+            maxSize = (window.innerWidth < window.innerHeight) ? window.innerWidth : window.innerHeight,
+            padding = 50,
+            scalePrecision = 10,
+            scaleAmount = Math.floor(scalePrecision * (maxSize / (640 + padding*2))) / scalePrecision;
+
+        flower.style['-webkit-transform'] = 'scale(' + scaleAmount + ')';
     },
 
     setupStyles: function() {
@@ -159,8 +202,9 @@ var View = {
         document.body.addEventListener('focus', _.bind(function(ev) {
             var el = ev.target;
             if (hasClass(el, 'daisywheel')) {
+                ev.preventDefault();
                 this.inputEl = el;
-                this.load(this.onSymbolSelection);
+                this.load(this.onSymbolSelectionDefault);
             }
         }, this), true);
     },
@@ -168,6 +212,29 @@ var View = {
     load: function(callback) {
         //Overwrite symbol selection if there was/is a callback passed to `load`
         this.onSymbolSelection = callback;
+
+        if (!this.loaded) {
+            this.loaded = true;
+
+            var daisywheel = document.getElementById('daisywheel-js');
+
+            daisywheel.addEventListener('click', _.bind(this.unload, this));
+
+            daisywheel.style.visibility = 'visible';
+            daisywheel.style.opacity = 1;
+        }
+    },
+
+    unload: function() {
+        if (this.loaded) {
+            this.loaded = false;
+            var daisywheel = document.getElementById('daisywheel-js');
+
+            daisywheel.removeEventListener('click', _.bind(this.unload, this));
+
+            daisywheel.style.opacity = 0;
+            daisywheel.style.visibility = 'hidden';
+        }
     },
 
     updateWheel: function(gamepad) {
@@ -231,7 +298,7 @@ var View = {
                 this.lastButtonDownId = i
             }
         }
-    }),
+    }, 50),
 
     onButtonUp: function() {
         for (var i = 0; i < this.buttons.length; i++) {
@@ -254,7 +321,7 @@ var View = {
         this.lastButtonIsUp = false;
     },
 
-    onSymbolSelection: function(symbol) {
+    onSymbolSelectionDefault: function(symbol) {
         var cursorPos = getCursor(this.inputEl),
             currentText = this.inputEl.value,
             firstStrPart = currentText.substring(0, cursorPos),
@@ -274,7 +341,7 @@ var View = {
         this.lastButtonIsUp = false;
 
         this.attachSymbols();
-    }),
+    }, 50),
 
     onDPadPress: function(buttonId) {
         var directions = {

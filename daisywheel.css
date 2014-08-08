@@ -1,5 +1,16 @@
 #daisywheel-js {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    opacity: 0;
+    visibility: hidden;
+
     font-family: "Montserrat", sans-serif;
+
+    -webkit-transition: opacity 200ms linear;
 }
 
 #daisywheel-js, #daisywheel-js * {
@@ -8,14 +19,28 @@
     box-sizing: content-box;
 }
 
+#daisywheel-js #daisywheel-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+#daisywheel-js #flower-container {
+    -webkit-transform: translate(50%, 50%);
+}
+
 #daisywheel-js #flower {
 	position: relative;
+    margin-left: -370px;
+    margin-top: -405px;
 	height: 640px;
 	width: 640px;
 	border-radius: 50%;
 	border: 48px solid #15232d;
 	background: #1d303e;
-	-webkit-transform: scale(.8);
 }
 
 #daisywheel-js #flower:before {
