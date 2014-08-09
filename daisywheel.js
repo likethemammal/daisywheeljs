@@ -59,19 +59,26 @@ var View = {
 
         this.setupModal();
         this.setupFlower();
+        this.setupControlsUI();
         this.setupSize();
     },
 
     setupModal: function() {
         var daisywheel = document.getElementById('daisywheel-js'),
+            modalOverlay = document.createElement('div'),
             modal = document.createElement('div'),
-            inputContainer = document.createElement('div');
+            inputContainer = document.createElement('div'),
+            input = document.createElement('textarea');
 
+        modalOverlay.id = 'daisywheel-modal-overlay';
         modal.id = 'daisywheel-modal';
         inputContainer.id = 'daisywheel-input-container';
+        input.id = 'daisywheel-input';
 
+        inputContainer.appendChild(input);
         modal.appendChild(inputContainer);
-        daisywheel.appendChild(modal);
+        modalOverlay.appendChild(modal);
+        daisywheel.appendChild(modalOverlay);
     },
 
     setupFlower: function() {
@@ -118,6 +125,47 @@ var View = {
         flowerContainer.id = 'flower-container';
         flowerContainer.appendChild(flower);
         modal.appendChild(flowerContainer);
+    },
+
+    setupControlsUI: function() {
+        var modal = document.getElementById('daisywheel-modal'),
+            controlsUI = document.createElement('div'),
+            uiElements = [
+                'left-trigger',
+                'right-trigger',
+                'left-bumper',
+                'right-bumper',
+                'left-analog'
+            ],
+            uiLabels = [
+                'Numbers',
+                'Caps',
+                'Backspace',
+                'Space',
+                'Select Petal'
+            ];
+
+        for (var i = 0; i < uiElements.length; i++) {
+            var element = document.createElement('div'),
+                icon = document.createElement('div'),
+                label = document.createElement('div');
+
+            element.id = uiElements[i] + '-ui';
+            element.className = 'control-ui cf';
+
+            icon.className = 'control-ui-icon';
+            label.className = 'control-ui-label';
+
+            label.textContent = uiLabels[i];
+
+            element.appendChild(icon);
+            element.appendChild(label);
+
+            controlsUI.appendChild(element);
+        }
+
+        controlsUI.id = 'daisywheel-controls-ui';
+        modal.appendChild(controlsUI);
     },
 
     setupSize: function() {
@@ -204,6 +252,8 @@ var View = {
             if (hasClass(el, 'daisywheel')) {
                 ev.preventDefault();
                 this.inputEl = el;
+                this.modalInputEl = el.cloneNode(true);
+
                 this.load(this.onSymbolSelectionDefault);
             }
         }, this), true);
@@ -216,7 +266,12 @@ var View = {
         if (!this.loaded) {
             this.loaded = true;
 
-            var daisywheel = document.getElementById('daisywheel-js');
+            var daisywheel = document.getElementById('daisywheel-js'),
+                input = document.getElementById('daisywheel-input');
+
+            input.value = this.inputEl.value + 'what the flying fuck';
+            setCursor(input, getCursor(this.inputEl));
+            input.focus();
 
             daisywheel.addEventListener('click', _.bind(this.unload, this));
 
@@ -228,7 +283,11 @@ var View = {
     unload: function() {
         if (this.loaded) {
             this.loaded = false;
-            var daisywheel = document.getElementById('daisywheel-js');
+            var daisywheel = document.getElementById('daisywheel-js'),
+                input = document.getElementById('daisywheel-input');
+
+            this.inputEl.value = input.value;
+            setCursor(this.inputEl, getCursor(input));
 
             daisywheel.removeEventListener('click', _.bind(this.unload, this));
 

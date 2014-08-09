@@ -4,6 +4,7 @@
     right: 0;
     bottom: 0;
     left: 0;
+    color: white;
 
     opacity: 0;
     visibility: hidden;
@@ -19,7 +20,7 @@
     box-sizing: content-box;
 }
 
-#daisywheel-js #daisywheel-modal {
+#daisywheel-js #daisywheel-modal-overlay {
     position: absolute;
     top: 0;
     right: 0;
@@ -27,6 +28,64 @@
     left: 0;
     background: rgba(0,0,0,0.5);
 }
+
+#daisywheel-js #daisywheel-input-container {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    padding: 40px 0;
+}
+
+#daisywheel-js #daisywheel-input {
+    height: 1em;
+    width: 370px;
+    margin-top: -26px;
+
+    resize: none;
+    font-size: 22px;
+    padding: 15px;
+    border-radius: 3px;
+    box-shadow: 0 0 20px 5px rgba(0,0,0,0.5);
+}
+
+/*  Controls UI  */
+
+#daisywheel-js #daisywheel-controls-ui {
+    position: relative;
+    width: 640px;
+    background: #1d303e;
+    text-align: center;
+    border-radius: 3px;
+}
+
+#daisywheel-js .control-ui {
+    display: inline-block;
+    padding: 20px 30px;
+    width: 212px;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#daisywheel-js .control-ui-icon {
+    display: block;
+    float: left;
+    width: 40px;
+    height: 40px;
+}
+
+#daisywheel-js .control-ui-label {
+    display: block;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 12px;
+
+    text-align: left;
+}
+
 
 #daisywheel-js #flower-container {
     -webkit-transform: translate(50%, 50%);
@@ -129,4 +188,15 @@
 
 #daisywheel-js .selected .button-bottom {
 	background: #5E8D00;
+}
+
+/* clearfix rules */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
 }
