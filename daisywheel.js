@@ -66,24 +66,26 @@ var View = {
     setupModal: function() {
         var daisywheel = document.getElementById('daisywheel-js'),
             modalOverlay = document.createElement('div'),
+            modalContainer = document.createElement('div'),
             modal = document.createElement('div'),
             inputContainer = document.createElement('div'),
             input = document.createElement('textarea');
 
         modalOverlay.id = 'daisywheel-modal-overlay';
+        modalContainer.id = 'daisywheel-modal-container';
         modal.id = 'daisywheel-modal';
         inputContainer.id = 'daisywheel-input-container';
         input.id = 'daisywheel-input';
 
         inputContainer.appendChild(input);
         modal.appendChild(inputContainer);
-        modalOverlay.appendChild(modal);
+        modalContainer.appendChild(modal);
+        modalOverlay.appendChild(modalContainer);
         daisywheel.appendChild(modalOverlay);
     },
 
     setupFlower: function() {
         var modal = document.getElementById('daisywheel-modal'),
-            flowerContainer = document.createElement('div'),
             flower = document.createElement('div'),
             petalTemplate = document.createDocumentFragment(),
             petal = document.createElement('div'),
@@ -122,9 +124,7 @@ var View = {
         this.petals = document.getElementsByClassName('petal');
 
         flower.id = 'flower';
-        flowerContainer.id = 'flower-container';
-        flowerContainer.appendChild(flower);
-        modal.appendChild(flowerContainer);
+        modal.appendChild(flower);
     },
 
     setupControlsUI: function() {
@@ -169,13 +169,14 @@ var View = {
     },
 
     setupSize: function() {
-        var flower = document.getElementById('flower'),
+        var modal = document.getElementById('daisywheel-modal'),
             maxSize = (window.innerWidth < window.innerHeight) ? window.innerWidth : window.innerHeight,
             padding = 50,
             scalePrecision = 10,
-            scaleAmount = Math.floor(scalePrecision * (maxSize / (640 + padding*2))) / scalePrecision;
+            modalHeight = 1000,
+            scaleAmount = Math.floor(scalePrecision * (maxSize / (modalHeight + padding*2))) / scalePrecision;
 
-        flower.style['-webkit-transform'] = 'scale(' + scaleAmount + ')';
+        modal.style['-webkit-transform'] = 'scale(' + scaleAmount + ')';
     },
 
     setupStyles: function() {
@@ -252,8 +253,6 @@ var View = {
             if (hasClass(el, 'daisywheel')) {
                 ev.preventDefault();
                 this.inputEl = el;
-                this.modalInputEl = el.cloneNode(true);
-
                 this.load(this.onSymbolSelectionDefault);
             }
         }, this), true);
@@ -264,35 +263,37 @@ var View = {
         this.onSymbolSelection = callback;
 
         if (!this.loaded) {
-            this.loaded = true;
-
             var daisywheel = document.getElementById('daisywheel-js'),
-                input = document.getElementById('daisywheel-input');
+                input = document.getElementById('daisywheel-input'),
+                inputElValue = this.inputEl.value;
 
-            input.value = this.inputEl.value + 'what the flying fuck';
-            setCursor(input, getCursor(this.inputEl));
-            input.focus();
+            input.value = inputElValue;
+            setCursor(input, inputElValue.length);
 
             daisywheel.addEventListener('click', _.bind(this.unload, this));
 
             daisywheel.style.visibility = 'visible';
             daisywheel.style.opacity = 1;
+            input.focus();
+
+            this.inputEl.readOnly = true;
+            this.loaded = true;
         }
     },
 
     unload: function() {
         if (this.loaded) {
-            this.loaded = false;
             var daisywheel = document.getElementById('daisywheel-js'),
                 input = document.getElementById('daisywheel-input');
 
             this.inputEl.value = input.value;
-            setCursor(this.inputEl, getCursor(input));
+            this.inputEl.readOnly = false;
 
             daisywheel.removeEventListener('click', _.bind(this.unload, this));
 
             daisywheel.style.opacity = 0;
             daisywheel.style.visibility = 'hidden';
+            this.loaded = false;
         }
     },
 

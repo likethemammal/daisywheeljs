@@ -20,6 +20,8 @@
     box-sizing: content-box;
 }
 
+/*  Modal  */
+
 #daisywheel-js #daisywheel-modal-overlay {
     position: absolute;
     top: 0;
@@ -29,22 +31,38 @@
     background: rgba(0,0,0,0.5);
 }
 
+#daisywheel-js #daisywheel-modal-container {
+    -webkit-transform: translate(50%);
+}
+
+#daisywheel-js #daisywheel-modal {
+    position: relative;
+    width: 736px;
+    margin-left: -368px;
+    margin-top: -200px;
+}
+
+/*  Input  */
+
 #daisywheel-js #daisywheel-input-container {
+    width: 736px;
+    padding-bottom: 40px;
+
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 
-    padding: 40px 0;
 }
 
 #daisywheel-js #daisywheel-input {
+    display: block;
     height: 1em;
     width: 370px;
-    margin-top: -26px;
+    margin: 0 auto;
+    padding: 15px;
 
     resize: none;
     font-size: 22px;
-    padding: 15px;
     border-radius: 3px;
     box-shadow: 0 0 20px 5px rgba(0,0,0,0.5);
 }
@@ -57,6 +75,7 @@
     background: #1d303e;
     text-align: center;
     border-radius: 3px;
+    margin: 0 auto;
 }
 
 #daisywheel-js .control-ui {
@@ -78,23 +97,21 @@
 
 #daisywheel-js .control-ui-label {
     display: block;
-    float: left;
     height: 40px;
     line-height: 40px;
     margin-left: 12px;
 
+    float: left;
     text-align: left;
 }
 
+/*  Flower  */
 
 #daisywheel-js #flower-container {
-    -webkit-transform: translate(50%, 50%);
 }
 
 #daisywheel-js #flower {
 	position: relative;
-    margin-left: -370px;
-    margin-top: -405px;
 	height: 640px;
 	width: 640px;
 	border-radius: 50%;
