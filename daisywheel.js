@@ -69,7 +69,7 @@ var View = {
             modalContainer = document.createElement('div'),
             modal = document.createElement('div'),
             inputContainer = document.createElement('div'),
-            input = document.createElement('textarea');
+            input = document.createElement('input');
 
         modalOverlay.id = 'daisywheel-modal-overlay';
         modalContainer.id = 'daisywheel-modal-container';
@@ -382,13 +382,14 @@ var View = {
     },
 
     onSymbolSelectionDefault: function(symbol) {
-        var cursorPos = getCursor(this.inputEl),
-            currentText = this.inputEl.value,
+        var input = document.getElementById('daisywheel-input'),
+            cursorPos = getCursor(input),
+            currentText = input.value,
             firstStrPart = currentText.substring(0, cursorPos),
             secondStrPart = currentText.substring(cursorPos, currentText.length);
 
-        this.inputEl.value = firstStrPart + symbol + secondStrPart;
-        setCursor(this.inputEl, cursorPos + 1);
+        input.value = firstStrPart + symbol + secondStrPart;
+        input.scrollLeft = input.scrollWidth;
     },
 
     toggleSymbols: _.throttle(function(symbolSetNumber) {
@@ -410,30 +411,21 @@ var View = {
                 14: 'left',
                 15: 'right'
             },
-            cursorPos = getCursor(this.inputEl),
-            isInput = this.inputEl.tagName === 'INPUT',
-            isTextArea = this.inputEl.tagName === 'TEXTAREA';
+            input = document.getElementById('daisywheel-input'),
+            cursorPos = getCursor(input);
 
         switch (directions[buttonId]) {
             case 'up':
-                if (isInput) {
-                    setCursor(this.inputEl, 0);
-                } else if (isTextArea) {
-
-                }
+                setCursor(input, 0);
                 break;
             case 'down':
-                if (isInput) {
-                    setCursor(this.inputEl, this.inputEl.value.length);
-                } else if (isTextArea) {
-
-                }
+                setCursor(input, input.value.length);
                 break;
             case 'left':
-                setCursor(this.inputEl, cursorPos - 1);
+                setCursor(input, cursorPos - 1);
                 break;
             case 'right':
-                setCursor(this.inputEl, cursorPos + 1);
+                setCursor(input, cursorPos + 1);
                 break;
         }
     },
