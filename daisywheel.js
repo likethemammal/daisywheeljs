@@ -341,6 +341,12 @@ var View = {
                     case 3:
                         this.getSymbol(i);
                         break;
+                    case 4:
+                        this.onBackspace();
+                        break;
+                    case 5:
+                        this.onSpace();
+                        break;
                     case 6:
                         this.toggleSymbols(2);
                         break;
@@ -390,6 +396,19 @@ var View = {
 
         input.value = firstStrPart + symbol + secondStrPart;
         input.scrollLeft = input.scrollWidth;
+    },
+
+    onBackspace: function() {
+        var input = document.getElementById('daisywheel-input');
+        var value = input.value;
+
+        input.value = value.substring(0, value.length - 1);
+    },
+
+    onSpace: function() {
+        var input = document.getElementById('daisywheel-input');
+
+        input.value += ' ';
     },
 
     toggleSymbols: _.throttle(function(symbolSetNumber) {
