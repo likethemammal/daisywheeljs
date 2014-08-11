@@ -12,9 +12,11 @@
 
 var View = {
 
-    symbols0: "abcdefghijklmnopqrstuvwxyz?!;\\&-".split(''),
-    symbols1: "ABCDEFGHIJKLMNOPQRSTUVWXYZ+.@#$%".split(''),
-    symbols2: "0123456789*,_=\"'()[]{}:~^<>|".split(''),
+    symbolSets: [
+        "abcdefghijklmnopqrstuvwxyz?!;\\&-".split(''),
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZ+.@#$%".split(''),
+        "0123456789*,_=\"'()[]{}:~^<>|".split('')
+    ],
     symbolSetNumber: 0,
 
     petals: [],
@@ -31,6 +33,22 @@ var View = {
     lastButtonIsUp: true,
 
     numOfPetals: 8,
+
+    uiElements: [
+        'left-bumper',
+        'left-analog',
+        'right-bumper',
+        'left-trigger',
+        'right-trigger'
+    ],
+
+    uiLabels: {
+        'left-bumper': 'Backspace',
+        'left-analog': 'Select Petal',
+        'right-bumper': 'Space',
+        'left-trigger': 'Numbers',
+        'right-trigger': 'Caps'
+    },
 
     init: function() {
         this.setupElements();
@@ -129,34 +147,29 @@ var View = {
 
     setupControlsUI: function() {
         var modal = document.getElementById('daisywheel-modal'),
-            controlsUI = document.createElement('div'),
-            uiElements = [
-                'left-bumper',
-                'left-analog',
-                'right-bumper',
-                'left-trigger',
-                'right-trigger'
-            ],
-            uiLabels = [
-                'Backspace',
-                'Select Petal',
-                'Space',
-                'Numbers',
-                'Caps'
-            ];
+            controlsUI = document.getElementById('daisywheel-controls-ui');
 
-        for (var i = 0; i < uiElements.length; i++) {
+        if (!controlsUI) {
+            controlsUI = document.createElement('div');
+            controlsUI.id = 'daisywheel-controls-ui';
+            modal.appendChild(controlsUI);
+        } else {
+            controlsUI.innerHTML = '';
+        }
+
+        for (var i = 0; i < this.uiElements.length; i++) {
             var element = document.createElement('div'),
+                elementKey = this.uiElements[i],
                 icon = document.createElement('div'),
                 label = document.createElement('div');
 
-            element.id = 'daisywheel-' + uiElements[i] + '-ui';
+            element.id = 'daisywheel-' + elementKey + '-ui';
             element.className = 'control-ui cf';
 
             icon.className = 'control-ui-icon';
             label.className = 'control-ui-label';
 
-            label.textContent = uiLabels[i];
+            label.textContent = this.uiLabels[elementKey];
 
             element.appendChild(icon);
             element.appendChild(label);
@@ -164,8 +177,6 @@ var View = {
             controlsUI.appendChild(element);
         }
 
-        controlsUI.id = 'daisywheel-controls-ui';
-        modal.appendChild(controlsUI);
     },
 
     setupSize: function() {
@@ -232,7 +243,7 @@ var View = {
 
         for (var i = 0; i < this.buttons.length; i++) {
             var button = this.buttons[i],
-                symbol = this['symbols' + this.symbolSetNumber][i],
+                symbol = this.symbolSets[this.symbolSetNumber][i],
                 opacity = 1;
 
             if (symbol) {
@@ -297,6 +308,32 @@ var View = {
         }
     },
 
+    symbols: function(customSymbols) {
+        var nextOverridden = 2;
+        var nextSetNumber = 3;
+
+        for (var i = 0; i < customSymbols.length; i++) {
+            var customSet = customSymbols[i];
+            var setStr = customSet.set;
+            var override = customSet.override;
+
+            if (override && nextOverridden > -1) {
+                this.symbolSets[nextOverridden] = setStr;
+                nextOverridden -= 1;
+            } else {
+                this.symbolSets[nextSetNumber] = setStr;
+                nextSetNumber++;
+            }
+        }
+
+        if (nextSetNumber > 3) {
+            this.uiLabels['left-trigger'] = 'Reset';
+            this.uiLabels['right-trigger'] = 'Cycle';
+        }
+
+        this.setupControlsUI();
+    },
+
     updateWheel: function(gamepad) {
         this.setDirection(gamepad.axes);
         this.onButtonPress(gamepad.buttons);
@@ -348,10 +385,18 @@ var View = {
                         this.onSpace();
                         break;
                     case 6:
-                        this.toggleSymbols(2);
+                        if (this.symbolSets.length < 4) {
+                            this.toggleSymbols(2);
+                        } else {
+                            this.resetSymbols();
+                        }
                         break;
                     case 7:
-                        this.toggleSymbols(1);
+                        if (this.symbolSets.length < 4) {
+                            this.toggleSymbols(1);
+                        } else {
+                            this.cycleSymbols();
+                        }
                         break;
                     case 12:
                     case 13:
@@ -422,6 +467,20 @@ var View = {
 
         this.attachSymbols();
     }, 50),
+
+    cycleSymbols: function() {
+        if (this.symbolSetNumber > this.symbolSets.length - 1) {
+            this.symbolSetNumber++;
+        } else {
+            this.symbolSetNumber = 0;
+        }
+        this.attachSymbols();
+    },
+
+    resetSymbols: function() {
+        this.symbolSetNumber = 0;
+        this.attachSymbols();
+    },
 
     onDPadPress: function(buttonId) {
         var directions = {
