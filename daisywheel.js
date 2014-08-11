@@ -109,12 +109,16 @@ var View = {
             petal = document.createElement('div'),
             petalInner = document.createElement('div'),
             buttons = document.createElement('div'),
-            buttonPositions = ['left', 'top', 'right', 'bottom'],
-            button;
+            buttonPositions = ['left', 'top', 'right', 'bottom'];
 
         // Add buttons
         for (var i = 0; i < buttonPositions.length; i++) {
-            button = document.createElement('div');
+            var button = document.createElement('div'),
+                buttonImg = document.createElement('img'),
+                buttonSpan = document.createElement('span');
+
+            button.appendChild(buttonImg);
+            button.appendChild(buttonSpan);
 
             button.className = 'button button-' + buttonPositions[i];
             buttons.appendChild(button);
@@ -253,7 +257,18 @@ var View = {
                 opacity = 0.5;
             }
 
-            button.innerText = symbol;
+            if (symbol.image) {
+                button.childNodes[0].src = symbol.image;
+                button.childNodes[0].style.display = 'inline-block';
+                button.childNodes[1].style.visibility = 'hidden';
+                symbol = symbol.symbol;
+            } else {
+                button.childNodes[0].src = '';
+                button.childNodes[0].style.display = 'none';
+                button.childNodes[1].style.visibility = 'visible';
+            }
+
+            button.childNodes[1].innerText = symbol;
             button.style.opacity = opacity;
         }
     },
@@ -318,7 +333,8 @@ var View = {
             var override = customSet.override;
 
             if (override && nextOverridden > -1) {
-                this.symbolSets[nextOverridden] = setStr;
+                this.symbolSets.unshift(setStr);
+                this.symbolSets[nextOverridden] = null;
                 nextOverridden -= 1;
             } else {
                 this.symbolSets[nextSetNumber] = setStr;
@@ -331,6 +347,7 @@ var View = {
             this.uiLabels['right-trigger'] = 'Cycle';
         }
 
+        this.attachSymbols();
         this.setupControlsUI();
     },
 
@@ -425,9 +442,7 @@ var View = {
 
         button.style['-webkit-filter'] = 'saturate(2)';
 
-        console.log(button.innerText);
-
-        this.onSymbolSelection(button.innerText);
+        this.onSymbolSelection(button.childNodes[1].textContent);
 
         this.lastButtonIsUp = false;
     },
