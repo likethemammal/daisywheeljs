@@ -131,18 +131,18 @@ var View = {
         var modal = document.getElementById('daisywheel-modal'),
             controlsUI = document.createElement('div'),
             uiElements = [
-                'left-trigger',
-                'right-trigger',
                 'left-bumper',
+                'left-analog',
                 'right-bumper',
-                'left-analog'
+                'left-trigger',
+                'right-trigger'
             ],
             uiLabels = [
-                'Numbers',
-                'Caps',
                 'Backspace',
+                'Select Petal',
                 'Space',
-                'Select Petal'
+                'Numbers',
+                'Caps'
             ];
 
         for (var i = 0; i < uiElements.length; i++) {
@@ -150,7 +150,7 @@ var View = {
                 icon = document.createElement('div'),
                 label = document.createElement('div');
 
-            element.id = uiElements[i] + '-ui';
+            element.id = 'daisywheel-' + uiElements[i] + '-ui';
             element.className = 'control-ui cf';
 
             icon.className = 'control-ui-icon';

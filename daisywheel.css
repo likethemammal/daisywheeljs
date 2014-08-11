@@ -20,6 +20,8 @@
     box-sizing: content-box;
 }
 
+
+
 /*  Modal  */
 
 #daisywheel-js #daisywheel-modal-overlay {
@@ -39,14 +41,16 @@
     position: relative;
     width: 736px;
     margin-left: -368px;
-    margin-top: -200px;
+    margin-top: -170px;
 }
 
 /*  Input  */
 
 #daisywheel-js #daisywheel-input-container {
-    width: 736px;
-    padding-bottom: 40px;
+    width: 640px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    border-radius: 3px;
 
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -67,20 +71,23 @@
     box-shadow: 0 0 20px 5px rgba(0,0,0,0.5);
 }
 
+
+
 /*  Controls UI  */
 
 #daisywheel-js #daisywheel-controls-ui {
     position: relative;
     width: 640px;
-    background: #1d303e;
     text-align: center;
     border-radius: 3px;
     margin: 0 auto;
+    padding-left: 60px;
+    padding-top: 30px;
 }
 
 #daisywheel-js .control-ui {
     display: inline-block;
-    padding: 20px 30px;
+    padding: 10px 30px;
     width: 212px;
 
     -webkit-box-sizing: border-box;
@@ -89,10 +96,26 @@
 }
 
 #daisywheel-js .control-ui-icon {
+    position: relative;
     display: block;
     float: left;
     width: 40px;
     height: 40px;
+}
+
+#daisywheel-js .control-ui-icon:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 5px 5px;
+    background: #1d303e;
+    border: 2px solid black;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 #daisywheel-js .control-ui-label {
@@ -103,7 +126,46 @@
 
     float: left;
     text-align: left;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 1);
 }
+
+#daisywheel-js #daisywheel-left-bumper-ui .control-ui-icon:before {
+    top: 5px;
+    bottom: 2px;
+    border-radius: 15px 2px 2px 2px;
+    content: 'LB';
+}
+
+#daisywheel-js #daisywheel-right-bumper-ui .control-ui-icon:before {
+    top: 5px;
+    bottom: 2px;
+    border-radius: 2px 15px 2px 2px;
+    content: 'RB';
+}
+
+#daisywheel-js #daisywheel-left-trigger-ui .control-ui-icon:before {
+    top: 5px;
+    bottom: 2px;
+    border-radius: 2px;
+    content: 'LT';
+}
+
+#daisywheel-js #daisywheel-right-trigger-ui .control-ui-icon:before {
+    top: 5px;
+    bottom: 2px;
+    border-radius: 2px;
+    content: 'RT';
+}
+
+#daisywheel-js #daisywheel-left-analog-ui .control-ui-icon:before {
+    top: 0;
+    bottom: 0;
+    line-height: 21px;
+    border-radius: 50%;
+    content: 'L';
+}
+
+
 
 /*  Flower  */
 
