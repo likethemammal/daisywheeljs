@@ -10,6 +10,61 @@
 //
 //getCSS();
 
+var Utils = {
+    //Taken from http://stackoverflow.com/questions/1865563/set-cursor-at-a-length-of-14-onfocus-of-a-textbox/1867393#1867393 on 8/8/14
+    setCursor: function(node,pos){
+
+        var node = (typeof node == "string" || node instanceof String) ? document.getElementById(node) : node;
+
+        if(!node){
+            return false;
+        }else if(node.createTextRange){
+            var textRange = node.createTextRange();
+            textRange.collapse(true);
+            textRange.moveEnd(pos);
+            textRange.moveStart(pos);
+            textRange.select();
+            return true;
+        }else if(node.setSelectionRange){
+            node.setSelectionRange(pos,pos);
+            return true;
+        }
+
+        return false;
+    },
+
+//Taken from http://stackoverflow.com/questions/263743/caret-position-in-textarea-in-characters-from-the-start on 8/8/14
+    getCursor: function(el) {
+        if (el.selectionStart) {
+            return el.selectionStart;
+        } else if (document.selection) {
+            el.focus();
+
+            var r = document.selection.createRange();
+            if (r == null) {
+                return 0;
+            }
+
+            var re = el.createTextRange(),
+                rc = re.duplicate();
+            re.moveToBookmark(r.getBookmark());
+            rc.setEndPoint('EndToStart', re);
+
+            return rc.text.length;
+        }
+        return 0;
+    },
+
+//Taken from http://stackoverflow.com/questions/5085567/hasclass-with-javascript-or-site-with-jquery-to-javascript-translation on 8/8/14 and modified
+    hasClass: function(el, selector) {
+        var className = ' ' + selector + ' ',
+            elClasses = ' ' + el.className + ' ';
+
+        return elClasses.replace(/[\n\t]/g, ' ').indexOf(className) > -1;
+    }
+
+};
+
 var View = {
 
     symbolSets: [
@@ -276,7 +331,7 @@ var View = {
     setupFocusEvent: function() {
         document.body.addEventListener('focus', _.bind(function(ev) {
             var el = ev.target;
-            if (hasClass(el, 'daisywheel')) {
+            if (Utils.hasClass(el, 'daisywheel')) {
                 ev.preventDefault();
                 this.inputEl = el;
                 this.load(this.onSymbolSelectionDefault);
@@ -289,12 +344,18 @@ var View = {
         this.onSymbolSelection = callback;
 
         if (!this.loaded) {
-            var daisywheel = document.getElementById('daisywheel-js'),
-                input = document.getElementById('daisywheel-input'),
-                inputElValue = this.inputEl.value;
 
-            input.value = inputElValue;
-            setCursor(input, inputElValue.length);
+
+            var daisywheel = document.getElementById('daisywheel-js'),
+                input = document.getElementById('daisywheel-input');
+
+            if (this.inputEl) {
+                var inputElValue = this.inputEl.value;
+
+                input.value = inputElValue;
+                Utils.setCursor(input, inputElValue.length);
+                this.inputEl.readOnly = true;
+            }
 
             daisywheel.addEventListener('click', _.bind(this.unload, this));
 
@@ -302,7 +363,6 @@ var View = {
             daisywheel.style.opacity = 1;
             input.focus();
 
-            this.inputEl.readOnly = true;
             this.loaded = true;
         }
     },
@@ -312,8 +372,10 @@ var View = {
             var daisywheel = document.getElementById('daisywheel-js'),
                 input = document.getElementById('daisywheel-input');
 
-            this.inputEl.value = input.value;
-            this.inputEl.readOnly = false;
+            if (this.inputEl) {
+                this.inputEl.value = input.value;
+                this.inputEl.readOnly = false;
+            }
 
             daisywheel.removeEventListener('click', _.bind(this.unload, this));
 
@@ -449,7 +511,7 @@ var View = {
 
     onSymbolSelectionDefault: function(symbol) {
         var input = document.getElementById('daisywheel-input'),
-            cursorPos = getCursor(input),
+            cursorPos = Utils.getCursor(input),
             currentText = input.value,
             firstStrPart = currentText.substring(0, cursorPos),
             secondStrPart = currentText.substring(cursorPos, currentText.length);
@@ -505,20 +567,20 @@ var View = {
                 15: 'right'
             },
             input = document.getElementById('daisywheel-input'),
-            cursorPos = getCursor(input);
+            cursorPos = Utils.getCursor(input);
 
         switch (directions[buttonId]) {
             case 'up':
-                setCursor(input, 0);
+                Utils.setCursor(input, 0);
                 break;
             case 'down':
-                setCursor(input, input.value.length);
+                Utils.setCursor(input, input.value.length);
                 break;
             case 'left':
-                setCursor(input, cursorPos - 1);
+                Utils.setCursor(input, cursorPos - 1);
                 break;
             case 'right':
-                setCursor(input, cursorPos + 1);
+                Utils.setCursor(input, cursorPos + 1);
                 break;
         }
     },
@@ -568,61 +630,13 @@ var View = {
     }
 };
 
-window.View = View;
+var Daisywheel = {
+    load: _.bind(View.load, View),
+    unload: _.bind(View.unload, View),
+    symbols: _.bind(View.symbols, View)
+};
+
+window.Daisywheel = Daisywheel;
 
 View.init();
-
-
-//Taken from http://stackoverflow.com/questions/1865563/set-cursor-at-a-length-of-14-onfocus-of-a-textbox/1867393#1867393 on 8/8/14
-function setCursor(node,pos){
-
-    var node = (typeof node == "string" || node instanceof String) ? document.getElementById(node) : node;
-
-    if(!node){
-        return false;
-    }else if(node.createTextRange){
-        var textRange = node.createTextRange();
-        textRange.collapse(true);
-        textRange.moveEnd(pos);
-        textRange.moveStart(pos);
-        textRange.select();
-        return true;
-    }else if(node.setSelectionRange){
-        node.setSelectionRange(pos,pos);
-        return true;
-    }
-
-    return false;
-}
-
-//Taken from http://stackoverflow.com/questions/263743/caret-position-in-textarea-in-characters-from-the-start on 8/8/14
-function getCursor(el) {
-    if (el.selectionStart) {
-        return el.selectionStart;
-    } else if (document.selection) {
-        el.focus();
-
-        var r = document.selection.createRange();
-        if (r == null) {
-            return 0;
-        }
-
-        var re = el.createTextRange(),
-            rc = re.duplicate();
-        re.moveToBookmark(r.getBookmark());
-        rc.setEndPoint('EndToStart', re);
-
-        return rc.text.length;
-    }
-    return 0;
-}
-
-//Taken from http://stackoverflow.com/questions/5085567/hasclass-with-javascript-or-site-with-jquery-to-javascript-translation on 8/8/14 and modified
-function hasClass(el, selector) {
-    var className = ' ' + selector + ' ',
-        elClasses = ' ' + el.className + ' ';
-
-    return elClasses.replace(/[\n\t]/g, ' ').indexOf(className) > -1;
-}
-
 }(_));
