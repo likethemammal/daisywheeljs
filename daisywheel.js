@@ -39,7 +39,7 @@ var View = {
         this.attachSymbols();
         this.setupFocusEvent();
         window.ongamepad = _.bind(this.updateWheel, this);
-        window.addEventListener('resize', _.throttle(_.bind(this.setupSize, this), 50));
+        window.addEventListener('resize', _.throttle(_.bind(this.setupSize, this), 100));
         window.addEventListener('keyup', _.bind(function(ev) {
             if (ev.which === 27 && this.loaded) {
                 this.unload();
@@ -171,8 +171,8 @@ var View = {
     setupSize: function() {
         var modal = document.getElementById('daisywheel-modal'),
             maxSize = (window.innerWidth < window.innerHeight) ? window.innerWidth : window.innerHeight,
-            padding = 50,
-            scalePrecision = 10,
+            padding = 25,
+            scalePrecision = 100,
             modalHeight = 1000,
             scaleAmount = Math.floor(scalePrecision * (maxSize / (modalHeight + padding*2))) / scalePrecision;
 

@@ -30,7 +30,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0,0,0,0.5);
+    background: rgba(29, 48, 62, 0.7);
 }
 
 #daisywheel-js #daisywheel-modal-container {
@@ -121,12 +121,14 @@
 #daisywheel-js .control-ui-label {
     display: block;
     height: 40px;
-    line-height: 40px;
+    line-height: 45px;
     margin-left: 12px;
 
     float: left;
     text-align: left;
-    text-shadow: 0 0 2px rgba(0, 0, 0, 1);
+    text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+    font-weight: bold;
+    font-size: 17px;
 }
 
 #daisywheel-js #daisywheel-left-bumper-ui .control-ui-icon:before {

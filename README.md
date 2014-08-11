@@ -22,7 +22,6 @@ A live demo can be found [here](http://likethemammal.github.io/daisywheeljs/)
 ---------------------
 
 ####todo
- + display controls
  + switch trigger buttons to be 'hold down' instead of toggles.
  + multilanguage support
  + controller brand specific button images
