@@ -12,6 +12,11 @@
     font-family: "Montserrat", sans-serif;
 
     -webkit-transition: opacity 200ms linear;
+    -moz-transition: opacity 200ms linear;
+    -ms-transition: opacity 200ms linear;
+    -o-transition: opacity 200ms linear;
+    transition: opacity 200ms linear;
+
 }
 
 #daisywheel-js, #daisywheel-js * {
@@ -35,6 +40,8 @@
 
 #daisywheel-js #daisywheel-modal-container {
     -webkit-transform: translate(50%);
+    -ms-transform: translate(50%);
+    transform: translate(50%);
 }
 
 #daisywheel-js #daisywheel-modal {
@@ -50,6 +57,8 @@
     width: 640px;
     margin: 0 auto;
     padding-bottom: 50px;
+
+    -webkit-border-radius: 3px;
     border-radius: 3px;
 
     -webkit-box-sizing: border-box;
@@ -67,7 +76,11 @@
 
     resize: none;
     font-size: 22px;
+
+    -webkit-border-radius: 3px;
     border-radius: 3px;
+
+    -webkit-box-shadow: 0 0 20px 5px rgba(0,0,0,0.5);
     box-shadow: 0 0 20px 5px rgba(0,0,0,0.5);
 }
 
@@ -79,10 +92,12 @@
     position: relative;
     width: 640px;
     text-align: center;
-    border-radius: 3px;
     margin: 0 auto;
     padding-left: 60px;
     padding-top: 30px;
+
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
 }
 
 #daisywheel-js .control-ui {
@@ -134,37 +149,42 @@
 #daisywheel-js #daisywheel-left-bumper-ui .control-ui-icon:before {
     top: 5px;
     bottom: 2px;
-    border-radius: 15px 2px 2px 2px;
     content: 'LB';
+    -webkit-border-radius: 15px 2px 2px 2px;
+    border-radius: 15px 2px 2px 2px;
 }
 
 #daisywheel-js #daisywheel-right-bumper-ui .control-ui-icon:before {
     top: 5px;
     bottom: 2px;
-    border-radius: 2px 15px 2px 2px;
     content: 'RB';
+    -webkit-border-radius: 15px 2px 2px 2px;
+    border-radius: 15px 2px 2px 2px;
 }
 
 #daisywheel-js #daisywheel-left-trigger-ui .control-ui-icon:before {
     top: 5px;
     bottom: 2px;
-    border-radius: 2px;
     content: 'LT';
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
 }
 
 #daisywheel-js #daisywheel-right-trigger-ui .control-ui-icon:before {
     top: 5px;
     bottom: 2px;
-    border-radius: 2px;
     content: 'RT';
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
 }
 
 #daisywheel-js #daisywheel-left-analog-ui .control-ui-icon:before {
     top: 0;
     bottom: 0;
     line-height: 21px;
-    border-radius: 50%;
     content: 'L';
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
 }
 
 
@@ -178,20 +198,24 @@
 	position: relative;
 	height: 640px;
 	width: 640px;
-	border-radius: 50%;
 	border: 48px solid #15232d;
 	background: #1d303e;
+
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
 }
 
 #daisywheel-js #flower:before {
-	content: ' ';
 	position: absolute;
 	height: 368px;
 	width: 368px;
 	left: 144px;
 	top: 144px;
-	border-radius: 50%;
+	content: ' ';
 	background-color: #223846;
+
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
 }
 
 #daisywheel-js .petal {
@@ -199,6 +223,8 @@
 	height: 160px;
 	width: 160px;
 	background-color: #223846;
+
+	-webkit-border-radius: 0 50% 50% 50%;
 	border-radius: 0 50% 50% 50%;
 }
 
@@ -222,13 +248,15 @@
 	position: absolute;
 	width: 48px;
 	height: 48px;
-	border-radius: 50%;
 	color: white;
 	font-size: 22px;
 	line-height: 48px;
 	font-weight: 500;
 	text-align: center;
 	text-shadow: 0 0 2px rgba(0, 0, 0, 1);
+
+    -webkit-border-radius: 50%;
+	border-radius: 50%;
 }
 
 #daisywheel-js .button img {
@@ -239,6 +267,7 @@
 }
 
 #daisywheel-js .selected .button {
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
