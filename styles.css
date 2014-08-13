@@ -275,14 +275,6 @@ h2 {
     background-color: rgba(0,0,0,0.5);
 }
 
-.ps3-girl {
-    background-image: url(imgs/banner/ps3_girl_blur2.png);
-}
-
-.xbox-hamster {
-    background-image: url(imgs/banner/xbox_white_hamster_mini.jpg);
-}
-
 /*  Text  */
 
 .text-band {
@@ -392,6 +384,26 @@ code pre {
 
 .italics {
     font-style: italic;
+}
+
+@media only screen and (min-device-width: 1001px) {
+    .ps3-girl {
+        background-image: url(imgs/banner/ps3_girl_blur.jpg);
+    }
+
+    .xbox-hamster {
+        background-image: url(imgs/banner/xbox_white_hamster.jpg);
+    }
+}
+
+@media only screen and (max-device-width: 1000px) {
+    .ps3-girl {
+        background-image: url(imgs/banner/1000px/ps3_girl_blur.jpg);
+    }
+
+    .xbox-hamster {
+        background-image: url(imgs/banner/1000px/xbox_white_hamster.jpg);
+    }
 }
 
 @media only screen and (max-width: 490px) {
