@@ -19,6 +19,9 @@ A live demo can be found [here](http://likethemammal.github.io/daisywheeljs/)
 ###Attributions
 `gamepad-mod.js` interfaces with the browser API and organizes the data sent over in the controller's events. It was a modification of the `gamepad.js` library found in the example code for the [HTML5Rocks gamepad tester](http://www.html5rocks.com/en/tutorials/doodles/gamepad/), which can be found in its orginal form [here](https://github.com/html5rocks/www.html5rocks.com/blob/master/content/tutorials/doodles/gamepad/static/gamepad-tester/gamepad.js)
 
+##License
+This is licensed under the [MIT Open-source License](https://github.com/likethemammal/daisywheeljs/blob/master/LICENSE.txt).
+
 ---------------------
 
 ####todo
