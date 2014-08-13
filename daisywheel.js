@@ -189,7 +189,7 @@ var View = {
 
         this.petals = document.getElementsByClassName('petal');
 
-        flower.id = 'flower';
+        flower.id = 'daisywheel-flower';
         modal.appendChild(flower);
     },
 

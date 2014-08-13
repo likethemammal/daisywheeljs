@@ -5,6 +5,7 @@
     bottom: 0;
     left: 0;
     color: white;
+    z-index: 1000000;
 
     opacity: 0;
     visibility: hidden;
@@ -102,7 +103,7 @@
 
 #daisywheel-js .control-ui {
     display: inline-block;
-    padding: 10px 30px;
+    padding: 10px 27px;
     width: 212px;
 
     -webkit-box-sizing: border-box;
@@ -191,10 +192,10 @@
 
 /*  Flower  */
 
-#daisywheel-js #flower-container {
+#daisywheel-js #daisywheel-flower-container {
 }
 
-#daisywheel-js #flower {
+#daisywheel-js #daisywheel-flower {
 	position: relative;
 	height: 640px;
 	width: 640px;
@@ -203,9 +204,12 @@
 
 	-webkit-border-radius: 50%;
 	border-radius: 50%;
+
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
-#daisywheel-js #flower:before {
+#daisywheel-js #daisywheel-flower:before {
 	position: absolute;
 	height: 368px;
 	width: 368px;
