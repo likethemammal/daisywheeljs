@@ -8,7 +8,6 @@
     
 <!-- Dev -->    
     <link rel="stylesheet" type="text/css" href="navigation.css">
-    <link rel="stylesheet" type="text/css" href="animation.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
 <!--     <link rel="stylesheet" type="text/css" href="daisywheel.css"> -->
 
@@ -45,9 +44,10 @@
         <div class="banner-text-container">
             <div class="banner-text">
                 <h1>DaisywheelJS</h1>
-                <h2>A text entry interface designed specifically for analog gamepads.</h2>
+                <h2>A text entry interface designed specifically for console gamepads.</h2>
                 <p>Click inside the input field below for a demo.</p>
-                <input class="banner-input" placeholder="click for demo">
+                <input class="banner-input daisywheel" placeholder="click for demo">
+                <div class="download-link-container"><a href="http://github.com/likethemammal/daisywheeljs" class="download-link" href="#">Download</a></div>
             </div>
         </div>
     </div>
@@ -57,7 +57,7 @@
         <div class="feature-container">
             <div class="feature">
                 <img src="imgs/features/feature-text.png" class="feature-img">
-                <div class="feature-text">Text input entry with console controllers.</div>
+                <div class="feature-text">Text entry with console controllers that's ergonomic and feels natural.</div>
             </div>
         </div>
 
@@ -71,7 +71,7 @@
         <div class="feature-container">
             <div class="feature">
                 <img src="imgs/features/feature-setup.png" class="feature-img">
-                <div class="feature-text">Simple setup using only CSS classes.</div>
+                <div class="feature-text">Simple and straightforward setup using CSS classes.</div>
             </div>
         </div>
 
@@ -82,12 +82,12 @@
         <div class="text-section">
 
             <h3>Introduction</h3>
-            <p>DaisywheelJS is a UI tool built for HTML5 games and sites that wish to utilize a 'gamepad' as their users' main input device. It is an alternative to the QWERTY keyboard setup which is commonly frustrating for those with a controller in hand.</p>
-            <p>It's radial layout allows the selection of any symbol with just 2 - 3 actions, compared to the QWERTY layout that forces the user to navigate to each symbol individually, taking up to 12 actions.</p>
+            <p>DaisywheelJS is a UI tool built for HTML5 games and sites that wish to utilize a 'gamepad' as their users' main input device. It is an alternative to the <span class="italics">QWERTY</span> keyboard setup which is commonly frustrating for those with a controller in hand.</p>
+            <p>It's radial layout allows the selection of any symbol with just 2 - 3 actions, compared to the <span class="italics">QWERTY</span> layout that forces the user to navigate to each symbol individually, taking up to 12 actions.</p>
 
             <h3 id="how-it-works">How It Works</h3>
-            <p>This efficiency is achieved by using the left analog stick to choose a group of symbols or a 'petal' and then pressing one of the four colored buttons to select the actual symbol itself. A different set of symbols (numbers/capital letters) can be toggled by pressing the trigger buttons at the back of the controller. Space, backspace, left/right, and up/down each have their own buttons assigned to them.</p>
-            <p>A variety of options allow for custom symbol sets and manually loading the ui. Check out the <a href="#options-and-extensions">options and extensions</a> in the docs for implementation.</p>
+            <p>This efficiency is achieved by using the left analog stick to choose a group of symbols or a 'petal' and then pressing one of the four colored buttons to select the actual symbol itself. A different set of symbols (numbers/capital letters) can be toggled by pressing the trigger buttons at the back of the controller. <span class="bold">Space</span>, <span class="bold">backspace</span>, <span class="bold">left/right</span>, and <span class="bold">up/down</span> each have their own buttons assigned to them.</p>
+            <p>A variety of options allow for custom symbol sets and manually loading the UI. Check out the <a href="#options-and-extensions">options and extensions</a> in the docs for implementation.</p>
 
         </div>
 
@@ -101,7 +101,12 @@
 
             <h3 id="docs">Docs</h3>
             <h4>Setup</h4>
-            <p>Daisywheel's setup is simple and easily extendable. The most straightforward way to get started is by including the <a href="http://github.com/likethemammal/daisywheeljs">daisywheel.js library</a> and its <a href="#dependencies">dependencies</a> in script tags and then adding the <span class="code-chars">daisywheel</span> css class to whatever input or textarea tag the tool will provide input for.</p>
+            <p>Daisywheel's setup is simple and easily extendable. The most straightforward way to get started is by including the <a href="http://github.com/likethemammal/daisywheeljs">daisywheel.js library</a> and its <a href="#dependencies">dependencies</a> in script tags and then adding the <span class="code-chars">daisywheel</span> CSS class to whatever input or textarea tag the tool will provide input for.</p>
+
+            <code class="code-block">
+
+            </code>
+
             <p>That's it! Whenever the 'focus' event for that input is fired the Daisywheel UI will automatically appear, allowing the user to enter text with their gamepad without having to switch to their keyboard.</p>
 
             <h4 id="dependencies">Dependencies</h4>
@@ -112,14 +117,23 @@
             <h5>Manually loading and unloading</h5>
             <p>Daisywheel can be manually loaded and unloaded by calling <span class="code-chars">load</span> and <span class="code-chars">unload</span> respectively on the global <span class="code-chars">Daisywheel</span> object. The <span class="code-chars">load</span> function expects a single callback parameter which will return the symbols, as they're selected, to be used as needed.</p>
 
+            <code class="code-block">
+
+            </code>
+
             <h5>Custom symbol sets</h5>
             <p>A custom set of symbols can be sent into Daisywheel to add support for multiple languages, emojis, etc. The <span class="code-chars">symbols</span> function expects an array of objects, each with a <span class="code-chars">set</span> and an <span class="code-chars">override</span> attribute.</p>
+
+            <code class="code-block">
+
+            </code>
+
             <p>The <span class="code-chars">set</span> property is the array of symbols (a string or an object) that will be displayed. For symbols that are a single character each a single concatinated string can be used. If the symbol is not supported by utf-8 (i.e. emojis) then the <span class="code-chars">image</span> attribute within the symbol's object should be set to the url of the image desired.</p>
             <p>The <span class="code-chars">override</span> property is a boolean that determines whether the symbol set will 'override' one of the default sets or not, meaning if more than 3 symbol sets have an override property of <span class="code-chars">true</span> the defaults will not be shown at all.</p>
 
             <h3 id="community">Community</h3>
             <h4>Contributing</h4>
-            <p>Contributions to the library are welcome and encouraged. The source code for the project can be found on Github.</p>
+            <p>Contributions to the library are welcome and encouraged. The source code for the project can be found on <a href="http://github.com/likethemammal/daisywheeljs">Github</a>.</p>
 
             <h4>Feature Requests</h4>
             <p>If there is a particular feature or a change to how the API works you'd like to see discussion is welcomed. Create an issue on the project's repo and include any links or images that might be beneficial to the conversation.</p>
@@ -135,7 +149,7 @@
         <div class="text-section">
 
             <h3 id="about">About</h3>
-            <p>DaisywheelJS was inspired by the <a href="http://store.steampowered.com/bigpicture/">Steam "Big Picture"</a> Daisywheel and the fact that there should never be a QWERTY keyboard presented to a user that has a controller in their hand. It was ported to Javascript and CSS, and the Gamepad API attached, so the HTML5 gaming community can use it in their games as a standard library in UI toolkits.</p>
+            <p>DaisywheelJS was inspired by the <a href="http://store.steampowered.com/bigpicture/">Steam "Big Picture"</a> Daisywheel and the fact that there should never be a <span class="italics">QWERTY</span> keyboard presented to a user that has a controller in their hand. It was ported to Javascript and CSS, and the Gamepad API attached, so the HTML5 gaming community can use it in their games as a standard library in UI toolkits.</p>
             <p>An explanation of how it works can be found <a href="#how-it-works">here</a>.</p>
 
             <h4>Browser Support</h4>
@@ -143,10 +157,10 @@
 
             <h4>Attributions</h4>
             <p><span class="code-chars">gamepad-mod.js</span> interfaces with the browser API and organizes the data sent over in the controller's events. It was a modification of the <span class="code-chars">gamepad.js</span> library in the example code for the <a href="http://www.html5rocks.com/en/tutorials/doodles/gamepad/">HTML5Rocks gamepad tester</a>, found in its original form <a href="https://github.com/html5rocks/www.html5rocks.com/blob/master/content/tutorials/doodles/gamepad/static/gamepad-tester/gamepad.js">here</a>.</p>
-            <p>The Montserrat webfont is used for numbers, letters, and all utf-8 characters. It can be found *here*, accessible through Google webfonts.</p>
+            <p>The <span class="bold">Montserrat</span> webfont is used for numbers, letters, and all utf-8 characters. It can be found *here*, accessible through Google webfonts.</p>
 
             <h4>License</h4>
-            <p>DaisywheelJS is licensed under the --- Apache --- License.</p>
+            <p>DaisywheelJS is licensed under the MIT License.</p>
 
         </div>
 
