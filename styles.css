@@ -110,7 +110,14 @@ h2 {
     right: 0;
     z-index: 1;
     content: ' ';
+
+    background: -moz-linear-gradient(bottom, #ffffff 0%, #000000 14%, transparent 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0%,#ffffff), color-stop(14%,#000000), color-stop(100%,transparent)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(bottom, #ffffff 0%,#000000 14%,transparent 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(bottom, #ffffff 0%,#000000 14%,transparent 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(bottom, #ffffff 0%,#000000 14%,transparent 100%); /* IE10+ */
     background: linear-gradient(to top, #000000 0%, #000000 14%, transparent 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
 }
 
 .banner-img {
@@ -150,8 +157,9 @@ h2 {
     width: 100%;
     line-height: 17px;
     padding: 11px;
-    border-radius: 5px;
     outline: none;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
 }
 
 /*  Download  */
@@ -172,6 +180,7 @@ h2 {
     text-transform: uppercase;
     text-decoration: none;
     text-shadow: none;
+    -webkit-border-radius: 3px;
     border-radius: 3px;
     font-size: 0.9em;
     font-weight: normal;
@@ -245,8 +254,15 @@ h2 {
     padding: 111px 11px 11px 11px;
     font-size: 18px;
     font-weight: bold;
-    text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+
+    background: -moz-linear-gradient(bottom, #ffffff 0%, #000000 31%, transparent 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0%,#ffffff), color-stop(31%,#000000), color-stop(100%,transparent)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(bottom, #ffffff 0%,#000000 31%,transparent 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(bottom, #ffffff 0%,#000000 31%,transparent 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(bottom, #ffffff 0%,#000000 31%,transparent 100%); /* IE10+ */
     background: linear-gradient(to top, #000000 0%, #000000 31%, transparent 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
 }
 
 /*  Dividing Image  */
@@ -347,8 +363,8 @@ h2 {
     background-color: #15232D;
     border: 1px solid #3A596B;
 
-    border-radius: 3px;
     -webkit-border-radius: 3px;
+    border-radius: 3px;
 }
 
 .code-chars {
@@ -358,8 +374,8 @@ h2 {
     background-color: #1D303E;
     color: #E2E2E2;
 
-    border-radius: 3px;
     -webkit-border-radius: 3px;
+    border-radius: 3px;
 }
 
 code pre {
