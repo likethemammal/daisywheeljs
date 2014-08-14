@@ -360,8 +360,9 @@ h2 {
     margin: 22px 0;
     padding: 30px 15px;
     color: #E2E2E2;
-    background-color: #15232D;
+    background-color: #0E181F;
     border: 1px solid #3A596B;
+    overflow-x: auto;
 
     -webkit-border-radius: 3px;
     border-radius: 3px;
@@ -371,7 +372,7 @@ h2 {
     margin: 0;
     padding: 0 5px;
     border: 1px solid #3A596B;
-    background-color: #1D303E;
+    background-color: #0E181F;
     color: #E2E2E2;
 
     -webkit-border-radius: 3px;
@@ -392,6 +393,14 @@ code pre {
 
 .yellow {
     color: #B8B847;
+}
+
+.gray {
+    color: #9b9b9b;
+}
+
+.red {
+    color: #F3285B;
 }
 
 .bold {

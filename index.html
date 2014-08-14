@@ -105,7 +105,18 @@
             <p>Daisywheel's setup is simple and easily extendable. The most straightforward way to get started is by including the <a href="http://github.com/likethemammal/daisywheeljs">daisywheel.js library</a> and its <a href="#dependencies">dependencies</a> in script tags, including the <span class="code-chars">daisywheel.css</span> file on the page or in the build process, and then adding the <span class="code-chars">daisywheel</span> CSS class to whatever input or textarea tag the tool will provide input for.</p>
 
             <code class="code-block">
+                <pre><span class="green">&lt;link</span> <span class="blue">rel=</span><span class="yellow">"stylesheet"</span> <span class="blue">type=</span><span class="yellow">"text/css"</span> <span class="blue">href=</span><span class="yellow">"css/lib/daisywheel.css"</span><span class="green">&gt;</span>
 
+...
+
+<span class="green">&lt;input</span> <span class="blue">class=</span><span class="yellow">"daisywheel"</span><span class="green">&gt;</span>
+
+...
+
+<span class="green">&lt;script </span><span class="blue">src=</span><span class="yellow">"js/lib/underscore-min.js"</span><span class="green">&gt;&lt;/script&gt;</span>
+<span class="green">&lt;script </span><span class="blue">src=</span><span class="yellow">"js/lib/gamepad-mod.js"</span><span class="green">&gt;&lt;/script&gt;</span>
+
+<span class="green">&lt;script </span><span class="blue">src=</span><span class="yellow">"js/lib/daisywheel.js"</span><span class="green">&gt;&lt;/script&gt;</span></pre>
             </code>
 
             <p>That's it! Whenever the 'focus' event for that input is fired the Daisywheel UI will automatically appear, allowing the user to enter text with their gamepad without having to switch to their keyboard.</p>
@@ -119,15 +130,43 @@
             <p>Daisywheel can be manually loaded and unloaded by calling <span class="code-chars">load</span> and <span class="code-chars">unload</span> respectively on the global <span class="code-chars">Daisywheel</span> object. The <span class="code-chars">load</span> function expects a single callback parameter which will return the symbols, as they're selected, to be used as needed.</p>
 
             <code class="code-block">
+<pre><span class="gray">//When the Daisywheel should appear</span>
+<span class="nx">Daisywheel</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">symbol</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">symbol</span><span class="p">);</span>
+<span class="p">});</span>
 
+
+<span class="gray">//When the Daisywheel should close</span>
+<span class="nx">Daisywheel</span><span class="p">.</span><span class="nx">unload</span><span class="p">();</span></pre>
             </code>
 
             <h5>Custom symbol sets</h5>
             <p>A custom set of symbols can be sent into Daisywheel to add support for multiple languages, emojis, etc. The <span class="code-chars">symbols</span> function expects an array of objects, each with a <span class="code-chars">set</span> and an <span class="code-chars">override</span> attribute.</p>
 
             <code class="code-block">
+<pre><span class="gray">//Adding Japanese Romaji alphabet</span>
+<span class="nx">Daisywheel</span><span class="p">.</span><span class="nx">symbols</span><span class="p">([{</span>
+  <span class="nx">set</span><span class="o">:</span> <span class="p">[</span><span class="red">"あ"</span><span class="p">,</span> <span class="red">"い"</span><span class="p">,</span> <span class="red">"う"</span><span class="p">,</span> <span class="red">"え"</span><span class="p">,</span> <span class="red">"お"</span><span class="p">,</span> <span class="red">"か"</span><span class="p">,</span> <span class="red">"き"</span><span class="p">,</span> <span class="red">"く"</span><span class="p">,</span> <span class="red">"け"</span><span class="p">,</span> <span class="p">....],</span>
+  <span class="nx">override</span><span class="o">:</span> <span class="kc">true</span>
+<span class="p">}]);</span>
 
-            </code>
+
+<span class="gray">//Adding Emoji support</span>
+<span class="nx">Daisywheel</span><span class="p">.</span><span class="nx">symbols</span><span class="p">([{</span>
+  <span class="nx">set</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nx">symbol</span><span class="o">:</span> <span class="red">':stuck_out_tongue_winking_eye:'</span>
+      <span class="nx">image</span><span class="o">:</span> <span class="red">'imgs/emojis/stuck_out_tongue_winking_eye.png'</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nx">symbol</span><span class="o">:</span> <span class="red">':kissing_heart:'</span>
+      <span class="nx">image</span><span class="o">:</span> <span class="red">'imgs/emojis/kissing_heart.png'</span>
+    <span class="p">},</span>
+  <span class="p">],</span>
+  <span class="nx">override</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="p">}]);</span>
+
+</pre>            </code>
 
             <p>The <span class="code-chars">set</span> property is the array of symbols (a string or an object) that will be displayed. For symbols that are a single character each a single concatinated string can be used. If the symbol is not supported by utf-8 (i.e. emojis) then the <span class="code-chars">image</span> attribute within the symbol's object should be set to the url of the image desired.</p>
             <p>The <span class="code-chars">override</span> property is a boolean that determines whether the symbol set will 'override' one of the default sets or not, meaning if more than 3 symbol sets have an override property of <span class="code-chars">true</span> the defaults will not be shown at all.</p>
