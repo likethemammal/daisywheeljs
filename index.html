@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daisywheel JS</title>
+    <!-- General page specifics -->
+    <title>DaisywheelJS</title>
+
+    <meta name="description" content="A port of the Daisywheel text entry layout from the Steam 'Big Picture' mode to Javascript, HTML, and CSS. Connected to the Gamepad API for use with HTML5 games.">
+    <meta name="keywords" content="Daisywheel, Gamepad API, HTML5 games, Steam, keyboard layout, Javascript, console gaming, ui tool, open-source.">
     <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
-    
+
+    <!-- Facebook page specifics -->
+    <meta property="og:title" content="DaisywheelJS, radial keyboard layout for HTML5 games leveraging the Gamepad API.">
+    <meta property="og:description" content="A port of the Daisywheel text entry layout from the Steam 'Big Picture' mode to Javascript, HTML, and CSS. Connected to the Gamepad API for use with HTML5 games.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="DaisywheelJS">
+    <meta property="og:image" content="">
+
+    <!-- Twitter page specifics -->
+    <meta name="twitter:title" content="DaisywheelJS, radial keyboard layout for HTML5 games leveraging the Gamepad API.">
+    <meta name="twitter:description" content="A port of the Daisywheel text entry layout from the Steam 'Big Picture' mode to Javascript, HTML, and CSS. Connected to the Gamepad API for use with HTML5 games.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="http://daisywheeljs.org">
+    <meta name="twitter:site" content="@likethemammal">
+    <meta name="twitter:image" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Chris Dolphin">
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-37560411-3', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
 <!-- Dev -->    
     <link rel="stylesheet" type="text/css" href="navigation.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
@@ -84,7 +118,7 @@
 
             <h3>Introduction</h3>
             <p>DaisywheelJS is a UI tool built for HTML5 games and sites that wish to utilize a 'gamepad' as their users' main input device. It is an alternative to the <span class="italics">QWERTY</span> keyboard setup which is commonly frustrating for those with a controller in hand.</p>
-            <p>It's radial layout allows the selection of any symbol with just 2 - 3 actions, compared to the <span class="italics">QWERTY</span> layout that forces the user to navigate to each symbol individually, taking up to 12 actions.</p>
+            <p>It's radial layout allows the selection of any symbol with just 2 - 3 actions. Compared to the <span class="italics">QWERTY</span> layout that forces the user to navigate to each symbol individually, taking up to 12 actions.</p>
 
             <h3 id="how-it-works">How It Works</h3>
             <p>This efficiency is achieved by using the left analog stick to choose a group of symbols or a 'petal' and then pressing one of the four colored buttons to select the actual symbol itself. A different set of symbols (numbers/capital letters) can be toggled by pressing the trigger buttons at the back of the controller. <span class="bold">Space</span>, <span class="bold">backspace</span>, <span class="bold">left/right</span>, and <span class="bold">up/down</span> each have their own buttons assigned to them.</p>
