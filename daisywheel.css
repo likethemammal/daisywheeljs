@@ -46,10 +46,11 @@
 }
 
 #daisywheel-js #daisywheel-modal {
-    position: relative;
+    position: absolute;
+    top: 0;
+    bottom: 0;
     width: 736px;
     margin-left: -368px;
-    margin-top: -170px;
 }
 
 /*  Input  */
@@ -58,6 +59,7 @@
     width: 640px;
     margin: 0 auto;
     padding-bottom: 50px;
+    padding-top: 35px;
 
     -webkit-border-radius: 3px;
     border-radius: 3px;

@@ -209,7 +209,8 @@ var View = {
             var element = document.createElement('div'),
                 elementKey = this.uiElements[i],
                 icon = document.createElement('div'),
-                label = document.createElement('div');
+                label = document.createElement('div'),
+                labelText = this.uiLabels[elementKey];
 
             element.id = 'daisywheel-' + elementKey + '-ui';
             element.className = 'control-ui cf';
@@ -217,7 +218,8 @@ var View = {
             icon.className = 'control-ui-icon';
             label.className = 'control-ui-label';
 
-            label.textContent = this.uiLabels[elementKey];
+            label.textContent = labelText;
+            label.title = labelText;
 
             element.appendChild(icon);
             element.appendChild(label);
