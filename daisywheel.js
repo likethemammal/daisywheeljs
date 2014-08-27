@@ -348,10 +348,14 @@ var View = {
         }
     },
 
-    unload: function() {
+    unload: function(ev) {
         if (this.loaded) {
             var daisywheel = document.getElementById('daisywheel-js'),
                 input = document.getElementById('daisywheel-input');
+
+            if (ev && ev.target.id === 'daisywheel-input') {
+              return;
+            }
 
             if (this.inputEl) {
                 this.inputEl.value = input.value;
