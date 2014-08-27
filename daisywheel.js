@@ -294,6 +294,8 @@ var View = {
         for (var i = 0; i < this.buttons.length; i++) {
             var button = this.buttons[i],
                 symbol = this.symbolSets[this.symbolSetNumber][i],
+                symbolImageEl = button.childNodes[0],
+                symbolTextEl = button.childNodes[1],
                 opacity = 1;
 
             if (symbol) {
@@ -304,17 +306,22 @@ var View = {
             }
 
             if (symbol.image) {
-                button.childNodes[0].src = symbol.image;
-                button.childNodes[0].style.display = 'inline-block';
-                button.childNodes[1].style.visibility = 'hidden';
+                symbolImageEl.src = symbol.image;
+                symbolImageEl.style.display = 'inline-block';
+                symbolTextEl.style.visibility = 'hidden';
                 symbol = symbol.symbol;
             } else {
-                button.childNodes[0].src = '';
-                button.childNodes[0].style.display = 'none';
-                button.childNodes[1].style.visibility = 'visible';
+                symbolImageEl.src = '';
+                symbolImageEl.style.display = 'none';
+                symbolTextEl.style.visibility = 'visible';
+
+                if (symbol.font) {
+                  symbolTextEl.style.fontFamily = symbol.font;
+                  symbol = symbol.symbol;
+                }
             }
 
-            button.childNodes[1].innerText = symbol;
+            symbolTextEl.innerText = symbol;
             button.style.opacity = opacity;
         }
     },
