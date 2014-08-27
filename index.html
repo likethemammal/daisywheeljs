@@ -80,8 +80,14 @@
             <div class="banner-text">
                 <h1>DaisywheelJS</h1>
                 <h2>A text entry interface designed specifically for console gamepads.</h2>
-                <p>Click inside the input field below for a demo.</p>
-                <input class="banner-input daisywheel" placeholder="click this input for demo">
+                <div class="demo-input">
+                    <p>Click inside the input field below for a demo.</p>
+                    <input class="banner-input daisywheel" placeholder="click this input for demo">
+                </div>
+                <div class="demo-example">
+                    <p class="italics">DaisywheelJS and the Gamepad API aren't supported on mobile devices. </p>
+                    <p>Click <a href="imgs/screenshot.jpg" class="demo-example-link">here</a> for a screenshot of the demo.</p>
+                </div>
                 <div class="download-link-container"><a href="http://github.com/likethemammal/daisywheeljs" class="download-link">Download</a></div>
             </div>
         </div>
@@ -178,10 +184,11 @@
             <p>A custom set of symbols can be sent into Daisywheel to add support for multiple languages, emojis, etc. The <span class="code-chars">symbols</span> function expects an array of objects, each with a <span class="code-chars">set</span>, an <span class="code-chars">override</span>, and a <span class="code-chars">title</span> attribute.</p>
 
             <code class="code-block">
-<pre><span class="gray">//Adding Japanese Romaji alphabet</span>
+<pre><span class="gray">//Adding Japanese Katakana alphabet</span>
 <span class="nx">Daisywheel</span><span class="p">.</span><span class="nx">symbols</span><span class="p">([{</span>
   <span class="nx">set</span><span class="o">:</span> <span class="p">[</span><span class="red">"あ"</span><span class="p">,</span> <span class="red">"い"</span><span class="p">,</span> <span class="red">"う"</span><span class="p">,</span> <span class="red">"え"</span><span class="p">,</span> <span class="red">"お"</span><span class="p">,</span> <span class="red">"か"</span><span class="p">,</span> <span class="red">"き"</span><span class="p">,</span> <span class="red">"く"</span><span class="p">,</span> <span class="red">"け"</span><span class="p">,</span> <span class="p">....],</span>
-  <span class="nx">override</span><span class="o">:</span> <span class="kc">true</span>
+  <span class="nx">override</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">title</span><span class="o">:</span> <span class="red">'Japanese (Katakana)'</span>
 <span class="p">}]);</span>
 
 
@@ -189,20 +196,21 @@
 <span class="nx">Daisywheel</span><span class="p">.</span><span class="nx">symbols</span><span class="p">([{</span>
   <span class="nx">set</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="nx">symbol</span><span class="o">:</span> <span class="red">':stuck_out_tongue_winking_eye:'</span>
-      <span class="nx">image</span><span class="o">:</span> <span class="red">'imgs/emojis/stuck_out_tongue_winking_eye.png'</span>
+      <span class="nx">symbol</span><span class="o">:</span> <span class="red">'&amp;#x1F344;'</span>
+      <span class="nx">font</span><span class="o">:</span> <span class="red">'EmojiSymbols'</span>
     <span class="p">},</span>
     <span class="p">{</span>
-      <span class="nx">symbol</span><span class="o">:</span> <span class="red">':kissing_heart:'</span>
-      <span class="nx">image</span><span class="o">:</span> <span class="red">'imgs/emojis/kissing_heart.png'</span>
+      <span class="nx">symbol</span><span class="o">:</span> <span class="red">'&amp;#x1F31E;'</span>
+      <span class="nx">font</span><span class="o">:</span> <span class="red">'EmojiSymbols'</span>
     <span class="p">},</span>
   <span class="p">],</span>
   <span class="nx">override</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">title</span><span class="o">:</span> <span class="red">'Emoji Symbols'</span>
 <span class="p">}]);</span>
 
 </pre>            </code>
 
-            <p>The <span class="code-chars">set</span> property is the array of symbols (a string or an object) that will be displayed. For symbols that are a single character each a single concatinated string can be used. If the symbol is not supported by utf-8 (i.e. emojis) then the <span class="code-chars">font</span> attribute within the symbol's object should be set to the <span class="code-chars">font-family</span> of the desired font (remember to include the font file if it is not support by default).</p>
+            <p>The <span class="code-chars">set</span> property is the array of symbols (a string or an object) that will be displayed. For symbols that are a single character each a single concatinated string can be used. If the symbol is not supported by utf-8 (i.e. emojis) then the <span class="code-chars">font</span> attribute within the symbol's object should be set to the <span class="code-chars">font-family</span> of the desired font <span class="italics">(remember to include the font file if it is not support by default)</span>.</p>
             <p>The <span class="code-chars">override</span> property is a boolean that determines whether the symbol set will 'override' one of the default sets or not, meaning if more than 3 symbol sets have an override property of <span class="code-chars">true</span> the defaults will not be shown at all.</p>
             <p>The <span class="code-chars">title</span> property is <span class="bold">required</span> if the <span class="code-chars">override</span> property is set. It's the string that's used to label the control for its corresponding symbol set.</p>
 

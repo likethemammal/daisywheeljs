@@ -162,6 +162,28 @@ h2 {
     /*border-radius: 2px;*/
 }
 
+/*  Demo  */
+
+.demo-input {
+    display: block;
+}
+
+.demo-example {
+    position: relative;
+    display: none;
+}
+
+.demo-example-link {
+    color: #73E67B;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.demo-example-link:hover {
+    color: #59b15c;
+}
+
+
 /*  Download  */
 
 .download-link-container {
@@ -438,6 +460,14 @@ code pre {
 
     h2 {
         font-size: 1.1em;
+    }
+
+    .demo-input {
+        display: none;
+    }
+
+    .demo-example {
+        display: block;
     }
 }
 
