@@ -69,10 +69,11 @@ A custom set of symbols can be sent into Daisywheel to add support for multiple 
 
 ```js
 
-//Adding Japanese Romaji alphabet
+//Adding Japanese Katakana alphabet
 Daisywheel.symbols([{
   set: ["あ", "い", "う", "え", "お", "か", "き", "く", "け", ....],
-  override: true
+  override: true,
+  title: 'Japanese (Katakana)'
 }]);
 
 
@@ -80,22 +81,25 @@ Daisywheel.symbols([{
 Daisywheel.symbols([{
   set: [
     {
-      symbol: ':stuck_out_tongue_winking_eye:'
-      image: 'imgs/emojis/stuck_out_tongue_winking_eye.png'
+      symbol: '&#x1F344;'
+      font: 'EmojiSymbols'
     },
     {
-      symbol: ':kissing_heart:'
-      image: 'imgs/emojis/kissing_heart.png'
+      symbol: '&#x1F31E;'
+      font: 'EmojiSymbols'
     },
   ],
   override: true,
+  title: 'Emoji Symbols'
 }]);
 
 ```
 
-The `set` property is the array of symbols (a string or an object) that will be displayed. For symbols that are a single character each a single concatinated string can be used. If the symbol is not supported by utf-8 (i.e. emojis) then the `image` attribute within the symbol's object should be set to the url of the image desired.
+The `set` property is the array of symbols (a string or an object) that will be displayed. For symbols that are a single character each a single concatinated string can be used. If the symbol is not supported by utf-8 (i.e. emojis) then the `font` attribute within the symbol's object should be set to the `font-family` of the desired font (remember to include the font file if it is not support by default).
 
 The `override` property is a boolean that determines whether the symbol set will 'override' one of the default sets or not, meaning if more than 3 symbol sets have an override property of `true` the defaults will not be shown at all.
+
+The `title` property is required if the `override` property is set. It's the string that's used to label the control for its corresponding symbol set.
 
 ###Attributions
 `gamepad-mod.js` interfaces with the browser API and organizes the data sent over in the controller's events. It was a modification of the `gamepad.js` library found in the example code for the [HTML5Rocks gamepad tester](http://www.html5rocks.com/en/tutorials/doodles/gamepad/), which can be found in its orginal form [here](https://github.com/html5rocks/www.html5rocks.com/blob/master/content/tutorials/doodles/gamepad/static/gamepad-tester/gamepad.js)
