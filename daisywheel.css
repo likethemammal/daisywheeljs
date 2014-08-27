@@ -139,8 +139,12 @@
 #daisywheel-js .control-ui-label {
     display: block;
     height: 40px;
+    width: 100px;
     line-height: 45px;
     margin-left: 12px;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
 
     float: left;
     text-align: left;

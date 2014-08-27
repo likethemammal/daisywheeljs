@@ -382,6 +382,20 @@ var View = {
             if (override && nextOverridden > -1) {
                 this.symbolSets.unshift(setStr);
                 this.symbolSets[nextOverridden] = null;
+
+                if (customSet.title) {
+                    switch (nextOverridden) {
+                        case 2:
+                            this.uiLabels['left-trigger'] = customSet.title;
+                            break;
+                        case 3:
+                            this.uiLabels['right-trigger'] = customSet.title;
+                            break;
+                    }
+                } else {
+                    console.error("Custom sets with `override` must also have the `title` property defined.")
+                }
+
                 nextOverridden -= 1;
             } else {
                 this.symbolSets[nextSetNumber] = setStr;
