@@ -63,6 +63,37 @@
     margin-left: -368px;
 }
 
+/*  Wheel  */
+
+#daisywheel-js #daisywheel {
+    opacity: 0.2;
+
+    -webkit-transition: opacity 200ms linear;
+    -moz-transition: opacity 200ms linear;
+    -ms-transition: opacity 200ms linear;
+    -o-transition: opacity 200ms linear;
+    transition: opacity 200ms linear;
+}
+
+
+/*  Controller Warning  */
+
+#daisywheel-js #daisywheel-controller-warning {
+    position: absolute;
+    width: 100%;
+    margin-top: 63%;
+
+    z-index: 1;
+    text-align: center;
+    font-size: 52px;
+    text-shadow: 0 0 10px black;
+}
+
+#daisywheel-js #daisywheel-controller-warning a {
+    color: white;
+}
+
+
 /*  Input  */
 
 #daisywheel-js #daisywheel-input-container {

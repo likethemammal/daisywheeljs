@@ -94,6 +94,8 @@ var View = {
         'right-trigger': 'Caps'
     },
 
+    gamepadConnected: false,
+
     init: function() {
         this.setupElements();
         this.setupStyles();
@@ -126,28 +128,41 @@ var View = {
     },
 
     setupModal: function() {
-        var daisywheel = document.getElementById('daisywheel-js'),
+        var daisywheelContainer = document.getElementById('daisywheel-js'),
             modalOverlay = document.createElement('div'),
             modalContainer = document.createElement('div'),
             modal = document.createElement('div'),
+            daisywheel = document.createElement('div'),
+            warning = document.createElement('div'),
             inputContainer = document.createElement('div'),
             input = document.createElement('input');
+
+        daisywheel.id = 'daisywheel';
 
         modalOverlay.id = 'daisywheel-modal-overlay';
         modalContainer.id = 'daisywheel-modal-container';
         modal.id = 'daisywheel-modal';
+
+        warning.id = 'daisywheel-controller-warning';
+        warning.innerHTML = 'Connect a gamepad controller to use the <a href="http://daisywheeljs.org">Daisywheel</a>';
+
         inputContainer.id = 'daisywheel-input-container';
         input.id = 'daisywheel-input';
 
         inputContainer.appendChild(input);
-        modal.appendChild(inputContainer);
+
+        daisywheel.appendChild(inputContainer);
+
+        modal.appendChild(warning);
+        modal.appendChild(daisywheel);
         modalContainer.appendChild(modal);
         modalOverlay.appendChild(modalContainer);
-        daisywheel.appendChild(modalOverlay);
+
+        daisywheelContainer.appendChild(modalOverlay);
     },
 
     setupFlower: function() {
-        var modal = document.getElementById('daisywheel-modal'),
+        var daisywheel = document.getElementById('daisywheel'),
             flower = document.createElement('div'),
             petalTemplate = document.createDocumentFragment(),
             petal = document.createElement('div'),
@@ -186,17 +201,17 @@ var View = {
         this.petals = document.getElementsByClassName('petal');
 
         flower.id = 'daisywheel-flower';
-        modal.appendChild(flower);
+        daisywheel.appendChild(flower);
     },
 
     setupControlsUI: function() {
-        var modal = document.getElementById('daisywheel-modal'),
+        var daisywheel = document.getElementById('daisywheel'),
             controlsUI = document.getElementById('daisywheel-controls-ui');
 
         if (!controlsUI) {
             controlsUI = document.createElement('div');
             controlsUI.id = 'daisywheel-controls-ui';
-            modal.appendChild(controlsUI);
+            daisywheel.appendChild(controlsUI);
         } else {
             controlsUI.innerHTML = '';
         }
@@ -320,6 +335,14 @@ var View = {
         }, this), true);
     },
 
+    showUI: function() {
+        var daisywheel = document.getElementById('daisywheel'),
+            warning = document.getElementById('daisywheel-controller-warning');
+
+        warning.style.opacity = 0;
+        daisywheel.style.opacity = 1;
+    },
+
     load: function(callback) {
         //Overwrite symbol selection if there was/is a callback passed to `load`
         this.onSymbolSelection = callback;
@@ -413,6 +436,10 @@ var View = {
     },
 
     updateWheel: function(gamepad) {
+        if (!this.gamepadConnected) {
+            this.gamepadConnected = true;
+            this.showUI();
+        }
         this.setDirection(gamepad.axes);
         this.onButtonPress(gamepad.buttons);
     },
