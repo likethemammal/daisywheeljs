@@ -265,13 +265,6 @@
 	border-radius: 50%;
 }
 
-#daisywheel-js .button img {
-    width: 50%;
-    height: 50%;
-    text-align: center;
-    padding-top: 12px;
-}
-
 #daisywheel-js .selected .button {
 	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);

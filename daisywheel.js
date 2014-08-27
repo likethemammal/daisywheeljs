@@ -158,11 +158,7 @@ var View = {
         // Add buttons
         for (var i = 0; i < buttonPositions.length; i++) {
             var button = document.createElement('div'),
-                buttonImg = document.createElement('img'),
-                buttonSpan = document.createElement('span');
-
-            button.appendChild(buttonImg);
-            button.appendChild(buttonSpan);
+                buttonImg = document.createElement('img');
 
             button.className = 'button button-' + buttonPositions[i];
             buttons.appendChild(button);
@@ -294,8 +290,6 @@ var View = {
         for (var i = 0; i < this.buttons.length; i++) {
             var button = this.buttons[i],
                 symbol = this.symbolSets[this.symbolSetNumber][i],
-                symbolImageEl = button.childNodes[0],
-                symbolTextEl = button.childNodes[1],
                 opacity = 1;
 
             if (symbol) {
@@ -305,23 +299,12 @@ var View = {
                 opacity = 0.5;
             }
 
-            if (symbol.image) {
-                symbolImageEl.src = symbol.image;
-                symbolImageEl.style.display = 'inline-block';
-                symbolTextEl.style.visibility = 'hidden';
-                symbol = symbol.symbol;
-            } else {
-                symbolImageEl.src = '';
-                symbolImageEl.style.display = 'none';
-                symbolTextEl.style.visibility = 'visible';
-
-                if (symbol.font) {
-                  symbolTextEl.style.fontFamily = symbol.font;
-                  symbol = symbol.symbol;
-                }
+            if (symbol.font) {
+              button.style.fontFamily = symbol.font;
+              symbol = symbol.symbol;
             }
 
-            symbolTextEl.innerText = symbol;
+            button.innerText = symbol;
             button.style.opacity = opacity;
         }
     },
@@ -502,7 +485,7 @@ var View = {
 
         button.style['-webkit-filter'] = 'saturate(2)';
 
-        this.onSymbolSelection(button.childNodes[1].textContent);
+        this.onSymbolSelection(button.textContent);
 
         this.lastButtonIsUp = false;
     },
