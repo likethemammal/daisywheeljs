@@ -81,7 +81,7 @@
                 <h1>DaisywheelJS</h1>
                 <h2>A text entry interface designed specifically for console gamepads.</h2>
                 <p>Click inside the input field below for a demo.</p>
-                <input class="banner-input daisywheel" placeholder="click for demo">
+                <input class="banner-input daisywheel" placeholder="click this input for demo">
                 <div class="download-link-container"><a href="http://github.com/likethemammal/daisywheeljs" class="download-link">Download</a></div>
             </div>
         </div>
@@ -175,7 +175,7 @@
             </code>
 
             <h5>Custom symbol sets</h5>
-            <p>A custom set of symbols can be sent into Daisywheel to add support for multiple languages, emojis, etc. The <span class="code-chars">symbols</span> function expects an array of objects, each with a <span class="code-chars">set</span> and an <span class="code-chars">override</span> attribute.</p>
+            <p>A custom set of symbols can be sent into Daisywheel to add support for multiple languages, emojis, etc. The <span class="code-chars">symbols</span> function expects an array of objects, each with a <span class="code-chars">set</span>, an <span class="code-chars">override</span>, and a <span class="code-chars">title</span> attribute.</p>
 
             <code class="code-block">
 <pre><span class="gray">//Adding Japanese Romaji alphabet</span>
@@ -202,8 +202,9 @@
 
 </pre>            </code>
 
-            <p>The <span class="code-chars">set</span> property is the array of symbols (a string or an object) that will be displayed. For symbols that are a single character each a single concatinated string can be used. If the symbol is not supported by utf-8 (i.e. emojis) then the <span class="code-chars">image</span> attribute within the symbol's object should be set to the url of the image desired.</p>
+            <p>The <span class="code-chars">set</span> property is the array of symbols (a string or an object) that will be displayed. For symbols that are a single character each a single concatinated string can be used. If the symbol is not supported by utf-8 (i.e. emojis) then the <span class="code-chars">font</span> attribute within the symbol's object should be set to the <span class="code-chars">font-family</span> of the desired font (remember to include the font file if it is not support by default).</p>
             <p>The <span class="code-chars">override</span> property is a boolean that determines whether the symbol set will 'override' one of the default sets or not, meaning if more than 3 symbol sets have an override property of <span class="code-chars">true</span> the defaults will not be shown at all.</p>
+            <p>The <span class="code-chars">title</span> property is <span class="bold">required</span> if the <span class="code-chars">override</span> property is set. It's the string that's used to label the control for its corresponding symbol set.</p>
 
             <h3 id="community">Community</h3>
             <h4>Contributing</h4>
