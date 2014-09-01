@@ -188,8 +188,13 @@ h2 {
 
 .download-link-container {
     display: block;
+    position: absolute;
+    bottom: 11px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
     text-align: center;
-    padding-top: 44px;
 }
 
 .download-link {
@@ -352,6 +357,10 @@ h2 {
 
 .text-section p, .text-section h4, .text-section h5 {
     padding: 0 22px;
+}
+
+.text-section li {
+    padding-bottom: 11px;
 }
 
 .introduction {
