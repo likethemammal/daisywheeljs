@@ -42,16 +42,7 @@ var Utils = {
             return rc.text.length;
         }
         return 0;
-    },
-
-//Taken from http://stackoverflow.com/questions/5085567/hasclass-with-javascript-or-site-with-jquery-to-javascript-translation on 8/8/14 and modified
-    hasClass: function(el, selector) {
-        var className = ' ' + selector + ' ',
-            elClasses = ' ' + el.className + ' ';
-
-        return elClasses.replace(/[\n\t]/g, ' ').indexOf(className) > -1;
     }
-
 };
 
 var View = {
@@ -190,10 +181,6 @@ var View = {
         for (var j = 0; j < this.numOfPetals; j++) {
             petal = petalTemplate.cloneNode(true);
 
-            if (j === 0) {
-                petal.children[0].className = 'petal selected';
-            }
-
             flower.appendChild(petal);
         }
 
@@ -326,7 +313,7 @@ var View = {
     setupFocusEvent: function() {
         document.body.addEventListener('focus', _.bind(function(ev) {
             var el = ev.target;
-            if (Utils.hasClass(el, 'daisywheel')) {
+            if (el.classList.contains('daisywheel')) {
                 ev.preventDefault();
                 this.inputEl = el;
                 this.load(this.onSymbolSelectionDefault);
@@ -620,8 +607,10 @@ var View = {
 
     getPetalNum: function(xAxis, yAxis, ratio) {
         var petal = 0;
+        var isNoise = betweenNums(yAxis, 0,  0.1) && betweenNums(xAxis, 0, 0.1);
+        var isStill = xAxis === 0 && yAxis === 0;
 
-        if (xAxis === 0 && yAxis === 0) {
+        if (isNoise || isStill) {
             return 0;
         }
 
