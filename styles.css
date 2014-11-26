@@ -156,10 +156,8 @@ h2 {
     max-width: 253px;
     width: 100%;
     line-height: 17px;
-    padding: 11px;
+    padding-left: 11px;
     outline: none;
-    /*-webkit-border-radius: 2px;*/
-    /*border-radius: 2px;*/
 }
 
 /*  Demo  */
