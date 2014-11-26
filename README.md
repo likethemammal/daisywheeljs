@@ -8,7 +8,7 @@ This interface is something every game with text input needs. Not a single game 
 
 ![DaisywheelJS Screenshot](http://imgur.com/087i4Rp.png)
 
-A live demo can be found [here](http://likethemammal.github.io/daisywheeljs/)
+A live demo can be found [here](http://daisywheeljs.org)
 
 ###Controls
  + **Left Analog Stick**: Select group/petal.

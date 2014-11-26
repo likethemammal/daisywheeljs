@@ -232,9 +232,12 @@ var View = {
             padding = 25,
             scalePrecision = 100,
             modalHeight = 1000,
-            scaleAmount = Math.floor(scalePrecision * (maxSize / (modalHeight + padding*2))) / scalePrecision;
+            scaleAmount = Math.floor(scalePrecision * (maxSize / (modalHeight + padding*2))) / scalePrecision,
+            scaleStr = 'scale(' + scaleAmount + ')';
 
-        modal.style['-webkit-transform'] = 'scale(' + scaleAmount + ')';
+        modal.style['-webkit-transform'] = scaleStr;
+        modal.style['-ms-transform'] = scaleStr;
+        modal.style['transform'] = scaleStr;
     },
 
     setupStyles: function() {
@@ -305,7 +308,7 @@ var View = {
               symbol = symbol.symbol;
             }
 
-            button.innerText = symbol;
+            button.textContent = symbol;
             button.style.opacity = opacity;
         }
     },
@@ -512,7 +515,9 @@ var View = {
 
     onButtonUp: function() {
         for (var i = 0; i < this.buttons.length; i++) {
-            this.buttons[i].style['-webkit-filter'] = '';
+            var buttonStyles = this.buttons[i].style;
+            buttonStyles['-webkit-filter'] = '';
+            buttonStyles['filter'] = '';
         }
     },
 
@@ -520,9 +525,11 @@ var View = {
         var buttonRange = this.currentPetalNum*4,
             currentPetalButtons = this.buttons.slice(buttonRange, buttonRange + 4),
             mappedButtonId = this.buttonMapping[buttonNum],
-            button = currentPetalButtons[mappedButtonId];
+            button = currentPetalButtons[mappedButtonId],
+            saturationStr = 'saturate(2)';
 
-        button.style['-webkit-filter'] = 'saturate(2)';
+        button.style['-webkit-filter'] = saturationStr;
+        button.style['filter'] = saturationStr;
 
         this.onSymbolSelection(button.textContent);
 
