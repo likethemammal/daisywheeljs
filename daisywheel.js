@@ -1,6 +1,6 @@
 (function(_){
 var Utils = {
-    //Taken from http://stackoverflow.com/questions/1865563/set-cursor-at-a-length-of-14-onfocus-of-a-textbox/1867393#1867393 on 8/8/14
+//Taken from http://stackoverflow.com/questions/1865563/set-cursor-at-a-length-of-14-onfocus-of-a-textbox/1867393#1867393 on 8/8/14
     setCursor: function(node,pos){
 
         var node = (typeof node == "string" || node instanceof String) ? document.getElementById(node) : node;
@@ -102,7 +102,7 @@ var View = {
         this.setupFontStyles();
         this.attachSymbols();
         this.setupFocusEvent();
-        window.ongamepad = _.bind(this.updateWheel, this);
+        window.addEventListener('ongamepadupdate', _.bind(this.onGamepadEvent, this));
         window.addEventListener('resize', _.throttle(_.bind(this.setupSize, this), 100));
         window.addEventListener('keyup', _.bind(function(ev) {
             if (ev.which === 27 && this.loaded) {
@@ -172,8 +172,7 @@ var View = {
 
         // Add buttons
         for (var i = 0; i < buttonPositions.length; i++) {
-            var button = document.createElement('div'),
-                buttonImg = document.createElement('img');
+            var button = document.createElement('div');
 
             button.className = 'button button-' + buttonPositions[i];
             buttons.appendChild(button);
@@ -433,6 +432,14 @@ var View = {
 
         this.attachSymbols();
         this.setupControlsUI();
+    },
+
+    onGamepadEvent: function() {
+        var gamepads = gamepadSupport.gamepads;
+        for (var i = 0; i < gamepads.length; gamepads++) {
+            var gamepad = gamepads[i];
+            this.updateWheel(gamepad);
+        }
     },
 
     updateWheel: function(gamepad) {
