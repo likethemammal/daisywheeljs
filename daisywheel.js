@@ -314,14 +314,20 @@ var View = {
     },
 
     setupFocusEvent: function() {
-        document.body.addEventListener('focus', _.bind(function(ev) {
+        if (document.addEventListener){
+            document.addEventListener("focus", _.bind(onFocusEvent, this), true);
+        } else {
+            document.observe("focusin", _.bind(onFocusEvent, this));
+        }
+
+        function onFocusEvent(ev) {
             var el = ev.target;
             if (el.classList.contains('daisywheel')) {
                 ev.preventDefault();
                 this.inputEl = el;
                 this.load(this.onSymbolSelectionDefault);
             }
-        }, this), true);
+        }
     },
 
     showUI: function() {
