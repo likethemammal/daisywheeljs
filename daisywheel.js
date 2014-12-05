@@ -135,7 +135,12 @@ var View = {
         modal.id = 'daisywheel-modal';
 
         warning.id = 'daisywheel-controller-warning';
-        warning.innerHTML = 'Connect a gamepad controller to use the <a href="http://daisywheeljs.org">Daisywheel</a>';
+
+        if (!window.gamepadSupportAvailable) {
+            warning.innerHTML = 'This browser does not support the Gamepad API. Check <a href="http://caniuse.com/#feat=gamepad">this list</a> for support';
+        } else {
+            warning.innerHTML = 'Connect a gamepad controller to use the <a href="http://daisywheeljs.org">Daisywheel</a>';
+        }
 
         inputContainer.id = 'daisywheel-input-container';
         input.id = 'daisywheel-input';
