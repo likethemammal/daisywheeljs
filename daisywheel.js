@@ -435,8 +435,7 @@ var View = {
         this.setupControlsUI();
     },
 
-    onGamepadEvent: function() {
-        var gamepads = gamepadSupport.gamepads;
+    onGamepadEvent: function(gamepads) {
         for (var i = 0; i < gamepads.length; gamepads++) {
             var gamepad = gamepads[i];
             this.updateWheel(gamepad);
