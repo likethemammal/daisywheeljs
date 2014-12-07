@@ -40,16 +40,11 @@ a:hover {
     line-height: 55px;
     border-bottom: 1px solid #15232D;
     background: #1D303E;
-    padding: 0 22px;
     font-size: 14px;
 }
 
-#desktop-nav .nav-item:first-child {
-    margin: 0 0 0 22px;
-}
-
 #logo {
-    left: 22px;
+    padding-left: 22px;
     cursor: auto;
 }
 
@@ -59,7 +54,7 @@ a:hover {
 }
 
 #desktop-nav .nav-item {
-    margin: 0 22px;
+    padding: 0 22px;
 }
 
 #mobile-nav {
@@ -71,7 +66,7 @@ a:hover {
     border-bottom: 1px solid #15232D;
 }
 
-.mobile-nav-toggle {
+.nav-toggle {
     height: 22px;
     width: 22px;
     line-height: 0px;
