@@ -450,7 +450,8 @@ var View = {
             var daisywheel = document.getElementById('daisywheel-js'),
                 input = document.getElementById('daisywheel-input');
 
-            if (this.inputEl) {
+            //Check for gamepad support because IE is stupid and setCursor causes an error.
+            if (this.inputEl && window.gamepadSupportAvailable) {
                 var inputElValue = this.inputEl.value;
 
                 input.value = inputElValue;
