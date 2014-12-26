@@ -366,7 +366,7 @@ var View = {
                 y = Math.round(height/2 + radius * Math.sin(angle) - petalDiameter/2),
                 rotation = angle * 180 / Math.PI + 135;
 
-            stylesStr += ['.petal:nth-of-type(' + (i + 1) + ') {',
+            stylesStr += ['#daisywheel-js .petal:nth-of-type(' + (i + 1) + ') {',
                             'top: ' + y + 'px;',
                             'left: ' + x + 'px;',
                             'transform: rotate(' + rotation + 'deg);',
@@ -374,7 +374,7 @@ var View = {
                             '-webkit-transform: rotate(' + rotation + 'deg);',
                         '} '].join('');
 
-            stylesStr += ['.petal:nth-of-type(' + (i + 1) + ') .buttons {',
+            stylesStr += ['#daisywheel-js .petal:nth-of-type(' + (i + 1) + ') .buttons {',
                             'transform: rotate(' + (-rotation) + 'deg);',
                             '-ms-transform: rotate(' + (-rotation) + 'deg);',
                             '-webkit-transform: rotate(' + (-rotation) + 'deg);',

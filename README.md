@@ -101,6 +101,22 @@ The `override` property is a boolean that determines whether the symbol set will
 
 The `title` property is required if the `override` property is set. It's the string that's used to label the control for its corresponding symbol set.
 
+###Contributing
+
+To setup your own build and/or contribute, pull down a clone of the repo. Run `npm install` to install dependencies. After making changes to either the daisywheel.js file or the `less` files run `gulp` and a build version of the files will be generated. The process should look like this:
+
+```
+
+git clone git@github.com:likethemammal/daisywheeljs.git
+cd daisywheeljs
+npm install
+
+//make some changes
+
+gulp
+
+```
+
 ###Attributions
 `gamepad-mod.js` interfaces with the browser API and organizes the data sent over in the controller's events. It was a modification of the `gamepad.js` library found in the example code for the [HTML5Rocks gamepad tester](http://www.html5rocks.com/en/tutorials/doodles/gamepad/), which can be found in its orginal form [here](https://github.com/html5rocks/www.html5rocks.com/blob/master/content/tutorials/doodles/gamepad/static/gamepad-tester/gamepad.js)
 
@@ -114,4 +130,3 @@ This is licensed under the [MIT Open-source License](https://github.com/likethem
  + multilanguage support
  + controller brand specific button images
  + complex actions (attach to a text editor like [Atom](https://atom.io/) or [Light Table](http://www.lighttable.com/))
- + emoji support (must include snowman!)

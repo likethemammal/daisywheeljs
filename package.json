@@ -1,0 +1,24 @@
+{
+  "name": "daisywheeljs",
+  "version": "0.0.1",
+  "author": "Chris Dolphin <dolphin@likethemammal.com>",
+  "description": "The Steam 'Big Picture' Daisywheel ported to JS and CSS. Supports Gamepad API.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/likethemammal/daisywheeljs.git"
+  },
+  "keywords": [
+    "daisywheel",
+    "daisywheeljs",
+    "gamepad",
+    "gamepad api"
+  ],
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-less": "^2.0.1",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^1.0.2"
+  }
+}
