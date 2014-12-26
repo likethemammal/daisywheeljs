@@ -148,10 +148,10 @@
 
             <h3 id="docs">Docs</h3>
             <h4>Setup</h4>
-            <p>Daisywheel's setup is simple and easily extendable. The most straightforward way to get started is by first including the <a href="http://github.com/likethemammal/daisywheeljs">daisywheel.js library</a> and its <a href="#dependencies">dependencies</a> in script tags. Then include the <span class="code-chars">daisywheel.css</span> file on the page or in the build process, and add the <span class="code-chars">daisywheel</span> CSS class to whatever input or textarea tag the tool will provide input for.</p>
+            <p>Daisywheel's setup is simple and easily extendable. The most straightforward way to get started is by first including the <a href="http://github.com/likethemammal/daisywheeljs">daisywheel.min.js library</a> and its <a href="#dependencies">dependencies</a> in script tags. Then include the <span class="code-chars">daisywheel.min.css</span> file on the page or in the build process (both can be found in the <a href="https://github.com/likethemammal/daisywheeljs/tree/master/dist"><span class="code-chars">dist</span> directory of the Daisywheeljs repo</a>), and add the <span class="code-chars">daisywheel</span> CSS class to whatever input or textarea tag the tool will provide input for.</p>
 
             <code class="code-block">
-                <pre><span class="green">&lt;link</span> <span class="blue">rel=</span><span class="yellow">"stylesheet"</span> <span class="blue">type=</span><span class="yellow">"text/css"</span> <span class="blue">href=</span><span class="yellow">"css/lib/daisywheel.css"</span><span class="green">&gt;</span>
+                <pre><span class="green">&lt;link</span> <span class="blue">rel=</span><span class="yellow">"stylesheet"</span> <span class="blue">type=</span><span class="yellow">"text/css"</span> <span class="blue">href=</span><span class="yellow">"css/lib/daisywheel.min.css"</span><span class="green">&gt;</span>
 
 ...
 
@@ -162,7 +162,7 @@
 <span class="green">&lt;script </span><span class="blue">src=</span><span class="yellow">"js/lib/underscore-min.js"</span><span class="green">&gt;&lt;/script&gt;</span>
 <span class="green">&lt;script </span><span class="blue">src=</span><span class="yellow">"js/lib/gamepad-mod.js"</span><span class="green">&gt;&lt;/script&gt;</span>
 
-<span class="green">&lt;script </span><span class="blue">src=</span><span class="yellow">"js/lib/daisywheel.js"</span><span class="green">&gt;&lt;/script&gt;</span></pre>
+<span class="green">&lt;script </span><span class="blue">src=</span><span class="yellow">"js/lib/daisywheel.min.js"</span><span class="green">&gt;&lt;/script&gt;</span></pre>
             </code>
 
             <p>That's it! Whenever the 'focus' event for that input is fired the Daisywheel UI will automatically appear, allowing the user to enter text with their gamepad without having to switch to their keyboard.</p>
