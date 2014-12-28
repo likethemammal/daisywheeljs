@@ -8,7 +8,7 @@
 
     <meta name="description" content="A port of the Daisywheel text entry layout from the Steam 'Big Picture' mode to Javascript, HTML, and CSS. Connected to the Gamepad API for use with HTML5 games.">
     <meta name="keywords" content="Daisywheel, Gamepad API, HTML5 games, Steam, keyboard layout, Javascript, console gaming, ui tool, open-source.">
-    <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Facebook page specifics -->
     <meta property="og:title" content="DaisywheelJS, radial keyboard layout for HTML5 games leveraging the Gamepad API.">
@@ -52,20 +52,20 @@
     <div id="logo">DaisywheelJS</div>
 
     <nav id="desktop-nav">
-        <a class="nav-item" href="http://github.com/likethemammal/daisywheeljs">Github</a>
-        <a class="nav-item" href="#about">About</a>
-        <a class="nav-item" href="#community">Community</a>
-        <a class="nav-item" href="#docs">Docs</a>
+        <a class="nav-item" title="Github repo" href="http://github.com/likethemammal/daisywheeljs">Github</a>
+        <a class="nav-item" title="About" href="#about">About</a>
+        <a class="nav-item" title="Community" href="#community">Community</a>
+        <a class="nav-item" title="Documentation" href="#docs">Docs</a>
     </nav>
     
     <input id="open-toggle" class="nav-toggle" type="text" readonly>
     <input id="close-toggle" class="nav-toggle" type="text" readonly>
 
     <nav id="mobile-nav">
-        <a class="nav-item" href="#docs">Docs</a>
-        <a class="nav-item" href="#community">Community</a>
-        <a class="nav-item" href="#about">About</a>
-        <a class="nav-item" href="http://github.com/likethemammal/daisywheeljs">Github</a>
+        <a class="nav-item" title="Documentation" href="#docs">Docs</a>
+        <a class="nav-item" title="Community" href="#community">Community</a>
+        <a class="nav-item" title="About" href="#about">About</a>
+        <a class="nav-item" title="Github repo" href="http://github.com/likethemammal/daisywheeljs">Github</a>
     </nav>
 
 </div>
@@ -74,7 +74,7 @@
 
 
     <div class="page-section banner">
-        <img class="banner-img" src="imgs/banner/banner-screenshot.png" alt="PS3 Controller, Girl">
+        <img class="banner-img" src="imgs/banner/banner-screenshot.png" alt="Screenshot of DaisywheelJS">
         <div class="banner-text-container">
             <div class="banner-text">
                 <h1>DaisywheelJS</h1>
@@ -85,32 +85,32 @@
                 </div>
                 <div class="demo-example">
                     <p class="italics">DaisywheelJS and the Gamepad API aren't supported on mobile devices. </p>
-                    <p>Click <a href="imgs/screenshot.jpg" class="demo-example-link">here</a> for a screenshot of the demo.</p>
+                    <p>Click <a href="imgs/screenshot.jpg" class="demo-example-link" title="Screenshot of DaisywheelJS">here</a> for a screenshot of the demo.</p>
                 </div>
             </div>
         </div>
-        <div class="download-link-container"><a href="http://github.com/likethemammal/daisywheeljs" class="download-link">Download</a></div>
+        <div class="download-link-container"><a href="http://github.com/likethemammal/daisywheeljs" class="download-link" title="DaisywheelJS Github Repo">Download</a></div>
     </div>
 
     <div class="page-section features">
 
         <div class="feature-container">
             <div class="feature">
-                <img src="imgs/features/feature-text.jpg" class="feature-img">
+                <img src="imgs/features/feature-text.jpg" class="feature-img" alt="Steam text entry" title="Steam text entry">
                 <div class="feature-text">Text entry with console controllers that's ergonomic and feels natural.</div>
             </div>
         </div>
 
         <div class="feature-container">
             <div class="feature">
-                <img src="imgs/features/feature-controller.jpg" class="feature-img">
+                <img src="imgs/features/feature-controller.jpg" class="feature-img" alt="Xbox controller" title="Xbox controller">
                 <div class="feature-text">Perfect for games leveraging HTML5 and the Gamepad API.</div>
             </div>
         </div>
 
         <div class="feature-container">
             <div class="feature">
-                <img src="imgs/features/feature-setup.png" class="feature-img">
+                <img src="imgs/features/feature-setup.png" class="feature-img" alt="HTML code example" title="Setup with CSS classes">
                 <div class="feature-text">Simple and straightforward setup using CSS classes.</div>
             </div>
         </div>
@@ -134,7 +134,7 @@
                 <li><span class="bold">Right Shoulder Button</span>: Toggle capital letters.</li>
                 <li><span class="bold">Left Shoulder Button</span>: Toggle numbers.</li>
             </ul>
-            <p>A variety of options allow for custom symbol sets and manually loading the UI. Check out the <a href="#options-and-extensions">options and extensions</a> in the docs for implementation.</p>
+            <p>A variety of options allow for custom symbol sets and manually loading the UI. Check out the <a href="#options-and-extensions" title="Options and Extensions">options and extensions</a> in the docs for implementation.</p>
 
         </div>
 
@@ -148,7 +148,7 @@
 
             <h3 id="docs">Docs</h3>
             <h4>Setup</h4>
-            <p>Daisywheel's setup is simple and easily extendable. The most straightforward way to get started is by first including the <a href="http://github.com/likethemammal/daisywheeljs">daisywheel.min.js library</a> and its <a href="#dependencies">dependencies</a> in script tags. Then include the <span class="code-chars">daisywheel.min.css</span> file on the page or in the build process (both can be found in the <a href="https://github.com/likethemammal/daisywheeljs/tree/master/dist"><span class="code-chars">dist</span> directory of the Daisywheeljs repo</a>), and add the <span class="code-chars">daisywheel</span> CSS class to whatever input or textarea tag the tool will provide input for.</p>
+            <p>Daisywheel's setup is simple and easily extendable. The most straightforward way to get started is by first including the <a href="http://github.com/likethemammal/daisywheeljs">daisywheel.min.js library</a> and its <a href="#dependencies" title="Dependencies">dependencies</a> in script tags. Then include the <span class="code-chars">daisywheel.min.css</span> file on the page or in the build process (both can be found in the <a href="https://github.com/likethemammal/daisywheeljs/tree/master/dist" title="Github Repo Distribution Directory"><span class="code-chars">dist</span> directory of the Daisywheeljs repo</a>), and add the <span class="code-chars">daisywheel</span> CSS class to whatever input or textarea tag the tool will provide input for.</p>
 
             <code class="code-block">
                 <pre><span class="green">&lt;link</span> <span class="blue">rel=</span><span class="yellow">"stylesheet"</span> <span class="blue">type=</span><span class="yellow">"text/css"</span> <span class="blue">href=</span><span class="yellow">"css/lib/daisywheel.min.css"</span><span class="green">&gt;</span>
@@ -168,8 +168,8 @@
             <p>That's it! Whenever the 'focus' event for that input is fired the Daisywheel UI will automatically appear, allowing the user to enter text with their gamepad without having to switch to their keyboard.</p>
 
             <h4 id="dependencies">Dependencies</h4>
-            <p><a href="http://underscorejs.org/underscore-min.js">Underscore</a>, common javascript utility belt.</p>
-            <p><a href="https://github.com/likethemammal/gamepad-mod.js">Gamepad-mod.js</a>, library that interfaces with the Gamepad API and feeds Daisywheel its data.</p>
+            <p><a href="http://underscorejs.org/underscore-min.js" title="Underscore Library Download">Underscore</a>, common javascript utility belt.</p>
+            <p><a href="https://github.com/likethemammal/gamepad-mod.js" title="Gamepad-mod.js Github Repo">Gamepad-mod.js</a>, library that interfaces with the Gamepad API and feeds Daisywheel its data.</p>
 
             <h4 id="options-and-extensions">Options and Extensions</h4>
             <h5>Manually loading and unloading</h5>
@@ -222,7 +222,7 @@
 
             <h3 id="community">Community</h3>
             <h4>Contributing</h4>
-            <p>Contributions to the library are welcome and encouraged. The source code for the project can be found on <a href="http://github.com/likethemammal/daisywheeljs">Github</a>.</p>
+            <p>Contributions to the library are welcome and encouraged. The source code for the project can be found on <a href="http://github.com/likethemammal/daisywheeljs" title="DaisywheelJS Github Repo">Github</a>.</p>
 
             <h4>Feature Requests</h4>
             <p>Discussion is welcomed! If there is a particular feature or API change you'd like to see, create an issue on the project's repo and include any links or images that might be beneficial to the conversation.</p>
@@ -238,18 +238,18 @@
         <div class="text-section">
 
             <h3 id="about">About</h3>
-            <p>DaisywheelJS was inspired by the <a href="http://store.steampowered.com/bigpicture/">Steam "Big Picture"</a> Daisywheel and the fact that there should never be a <span class="italics">QWERTY</span> keyboard presented to a user that has a controller in their hand. This project ports that great solution to Javascript and CSS so the HTML5 gaming community can use it in their games as a standard library/toolkit.</p>
-            <p>An explanation of how it works can be found <a href="#how-it-works">here</a>.</p>
+            <p>DaisywheelJS was inspired by the <a href="http://store.steampowered.com/bigpicture/" title="Steam Big Picture Mode">Steam "Big Picture"</a> Daisywheel and the fact that there should never be a <span class="italics">QWERTY</span> keyboard presented to a user that has a controller in their hand. This project ports that great solution to Javascript and CSS so the HTML5 gaming community can use it in their games as a standard library/toolkit.</p>
+            <p>An explanation of how it works can be found <a href="#how-it-works" title="How it works">here</a>.</p>
 
             <h4>Browser Support</h4>
             <p>As of now, the Gamepad API is only supported by <span class="bold">Chrome 21+</span> and <span class="bold">Firefox 29+</span>.</p>
 
             <h4>Attributions</h4>
-            <p><span class="code-chars">gamepad-mod.js</span> interfaces with the browser API and organizes the data sent over in the controller's events and can be found <a href="https://github.com/likethemammal/gamepad-mod.js">here</a>. It was a modification of the <span class="code-chars">gamepad.js</span> library in the example code for the <a href="http://www.html5rocks.com/en/tutorials/doodles/gamepad/">HTML5Rocks gamepad tester</a>, found in its original form <a href="https://github.com/html5rocks/www.html5rocks.com/blob/master/content/tutorials/doodles/gamepad/static/gamepad-tester/gamepad.js">here</a>.</p>
-            <p>The <span class="bold">Montserrat</span> webfont is used for numbers, letters, and all utf-8 characters. It can be found <a href="https://www.google.com/fonts/specimen/Montserrat">here</a>, accessible through Google webfonts.</p>
+            <p><span class="code-chars">gamepad-mod.js</span> interfaces with the browser API and organizes the data sent over in the controller's events and can be found <a href="https://github.com/likethemammal/gamepad-mod.js" title="Gamepad-mod.js Github Repo">here</a>. It was a modification of the <span class="code-chars">gamepad.js</span> library in the example code for the <a href="http://www.html5rocks.com/en/tutorials/doodles/gamepad/" title="HTML5Rocks Gamepad Tutorial Tester">HTML5Rocks gamepad tester</a>, found in its original form <a href="https://github.com/html5rocks/www.html5rocks.com/blob/master/content/tutorials/doodles/gamepad/static/gamepad-tester/gamepad.js" title="Gamepad.js Library">here</a>.</p>
+            <p>The <span class="bold">Montserrat</span> webfont is used for numbers, letters, and all utf-8 characters. It can be found <a href="https://www.google.com/fonts/specimen/Montserrat" title="Montserrat Google Webfont">here</a>, accessible through Google webfonts.</p>
 
             <h4>License</h4>
-            <p>DaisywheelJS is licensed under the <a href="https://github.com/likethemammal/daisywheeljs/blob/master/LICENSE.txt">MIT Open-source License</a>.</p>
+            <p>DaisywheelJS is licensed under the <a href="https://github.com/likethemammal/daisywheeljs/blob/master/LICENSE.txt" title="DaisywheelJS License">MIT Open-source License</a>.</p>
 
         </div>
 
@@ -257,11 +257,11 @@
 
     <div class="page-section text-band copyright">
 
-        <small id="copyright">Copyright 2014 by <a href="http://likethemammal.com">Chris Dolphin</a></small>
+        <small id="copyright">Copyright 2014 by <a href="http://likethemammal.com" title="Chris Dolphin's Portfolio Site">Chris Dolphin</a></small>
 
         <script>
             var copyright = document.getElementById('copyright');
-            copyright.innerHTML = 'Copyright ' + new Date().getFullYear() + ' by <a href="http://likethemammal.com">Chris Dolphin</a>';
+            copyright.innerHTML = 'Copyright ' + new Date().getFullYear() + ' by <a href="http://likethemammal.com" title="Chris Dolphin Portfolio Site">Chris Dolphin</a>';
         </script>
     </div>
 
