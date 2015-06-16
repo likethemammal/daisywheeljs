@@ -55,6 +55,7 @@
   -moz-transform: translate(50%);
   -ms-transform: translate(50%);
   -o-transform: translate(50%);
+  transform: translate(50%);
 }
 #daisywheel-js #daisywheel-modal {
   position: absolute;
@@ -305,6 +306,9 @@
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+#daisywheel-js .selected .button.pressed {
+  background: #555;
 }
 #daisywheel-js .button-left {
   top: 48px;
