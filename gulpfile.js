@@ -5,14 +5,14 @@ var less = require('gulp-less');
 var path = require('path');
 
 var lessFiles = [
-    'less/mixins.less',
-    'less/daisywheel.less'
+    'src/less/mixins.less',
+    'src/less/daisywheel.less'
 ];
 
 gulp.task('default', ['uglify', 'css']);
 
 gulp.task('uglify', function() {
-    return gulp.src('daisywheel.js')
+    return gulp.src('src/js/daisywheel.js')
         .pipe(uglify())
         .pipe(rename('daisywheel.min.js'))
         .pipe(gulp.dest('dist'));
