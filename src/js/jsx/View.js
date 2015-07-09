@@ -1,10 +1,12 @@
 var React = require('../libs/react.0.13.3.js');
 var Fluxxor = require('../libs/fluxxor.1.6.0.js');
-var Modal = require('../units/Modal.js');
+var Modal = require('../jsx/Modal.js');
+var _ = require('../libs/underscore.1.8.3.js');
 var FluxMixin = Fluxxor.FluxMixin(React),
     StoreWatchMixin = Fluxxor.StoreWatchMixin;
 
 module.exports = React.createClass({
+    displayName: 'View',
     mixins: [FluxMixin, StoreWatchMixin(['WheelStore', 'SymbolsStore'])],
 
     getStateFromFlux: function() {
@@ -77,7 +79,7 @@ module.exports = React.createClass({
         };
 
         return (
-            <div ref="daisywheel" className="daisywheel-js" styles={styles}>
+            <div ref="daisywheel" id="daisywheel-js" styles={styles}>
                 <Modal/>
             </div>
         );

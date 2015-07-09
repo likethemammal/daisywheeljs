@@ -1,5 +1,3 @@
-
-
 module.exports = {
     init: function() {
         //Taken from https://gist.github.com/eirikbacker/2864711 on 12/23/14

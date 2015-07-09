@@ -1,7 +1,8 @@
-var Polyfills = require('polyfills.js');
-var actions = require('actions.js');
-var View = require('jsx/View.js');
-var Fluxxor = require('../libs/fluxxor.1.6.0.js');
+var Polyfills = require('./polyfills.js');
+var actions = require('./actions.js');
+var View = require('./jsx/View.js');
+var Fluxxor = require('./libs/fluxxor.1.6.0.js');
+var React = require('./libs/react.0.13.3.js');
 
 if (window && document) {
     Polyfills.init();
@@ -11,18 +12,18 @@ if (window && document) {
 var FluxMixin = Fluxxor.FluxMixin(React),
     StoreWatchMixin = Fluxxor.StoreWatchMixin;
 
-var SymbolsStore = require('stores/symbols.js');
-var WheelStore = require('stores/wheel.js');
-var InputStore = require('stores/input.js');
-var GamepadStore = require('stores/gamepad.js');
-var ControlsStore = require('stores/controls.js');
+var SymbolsStore = require('./stores/symbols.js');
+var WheelStore = require('./stores/wheel.js');
+var InputStore = require('./stores/input.js');
+var GamepadStore = require('./stores/gamepad.js');
+var ControlsStore = require('./stores/controls.js');
 
 var stores = {
-    InputStore: InputStore(),
-    SymbolsStore: SymbolsStore(),
-    WheelStore: WheelStore(),
-    GamepadStore: GamepadStore(),
-    ControlsStore: ControlsStore()
+    InputStore: new InputStore(),
+    SymbolsStore: new SymbolsStore(),
+    WheelStore: new WheelStore(),
+    GamepadStore: new GamepadStore(),
+    ControlsStore: new ControlsStore()
 };
 
 var flux = new Fluxxor.Flux(stores, actions);
@@ -36,7 +37,7 @@ flux.on("dispatch", function(type, payload) {
 
 var app = document.createElement('div');
 
-document.appendChild(app);
+document.body.appendChild(app);
 
 React.render(React.createElement(View, {flux: window.flux}), app);
 

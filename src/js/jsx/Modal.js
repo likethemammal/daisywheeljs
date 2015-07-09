@@ -1,8 +1,10 @@
 var React = require('../libs/react.0.13.3.js');
-var Warning = require('jsx/Warning.js');
-var Wheel = require('jsx/Wheel.js');
+var Warning = require('./Warning.js');
+var Wheel = require('./Wheel.js');
+var _ = require('../libs/underscore.1.8.3.js');
 
 module.exports = React.createClass({
+    displayName: "Modal",
     getInitialState: function() {
         return {
             scale: 1
@@ -41,7 +43,7 @@ module.exports = React.createClass({
             <div id="daisywheel-modal-overlay">
                 <div id="daisywheel-modal-container">
                     <div id="daisywheel-modal" styles={styles}>
-                        <Warning gamepadSupport={!!window.gamepadSupportAvailable}/>
+                        <Warning gamepadSupported={!!window.gamepadSupportAvailable}/>
                         <Wheel />
                     </div>
                 </div>

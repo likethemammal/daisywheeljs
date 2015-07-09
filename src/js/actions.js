@@ -1,4 +1,4 @@
-var constants = require('../constants.js');
+var constants = require('./constants.js');
 
 module.exports = {
     unload: function(ev) {
@@ -21,9 +21,6 @@ module.exports = {
     },
     clickCloseDetached: function() {
         this.dispatch(constants.CLICK_CLOSE_DETACHED)
-    },
-    setInputValue: function(value) {
-        this.dispatch(constants.SET_INPUT_VALUE, value)
     },
     setInputCursor: function(cursorPos) {
         this.dispatch(constants.SET_INPUT_CURSOR, cursorPos)

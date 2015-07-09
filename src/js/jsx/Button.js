@@ -1,15 +1,22 @@
-var React = require('../react.0.13.3.js');
+var React = require('../libs/react.0.13.3.js');
 var _ = require('../libs/underscore.1.8.3.js');
 var Fluxxor = require('../libs/fluxxor.1.6.0.js');
 var FluxMixin = Fluxxor.FluxMixin(React),
     StoreWatchMixin = Fluxxor.StoreWatchMixin;
 
 module.exports = React.createClass({
+    displayName: "Button",
     mixins: [FluxMixin, StoreWatchMixin(['SymbolsStore'])],
 
     propTypes: {
         position: React.PropTypes.string.isRequired,
-        symbol: React.PropTypes.object
+        symbol: React.PropTypes.oneOfType([
+            React.PropTypes.string,
+            React.PropTypes.shape({
+                font: React.PropTypes.string.isRequired,
+                symbol: React.PropTypes.string.isRequired
+            })
+        ])
     },
 
     getStateFromFlux: function() {

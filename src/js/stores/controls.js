@@ -1,5 +1,5 @@
 var constants = require('../constants');
-var _ = require('../underscore.1.8.3.js');
+var _ = require('../libs/underscore.1.8.3.js');
 var Fluxxor = require('../libs/fluxxor.1.6.0.js');
 
 module.exports = Fluxxor.createStore({

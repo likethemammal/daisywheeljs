@@ -16,7 +16,6 @@ module.exports = Fluxxor.createStore({
             constants.LOAD_DEFAULT, this.onLoad,
 
             constants.ATTACH_INPUT, this.onAttachInput,
-            constants.SET_INPUT_VALUE, this.onSetInputValue,
             constants.SET_INPUT_CURSOR, this.onSetInputCursor,
 
             constants.SELECT_SYMBOL, this.onSelectSymbol,
@@ -28,6 +27,7 @@ module.exports = Fluxxor.createStore({
         this.originalEl = {};
         this.value = '';
         this.cursor = 0;
+        this.emit('change');
 	},
 
 	getState: function() {

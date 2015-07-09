@@ -5,6 +5,7 @@ var FluxMixin = Fluxxor.FluxMixin(React),
 var Utils = require('../Utils.js');
 
 module.exports = React.createClass({
+    displayName: "Warning",
     mixins: [FluxMixin, StoreWatchMixin(['WheelStore'])],
 
     propTypes: {
@@ -37,7 +38,7 @@ module.exports = React.createClass({
         }
 
         return (
-            <div id="daisywheel-controller-warning">
+            <div id="daisywheel-controller-warning" styles={styles}>
                 {renderedComponent}
             </div>
         );

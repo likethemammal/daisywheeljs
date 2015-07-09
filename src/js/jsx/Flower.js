@@ -3,9 +3,10 @@ var _ = require('../libs/underscore.1.8.3.js');
 var Fluxxor = require('../libs/fluxxor.1.6.0.js');
 var FluxMixin = Fluxxor.FluxMixin(React),
     StoreWatchMixin = Fluxxor.StoreWatchMixin;
-var Petal = require('jsx/Petal.js');
+var Petal = require('./Petal.js');
 
 module.exports = React.createClass({
+    displayName: 'Flower',
     mixins: [FluxMixin, StoreWatchMixin(['SymbolsStore', 'WheelStore'])],
 
     getStateFromFlux: function() {
@@ -24,12 +25,12 @@ module.exports = React.createClass({
         var symbolSet = this.state.symbolSet;
         var selectedPetal = this.state.selectedPetal;
 
-        var petals = _.times(this.state.numPetals, function(n) {
+        var petals = _.times(this.state.numOfPetals, function(n) {
             var from = n*4;
-            var symbols = symbolSet.slice(from, 3);
+            var symbols = symbolSet.slice(from, from + 4);
             var isSelected = selectedPetal === n;
 
-            return <Petal symbols={symbols} selected={isSelected}/>
+            return <Petal symbols={symbols} selected={isSelected} key={n}/>
         });
 
         return (

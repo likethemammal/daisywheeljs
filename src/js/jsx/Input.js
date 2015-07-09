@@ -1,10 +1,11 @@
-var React = require('../react.0.13.3.js');
+var React = require('../libs/react.0.13.3.js');
 var Fluxxor = require('../libs/fluxxor.1.6.0.js');
 var FluxMixin = Fluxxor.FluxMixin(React),
     StoreWatchMixin = Fluxxor.StoreWatchMixin;
 var Utils = require('../Utils.js');
 
 module.exports = React.createClass({
+    displayName: "Input",
     mixins: [FluxMixin, StoreWatchMixin(['InputStore'])],
 
     getStateFromFlux: function() {
@@ -27,7 +28,7 @@ module.exports = React.createClass({
 
         return (
             <div id='daisywheel-input-container'>
-                <input ref="input" id='daisywheel-input' value={inputValue} type="text" readonly/>
+                <input ref="input" id='daisywheel-input' value={inputValue} type="text"/>
             </div>
         );
     }
