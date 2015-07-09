@@ -1,14 +1,14 @@
-module.exports = function() {
+module.exports = function(petals) {
     var styles = document.createElement('style'),
         stylesStr = '',
         radius = 208,
         petalDiameter = 160,
         width = 640,
         height = 640,
-        step = (2*Math.PI) / this.numOfPetals,
+        step = (2*Math.PI) / petals,
         angle = -step * 2;
 
-    for (var i = 0; i < this.numOfPetals; i++) {
+    for (var i = 0; i < petals; i++) {
 
         var x = Math.round(width/2 + radius * Math.cos(angle) - petalDiameter/2),
             y = Math.round(height/2 + radius * Math.sin(angle) - petalDiameter/2),

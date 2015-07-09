@@ -7,15 +7,15 @@ var FluxMixin = Fluxxor.FluxMixin(React),
 
 module.exports = React.createClass({
     displayName: 'View',
-    mixins: [FluxMixin, StoreWatchMixin(['WheelStore', 'SymbolsStore'])],
+    mixins: [FluxMixin, StoreWatchMixin('WheelStore')],
 
     getStateFromFlux: function() {
         var wheelState = this.getFlux().store('WheelStore').getState();
-        var symbolsState = this.getFlux().store('SymbolsStore').getState();
 
         return {
             loaded: wheelState.loaded,
-            showWarning: wheelState.showWarning
+            showWarning: wheelState.showWarning,
+            bacon: {}
         };
     },
 
@@ -32,12 +32,12 @@ module.exports = React.createClass({
 
     componentWillMount: function() {
         document.addEventListener('focus', this.onFocus, true);
-        window.addEventListener('keyup', this.onKeyboardClose);
+        window.addEventListener('keyup', _.bind(this.onKeyboardClose, this));
     },
 
     componentWillUnmount: function() {
-        document.removeEventListener('focus', this.onFocus);
-        window.removeEventListener('keyup', this.onKeyboardClose);
+        document.removeEventListener('focus', this.onFocus, true);
+        window.removeEventListener('keyup', _.bind(this.onKeyboardClose, this));
         if (this.state.clickCloseAttached) {
             this.refs.daisywheel.getDOMNode().removeEventListener('click', flux.actions.unload);
         }
@@ -53,33 +53,32 @@ module.exports = React.createClass({
         }
     },
 
-    onKeyboardClose: _.bind(function(ev) {
+    onKeyboardClose: function(ev) {
         if (ev.which === 27 && this.state.loaded) {
-            var flux = this.getFlux();
             flux.actions.unload();
         }
-    }, this),
+    },
 
-    onFocus: _.bind(function(ev) {
+    onFocus: function(ev) {
         var el = ev.target;
         if (el.classList && el.classList.contains('daisywheel')) {
             ev.preventDefault();
             flux.actions.attachInput(el);
             flux.actions.loadDefault();
         }
-    }, this),
+    },
 
     render: function() {
         var loaded = this.state.loaded;
         var visibility = (loaded) ? 'visible' : 'hidden';
-        var opacity = (loaded && !this.state.showWarning) ? 1 : 0;
+        var opacity = (loaded) ? 1 : 0;
         var styles = {
             visibility: visibility,
             opacity: opacity
         };
 
         return (
-            <div ref="daisywheel" id="daisywheel-js" styles={styles}>
+            <div ref="daisywheel" id="daisywheel-js" style={styles}>
                 <Modal/>
             </div>
         );

@@ -11,7 +11,7 @@ module.exports = React.createClass({
         };
     },
 
-    setupSize: _.throttle(_.bind(function() {
+    setupSize: _.throttle(function() {
         var maxSize = (window.innerWidth < window.innerHeight) ? window.innerWidth : window.innerHeight,
             padding = 25,
             scalePrecision = 100,
@@ -21,14 +21,18 @@ module.exports = React.createClass({
         this.setState({
             scale: scaleAmount
         });
-    }, this), 100),
+    }, 100),
+
+    componentDidMount: function() {
+        this.setupSize();
+    },
 
     componentWillMount: function() {
-        window.addEventListener('resize', this.setupSize);
+        window.addEventListener('resize', _.bind(this.setupSize, this));
     },
 
     componentWillUnmount: function() {
-        window.removeEventListener('resize', this.setupSize);
+        window.removeEventListener('resize', _.bind(this.setupSize, this));
     },
 
     render: function() {
@@ -42,9 +46,9 @@ module.exports = React.createClass({
         return (
             <div id="daisywheel-modal-overlay">
                 <div id="daisywheel-modal-container">
-                    <div id="daisywheel-modal" styles={styles}>
-                        <Warning gamepadSupported={!!window.gamepadSupportAvailable}/>
-                        <Wheel />
+                    <div id="daisywheel-modal" style={styles}>
+                        <Warning gamepadSupported={!!window.gamepadSupportAvailable} flux={window.flux}/>
+                        <Wheel flux={window.flux}/>
                     </div>
                 </div>
             </div>

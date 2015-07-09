@@ -35,7 +35,7 @@ module.exports = Fluxxor.createStore({
 	resetState: function() {
 		this.loaded = false;
         this.clickCloseAttached = false;
-        this.showWarning = false;
+        this.showWarning = true;
         this.selectedPetal = 'none';
 	},
 

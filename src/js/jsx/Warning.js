@@ -6,7 +6,7 @@ var Utils = require('../Utils.js');
 
 module.exports = React.createClass({
     displayName: "Warning",
-    mixins: [FluxMixin, StoreWatchMixin(['WheelStore'])],
+    mixins: [FluxMixin, StoreWatchMixin('WheelStore')],
 
     propTypes: {
         gamepadSupported: React.PropTypes.bool.isRequired
@@ -21,26 +21,27 @@ module.exports = React.createClass({
     },
 
     render: function() {
-        var renderedComponent;
+        var html;
+        var htmlHolder = {};
         var opacity = (this.state.showWarning) ? 1 : 0;
         var styles = {
             opacity: opacity
         };
 
         if (this.props.gamepadSupported) {
-            renderedComponent = (
+            html = (
                 'This browser does not support the Gamepad API. Check <a href="http://caniuse.com/#feat=gamepad">this list</a> for support'
             );
         } else {
-            renderedComponent = (
+            html = (
                 'Connect a gamepad controller to use the <a href="http://daisywheeljs.org">Daisywheel</a>'
             );
         }
 
+        htmlHolder['__html'] = html;
+
         return (
-            <div id="daisywheel-controller-warning" styles={styles}>
-                {renderedComponent}
-            </div>
+            <div id="daisywheel-controller-warning" style={styles} dangerouslySetInnerHTML={htmlHolder}></div>
         );
     }
 });

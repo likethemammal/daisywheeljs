@@ -6,7 +6,7 @@ var Utils = require('../Utils.js');
 
 module.exports = React.createClass({
     displayName: "Input",
-    mixins: [FluxMixin, StoreWatchMixin(['InputStore'])],
+    mixins: [FluxMixin, StoreWatchMixin('InputStore')],
 
     getStateFromFlux: function() {
         var inputState = this.getFlux().store('InputStore').getState();

@@ -4,10 +4,11 @@ var Fluxxor = require('../libs/fluxxor.1.6.0.js');
 var FluxMixin = Fluxxor.FluxMixin(React),
     StoreWatchMixin = Fluxxor.StoreWatchMixin;
 var Petal = require('./Petal.js');
+var SetupFlowerStyles = require('../units/SetupFlowerStyles.js');
 
 module.exports = React.createClass({
     displayName: 'Flower',
-    mixins: [FluxMixin, StoreWatchMixin(['SymbolsStore', 'WheelStore'])],
+    mixins: [FluxMixin, StoreWatchMixin('SymbolsStore', 'WheelStore')],
 
     getStateFromFlux: function() {
         var symbolState = this.getFlux().store('SymbolsStore').getState();
@@ -19,6 +20,10 @@ module.exports = React.createClass({
             numOfPetals: wheelState.numOfPetals,
             selectedPetal: wheelState.selectedPetal
         };
+    },
+
+    componentDidMount: function() {
+        SetupFlowerStyles(this.state.numOfPetals);
     },
 
     render: function() {

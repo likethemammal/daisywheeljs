@@ -6,7 +6,7 @@ var FluxMixin = Fluxxor.FluxMixin(React),
 
 module.exports = React.createClass({
     displayName: "Button",
-    mixins: [FluxMixin, StoreWatchMixin(['SymbolsStore'])],
+    mixins: [FluxMixin, StoreWatchMixin('SymbolsStore')],
 
     propTypes: {
         position: React.PropTypes.string.isRequired,
@@ -49,7 +49,7 @@ module.exports = React.createClass({
         symbolContent = symbol.symbol || symbol;
 
         return (
-            <div className={'button button-' + position + ' ' + selectedClass} styles={styles}>
+            <div className={'button button-' + position + ' ' + selectedClass} style={styles}>
                 {symbolContent}
             </div>
         );

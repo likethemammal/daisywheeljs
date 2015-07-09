@@ -6,7 +6,7 @@ var FluxMixin = Fluxxor.FluxMixin(React),
 
 module.exports = React.createClass({
     displayName: 'Controls',
-    mixins: [FluxMixin, StoreWatchMixin(['ControlsStore'])],
+    mixins: [FluxMixin, StoreWatchMixin('ControlsStore')],
 
     uiElements: [
         'left-bumper',
