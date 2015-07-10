@@ -1,6 +1,6 @@
 var constants = require('../constants.js');
-var Fluxxor = require('../libs/fluxxor.1.6.0.js');
-var _ = require('../libs/underscore.1.8.3.js');
+var Fluxxor = require('fluxxor');
+var _ = require('underscore');
 
 module.exports = Fluxxor.createStore({
 
@@ -81,10 +81,18 @@ module.exports = Fluxxor.createStore({
 
     onGamepadEvent: function() {
         this.waitFor(['GamepadStore'], _.bind(function(GamepadStore) {
-            var direction = GamepadStore.getState().stickDirection;
+            var gamepadState = GamepadStore.getState();
+            var direction = gamepadState.stickDirection;
+            var isConnected = gamepadState.gamepadConnected;
+
+            this.showWarning = !isConnected;
 
             if (direction) {
-                this.selectedPetal = this.petalDirections[direction];
+                _.map(this.petalDirections, _.bind(function(petalDirection, index) {
+                    if (petalDirection === direction) {
+                        this.selectedPetal = index;
+                    }
+                }, this));
             } else {
                 this.selectedPetal = 'none';
             }

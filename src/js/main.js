@@ -1,17 +1,15 @@
 var Polyfills = require('./polyfills.js');
 var actions = require('./actions.js');
 var View = require('./jsx/View.js');
-var Fluxxor = require('./libs/fluxxor.1.6.0.js');
-var React = require('./libs/react.0.13.3.js');
+var Fluxxor = require('fluxxor');
+var React = require('react');
+var app;
 
 if (window && document) {
     Polyfills.init();
 }
 
 //Flux
-var FluxMixin = Fluxxor.FluxMixin(React),
-    StoreWatchMixin = Fluxxor.StoreWatchMixin;
-
 var SymbolsStore = require('./stores/symbols.js');
 var WheelStore = require('./stores/wheel.js');
 var InputStore = require('./stores/input.js');
@@ -35,7 +33,7 @@ flux.on("dispatch", function(type, payload) {
     }
 });
 
-var app = document.createElement('div');
+app = document.createElement('div');
 
 document.body.appendChild(app);
 

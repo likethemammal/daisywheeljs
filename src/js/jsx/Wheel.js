@@ -1,5 +1,5 @@
-var React = require('../libs/react.0.13.3.js');
-var Fluxxor = require('../libs/fluxxor.1.6.0.js');
+var React = require('react');
+var Fluxxor = require('fluxxor');
 var Input = require('./Input.js');
 var Flower = require('./Flower.js');
 var Controls = require('./Controls.js');

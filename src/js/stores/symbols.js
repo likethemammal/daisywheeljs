@@ -1,7 +1,7 @@
-var Fluxxor = require('../libs/fluxxor.1.6.0.js');
+var Fluxxor = require('fluxxor');
 var constants = require('../constants.js');
 var Utils = require('../Utils.js');
-var _ = require('../libs/underscore.1.8.3.js');
+var _ = require('underscore');
 
 module.exports = Fluxxor.createStore({
 	initialize: function() {
@@ -99,14 +99,14 @@ module.exports = Fluxxor.createStore({
             var shouldToggle = this.symbolSets.length < 4;
 
             switch (lastButton) {
-                case 6:
+                case 'leftTrigger':
                     if (shouldToggle) {
                         this.toggleSymbols(2);
                     } else {
                         this.resetSymbols();
                     }
                     break;
-                case 7:
+                case 'rightTrigger':
                     if (shouldToggle) {
                         this.toggleSymbols(1);
                     } else {

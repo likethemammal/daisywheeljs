@@ -1,6 +1,6 @@
-var React = require('../libs/react.0.13.3.js');
-var _ = require('../libs/underscore.1.8.3.js');
-var Fluxxor = require('../libs/fluxxor.1.6.0.js');
+var React = require('react');
+var _ = require('underscore');
+var Fluxxor = require('fluxxor');
 var FluxMixin = Fluxxor.FluxMixin(React),
     StoreWatchMixin = Fluxxor.StoreWatchMixin;
 

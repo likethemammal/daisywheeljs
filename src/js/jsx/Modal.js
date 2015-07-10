@@ -1,7 +1,7 @@
-var React = require('../libs/react.0.13.3.js');
+var React = require('react');
 var Warning = require('./Warning.js');
 var Wheel = require('./Wheel.js');
-var _ = require('../libs/underscore.1.8.3.js');
+var _ = require('underscore');
 
 module.exports = React.createClass({
     displayName: "Modal",
@@ -47,7 +47,7 @@ module.exports = React.createClass({
             <div id="daisywheel-modal-overlay">
                 <div id="daisywheel-modal-container">
                     <div id="daisywheel-modal" style={styles}>
-                        <Warning gamepadSupported={!!window.gamepadSupportAvailable} flux={window.flux}/>
+                        <Warning flux={window.flux}/>
                         <Wheel flux={window.flux}/>
                     </div>
                 </div>

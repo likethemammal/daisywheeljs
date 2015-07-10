@@ -1,5 +1,5 @@
-var React = require('../libs/react.0.13.3.js');
-var _ = require('../libs/underscore.1.8.3.js');
+var React = require('react');
+var _ = require('underscore');
 var Button = require('./Button.js');
 
 module.exports = React.createClass({

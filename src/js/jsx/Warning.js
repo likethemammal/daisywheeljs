@@ -1,22 +1,21 @@
-var React = require('../libs/react.0.13.3.js');
-var Fluxxor = require('../libs/fluxxor.1.6.0.js');
+var React = require('react');
+var Fluxxor = require('fluxxor');
 var FluxMixin = Fluxxor.FluxMixin(React),
     StoreWatchMixin = Fluxxor.StoreWatchMixin;
 var Utils = require('../Utils.js');
 
 module.exports = React.createClass({
     displayName: "Warning",
-    mixins: [FluxMixin, StoreWatchMixin('WheelStore')],
-
-    propTypes: {
-        gamepadSupported: React.PropTypes.bool.isRequired
-    },
+    mixins: [FluxMixin, StoreWatchMixin('WheelStore', 'GamepadStore')],
 
     getStateFromFlux: function() {
-        var wheelState = this.getFlux().store('WheelStore').getState();
+        var flux = this.getFlux();
+        var wheelState = flux.store('WheelStore').getState();
+        var gamepadState = flux.store('GamepadStore').getState();
 
         return {
-            showWarning: wheelState.showWarning
+            showWarning: wheelState.showWarning,
+            gamepadSupported: gamepadState.gamepadSupported
         };
     },
 
@@ -28,13 +27,13 @@ module.exports = React.createClass({
             opacity: opacity
         };
 
-        if (this.props.gamepadSupported) {
+        if (this.state.gamepadSupported) {
             html = (
-                'This browser does not support the Gamepad API. Check <a href="http://caniuse.com/#feat=gamepad">this list</a> for support'
+                'Connect a gamepad controller to use the <a target="_blank" href="http://daisywheeljs.org">Daisywheel</a>'
             );
         } else {
             html = (
-                'Connect a gamepad controller to use the <a href="http://daisywheeljs.org">Daisywheel</a>'
+                'This browser does not support the Gamepad API. Check <a target="_blank" href="http://caniuse.com/#feat=gamepad">this list</a> for support'
             );
         }
 

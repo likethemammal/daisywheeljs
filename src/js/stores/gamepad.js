@@ -1,13 +1,17 @@
 var constants = require('../constants');
-var Fluxxor = require('../libs/fluxxor.1.6.0.js');
-var _ = require('../libs/underscore.1.8.3.js');
+var Fluxxor = require('fluxxor');
+var _ = require('underscore');
 var BetweenNums = require('../units/BetweenNums.js');
+var GamepadMicro = require('gamepad-micro');
 
 module.exports = Fluxxor.createStore({
 	initialize: function() {
 		this.resetState();
 
-        window.addEventListener('ongamepadupdate', _.bind(this.onGamepadUpdate, this));
+        delete this._GamepadMicro;
+        this._GamepadMicro = new GamepadMicro();
+        this.gamepadSupported = !!this._GamepadMicro.gamepadSupported;
+        this._GamepadMicro.onUpdate(_.debounce(_.bind(this.onGamepadUpdate, this), 0));
 
         this.bindActions(
             constants.GAMEPAD_EVENT, this.onGamepadEvent
@@ -20,11 +24,12 @@ module.exports = Fluxxor.createStore({
         this.lastButton = false;
         this.dPadDirection = false;
         this.actionButton = false;
-	},
+    },
 
 	getState: function() {
 		return {
             gamepadConnected: this.gamepadConnected,
+            gamepadSupported: this.gamepadSupported,
             stickDirection: this.stickDirection,
             lastButton: this.lastButton,
             dPadDirection: this.dPadDirection,
@@ -32,29 +37,32 @@ module.exports = Fluxxor.createStore({
         }
 	},
 
-    onGamepadUpdate: function() {
-        var gamepads = ev.detail;
+    onGamepadUpdate: function(gamepads) {
+        this.gamepadConnected = this._GamepadMicro.gamepadConnected;
 
-        if (!_.isEmpty(gamepads)) {
-            if (!this.gamepadConnected) {
-                this.gamepadConnected = true;
-            }
-            _.map(gamepads, flux.actions.gamepadEvent);
+        if (this.gamepadConnected) {
+            _.map(gamepads, function(gamepad) {
+                 if (gamepad) {
+                     flux.actions.gamepadEvent(gamepad);
+                 }
+            });
         } else {
-            this.gamepadConnected = false;
-            flux.actions.hideWarning();
+            if (flux.store('WheelStore').getState().showWarning) {
+                flux.actions.hideWarning();
+            }
         }
+
         this.emit('change');
     },
 
     onGamepadEvent: function(gamepad) {
-        this.setDirection(gamepad.axes);
+        this.setDirection(gamepad.leftStick);
         this.setButtons(gamepad.buttons);
     },
 
-    setDirection: function(axes) {
+    setDirection: function(leftStick) {
         var numOfPetals = flux.store('WheelStore').getState().numOfPetals;
-        this.stickDirection = this.getDirectionFromAxes(axes[0], axes[1], (1/numOfPetals)*360/100);
+        this.stickDirection = this.getDirectionFromAxes(leftStick.x, leftStick.y, (1/numOfPetals)*360/100);
         this.emit('change');
     },
 
@@ -100,56 +108,36 @@ module.exports = Fluxxor.createStore({
         return direction;
     },
 
-    setButtons: _.throttle(function(buttons) {
-        var lastPressedButton = buttons[this.lastButton];
-
-        if (lastPressedButton && !lastPressedButton.pressed) {
-            this.lastButtonIsUp = true;
-            this.actionButton = false;
-        }
-
-        for (var i = 0; i < buttons.length; i++) {
-            var button = buttons[i];
-
-            if (button.pressed) {
-
-                if (this.lastButton === i && !this.lastButtonIsUp) {
-                    return;
+    setButtons: function(buttons) {
+        _.map(buttons, function(isPressed, button) {
+            if (isPressed) {
+                this.lastButton = button;
+                switch (button) {
+                    case 'actionSouth':
+                    case 'actionNorth':
+                    case 'actionEast':
+                    case 'actionWest':
+                        this.setActionButton(button);
+                        break;
+                    case 'dPadUp':
+                    case 'dPadRight':
+                    case 'dPadDown':
+                    case 'dPadLeft':
+                        this.setDPadDirection(button);
+                        break;
                 }
-
-                this.lastButton = i;
-
-                this.setDPadDirection();
-                this.setActionButton();
-                this.lastButtonIsUp = false;
-
                 this.emit('change');
-
             }
-        }
-    }, 50),
+        }.bind(this));
+    },
 
-    setDPadDirection: function() {
-        var directions = {
-            12: 'up',
-            13: 'down',
-            14: 'left',
-            15: 'right'
-        };
-
-        this.dPadDirection = directions[this.lastButton] || false;
+    setDPadDirection: function(button) {
+        this.dPadDirection = button || false;
         this.emit('change');
     },
 
-    setActionButton: function() {
-        var actionButtonMapping = {
-            0: 3,
-            1: 2,
-            2: 0,
-            3: 1
-        };
-
-        this.actionButton = actionButtonMapping[this.lastButton] || false;
+    setActionButton: function(button) {
+        this.actionButton = button || false;
         this.emit('change');
     }
 });

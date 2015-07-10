@@ -1,5 +1,3 @@
-
-
 module.exports =  {
     //Taken from http://stackoverflow.com/questions/1865563/set-cursor-at-a-length-of-14-onfocus-of-a-textbox/1867393#1867393 on 8/8/14
     setCursor: function(node,pos){

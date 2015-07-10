@@ -1,7 +1,7 @@
-var React = require('../libs/react.0.13.3.js');
-var Fluxxor = require('../libs/fluxxor.1.6.0.js');
+var React = require('react');
+var Fluxxor = require('fluxxor');
 var Modal = require('../jsx/Modal.js');
-var _ = require('../libs/underscore.1.8.3.js');
+var _ = require('underscore');
 var FluxMixin = Fluxxor.FluxMixin(React),
     StoreWatchMixin = Fluxxor.StoreWatchMixin;
 
@@ -15,7 +15,6 @@ module.exports = React.createClass({
         return {
             loaded: wheelState.loaded,
             showWarning: wheelState.showWarning,
-            bacon: {}
         };
     },
 
@@ -28,6 +27,7 @@ module.exports = React.createClass({
         link.href = fontLinkStr;
 
         document.head.appendChild(link);
+        this.refs.daisywheel.getDOMNode().addEventListener('click', this.onClickClose);
     },
 
     componentWillMount: function() {
@@ -38,18 +38,13 @@ module.exports = React.createClass({
     componentWillUnmount: function() {
         document.removeEventListener('focus', this.onFocus, true);
         window.removeEventListener('keyup', _.bind(this.onKeyboardClose, this));
-        if (this.state.clickCloseAttached) {
-            this.refs.daisywheel.getDOMNode().removeEventListener('click', flux.actions.unload);
-        }
+        this.refs.daisywheel.getDOMNode().removeEventListener('click', this.onClickClose);
     },
 
-    componentWillUpdate: function() {
-        if (this.state.loaded && !this.state.clickCloseAttached) {
-            this.refs.daisywheel.getDOMNode().addEventListener('click', flux.actions.unload);
-            flux.actions.clickCloseAttached();
-        } else if (!this.state.loaded && this.state.clickCloseAttached) {
-            this.refs.daisywheel.getDOMNode().removeEventListener('click', flux.actions.unload);
-            flux.actions.clickCloseDetached();
+    onClickClose: function(ev) {
+        var el = ev.target;
+        if (this.state.loaded && el.id !== 'daisywheel-input') {
+            flux.actions.unload();
         }
     },
 
@@ -61,7 +56,7 @@ module.exports = React.createClass({
 
     onFocus: function(ev) {
         var el = ev.target;
-        if (el.classList && el.classList.contains('daisywheel')) {
+        if (el.classList && el.classList.contains('daisywheel') && !this.state.loaded) {
             ev.preventDefault();
             flux.actions.attachInput(el);
             flux.actions.loadDefault();

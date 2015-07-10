@@ -1,7 +1,7 @@
 var constants = require('../constants.js');
 var Utils = require('../Utils.js');
-var Fluxxor = require('../libs/fluxxor.1.6.0.js');
-var _ = require('../libs/underscore.1.8.3.js');
+var Fluxxor = require('fluxxor');
+var _ = require('underscore');
 
 module.exports = Fluxxor.createStore({
 
@@ -110,25 +110,25 @@ module.exports = Fluxxor.createStore({
             var lastButton = gamepadState.lastButton;
 
             switch (dPadDirection) {
-                case 'up':
+                case 'dPadUp':
                     this.cursor = 0;
                     break;
-                case 'down':
+                case 'dPadDown':
                     this.cursor = this.value.length - 1;
                     break;
-                case 'left':
+                case 'dPadLeft':
                     this.cursor--;
                     break;
-                case 'right':
+                case 'dPadRight':
                     this.cursor++;
                     break;
             }
 
             switch (lastButton) {
-                case 5:
+                case 'leftBumper':
                     this.onBackspace();
                     break;
-                case 6:
+                case 'rightBumper':
                     this.onSpace();
                     break;
             }
