@@ -13,7 +13,7 @@ module.exports = React.createClass({
     getStateFromFlux: function() {
         var symbolState = this.getFlux().store('SymbolsStore').getState();
         var wheelState = this.getFlux().store('WheelStore').getState();
-        var currentSet = symbolState.symbolSets[symbolState.selectedSet];
+        var currentSet = symbolState.symbolSets[symbolState.selectedSetIndex];
 
         return {
             symbolSet: currentSet,

@@ -17,6 +17,7 @@ module.exports = Fluxxor.createStore({
 
             constants.ATTACH_INPUT, this.onAttachInput,
             constants.SET_INPUT_CURSOR, this.onSetInputCursor,
+            constants.SET_INPUT_VALUE, this.onSetInputValue,
 
             constants.SELECT_SYMBOL, this.onSelectSymbol,
             constants.GAMEPAD_EVENT, this.onGamepadEvent
@@ -55,9 +56,8 @@ module.exports = Fluxxor.createStore({
 
     onUnload: function() {
         this.originalEl.value = this.value;
-        this.originalEl.readonly = false;
+        this.originalEl.readOnly = false;
         Utils.setCursor(this.originalEl, this.cursor);
-        this.originalEl.focus();
         this.emit('change');
     },
 

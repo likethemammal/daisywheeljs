@@ -23,12 +23,24 @@ module.exports = React.createClass({
         input.scrollLeft = input.scrollWidth;
     },
 
+    onInputChange: function() {
+        var inputEl = this.refs.input.getDOMNode();
+        var value = inputEl.value;
+        flux.actions.setInputValue(value);
+        this.onInputClick();
+    },
+
+    onInputClick: function() {
+        var inputEl = this.refs.input.getDOMNode();
+        flux.actions.setInputCursor(Utils.getCursor(inputEl));
+    },
+
     render: function() {
         var inputValue = this.state.value;
 
         return (
             <div id='daisywheel-input-container'>
-                <input ref="input" id='daisywheel-input' value={inputValue} type="text"/>
+                <input ref="input" id='daisywheel-input' value={inputValue} onChange={this.onInputChange} onClick={this.onInputClick} type="text"/>
             </div>
         );
     }

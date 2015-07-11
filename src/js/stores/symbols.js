@@ -21,7 +21,7 @@ module.exports = Fluxxor.createStore({
             "ABCDEFGHIJKLMNOPQRSTUVWXYZ+.@#$%".split(''),
             "0123456789*,_=\"'()[]{}:~^<>|".split('')
         ];
-        this.selectedSet = 0;
+        this.selectedSetIndex = 0;
         this.selectedSymbol = '';
         this.defaultSymbolSelection = true;
         this.customTitles = {};
@@ -30,7 +30,7 @@ module.exports = Fluxxor.createStore({
 	getState: function() {
         return {
             symbolSets: this.symbolSets,
-            selectedSet: this.selectedSet,
+            selectedSetIndex: this.selectedSetIndex,
             selectedSymbol: this.selectedSymbol,
             defaultSymbolSelection: this.defaultSymbolSelection,
             customTitles: this.customTitles
@@ -97,6 +97,8 @@ module.exports = Fluxxor.createStore({
             var lastButton = gamepadState.lastButton;
             var actionButton = gamepadState.actionButton;
             var shouldToggle = this.symbolSets.length < 4;
+            var actionButtonMapped = gamepadState.actionButtonMapping[actionButton];
+            var currentSymbolSet = this.symbolSets[this.selectedSetIndex];
 
             switch (lastButton) {
                 case 'leftTrigger':
@@ -115,8 +117,9 @@ module.exports = Fluxxor.createStore({
                     break;
             }
 
-            if (actionButton) {
-                this.selectedSymbol = this.selectedSet[selectedPetal * actionButton];
+            if (actionButton && selectedPetal !== 'none') {
+                this.selectedSymbol = currentSymbolSet[selectedPetal * actionButtonMapped];
+                console.log(this.selectedSymbol);
             } else {
                 this.selectedSymbol = false;
             }
@@ -126,25 +129,25 @@ module.exports = Fluxxor.createStore({
     },
 
     toggleSymbols: _.throttle(function(setNumber) {
-        if (this.selectedSet === setNumber) {
-            this.selectedSet = 0;
+        if (this.selectedSetIndex === setNumber) {
+            this.selectedSetIndex = 0;
         } else {
-            this.selectedSet = setNumber;
+            this.selectedSetIndex = setNumber;
         }
         this.emit('change');
     }, 50),
     
     cycleSymbols: function() {
-        if (this.selectedSet > this.symbolSets.length - 1) {
-            this.selectedSet++;
+        if (this.selectedSetIndex > this.symbolSets.length - 1) {
+            this.selectedSetIndex++;
         } else {
-            this.selectedSet = 0;
+            this.selectedSetIndex = 0;
         }
         this.emit('change');
     },
 
     resetSymbols: function() {
-        this.selectedSet = 0;
+        this.selectedSetIndex = 0;
         this.emit('change');
     }
 

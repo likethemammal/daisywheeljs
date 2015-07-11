@@ -5,6 +5,14 @@ var BetweenNums = require('../units/BetweenNums.js');
 var GamepadMicro = require('gamepad-micro');
 
 module.exports = Fluxxor.createStore({
+
+    actionButtonMapping: {
+        'actionSouth': 4,
+        'actionEast': 3,
+        'actionWest': 2,
+        'actionNorth': 1
+    },
+
 	initialize: function() {
 		this.resetState();
 
@@ -33,22 +41,26 @@ module.exports = Fluxxor.createStore({
             stickDirection: this.stickDirection,
             lastButton: this.lastButton,
             dPadDirection: this.dPadDirection,
-            actionButton: this.actionButton
+            actionButton: this.actionButton,
+            actionButtonMapping: this.actionButtonMapping
         }
 	},
 
     onGamepadUpdate: function(gamepads) {
+        var wheelState = flux.store('WheelStore').getState();
         this.gamepadConnected = this._GamepadMicro.gamepadConnected;
 
-        if (this.gamepadConnected) {
-            _.map(gamepads, function(gamepad) {
-                 if (gamepad) {
-                     flux.actions.gamepadEvent(gamepad);
-                 }
-            });
-        } else {
-            if (flux.store('WheelStore').getState().showWarning) {
-                flux.actions.hideWarning();
+        if (wheelState.loaded) {
+            if (this.gamepadConnected) {
+                _.map(gamepads, function(gamepad) {
+                     if (gamepad) {
+                         flux.actions.gamepadEvent(gamepad);
+                     }
+                });
+            } else {
+                if (wheelState.showWarning) {
+                    flux.actions.hideWarning();
+                }
             }
         }
 
@@ -109,6 +121,8 @@ module.exports = Fluxxor.createStore({
     },
 
     setButtons: function(buttons) {
+        this.actionButton = false;
+        this.dPadDirection = false;
         _.map(buttons, function(isPressed, button) {
             if (isPressed) {
                 this.lastButton = button;
@@ -126,9 +140,9 @@ module.exports = Fluxxor.createStore({
                         this.setDPadDirection(button);
                         break;
                 }
-                this.emit('change');
             }
         }.bind(this));
+        this.emit('change');
     },
 
     setDPadDirection: function(button) {
