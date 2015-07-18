@@ -118,8 +118,10 @@ module.exports = Fluxxor.createStore({
             }
 
             if (actionButton && selectedPetal !== 'none') {
-                this.selectedSymbol = currentSymbolSet[selectedPetal * actionButtonMapped];
-                console.log(this.selectedSymbol);
+                var selectedPetalGroupIndex = selectedPetal * 4 - 4;
+                var selectedSymbolIndex = selectedPetalGroupIndex + actionButtonMapped - 1;
+
+                this.selectedSymbol = currentSymbolSet[selectedSymbolIndex];
             } else {
                 this.selectedSymbol = false;
             }

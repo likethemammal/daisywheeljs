@@ -7,10 +7,10 @@ var GamepadMicro = require('gamepad-micro');
 module.exports = Fluxxor.createStore({
 
     actionButtonMapping: {
-        'actionSouth': 4,
+        'actionWest': 1,
+        'actionNorth': 2,
         'actionEast': 3,
-        'actionWest': 2,
-        'actionNorth': 1
+        'actionSouth': 4
     },
 
 	initialize: function() {

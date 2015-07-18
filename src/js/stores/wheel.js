@@ -90,7 +90,7 @@ module.exports = Fluxxor.createStore({
             if (direction) {
                 _.map(this.petalDirections, _.bind(function(petalDirection, index) {
                     if (petalDirection === direction) {
-                        this.selectedPetal = index;
+                        this.selectedPetal = index + 1;
                     }
                 }, this));
             } else {

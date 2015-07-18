@@ -33,7 +33,7 @@ module.exports = React.createClass({
         var petals = _.times(this.state.numOfPetals, function(n) {
             var from = n*4;
             var symbols = symbolSet.slice(from, from + 4);
-            var isSelected = selectedPetal === n;
+            var isSelected = selectedPetal === n + 1;
 
             return <Petal symbols={symbols} selected={isSelected} key={n}/>
         });
