@@ -30,12 +30,10 @@ module.exports = React.createClass({
             var label = uiLabels[element];
 
             return (
-                <div id={"daisywheel-" + element + "-ui"} key={i}>
-                    <div className="control-ui cf">
-                        <div className="control-ui-icon"></div>
-                        <div className="control-ui-label" title={label}>
-                            {label}
-                        </div>
+                <div id={"daisywheel-" + element + "-ui"} className="control-ui cf" key={i}>
+                    <div className="control-ui-icon"></div>
+                    <div className="control-ui-label" title={label}>
+                        {label}
                     </div>
                 </div>
             );

@@ -13,8 +13,7 @@ module.exports = React.createClass({
         var wheelState = this.getFlux().store('WheelStore').getState();
 
         return {
-            loaded: wheelState.loaded,
-            showWarning: wheelState.showWarning,
+            loaded: wheelState.loaded
         };
     },
 
