@@ -18,10 +18,12 @@ module.exports = React.createClass({
         var selectedClass = (this.props.selected) ? 'selected': '';
 
         return (
-            <div className={"petal " + selectedClass}>
-                <div className="petal-inner">
-                    <div className="buttons">
-                        {buttons}
+            <div className={"petal-container " + selectedClass}>
+                <div className={"petal "}>
+                    <div className="petal-inner">
+                        <div className="buttons">
+                            {buttons}
+                        </div>
                     </div>
                 </div>
             </div>

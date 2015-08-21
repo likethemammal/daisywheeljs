@@ -14,7 +14,7 @@ module.exports = function(petals) {
             y = Math.round(height/2 + radius * Math.sin(angle) - petalDiameter/2),
             rotation = angle * 180 / Math.PI + 135;
 
-        stylesStr += ['#daisywheel-js .petal:nth-of-type(' + (i + 1) + ') {',
+        stylesStr += ['#daisywheel-js .petal-container:nth-of-type(' + (i + 1) + ') {',
             'top: ' + y + 'px;',
             'left: ' + x + 'px;',
             'transform: rotate(' + rotation + 'deg);',
@@ -22,7 +22,7 @@ module.exports = function(petals) {
             '-webkit-transform: rotate(' + rotation + 'deg);',
             '} '].join('');
 
-        stylesStr += ['#daisywheel-js .petal:nth-of-type(' + (i + 1) + ') .buttons {',
+        stylesStr += ['#daisywheel-js .petal-container:nth-of-type(' + (i + 1) + ') .buttons {',
             'transform: rotate(' + (-rotation) + 'deg);',
             '-ms-transform: rotate(' + (-rotation) + 'deg);',
             '-webkit-transform: rotate(' + (-rotation) + 'deg);',

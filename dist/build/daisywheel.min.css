@@ -260,20 +260,37 @@
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
-#daisywheel-js .petal {
+#daisywheel-js .petal-container {
   position: absolute;
   height: 160px;
   width: 160px;
+}
+#daisywheel-js .petal-container.selected {
+  z-index: 1;
+}
+#daisywheel-js .petal-container.selected .petal {
+  background-color: #3A596B;
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+}
+#daisywheel-js .petal {
   background-color: #223846;
+  width: 100%;
+  height: 100%;
   -webkit-border-radius: 0 50% 50% 50%;
   -moz-border-radius: 0 50% 50% 50%;
   border-radius: 0 50% 50% 50%;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
-}
-#daisywheel-js .petal.selected {
-  background-color: #3A596B;
+  -webkit-transition: transform 200ms linear;
+  -moz-transition: transform 200ms linear;
+  -ms-transition: transform 200ms linear;
+  -o-transition: transform 200ms linear;
+  transition: transform 200ms linear;
 }
 #daisywheel-js .petal-inner {
   position: absolute;

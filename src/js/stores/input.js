@@ -124,7 +124,7 @@ module.exports = Fluxxor.createStore({
                     break;
             }
 
-            if (lastButton && lastButton.released) {
+            if (lastButton) {
                 switch (lastButton.name) {
                     case 'leftBumper':
                         this.onBackspace();
