@@ -114,7 +114,7 @@ module.exports = Fluxxor.createStore({
                     this.cursor = 0;
                     break;
                 case 'dPadDown':
-                    this.cursor = this.value.length - 1;
+                    this.cursor = this.value.length;
                     break;
                 case 'dPadLeft':
                     this.cursor--;
@@ -124,14 +124,17 @@ module.exports = Fluxxor.createStore({
                     break;
             }
 
-            switch (lastButton) {
-                case 'leftBumper':
-                    this.onBackspace();
-                    break;
-                case 'rightBumper':
-                    this.onSpace();
-                    break;
+            if (lastButton && lastButton.released) {
+                switch (lastButton.name) {
+                    case 'leftBumper':
+                        this.onBackspace();
+                        break;
+                    case 'rightBumper':
+                        this.onSpace();
+                        break;
+                }
             }
+
 
             if (selectedSymbol) {
                 if (defaultSymbolSelection) {
@@ -149,9 +152,10 @@ module.exports = Fluxxor.createStore({
         var valueParts = this.getValueDivision();
         var start = valueParts.start;
 
-        start.substring(0, start.length - 1);
+        start = start.substring(0, start.length - 1);
 
         this.value = start + valueParts.end;
+        this.cursor--;
         this.emit('change');
     },
 

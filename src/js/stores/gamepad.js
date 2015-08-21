@@ -123,23 +123,31 @@ module.exports = Fluxxor.createStore({
     setButtons: function(buttons) {
         this.actionButton = false;
         this.dPadDirection = false;
-        _.map(buttons, function(isPressed, button) {
-            if (isPressed) {
-                this.lastButton = button;
-                switch (button) {
-                    case 'actionSouth':
-                    case 'actionNorth':
-                    case 'actionEast':
-                    case 'actionWest':
-                        this.setActionButton(button);
-                        break;
-                    case 'dPadUp':
-                    case 'dPadRight':
-                    case 'dPadDown':
-                    case 'dPadLeft':
-                        this.setDPadDirection(button);
-                        break;
-                }
+        this.lastButton = false;
+        _.map(buttons, function(state, button) {
+            if (!state) {
+                return;
+            }
+
+            this.lastButton = {
+                name: button,
+                released: state.released,
+                held: state.held
+            };
+
+            switch (button) {
+                case 'actionSouth':
+                case 'actionNorth':
+                case 'actionEast':
+                case 'actionWest':
+                    this.setActionButton(button);
+                    break;
+                case 'dPadUp':
+                case 'dPadRight':
+                case 'dPadDown':
+                case 'dPadLeft':
+                    this.setDPadDirection(button);
+                    break;
             }
         }.bind(this));
         this.emit('change');

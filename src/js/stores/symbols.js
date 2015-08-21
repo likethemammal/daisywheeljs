@@ -100,21 +100,35 @@ module.exports = Fluxxor.createStore({
             var actionButtonMapped = gamepadState.actionButtonMapping[actionButton];
             var currentSymbolSet = this.symbolSets[this.selectedSetIndex];
 
-            switch (lastButton) {
-                case 'leftTrigger':
-                    if (shouldToggle) {
-                        this.toggleSymbols(2);
-                    } else {
-                        this.resetSymbols();
-                    }
-                    break;
-                case 'rightTrigger':
-                    if (shouldToggle) {
-                        this.toggleSymbols(1);
-                    } else {
-                        this.cycleSymbols();
-                    }
-                    break;
+            if (lastButton) {
+                switch (lastButton.name) {
+                    case 'leftTrigger':
+                        if (shouldToggle) {
+                            if (lastButton.held) {
+                                this.selectedSetIndex = 2;
+                            } else if (lastButton.released) {
+                                this.selectedSetIndex = 0;
+                            }
+                        } else {
+                            if (lastButton.released) {
+                                this.resetSymbols();
+                            }
+                        }
+                        break;
+                    case 'rightTrigger':
+                        if (shouldToggle) {
+                            if (lastButton.held) {
+                                this.selectedSetIndex = 1;
+                            } else if (lastButton.released) {
+                                this.selectedSetIndex = 0;
+                            }
+                        } else {
+                            if (lastButton.released) {
+                                this.cycleSymbols();
+                            }
+                        }
+                        break;
+                }
             }
 
             if (actionButton && selectedPetal !== 'none') {
@@ -129,15 +143,6 @@ module.exports = Fluxxor.createStore({
 
         }, this));
     },
-
-    toggleSymbols: _.throttle(function(setNumber) {
-        if (this.selectedSetIndex === setNumber) {
-            this.selectedSetIndex = 0;
-        } else {
-            this.selectedSetIndex = setNumber;
-        }
-        this.emit('change');
-    }, 50),
     
     cycleSymbols: function() {
         if (this.selectedSetIndex > this.symbolSets.length - 1) {
