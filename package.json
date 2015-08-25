@@ -1,0 +1,31 @@
+{
+  "name": "daisywheeljs-site",
+  "version": "0.1.0",
+  "description": "The site for DaisywheelJS",
+  "main": "index.js",
+  "dependencies": {
+    "browserify": "^10.2.6",
+    "fluxxor": "^1.7.1",
+    "react": "^0.13.3",
+    "reactify": "^1.1.1",
+    "underscore": "^1.8.3",
+    "watchify": "^3.3.1"
+  },
+  "devDependencies": {
+    "uglifyify": "^3.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": " browserify -t reactify -t uglifyify js/main.js > build/scripts.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/likethemammal/daisywheeljs.git"
+  },
+  "author": "",
+  "license": "Apache",
+  "bugs": {
+    "url": "https://github.com/likethemammal/daisywheeljs/issues"
+  },
+  "homepage": "https://daisywheeljs.org"
+}
