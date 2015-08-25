@@ -23,14 +23,23 @@ module.exports = React.createClass({
         input.scrollLeft = input.scrollWidth;
     },
 
+    componentWillMount: function() {
+        //Has to be on mousedown because of possiblity of text selection
+        document.addEventListener('mousedown', this.onInputMouseDown);
+    },
+
+    componentDidUnmout: function() {
+        document.removeEventListener('mousedown', this.onInputMouseDown);
+    },
+
     onInputChange: function() {
         var inputEl = this.refs.input.getDOMNode();
         var value = inputEl.value;
         flux.actions.setInputValue(value);
-        this.onInputClick();
+        this.onInputMouseDown();
     },
 
-    onInputClick: function() {
+    onInputMouseDown: function() {
         var inputEl = this.refs.input.getDOMNode();
         flux.actions.setInputCursor(Utils.getCursor(inputEl));
     },
@@ -40,7 +49,7 @@ module.exports = React.createClass({
 
         return (
             <div id='daisywheel-input-container'>
-                <input ref="input" id='daisywheel-input' value={inputValue} onChange={this.onInputChange} onClick={this.onInputClick} type="text"/>
+                <input ref="input" id='daisywheel-input' value={inputValue} onChange={this.onInputChange} type="text"/>
             </div>
         );
     }

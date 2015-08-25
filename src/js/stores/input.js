@@ -155,7 +155,9 @@ module.exports = Fluxxor.createStore({
         start = start.substring(0, start.length - 1);
 
         this.value = start + valueParts.end;
-        this.cursor--;
+        if (this.cursor > 0) {
+            this.cursor--;
+        }
         this.emit('change');
     },
 

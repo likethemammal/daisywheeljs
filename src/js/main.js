@@ -4,6 +4,7 @@ var View = require('./jsx/View.js');
 var Fluxxor = require('fluxxor');
 var React = require('react');
 var app;
+var daisywheelDebug = daisywheelDebug || false;
 
 if (window && document) {
     Polyfills.init();
@@ -28,7 +29,7 @@ var flux = new Fluxxor.Flux(stores, actions);
 window.flux = flux;
 
 flux.on("dispatch", function(type, payload) {
-    if (console && console.log) {
+    if (console && console.log && daisywheelDebug) {
         console.log("[Dispatch]", type, payload);
     }
 });
