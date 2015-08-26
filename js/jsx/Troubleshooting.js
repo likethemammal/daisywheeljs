@@ -4,10 +4,17 @@ var controllerSupport = require('../json/controller-support');
 var ControllerTableRow = require('./ControllerTableRow');
 var EmptyPane = require('./EmptyPane');
 var Tabs = require('./Tabs');
+var MoreInfo = require('./MoreInfo');
 
 module.exports = React.createClass({
 	displayName: 'Troubleshooting',
+    propTypes: {
+        info: React.PropTypes.string,
+        controller: React.PropTypes.string,
+        onPopulateMoreInfo: React.PropTypes.func
+    },
     render: function() {
+        var populateMoreInfo = this.props.onPopulateMoreInfo;
         var titles = ['Windows', 'Linux', 'OSX'];
         var panes = _.map(titles, function(title, index) {
             var os = title.toLowerCase();
@@ -34,7 +41,7 @@ module.exports = React.createClass({
                 var browsers = controller[os];
 
                 if (browsers) {
-                    return <ControllerTableRow name={name} browserNames={listOfBrowsers} support={controller} key={name}/>
+                    return <ControllerTableRow name={name} browserNames={listOfBrowsers} support={browsers} key={name} moreInfoFunc={populateMoreInfo}/>
                 }
             });
 
@@ -58,6 +65,7 @@ module.exports = React.createClass({
         return (
 			<div className="troubleshooting">
                 <Tabs titles={titles} panes={panes} />
+                <MoreInfo info={this.props.info} controller={this.props.controller}/>
             </div>
         );
     }

@@ -9,10 +9,12 @@ module.exports = React.createClass({
                 'untested',
                 'not-supported'
             ]).isRequired,
-            more: React.PropTypes.string,
+            info: React.PropTypes.string,
             versions: React.PropTypes.array
         }).isRequired,
-        browserName: React.PropTypes.string
+        browserName: React.PropTypes.string,
+        moreInfoFunc: React.PropTypes.func.isRequired,
+        controllerName: React.PropTypes.string.isRequired
     },
     render: function() {
         var supportText = '';
@@ -35,8 +37,8 @@ module.exports = React.createClass({
         }
 
         return (
-			<td className={"controllerTableCell " + support} title={versions}>
-                {browser}
+			<td className={"controllerTableCell " + support} title={versions} onClick={this.props.moreInfoFunc.bind(null, browser.info, this.props.controllerName)}>
+                {supportText}
             </td>
         );
     }
