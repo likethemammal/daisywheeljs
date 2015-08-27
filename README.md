@@ -1,4 +1,4 @@
-daisywheeljs
+DaisywheelJS
 ============
 
 This is the code for the [DaisywheelJS promotional site](http://daisywheeljs.org). DaisywheelJS is the Steam "Big Picture" Daisywheel ported to JS and CSS. Supports Gamepad API.

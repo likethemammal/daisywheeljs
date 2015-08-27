@@ -1,3 +1,4 @@
+var Daisywheel = require('daisywheel');
 var React = require('react');
 var Troubleshooting = require('./jsx/Troubleshooting');
 
@@ -55,5 +56,3 @@ React.render(
     ),
     document.getElementById('troubleshooting-container')
 );
-
-//React.render(React.createElement(Troubleshooting), document.getElementById('troubleshooting-container'));

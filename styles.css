@@ -435,6 +435,71 @@ code pre {
     font-style: italic;
 }
 
+/*Community*/
+
+.community-cards {
+    text-align: center;
+}
+
+.community-card {
+    width: 49%;
+    display: inline-block;
+    padding: 11px;
+}
+
+#community-card-github {
+    float: right;
+    display: block;
+}
+
+.community-card h3 {
+    margin-top: 11px;
+}
+
+.community-img {
+    margin-bottom: 11px;
+    max-width: 120px;
+    display: inline-block;
+}
+
+.community-img a {
+    text-decoration: none;
+}
+
+.community-img a:hover {
+    text-decoration: none;
+}
+
+.community-img img {
+    max-width: 100%;
+}
+
+.community-link {
+    font-weight: bold;
+    margin-bottom: 11px;
+    font-size: 23px;
+}
+
+.community-summary {
+    text-align: left;
+    margin-left: 20%;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+
 @media only screen and (min-device-width: 1001px) {
     .ps3-girl {
         background-image: url(imgs/banner/ps3_girl_blur.jpg);
@@ -454,6 +519,15 @@ code pre {
         background-image: url(imgs/banner/1000px/xbox_white_hamster.jpg);
     }
 }
+
+@media only screen and (max-width: 900px) {
+    .community-card, #community-card-github {
+        width: 100%;
+        display: inline-block;
+        float: none;
+    }
+}
+
 
 @media only screen and (max-width: 490px) {
     h1 {
