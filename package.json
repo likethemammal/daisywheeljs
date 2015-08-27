@@ -4,17 +4,16 @@
   "description": "The site for DaisywheelJS",
   "main": "index.js",
   "dependencies": {
-    "browserify": "^10.2.6",
-    "fluxxor": "^1.7.1",
     "react": "^0.13.3",
-    "reactify": "^1.1.1",
     "underscore": "^1.8.3",
-    "watchify": "^3.3.1"
-  },
-  "devDependencies": {
     "daisywheel": "^0.1.3",
     "react-redux": "^1.0.1",
-    "redux": "^1.0.1",
+    "redux": "^1.0.1"
+  },
+  "devDependencies": {
+    "browserify": "^10.2.6",
+    "watchify": "^3.3.1",
+    "reactify": "^1.1.1",
     "uglifyify": "^3.0.1"
   },
   "scripts": {
