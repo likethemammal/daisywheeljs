@@ -3,14 +3,14 @@ DaisywheelJS
 
 The [Steam "Big Picture"](http://store.steampowered.com/bigpicture/) Daisywheel ported to Javascript and CSS. Works with the [Gamepad API](http://www.w3.org/TR/gamepad/), available in the latest modern browsers.
 
-####Note
+#### Note
 This interface is something every game with text input needs. Not a single game should present a *QWERTY* keyboard to a user with a controller in their hands. I ported this so that the growing HTML5 gaming community can use it in their games as a standard library in the user interface toolkit.
 
 ![DaisywheelJS Screenshot](http://imgur.com/087i4Rp.png)
 
 A live demo can be found [here](http://daisywheeljs.org)
 
-###Setup/Install/Documentation
+### Setup/Install/Documentation
 
 Instructions on use can be found at [daisywheeljs.org](http://daisywheeljs.org).
 
@@ -21,15 +21,15 @@ There you'll find:
  + [Documentation](http://daisywheeljs.org/#docs)
  + [Troubleshooting](http://daisywheeljs.org/#troubleshooting)
 
-###Patreon
+### Patreon
 
-####[https://patreon.com/daisywheeljs](https://www.patreon.com/daisywheeljs)####
+#### [https://patreon.com/daisywheeljs](https://www.patreon.com/daisywheeljs) ####
 
 ![Support on Patreon!](https://s3.amazonaws.com/patreon_public_assets/toolbox/patreon_logo.png)
 
 This project is funded through [Patreon](https://www.patreon.com), an ongoing crowd-funding site. [Check it out](https://www.patreon.com/daisywheeljs), and consider supporting Daisywheel's development. There you can find out more about the current status of the project through developer posts and community discussion. Pledging allows you to vote on **controller support** and **feature requests**, and gives access to **small-group chat** and **beta testing**.
 
-###Contributing
+### Contributing
 
 To setup your own build and/or contribute, pull down a clone of the repo. Run `npm install` to install dependencies. After making changes to either the daisywheel.js file or the `less` files run `gulp` and a build version of the files will be generated. The process should look like this:
 
@@ -45,15 +45,15 @@ gulp
 
 ```
 
-###Attributions
+### Attributions
 `gamepad-mod.js` interfaces with the browser API and organizes the data sent over in the controller's events. It was a modification of the `gamepad.js` library found in the example code for the [HTML5Rocks gamepad tester](http://www.html5rocks.com/en/tutorials/doodles/gamepad/), which can be found in its orginal form [here](https://github.com/html5rocks/www.html5rocks.com/blob/master/content/tutorials/doodles/gamepad/static/gamepad-tester/gamepad.js)
 
-##License
+## License
 This is licensed under the [MIT Open-source License](https://github.com/likethemammal/daisywheeljs/blob/master/LICENSE.txt).
 
 ---------------------
 
-####todo
+#### todo
  + multilanguage support
  + controller brand specific button images
  + complex actions (attach to a text editor like [Atom](https://atom.io/) or [Light Table](http://www.lighttable.com/))
