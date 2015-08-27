@@ -33,6 +33,7 @@ gulp.task('watch', function() {
     var watcher  = watchify(browserify({
         entries: [paths.ENTRY_POINT],
         transform: [reactify],
+        standalone: 'Daisywheel',
         debug: true,
         cache: {}, packageCache: {}, fullPaths: true
     }));
@@ -52,7 +53,8 @@ gulp.task('default', ['watch', 'css']);
 gulp.task('build', function(){
     browserify({
         entries: [paths.ENTRY_POINT],
-        transform: [reactify, uglifyify]
+        transform: [reactify, uglifyify],
+        standalone: 'Daisywheel'
     })
         .bundle()
         .pipe(source(paths.MINIFIED_OUT))
