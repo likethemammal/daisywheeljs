@@ -1,4 +1,4 @@
-(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.Daisywheel = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js":[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -90,7 +90,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/index.js":[function(require,module,exports){
+},{}],2:[function(require,module,exports){
 var Dispatcher = require("./lib/dispatcher"),
     Flux = require("./lib/flux"),
     FluxMixin = require("./lib/flux_mixin"),
@@ -110,7 +110,7 @@ var Fluxxor = {
 
 module.exports = Fluxxor;
 
-},{"./lib/create_store":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/lib/create_store.js","./lib/dispatcher":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/lib/dispatcher.js","./lib/flux":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/lib/flux.js","./lib/flux_child_mixin":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/lib/flux_child_mixin.js","./lib/flux_mixin":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/lib/flux_mixin.js","./lib/store_watch_mixin":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/lib/store_watch_mixin.js","./version":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/version.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/lib/create_store.js":[function(require,module,exports){
+},{"./lib/create_store":3,"./lib/dispatcher":4,"./lib/flux":5,"./lib/flux_child_mixin":6,"./lib/flux_mixin":7,"./lib/store_watch_mixin":9,"./version":98}],3:[function(require,module,exports){
 var _each = require("lodash/collection/forEach"),
     _isFunction = require("lodash/lang/isFunction"),
     Store = require("./store"),
@@ -152,7 +152,7 @@ var createStore = function(spec) {
 
 module.exports = createStore;
 
-},{"./store":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/lib/store.js","./util/inherits":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/lib/util/inherits.js","lodash/collection/forEach":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/collection/forEach.js","lodash/lang/isFunction":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isFunction.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/lib/dispatcher.js":[function(require,module,exports){
+},{"./store":8,"./util/inherits":10,"lodash/collection/forEach":15,"lodash/lang/isFunction":84}],4:[function(require,module,exports){
 var _clone = require("lodash/lang/clone"),
     _mapValues = require("lodash/object/mapValues"),
     _forOwn = require("lodash/object/forOwn"),
@@ -316,7 +316,7 @@ Dispatcher.prototype.setDispatchInterceptor = function(fn) {
 
 module.exports = Dispatcher;
 
-},{"lodash/array/intersection":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/array/intersection.js","lodash/array/uniq":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/array/uniq.js","lodash/collection/forEach":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/collection/forEach.js","lodash/collection/map":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/collection/map.js","lodash/collection/size":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/collection/size.js","lodash/lang/clone":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/clone.js","lodash/object/findKey":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/object/findKey.js","lodash/object/forOwn":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/object/forOwn.js","lodash/object/keys":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/object/keys.js","lodash/object/mapValues":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/object/mapValues.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/lib/flux.js":[function(require,module,exports){
+},{"lodash/array/intersection":12,"lodash/array/uniq":14,"lodash/collection/forEach":15,"lodash/collection/map":16,"lodash/collection/size":18,"lodash/lang/clone":81,"lodash/object/findKey":89,"lodash/object/forOwn":90,"lodash/object/keys":91,"lodash/object/mapValues":93}],5:[function(require,module,exports){
 var EventEmitter = require("eventemitter3"),
     inherits = require("./util/inherits"),
     objectPath = require("object-path"),
@@ -445,7 +445,7 @@ Flux.prototype.setDispatchInterceptor = function(fn) {
 
 module.exports = Flux;
 
-},{"./dispatcher":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/lib/dispatcher.js","./util/inherits":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/lib/util/inherits.js","eventemitter3":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/eventemitter3/index.js","lodash/collection/forEach":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/collection/forEach.js","lodash/collection/reduce":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/collection/reduce.js","lodash/lang/isFunction":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isFunction.js","lodash/lang/isString":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isString.js","object-path":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/object-path/index.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/lib/flux_child_mixin.js":[function(require,module,exports){
+},{"./dispatcher":4,"./util/inherits":10,"eventemitter3":11,"lodash/collection/forEach":15,"lodash/collection/reduce":17,"lodash/lang/isFunction":84,"lodash/lang/isString":87,"object-path":97}],6:[function(require,module,exports){
 var FluxChildMixin = function(React) {
   return {
     componentWillMount: function() {
@@ -474,7 +474,7 @@ FluxChildMixin.componentWillMount = function() {
 
 module.exports = FluxChildMixin;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/lib/flux_mixin.js":[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 var FluxMixin = function(React) {
   return {
     componentWillMount: function() {
@@ -511,7 +511,7 @@ FluxMixin.componentWillMount = function() {
 
 module.exports = FluxMixin;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/lib/store.js":[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 var EventEmitter = require("eventemitter3"),
     inherits = require("./util/inherits"),
     _isFunction = require("lodash/lang/isFunction"),
@@ -583,7 +583,7 @@ Store.prototype.waitFor = function(stores, fn) {
 
 module.exports = Store;
 
-},{"./util/inherits":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/lib/util/inherits.js","eventemitter3":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/eventemitter3/index.js","lodash/lang/isFunction":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isFunction.js","lodash/lang/isObject":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isObject.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/lib/store_watch_mixin.js":[function(require,module,exports){
+},{"./util/inherits":10,"eventemitter3":11,"lodash/lang/isFunction":84,"lodash/lang/isObject":86}],9:[function(require,module,exports){
 var _each = require("lodash/collection/forEach");
 
 var StoreWatchMixin = function() {
@@ -623,7 +623,7 @@ StoreWatchMixin.componentWillMount = function() {
 
 module.exports = StoreWatchMixin;
 
-},{"lodash/collection/forEach":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/collection/forEach.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/lib/util/inherits.js":[function(require,module,exports){
+},{"lodash/collection/forEach":15}],10:[function(require,module,exports){
 // From https://github.com/isaacs/inherits
 // inherits is licensed under the ISC license:
 //
@@ -668,7 +668,7 @@ if (typeof Object.create === 'function') {
   };
 }
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/eventemitter3/index.js":[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 'use strict';
 
 /**
@@ -899,7 +899,7 @@ EventEmitter.EventEmitter3 = EventEmitter;
 //
 module.exports = EventEmitter;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/array/intersection.js":[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 var baseIndexOf = require('../internal/baseIndexOf'),
     cacheIndexOf = require('../internal/cacheIndexOf'),
     createCache = require('../internal/createCache'),
@@ -959,7 +959,7 @@ var intersection = restParam(function(arrays) {
 
 module.exports = intersection;
 
-},{"../function/restParam":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/function/restParam.js","../internal/baseIndexOf":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseIndexOf.js","../internal/cacheIndexOf":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/cacheIndexOf.js","../internal/createCache":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/createCache.js","../internal/isArrayLike":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isArrayLike.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/array/last.js":[function(require,module,exports){
+},{"../function/restParam":19,"../internal/baseIndexOf":35,"../internal/cacheIndexOf":50,"../internal/createCache":54,"../internal/isArrayLike":70}],13:[function(require,module,exports){
 /**
  * Gets the last element of `array`.
  *
@@ -980,7 +980,7 @@ function last(array) {
 
 module.exports = last;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/array/uniq.js":[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 var baseCallback = require('../internal/baseCallback'),
     baseUniq = require('../internal/baseUniq'),
     isIterateeCall = require('../internal/isIterateeCall'),
@@ -1053,7 +1053,7 @@ function uniq(array, isSorted, iteratee, thisArg) {
 
 module.exports = uniq;
 
-},{"../internal/baseCallback":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseCallback.js","../internal/baseUniq":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseUniq.js","../internal/isIterateeCall":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isIterateeCall.js","../internal/sortedUniq":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/sortedUniq.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/collection/forEach.js":[function(require,module,exports){
+},{"../internal/baseCallback":27,"../internal/baseUniq":47,"../internal/isIterateeCall":72,"../internal/sortedUniq":78}],15:[function(require,module,exports){
 var arrayEach = require('../internal/arrayEach'),
     baseEach = require('../internal/baseEach'),
     createForEach = require('../internal/createForEach');
@@ -1092,7 +1092,7 @@ var forEach = createForEach(arrayEach, baseEach);
 
 module.exports = forEach;
 
-},{"../internal/arrayEach":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/arrayEach.js","../internal/baseEach":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseEach.js","../internal/createForEach":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/createForEach.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/collection/map.js":[function(require,module,exports){
+},{"../internal/arrayEach":22,"../internal/baseEach":30,"../internal/createForEach":56}],16:[function(require,module,exports){
 var arrayMap = require('../internal/arrayMap'),
     baseCallback = require('../internal/baseCallback'),
     baseMap = require('../internal/baseMap'),
@@ -1162,7 +1162,7 @@ function map(collection, iteratee, thisArg) {
 
 module.exports = map;
 
-},{"../internal/arrayMap":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/arrayMap.js","../internal/baseCallback":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseCallback.js","../internal/baseMap":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseMap.js","../lang/isArray":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isArray.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/collection/reduce.js":[function(require,module,exports){
+},{"../internal/arrayMap":23,"../internal/baseCallback":27,"../internal/baseMap":39,"../lang/isArray":83}],17:[function(require,module,exports){
 var arrayReduce = require('../internal/arrayReduce'),
     baseEach = require('../internal/baseEach'),
     createReduce = require('../internal/createReduce');
@@ -1208,7 +1208,7 @@ var reduce = createReduce(arrayReduce, baseEach);
 
 module.exports = reduce;
 
-},{"../internal/arrayReduce":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/arrayReduce.js","../internal/baseEach":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseEach.js","../internal/createReduce":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/createReduce.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/collection/size.js":[function(require,module,exports){
+},{"../internal/arrayReduce":24,"../internal/baseEach":30,"../internal/createReduce":59}],18:[function(require,module,exports){
 var getLength = require('../internal/getLength'),
     isLength = require('../internal/isLength'),
     keys = require('../object/keys');
@@ -1240,7 +1240,7 @@ function size(collection) {
 
 module.exports = size;
 
-},{"../internal/getLength":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/getLength.js","../internal/isLength":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isLength.js","../object/keys":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/object/keys.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/function/restParam.js":[function(require,module,exports){
+},{"../internal/getLength":63,"../internal/isLength":74,"../object/keys":91}],19:[function(require,module,exports){
 /** Used as the `TypeError` message for "Functions" methods. */
 var FUNC_ERROR_TEXT = 'Expected a function';
 
@@ -1300,7 +1300,7 @@ function restParam(func, start) {
 
 module.exports = restParam;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/SetCache.js":[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 (function (global){
 var cachePush = require('./cachePush'),
     getNative = require('./getNative');
@@ -1333,7 +1333,7 @@ SetCache.prototype.push = cachePush;
 module.exports = SetCache;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./cachePush":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/cachePush.js","./getNative":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/getNative.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/arrayCopy.js":[function(require,module,exports){
+},{"./cachePush":51,"./getNative":65}],21:[function(require,module,exports){
 /**
  * Copies the values of `source` to `array`.
  *
@@ -1355,7 +1355,7 @@ function arrayCopy(source, array) {
 
 module.exports = arrayCopy;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/arrayEach.js":[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 /**
  * A specialized version of `_.forEach` for arrays without support for callback
  * shorthands and `this` binding.
@@ -1379,7 +1379,7 @@ function arrayEach(array, iteratee) {
 
 module.exports = arrayEach;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/arrayMap.js":[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 /**
  * A specialized version of `_.map` for arrays without support for callback
  * shorthands and `this` binding.
@@ -1402,7 +1402,7 @@ function arrayMap(array, iteratee) {
 
 module.exports = arrayMap;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/arrayReduce.js":[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 /**
  * A specialized version of `_.reduce` for arrays without support for callback
  * shorthands and `this` binding.
@@ -1430,7 +1430,7 @@ function arrayReduce(array, iteratee, accumulator, initFromArray) {
 
 module.exports = arrayReduce;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/arraySome.js":[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 /**
  * A specialized version of `_.some` for arrays without support for callback
  * shorthands and `this` binding.
@@ -1455,7 +1455,7 @@ function arraySome(array, predicate) {
 
 module.exports = arraySome;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseAssign.js":[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 var baseCopy = require('./baseCopy'),
     keys = require('../object/keys');
 
@@ -1476,7 +1476,7 @@ function baseAssign(object, source) {
 
 module.exports = baseAssign;
 
-},{"../object/keys":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/object/keys.js","./baseCopy":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseCopy.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseCallback.js":[function(require,module,exports){
+},{"../object/keys":91,"./baseCopy":29}],27:[function(require,module,exports){
 var baseMatches = require('./baseMatches'),
     baseMatchesProperty = require('./baseMatchesProperty'),
     bindCallback = require('./bindCallback'),
@@ -1513,7 +1513,7 @@ function baseCallback(func, thisArg, argCount) {
 
 module.exports = baseCallback;
 
-},{"../utility/identity":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/utility/identity.js","../utility/property":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/utility/property.js","./baseMatches":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseMatches.js","./baseMatchesProperty":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseMatchesProperty.js","./bindCallback":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/bindCallback.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseClone.js":[function(require,module,exports){
+},{"../utility/identity":95,"../utility/property":96,"./baseMatches":40,"./baseMatchesProperty":41,"./bindCallback":48}],28:[function(require,module,exports){
 var arrayCopy = require('./arrayCopy'),
     arrayEach = require('./arrayEach'),
     baseAssign = require('./baseAssign'),
@@ -1643,7 +1643,7 @@ function baseClone(value, isDeep, customizer, key, object, stackA, stackB) {
 
 module.exports = baseClone;
 
-},{"../lang/isArray":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isArray.js","../lang/isObject":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isObject.js","./arrayCopy":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/arrayCopy.js","./arrayEach":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/arrayEach.js","./baseAssign":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseAssign.js","./baseForOwn":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseForOwn.js","./initCloneArray":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/initCloneArray.js","./initCloneByTag":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/initCloneByTag.js","./initCloneObject":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/initCloneObject.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseCopy.js":[function(require,module,exports){
+},{"../lang/isArray":83,"../lang/isObject":86,"./arrayCopy":21,"./arrayEach":22,"./baseAssign":26,"./baseForOwn":33,"./initCloneArray":67,"./initCloneByTag":68,"./initCloneObject":69}],29:[function(require,module,exports){
 /**
  * Copies properties of `source` to `object`.
  *
@@ -1668,7 +1668,7 @@ function baseCopy(source, props, object) {
 
 module.exports = baseCopy;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseEach.js":[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 var baseForOwn = require('./baseForOwn'),
     createBaseEach = require('./createBaseEach');
 
@@ -1685,7 +1685,7 @@ var baseEach = createBaseEach(baseForOwn);
 
 module.exports = baseEach;
 
-},{"./baseForOwn":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseForOwn.js","./createBaseEach":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/createBaseEach.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseFind.js":[function(require,module,exports){
+},{"./baseForOwn":33,"./createBaseEach":52}],31:[function(require,module,exports){
 /**
  * The base implementation of `_.find`, `_.findLast`, `_.findKey`, and `_.findLastKey`,
  * without support for callback shorthands and `this` binding, which iterates
@@ -1712,7 +1712,7 @@ function baseFind(collection, predicate, eachFunc, retKey) {
 
 module.exports = baseFind;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseFor.js":[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 var createBaseFor = require('./createBaseFor');
 
 /**
@@ -1731,7 +1731,7 @@ var baseFor = createBaseFor();
 
 module.exports = baseFor;
 
-},{"./createBaseFor":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/createBaseFor.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseForOwn.js":[function(require,module,exports){
+},{"./createBaseFor":53}],33:[function(require,module,exports){
 var baseFor = require('./baseFor'),
     keys = require('../object/keys');
 
@@ -1750,7 +1750,7 @@ function baseForOwn(object, iteratee) {
 
 module.exports = baseForOwn;
 
-},{"../object/keys":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/object/keys.js","./baseFor":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseFor.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseGet.js":[function(require,module,exports){
+},{"../object/keys":91,"./baseFor":32}],34:[function(require,module,exports){
 var toObject = require('./toObject');
 
 /**
@@ -1781,7 +1781,7 @@ function baseGet(object, path, pathKey) {
 
 module.exports = baseGet;
 
-},{"./toObject":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/toObject.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseIndexOf.js":[function(require,module,exports){
+},{"./toObject":79}],35:[function(require,module,exports){
 var indexOfNaN = require('./indexOfNaN');
 
 /**
@@ -1810,7 +1810,7 @@ function baseIndexOf(array, value, fromIndex) {
 
 module.exports = baseIndexOf;
 
-},{"./indexOfNaN":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/indexOfNaN.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseIsEqual.js":[function(require,module,exports){
+},{"./indexOfNaN":66}],36:[function(require,module,exports){
 var baseIsEqualDeep = require('./baseIsEqualDeep'),
     isObject = require('../lang/isObject'),
     isObjectLike = require('./isObjectLike');
@@ -1840,7 +1840,7 @@ function baseIsEqual(value, other, customizer, isLoose, stackA, stackB) {
 
 module.exports = baseIsEqual;
 
-},{"../lang/isObject":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isObject.js","./baseIsEqualDeep":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseIsEqualDeep.js","./isObjectLike":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isObjectLike.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseIsEqualDeep.js":[function(require,module,exports){
+},{"../lang/isObject":86,"./baseIsEqualDeep":37,"./isObjectLike":75}],37:[function(require,module,exports){
 var equalArrays = require('./equalArrays'),
     equalByTag = require('./equalByTag'),
     equalObjects = require('./equalObjects'),
@@ -1944,7 +1944,7 @@ function baseIsEqualDeep(object, other, equalFunc, customizer, isLoose, stackA, 
 
 module.exports = baseIsEqualDeep;
 
-},{"../lang/isArray":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isArray.js","../lang/isTypedArray":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isTypedArray.js","./equalArrays":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/equalArrays.js","./equalByTag":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/equalByTag.js","./equalObjects":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/equalObjects.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseIsMatch.js":[function(require,module,exports){
+},{"../lang/isArray":83,"../lang/isTypedArray":88,"./equalArrays":60,"./equalByTag":61,"./equalObjects":62}],38:[function(require,module,exports){
 var baseIsEqual = require('./baseIsEqual'),
     toObject = require('./toObject');
 
@@ -1998,7 +1998,7 @@ function baseIsMatch(object, matchData, customizer) {
 
 module.exports = baseIsMatch;
 
-},{"./baseIsEqual":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseIsEqual.js","./toObject":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/toObject.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseMap.js":[function(require,module,exports){
+},{"./baseIsEqual":36,"./toObject":79}],39:[function(require,module,exports){
 var baseEach = require('./baseEach'),
     isArrayLike = require('./isArrayLike');
 
@@ -2023,7 +2023,7 @@ function baseMap(collection, iteratee) {
 
 module.exports = baseMap;
 
-},{"./baseEach":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseEach.js","./isArrayLike":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isArrayLike.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseMatches.js":[function(require,module,exports){
+},{"./baseEach":30,"./isArrayLike":70}],40:[function(require,module,exports){
 var baseIsMatch = require('./baseIsMatch'),
     getMatchData = require('./getMatchData'),
     toObject = require('./toObject');
@@ -2055,7 +2055,7 @@ function baseMatches(source) {
 
 module.exports = baseMatches;
 
-},{"./baseIsMatch":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseIsMatch.js","./getMatchData":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/getMatchData.js","./toObject":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/toObject.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseMatchesProperty.js":[function(require,module,exports){
+},{"./baseIsMatch":38,"./getMatchData":64,"./toObject":79}],41:[function(require,module,exports){
 var baseGet = require('./baseGet'),
     baseIsEqual = require('./baseIsEqual'),
     baseSlice = require('./baseSlice'),
@@ -2102,7 +2102,7 @@ function baseMatchesProperty(path, srcValue) {
 
 module.exports = baseMatchesProperty;
 
-},{"../array/last":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/array/last.js","../lang/isArray":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isArray.js","./baseGet":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseGet.js","./baseIsEqual":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseIsEqual.js","./baseSlice":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseSlice.js","./isKey":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isKey.js","./isStrictComparable":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isStrictComparable.js","./toObject":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/toObject.js","./toPath":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/toPath.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseProperty.js":[function(require,module,exports){
+},{"../array/last":13,"../lang/isArray":83,"./baseGet":34,"./baseIsEqual":36,"./baseSlice":45,"./isKey":73,"./isStrictComparable":76,"./toObject":79,"./toPath":80}],42:[function(require,module,exports){
 /**
  * The base implementation of `_.property` without support for deep paths.
  *
@@ -2118,7 +2118,7 @@ function baseProperty(key) {
 
 module.exports = baseProperty;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/basePropertyDeep.js":[function(require,module,exports){
+},{}],43:[function(require,module,exports){
 var baseGet = require('./baseGet'),
     toPath = require('./toPath');
 
@@ -2139,7 +2139,7 @@ function basePropertyDeep(path) {
 
 module.exports = basePropertyDeep;
 
-},{"./baseGet":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseGet.js","./toPath":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/toPath.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseReduce.js":[function(require,module,exports){
+},{"./baseGet":34,"./toPath":80}],44:[function(require,module,exports){
 /**
  * The base implementation of `_.reduce` and `_.reduceRight` without support
  * for callback shorthands and `this` binding, which iterates over `collection`
@@ -2165,7 +2165,7 @@ function baseReduce(collection, iteratee, accumulator, initFromCollection, eachF
 
 module.exports = baseReduce;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseSlice.js":[function(require,module,exports){
+},{}],45:[function(require,module,exports){
 /**
  * The base implementation of `_.slice` without an iteratee call guard.
  *
@@ -2199,7 +2199,7 @@ function baseSlice(array, start, end) {
 
 module.exports = baseSlice;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseToString.js":[function(require,module,exports){
+},{}],46:[function(require,module,exports){
 /**
  * Converts `value` to a string if it's not one. An empty string is returned
  * for `null` or `undefined` values.
@@ -2214,7 +2214,7 @@ function baseToString(value) {
 
 module.exports = baseToString;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseUniq.js":[function(require,module,exports){
+},{}],47:[function(require,module,exports){
 var baseIndexOf = require('./baseIndexOf'),
     cacheIndexOf = require('./cacheIndexOf'),
     createCache = require('./createCache');
@@ -2276,7 +2276,7 @@ function baseUniq(array, iteratee) {
 
 module.exports = baseUniq;
 
-},{"./baseIndexOf":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseIndexOf.js","./cacheIndexOf":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/cacheIndexOf.js","./createCache":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/createCache.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/bindCallback.js":[function(require,module,exports){
+},{"./baseIndexOf":35,"./cacheIndexOf":50,"./createCache":54}],48:[function(require,module,exports){
 var identity = require('../utility/identity');
 
 /**
@@ -2317,7 +2317,7 @@ function bindCallback(func, thisArg, argCount) {
 
 module.exports = bindCallback;
 
-},{"../utility/identity":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/utility/identity.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/bufferClone.js":[function(require,module,exports){
+},{"../utility/identity":95}],49:[function(require,module,exports){
 (function (global){
 /** Native method references. */
 var ArrayBuffer = global.ArrayBuffer,
@@ -2341,7 +2341,7 @@ function bufferClone(buffer) {
 module.exports = bufferClone;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/cacheIndexOf.js":[function(require,module,exports){
+},{}],50:[function(require,module,exports){
 var isObject = require('../lang/isObject');
 
 /**
@@ -2362,7 +2362,7 @@ function cacheIndexOf(cache, value) {
 
 module.exports = cacheIndexOf;
 
-},{"../lang/isObject":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isObject.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/cachePush.js":[function(require,module,exports){
+},{"../lang/isObject":86}],51:[function(require,module,exports){
 var isObject = require('../lang/isObject');
 
 /**
@@ -2384,7 +2384,7 @@ function cachePush(value) {
 
 module.exports = cachePush;
 
-},{"../lang/isObject":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isObject.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/createBaseEach.js":[function(require,module,exports){
+},{"../lang/isObject":86}],52:[function(require,module,exports){
 var getLength = require('./getLength'),
     isLength = require('./isLength'),
     toObject = require('./toObject');
@@ -2417,7 +2417,7 @@ function createBaseEach(eachFunc, fromRight) {
 
 module.exports = createBaseEach;
 
-},{"./getLength":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/getLength.js","./isLength":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isLength.js","./toObject":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/toObject.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/createBaseFor.js":[function(require,module,exports){
+},{"./getLength":63,"./isLength":74,"./toObject":79}],53:[function(require,module,exports){
 var toObject = require('./toObject');
 
 /**
@@ -2446,7 +2446,7 @@ function createBaseFor(fromRight) {
 
 module.exports = createBaseFor;
 
-},{"./toObject":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/toObject.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/createCache.js":[function(require,module,exports){
+},{"./toObject":79}],54:[function(require,module,exports){
 (function (global){
 var SetCache = require('./SetCache'),
     getNative = require('./getNative');
@@ -2471,7 +2471,7 @@ function createCache(values) {
 module.exports = createCache;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./SetCache":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/SetCache.js","./getNative":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/getNative.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/createFindKey.js":[function(require,module,exports){
+},{"./SetCache":20,"./getNative":65}],55:[function(require,module,exports){
 var baseCallback = require('./baseCallback'),
     baseFind = require('./baseFind');
 
@@ -2491,7 +2491,7 @@ function createFindKey(objectFunc) {
 
 module.exports = createFindKey;
 
-},{"./baseCallback":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseCallback.js","./baseFind":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseFind.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/createForEach.js":[function(require,module,exports){
+},{"./baseCallback":27,"./baseFind":31}],56:[function(require,module,exports){
 var bindCallback = require('./bindCallback'),
     isArray = require('../lang/isArray');
 
@@ -2513,7 +2513,7 @@ function createForEach(arrayFunc, eachFunc) {
 
 module.exports = createForEach;
 
-},{"../lang/isArray":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isArray.js","./bindCallback":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/bindCallback.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/createForOwn.js":[function(require,module,exports){
+},{"../lang/isArray":83,"./bindCallback":48}],57:[function(require,module,exports){
 var bindCallback = require('./bindCallback');
 
 /**
@@ -2534,7 +2534,7 @@ function createForOwn(objectFunc) {
 
 module.exports = createForOwn;
 
-},{"./bindCallback":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/bindCallback.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/createObjectMapper.js":[function(require,module,exports){
+},{"./bindCallback":48}],58:[function(require,module,exports){
 var baseCallback = require('./baseCallback'),
     baseForOwn = require('./baseForOwn');
 
@@ -2562,7 +2562,7 @@ function createObjectMapper(isMapKeys) {
 
 module.exports = createObjectMapper;
 
-},{"./baseCallback":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseCallback.js","./baseForOwn":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseForOwn.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/createReduce.js":[function(require,module,exports){
+},{"./baseCallback":27,"./baseForOwn":33}],59:[function(require,module,exports){
 var baseCallback = require('./baseCallback'),
     baseReduce = require('./baseReduce'),
     isArray = require('../lang/isArray');
@@ -2586,7 +2586,7 @@ function createReduce(arrayFunc, eachFunc) {
 
 module.exports = createReduce;
 
-},{"../lang/isArray":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isArray.js","./baseCallback":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseCallback.js","./baseReduce":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseReduce.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/equalArrays.js":[function(require,module,exports){
+},{"../lang/isArray":83,"./baseCallback":27,"./baseReduce":44}],60:[function(require,module,exports){
 var arraySome = require('./arraySome');
 
 /**
@@ -2639,7 +2639,7 @@ function equalArrays(array, other, equalFunc, customizer, isLoose, stackA, stack
 
 module.exports = equalArrays;
 
-},{"./arraySome":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/arraySome.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/equalByTag.js":[function(require,module,exports){
+},{"./arraySome":25}],61:[function(require,module,exports){
 /** `Object#toString` result references. */
 var boolTag = '[object Boolean]',
     dateTag = '[object Date]',
@@ -2689,7 +2689,7 @@ function equalByTag(object, other, tag) {
 
 module.exports = equalByTag;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/equalObjects.js":[function(require,module,exports){
+},{}],62:[function(require,module,exports){
 var keys = require('../object/keys');
 
 /** Used for native method references. */
@@ -2758,7 +2758,7 @@ function equalObjects(object, other, equalFunc, customizer, isLoose, stackA, sta
 
 module.exports = equalObjects;
 
-},{"../object/keys":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/object/keys.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/getLength.js":[function(require,module,exports){
+},{"../object/keys":91}],63:[function(require,module,exports){
 var baseProperty = require('./baseProperty');
 
 /**
@@ -2775,7 +2775,7 @@ var getLength = baseProperty('length');
 
 module.exports = getLength;
 
-},{"./baseProperty":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseProperty.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/getMatchData.js":[function(require,module,exports){
+},{"./baseProperty":42}],64:[function(require,module,exports){
 var isStrictComparable = require('./isStrictComparable'),
     pairs = require('../object/pairs');
 
@@ -2798,7 +2798,7 @@ function getMatchData(object) {
 
 module.exports = getMatchData;
 
-},{"../object/pairs":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/object/pairs.js","./isStrictComparable":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isStrictComparable.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/getNative.js":[function(require,module,exports){
+},{"../object/pairs":94,"./isStrictComparable":76}],65:[function(require,module,exports){
 var isNative = require('../lang/isNative');
 
 /**
@@ -2816,7 +2816,7 @@ function getNative(object, key) {
 
 module.exports = getNative;
 
-},{"../lang/isNative":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isNative.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/indexOfNaN.js":[function(require,module,exports){
+},{"../lang/isNative":85}],66:[function(require,module,exports){
 /**
  * Gets the index at which the first occurrence of `NaN` is found in `array`.
  *
@@ -2841,7 +2841,7 @@ function indexOfNaN(array, fromIndex, fromRight) {
 
 module.exports = indexOfNaN;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/initCloneArray.js":[function(require,module,exports){
+},{}],67:[function(require,module,exports){
 /** Used for native method references. */
 var objectProto = Object.prototype;
 
@@ -2869,7 +2869,7 @@ function initCloneArray(array) {
 
 module.exports = initCloneArray;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/initCloneByTag.js":[function(require,module,exports){
+},{}],68:[function(require,module,exports){
 var bufferClone = require('./bufferClone');
 
 /** `Object#toString` result references. */
@@ -2934,7 +2934,7 @@ function initCloneByTag(object, tag, isDeep) {
 
 module.exports = initCloneByTag;
 
-},{"./bufferClone":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/bufferClone.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/initCloneObject.js":[function(require,module,exports){
+},{"./bufferClone":49}],69:[function(require,module,exports){
 /**
  * Initializes an object clone.
  *
@@ -2952,7 +2952,7 @@ function initCloneObject(object) {
 
 module.exports = initCloneObject;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isArrayLike.js":[function(require,module,exports){
+},{}],70:[function(require,module,exports){
 var getLength = require('./getLength'),
     isLength = require('./isLength');
 
@@ -2969,7 +2969,7 @@ function isArrayLike(value) {
 
 module.exports = isArrayLike;
 
-},{"./getLength":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/getLength.js","./isLength":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isLength.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isIndex.js":[function(require,module,exports){
+},{"./getLength":63,"./isLength":74}],71:[function(require,module,exports){
 /** Used to detect unsigned integer values. */
 var reIsUint = /^\d+$/;
 
@@ -2995,7 +2995,7 @@ function isIndex(value, length) {
 
 module.exports = isIndex;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isIterateeCall.js":[function(require,module,exports){
+},{}],72:[function(require,module,exports){
 var isArrayLike = require('./isArrayLike'),
     isIndex = require('./isIndex'),
     isObject = require('../lang/isObject');
@@ -3025,7 +3025,7 @@ function isIterateeCall(value, index, object) {
 
 module.exports = isIterateeCall;
 
-},{"../lang/isObject":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isObject.js","./isArrayLike":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isArrayLike.js","./isIndex":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isIndex.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isKey.js":[function(require,module,exports){
+},{"../lang/isObject":86,"./isArrayLike":70,"./isIndex":71}],73:[function(require,module,exports){
 var isArray = require('../lang/isArray'),
     toObject = require('./toObject');
 
@@ -3055,7 +3055,7 @@ function isKey(value, object) {
 
 module.exports = isKey;
 
-},{"../lang/isArray":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isArray.js","./toObject":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/toObject.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isLength.js":[function(require,module,exports){
+},{"../lang/isArray":83,"./toObject":79}],74:[function(require,module,exports){
 /**
  * Used as the [maximum length](http://ecma-international.org/ecma-262/6.0/#sec-number.max_safe_integer)
  * of an array-like value.
@@ -3077,7 +3077,7 @@ function isLength(value) {
 
 module.exports = isLength;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isObjectLike.js":[function(require,module,exports){
+},{}],75:[function(require,module,exports){
 /**
  * Checks if `value` is object-like.
  *
@@ -3091,7 +3091,7 @@ function isObjectLike(value) {
 
 module.exports = isObjectLike;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isStrictComparable.js":[function(require,module,exports){
+},{}],76:[function(require,module,exports){
 var isObject = require('../lang/isObject');
 
 /**
@@ -3108,7 +3108,7 @@ function isStrictComparable(value) {
 
 module.exports = isStrictComparable;
 
-},{"../lang/isObject":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isObject.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/shimKeys.js":[function(require,module,exports){
+},{"../lang/isObject":86}],77:[function(require,module,exports){
 var isArguments = require('../lang/isArguments'),
     isArray = require('../lang/isArray'),
     isIndex = require('./isIndex'),
@@ -3151,7 +3151,7 @@ function shimKeys(object) {
 
 module.exports = shimKeys;
 
-},{"../lang/isArguments":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isArguments.js","../lang/isArray":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isArray.js","../object/keysIn":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/object/keysIn.js","./isIndex":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isIndex.js","./isLength":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isLength.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/sortedUniq.js":[function(require,module,exports){
+},{"../lang/isArguments":82,"../lang/isArray":83,"../object/keysIn":92,"./isIndex":71,"./isLength":74}],78:[function(require,module,exports){
 /**
  * An implementation of `_.uniq` optimized for sorted arrays without support
  * for callback shorthands and `this` binding.
@@ -3182,7 +3182,7 @@ function sortedUniq(array, iteratee) {
 
 module.exports = sortedUniq;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/toObject.js":[function(require,module,exports){
+},{}],79:[function(require,module,exports){
 var isObject = require('../lang/isObject');
 
 /**
@@ -3198,7 +3198,7 @@ function toObject(value) {
 
 module.exports = toObject;
 
-},{"../lang/isObject":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isObject.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/toPath.js":[function(require,module,exports){
+},{"../lang/isObject":86}],80:[function(require,module,exports){
 var baseToString = require('./baseToString'),
     isArray = require('../lang/isArray');
 
@@ -3228,7 +3228,7 @@ function toPath(value) {
 
 module.exports = toPath;
 
-},{"../lang/isArray":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isArray.js","./baseToString":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseToString.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/clone.js":[function(require,module,exports){
+},{"../lang/isArray":83,"./baseToString":46}],81:[function(require,module,exports){
 var baseClone = require('../internal/baseClone'),
     bindCallback = require('../internal/bindCallback'),
     isIterateeCall = require('../internal/isIterateeCall');
@@ -3300,7 +3300,7 @@ function clone(value, isDeep, customizer, thisArg) {
 
 module.exports = clone;
 
-},{"../internal/baseClone":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseClone.js","../internal/bindCallback":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/bindCallback.js","../internal/isIterateeCall":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isIterateeCall.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isArguments.js":[function(require,module,exports){
+},{"../internal/baseClone":28,"../internal/bindCallback":48,"../internal/isIterateeCall":72}],82:[function(require,module,exports){
 var isArrayLike = require('../internal/isArrayLike'),
     isObjectLike = require('../internal/isObjectLike');
 
@@ -3336,7 +3336,7 @@ function isArguments(value) {
 
 module.exports = isArguments;
 
-},{"../internal/isArrayLike":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isArrayLike.js","../internal/isObjectLike":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isObjectLike.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isArray.js":[function(require,module,exports){
+},{"../internal/isArrayLike":70,"../internal/isObjectLike":75}],83:[function(require,module,exports){
 var getNative = require('../internal/getNative'),
     isLength = require('../internal/isLength'),
     isObjectLike = require('../internal/isObjectLike');
@@ -3378,7 +3378,7 @@ var isArray = nativeIsArray || function(value) {
 
 module.exports = isArray;
 
-},{"../internal/getNative":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/getNative.js","../internal/isLength":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isLength.js","../internal/isObjectLike":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isObjectLike.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isFunction.js":[function(require,module,exports){
+},{"../internal/getNative":65,"../internal/isLength":74,"../internal/isObjectLike":75}],84:[function(require,module,exports){
 var isObject = require('./isObject');
 
 /** `Object#toString` result references. */
@@ -3418,7 +3418,7 @@ function isFunction(value) {
 
 module.exports = isFunction;
 
-},{"./isObject":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isObject.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isNative.js":[function(require,module,exports){
+},{"./isObject":86}],85:[function(require,module,exports){
 var isFunction = require('./isFunction'),
     isObjectLike = require('../internal/isObjectLike');
 
@@ -3468,7 +3468,7 @@ function isNative(value) {
 
 module.exports = isNative;
 
-},{"../internal/isObjectLike":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isObjectLike.js","./isFunction":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isFunction.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isObject.js":[function(require,module,exports){
+},{"../internal/isObjectLike":75,"./isFunction":84}],86:[function(require,module,exports){
 /**
  * Checks if `value` is the [language type](https://es5.github.io/#x8) of `Object`.
  * (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
@@ -3498,7 +3498,7 @@ function isObject(value) {
 
 module.exports = isObject;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isString.js":[function(require,module,exports){
+},{}],87:[function(require,module,exports){
 var isObjectLike = require('../internal/isObjectLike');
 
 /** `Object#toString` result references. */
@@ -3535,7 +3535,7 @@ function isString(value) {
 
 module.exports = isString;
 
-},{"../internal/isObjectLike":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isObjectLike.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isTypedArray.js":[function(require,module,exports){
+},{"../internal/isObjectLike":75}],88:[function(require,module,exports){
 var isLength = require('../internal/isLength'),
     isObjectLike = require('../internal/isObjectLike');
 
@@ -3611,7 +3611,7 @@ function isTypedArray(value) {
 
 module.exports = isTypedArray;
 
-},{"../internal/isLength":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isLength.js","../internal/isObjectLike":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isObjectLike.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/object/findKey.js":[function(require,module,exports){
+},{"../internal/isLength":74,"../internal/isObjectLike":75}],89:[function(require,module,exports){
 var baseForOwn = require('../internal/baseForOwn'),
     createFindKey = require('../internal/createFindKey');
 
@@ -3667,7 +3667,7 @@ var findKey = createFindKey(baseForOwn);
 
 module.exports = findKey;
 
-},{"../internal/baseForOwn":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseForOwn.js","../internal/createFindKey":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/createFindKey.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/object/forOwn.js":[function(require,module,exports){
+},{"../internal/baseForOwn":33,"../internal/createFindKey":55}],90:[function(require,module,exports){
 var baseForOwn = require('../internal/baseForOwn'),
     createForOwn = require('../internal/createForOwn');
 
@@ -3702,7 +3702,7 @@ var forOwn = createForOwn(baseForOwn);
 
 module.exports = forOwn;
 
-},{"../internal/baseForOwn":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseForOwn.js","../internal/createForOwn":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/createForOwn.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/object/keys.js":[function(require,module,exports){
+},{"../internal/baseForOwn":33,"../internal/createForOwn":57}],91:[function(require,module,exports){
 var getNative = require('../internal/getNative'),
     isArrayLike = require('../internal/isArrayLike'),
     isObject = require('../lang/isObject'),
@@ -3749,7 +3749,7 @@ var keys = !nativeKeys ? shimKeys : function(object) {
 
 module.exports = keys;
 
-},{"../internal/getNative":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/getNative.js","../internal/isArrayLike":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isArrayLike.js","../internal/shimKeys":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/shimKeys.js","../lang/isObject":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isObject.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/object/keysIn.js":[function(require,module,exports){
+},{"../internal/getNative":65,"../internal/isArrayLike":70,"../internal/shimKeys":77,"../lang/isObject":86}],92:[function(require,module,exports){
 var isArguments = require('../lang/isArguments'),
     isArray = require('../lang/isArray'),
     isIndex = require('../internal/isIndex'),
@@ -3815,7 +3815,7 @@ function keysIn(object) {
 
 module.exports = keysIn;
 
-},{"../internal/isIndex":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isIndex.js","../internal/isLength":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isLength.js","../lang/isArguments":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isArguments.js","../lang/isArray":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isArray.js","../lang/isObject":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/lang/isObject.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/object/mapValues.js":[function(require,module,exports){
+},{"../internal/isIndex":71,"../internal/isLength":74,"../lang/isArguments":82,"../lang/isArray":83,"../lang/isObject":86}],93:[function(require,module,exports){
 var createObjectMapper = require('../internal/createObjectMapper');
 
 /**
@@ -3863,7 +3863,7 @@ var mapValues = createObjectMapper();
 
 module.exports = mapValues;
 
-},{"../internal/createObjectMapper":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/createObjectMapper.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/object/pairs.js":[function(require,module,exports){
+},{"../internal/createObjectMapper":58}],94:[function(require,module,exports){
 var keys = require('./keys'),
     toObject = require('../internal/toObject');
 
@@ -3898,7 +3898,7 @@ function pairs(object) {
 
 module.exports = pairs;
 
-},{"../internal/toObject":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/toObject.js","./keys":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/object/keys.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/utility/identity.js":[function(require,module,exports){
+},{"../internal/toObject":79,"./keys":91}],95:[function(require,module,exports){
 /**
  * This method returns the first argument provided to it.
  *
@@ -3920,7 +3920,7 @@ function identity(value) {
 
 module.exports = identity;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/utility/property.js":[function(require,module,exports){
+},{}],96:[function(require,module,exports){
 var baseProperty = require('../internal/baseProperty'),
     basePropertyDeep = require('../internal/basePropertyDeep'),
     isKey = require('../internal/isKey');
@@ -3953,7 +3953,7 @@ function property(path) {
 
 module.exports = property;
 
-},{"../internal/baseProperty":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/baseProperty.js","../internal/basePropertyDeep":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/basePropertyDeep.js","../internal/isKey":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/lodash/internal/isKey.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/node_modules/object-path/index.js":[function(require,module,exports){
+},{"../internal/baseProperty":42,"../internal/basePropertyDeep":43,"../internal/isKey":73}],97:[function(require,module,exports){
 (function (root, factory){
   'use strict';
 
@@ -4195,16 +4195,16 @@ module.exports = property;
 
   return objectPath;
 });
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/version.js":[function(require,module,exports){
+},{}],98:[function(require,module,exports){
 module.exports = "1.7.1"
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/gamepad-micro/dist/gamepad-micro.min.js":[function(require,module,exports){
+},{}],99:[function(require,module,exports){
 (function (global){
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.GamepadMicro = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 function GamepadMicro(){this._buttonNames=["actionSouth","actionEast","actionWest","actionNorth","leftBumper","rightBumper","leftTrigger","rightTrigger","select","start","leftStick","rightStick","dPadUp","dPadDown","dPadLeft","dPadRight","extra"],this.reset()}function _newGamepad(){return{leftStick:{x:0,y:0},rightStick:{x:0,y:0},dPad:{x:0,y:0},buttons:{},_pressed:{},timestamp:0}}function _getRawGamepads(){var t=navigator.getGamepads&&navigator.getGamepads()||navigator.webkitGetGamepads&&navigator.webkitGetGamepads(),e=[];if(t)for(var a=0,i=t.length;i>a;a++){var n=t[a];n&&"standard"===n.mapping&&e.push(n)}return e}function _buttonPressed(t,e){if(!t||!t.buttons||e>=t.buttons.length)return!1;var a,i=t.buttons[e];return i?(a=i,"object"==typeof i&&(a=i.value),1===a):!1}function _gamepadSupported(){return navigator.getGamepads||!!navigator.webkitGetGamepads||!!navigator.webkitGamepads}GamepadMicro.prototype.reset=function(){this._ticking=!1,this._prevTimestamps=[],this._connectionListening=!1,this._updateCallback=function(){},this._prevRawGamepadTypes=[],this.gamepadconnected=_getRawGamepads.length>0,this.gamepadConnected=!!this.gamepadconnected,this.gamepadSupported=!!_gamepadSupported(),this.gamepads=[],this._heldButtonDelay=200,this._heldTimestampByGamepad={}},GamepadMicro.prototype.onUpdate=function(t){this._updateCallback=t,this._checkForEvents(),this._setupPoll()},GamepadMicro.prototype.offUpdate=function(){this._shouldRemoveEvents(),this._removePoll()},GamepadMicro.prototype.update=function(){this._updateCallback(this.gamepads)},GamepadMicro.prototype._checkForEvents=function(){this._connectionListening||(window.addEventListener("gamepadconnected",this._onGamepadConnected.bind(this),!1),window.addEventListener("gamepaddisconnected",this._onGamepadDisconnected.bind(this),!1),this._connectionListening=!0)},GamepadMicro.prototype._shouldRemoveEvents=function(){this._connectionListening&&(window.removeEventListener("gamepadconnected",this._onGamepadConnected.bind(this)),window.removeEventListener("gamepaddisconnected",this._onGamepadDisconnected.bind(this)),this._connectionListening=!1)},GamepadMicro.prototype._onGamepadConnected=function(t){var e=t.gamepad;"standard"===e.mapping&&(this.gamepads[e.index]=_newGamepad(),this.gamepadconnected=!0,this.update())},GamepadMicro.prototype._onGamepadDisconnected=function(t){var e=t.gamepad,a=this.gamepads;a.forEach(function(t,i){i===e.index&&a.splice(i,1)}),a.length||(this.gamepadconnected=!1),this.update()},GamepadMicro.prototype._checkForGamepadChange=function(){for(var t=_getRawGamepads(),e=!1,a={},i=0,n=0;n<t.length;n++){var o=t[n];i=o.index,o.timestamp&&o.timestamp===this._prevTimestamps[i]||(this._prevTimestamps[i]=o.timestamp,a[i]=o,e=!0)}return e?a:!1},GamepadMicro.prototype._poll=function(){var t=this._checkForGamepadChange();if(t){this.gamepadconnected=!0,this.gamepadConnected=!0,this.gamepadSupported=!0;var e=!1,a=this.gamepads,i=this._buttonNames;Object.keys(t).map(function(n){var o=t[n];if(o){typeof o!=this._prevRawGamepadTypes[n]&&(e=!0,this._prevRawGamepadTypes[n]=typeof d);for(var s={},d=a[n]||_newGamepad(),p=this._heldTimestampByGamepad[n]||{},r=0,m=i.length;m>r;r++){var c=i[r],h=!!d._pressed[c],u=d._pressed[c]=_buttonPressed(o,r);h&&!u?(s[c]={released:!0,held:!1},p&&(p[c]=!1)):u&&(p[c]?o.timestamp>p[c]+this._heldButtonDelay&&(s[c]={held:!0}):p[c]=o.timestamp)}this._heldTimestampByGamepad[n]=p,d.timestamp=o.timestamp,d.buttons=s,d.leftStick.x=o.axes[0],d.leftStick.y=o.axes[1],d.rightStick.x=o.axes[2],d.rightStick.y=o.axes[3],d.dPad.x=(d.buttons.dPadLeft?-1:0)+(d.buttons.dPadRight?1:0),d.dPad.y=(d.buttons.dPadUp?-1:0)+(d.buttons.dPadDown?1:0),this.gamepads[n]=d}}.bind(this)),this.update()}},GamepadMicro.prototype._setupPoll=function(){this._ticking||(this._ticking=!0,this._tick())},GamepadMicro.prototype._tick=function(){var t=GamepadMicro.prototype._tick.bind(this);this._poll(),this._ticking&&(window.requestAnimationFrame?window.requestAnimationFrame(t):window.mozRequestAnimationFrame?window.mozRequestAnimationFrame(t):window.webkitRequestAnimationFrame&&window.webkitRequestAnimationFrame(t))},GamepadMicro.prototype._removePoll=function(){this._ticking=!1},module.exports=GamepadMicro;
 },{}]},{},[1])(1)
 });
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/AutoFocusMixin.js":[function(require,module,exports){
+},{}],100:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -4231,7 +4231,7 @@ var AutoFocusMixin = {
 
 module.exports = AutoFocusMixin;
 
-},{"./focusNode":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/focusNode.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/BeforeInputEventPlugin.js":[function(require,module,exports){
+},{"./focusNode":218}],101:[function(require,module,exports){
 /**
  * Copyright 2013-2015 Facebook, Inc.
  * All rights reserved.
@@ -4726,7 +4726,7 @@ var BeforeInputEventPlugin = {
 
 module.exports = BeforeInputEventPlugin;
 
-},{"./EventConstants":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventConstants.js","./EventPropagators":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventPropagators.js","./ExecutionEnvironment":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ExecutionEnvironment.js","./FallbackCompositionState":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/FallbackCompositionState.js","./SyntheticCompositionEvent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticCompositionEvent.js","./SyntheticInputEvent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticInputEvent.js","./keyOf":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/keyOf.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/CSSProperty.js":[function(require,module,exports){
+},{"./EventConstants":113,"./EventPropagators":118,"./ExecutionEnvironment":119,"./FallbackCompositionState":120,"./SyntheticCompositionEvent":192,"./SyntheticInputEvent":196,"./keyOf":240}],102:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -4851,7 +4851,7 @@ var CSSProperty = {
 
 module.exports = CSSProperty;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/CSSPropertyOperations.js":[function(require,module,exports){
+},{}],103:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -5033,7 +5033,7 @@ var CSSPropertyOperations = {
 module.exports = CSSPropertyOperations;
 
 }).call(this,require('_process'))
-},{"./CSSProperty":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/CSSProperty.js","./ExecutionEnvironment":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ExecutionEnvironment.js","./camelizeStyleName":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/camelizeStyleName.js","./dangerousStyleValue":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/dangerousStyleValue.js","./hyphenateStyleName":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/hyphenateStyleName.js","./memoizeStringOnly":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/memoizeStringOnly.js","./warning":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/warning.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/CallbackQueue.js":[function(require,module,exports){
+},{"./CSSProperty":102,"./ExecutionEnvironment":119,"./camelizeStyleName":207,"./dangerousStyleValue":212,"./hyphenateStyleName":232,"./memoizeStringOnly":242,"./warning":253,"_process":1}],104:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -5133,7 +5133,7 @@ PooledClass.addPoolingTo(CallbackQueue);
 module.exports = CallbackQueue;
 
 }).call(this,require('_process'))
-},{"./Object.assign":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Object.assign.js","./PooledClass":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/PooledClass.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ChangeEventPlugin.js":[function(require,module,exports){
+},{"./Object.assign":125,"./PooledClass":126,"./invariant":234,"_process":1}],105:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -5515,7 +5515,7 @@ var ChangeEventPlugin = {
 
 module.exports = ChangeEventPlugin;
 
-},{"./EventConstants":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventConstants.js","./EventPluginHub":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventPluginHub.js","./EventPropagators":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventPropagators.js","./ExecutionEnvironment":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ExecutionEnvironment.js","./ReactUpdates":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactUpdates.js","./SyntheticEvent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticEvent.js","./isEventSupported":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/isEventSupported.js","./isTextInputElement":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/isTextInputElement.js","./keyOf":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/keyOf.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ClientReactRootIndex.js":[function(require,module,exports){
+},{"./EventConstants":113,"./EventPluginHub":115,"./EventPropagators":118,"./ExecutionEnvironment":119,"./ReactUpdates":186,"./SyntheticEvent":194,"./isEventSupported":235,"./isTextInputElement":237,"./keyOf":240}],106:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -5540,7 +5540,7 @@ var ClientReactRootIndex = {
 
 module.exports = ClientReactRootIndex;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/DOMChildrenOperations.js":[function(require,module,exports){
+},{}],107:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -5678,7 +5678,7 @@ var DOMChildrenOperations = {
 module.exports = DOMChildrenOperations;
 
 }).call(this,require('_process'))
-},{"./Danger":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Danger.js","./ReactMultiChildUpdateTypes":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactMultiChildUpdateTypes.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","./setTextContent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/setTextContent.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/DOMProperty.js":[function(require,module,exports){
+},{"./Danger":110,"./ReactMultiChildUpdateTypes":171,"./invariant":234,"./setTextContent":248,"_process":1}],108:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -5977,7 +5977,7 @@ var DOMProperty = {
 module.exports = DOMProperty;
 
 }).call(this,require('_process'))
-},{"./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/DOMPropertyOperations.js":[function(require,module,exports){
+},{"./invariant":234,"_process":1}],109:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -6169,7 +6169,7 @@ var DOMPropertyOperations = {
 module.exports = DOMPropertyOperations;
 
 }).call(this,require('_process'))
-},{"./DOMProperty":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/DOMProperty.js","./quoteAttributeValueForBrowser":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/quoteAttributeValueForBrowser.js","./warning":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/warning.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Danger.js":[function(require,module,exports){
+},{"./DOMProperty":108,"./quoteAttributeValueForBrowser":246,"./warning":253,"_process":1}],110:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -6356,7 +6356,7 @@ var Danger = {
 module.exports = Danger;
 
 }).call(this,require('_process'))
-},{"./ExecutionEnvironment":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ExecutionEnvironment.js","./createNodesFromMarkup":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/createNodesFromMarkup.js","./emptyFunction":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/emptyFunction.js","./getMarkupWrap":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getMarkupWrap.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/DefaultEventPluginOrder.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":119,"./createNodesFromMarkup":211,"./emptyFunction":213,"./getMarkupWrap":226,"./invariant":234,"_process":1}],111:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -6395,7 +6395,7 @@ var DefaultEventPluginOrder = [
 
 module.exports = DefaultEventPluginOrder;
 
-},{"./keyOf":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/keyOf.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EnterLeaveEventPlugin.js":[function(require,module,exports){
+},{"./keyOf":240}],112:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -6535,7 +6535,7 @@ var EnterLeaveEventPlugin = {
 
 module.exports = EnterLeaveEventPlugin;
 
-},{"./EventConstants":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventConstants.js","./EventPropagators":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventPropagators.js","./ReactMount":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactMount.js","./SyntheticMouseEvent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticMouseEvent.js","./keyOf":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/keyOf.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventConstants.js":[function(require,module,exports){
+},{"./EventConstants":113,"./EventPropagators":118,"./ReactMount":169,"./SyntheticMouseEvent":198,"./keyOf":240}],113:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -6607,7 +6607,7 @@ var EventConstants = {
 
 module.exports = EventConstants;
 
-},{"./keyMirror":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/keyMirror.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventListener.js":[function(require,module,exports){
+},{"./keyMirror":239}],114:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -6697,7 +6697,7 @@ var EventListener = {
 module.exports = EventListener;
 
 }).call(this,require('_process'))
-},{"./emptyFunction":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/emptyFunction.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventPluginHub.js":[function(require,module,exports){
+},{"./emptyFunction":213,"_process":1}],115:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -6975,7 +6975,7 @@ var EventPluginHub = {
 module.exports = EventPluginHub;
 
 }).call(this,require('_process'))
-},{"./EventPluginRegistry":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventPluginRegistry.js","./EventPluginUtils":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventPluginUtils.js","./accumulateInto":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/accumulateInto.js","./forEachAccumulated":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/forEachAccumulated.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventPluginRegistry.js":[function(require,module,exports){
+},{"./EventPluginRegistry":116,"./EventPluginUtils":117,"./accumulateInto":204,"./forEachAccumulated":219,"./invariant":234,"_process":1}],116:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -7255,7 +7255,7 @@ var EventPluginRegistry = {
 module.exports = EventPluginRegistry;
 
 }).call(this,require('_process'))
-},{"./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventPluginUtils.js":[function(require,module,exports){
+},{"./invariant":234,"_process":1}],117:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -7476,7 +7476,7 @@ var EventPluginUtils = {
 module.exports = EventPluginUtils;
 
 }).call(this,require('_process'))
-},{"./EventConstants":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventConstants.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventPropagators.js":[function(require,module,exports){
+},{"./EventConstants":113,"./invariant":234,"_process":1}],118:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -7618,7 +7618,7 @@ var EventPropagators = {
 module.exports = EventPropagators;
 
 }).call(this,require('_process'))
-},{"./EventConstants":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventConstants.js","./EventPluginHub":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventPluginHub.js","./accumulateInto":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/accumulateInto.js","./forEachAccumulated":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/forEachAccumulated.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ExecutionEnvironment.js":[function(require,module,exports){
+},{"./EventConstants":113,"./EventPluginHub":115,"./accumulateInto":204,"./forEachAccumulated":219,"_process":1}],119:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -7662,7 +7662,7 @@ var ExecutionEnvironment = {
 
 module.exports = ExecutionEnvironment;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/FallbackCompositionState.js":[function(require,module,exports){
+},{}],120:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -7753,7 +7753,7 @@ PooledClass.addPoolingTo(FallbackCompositionState);
 
 module.exports = FallbackCompositionState;
 
-},{"./Object.assign":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Object.assign.js","./PooledClass":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/PooledClass.js","./getTextContentAccessor":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getTextContentAccessor.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/HTMLDOMPropertyConfig.js":[function(require,module,exports){
+},{"./Object.assign":125,"./PooledClass":126,"./getTextContentAccessor":229}],121:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -7964,7 +7964,7 @@ var HTMLDOMPropertyConfig = {
 
 module.exports = HTMLDOMPropertyConfig;
 
-},{"./DOMProperty":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/DOMProperty.js","./ExecutionEnvironment":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ExecutionEnvironment.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/LinkedValueUtils.js":[function(require,module,exports){
+},{"./DOMProperty":108,"./ExecutionEnvironment":119}],122:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -8120,7 +8120,7 @@ var LinkedValueUtils = {
 module.exports = LinkedValueUtils;
 
 }).call(this,require('_process'))
-},{"./ReactPropTypes":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactPropTypes.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/LocalEventTrapMixin.js":[function(require,module,exports){
+},{"./ReactPropTypes":177,"./invariant":234,"_process":1}],123:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -8177,7 +8177,7 @@ var LocalEventTrapMixin = {
 module.exports = LocalEventTrapMixin;
 
 }).call(this,require('_process'))
-},{"./ReactBrowserEventEmitter":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactBrowserEventEmitter.js","./accumulateInto":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/accumulateInto.js","./forEachAccumulated":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/forEachAccumulated.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/MobileSafariClickEventPlugin.js":[function(require,module,exports){
+},{"./ReactBrowserEventEmitter":129,"./accumulateInto":204,"./forEachAccumulated":219,"./invariant":234,"_process":1}],124:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -8235,7 +8235,7 @@ var MobileSafariClickEventPlugin = {
 
 module.exports = MobileSafariClickEventPlugin;
 
-},{"./EventConstants":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventConstants.js","./emptyFunction":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/emptyFunction.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Object.assign.js":[function(require,module,exports){
+},{"./EventConstants":113,"./emptyFunction":213}],125:[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -8284,7 +8284,7 @@ function assign(target, sources) {
 
 module.exports = assign;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/PooledClass.js":[function(require,module,exports){
+},{}],126:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -8400,7 +8400,7 @@ var PooledClass = {
 module.exports = PooledClass;
 
 }).call(this,require('_process'))
-},{"./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/React.js":[function(require,module,exports){
+},{"./invariant":234,"_process":1}],127:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -8552,7 +8552,7 @@ React.version = '0.13.3';
 module.exports = React;
 
 }).call(this,require('_process'))
-},{"./EventPluginUtils":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventPluginUtils.js","./ExecutionEnvironment":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ExecutionEnvironment.js","./Object.assign":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Object.assign.js","./ReactChildren":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactChildren.js","./ReactClass":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactClass.js","./ReactComponent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactComponent.js","./ReactContext":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactContext.js","./ReactCurrentOwner":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactCurrentOwner.js","./ReactDOM":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOM.js","./ReactDOMTextComponent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOMTextComponent.js","./ReactDefaultInjection":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDefaultInjection.js","./ReactElement":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElement.js","./ReactElementValidator":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElementValidator.js","./ReactInstanceHandles":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactInstanceHandles.js","./ReactMount":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactMount.js","./ReactPerf":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactPerf.js","./ReactPropTypes":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactPropTypes.js","./ReactReconciler":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactReconciler.js","./ReactServerRendering":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactServerRendering.js","./findDOMNode":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/findDOMNode.js","./onlyChild":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/onlyChild.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactBrowserComponentMixin.js":[function(require,module,exports){
+},{"./EventPluginUtils":117,"./ExecutionEnvironment":119,"./Object.assign":125,"./ReactChildren":131,"./ReactClass":132,"./ReactComponent":133,"./ReactContext":137,"./ReactCurrentOwner":138,"./ReactDOM":139,"./ReactDOMTextComponent":150,"./ReactDefaultInjection":153,"./ReactElement":156,"./ReactElementValidator":157,"./ReactInstanceHandles":165,"./ReactMount":169,"./ReactPerf":174,"./ReactPropTypes":177,"./ReactReconciler":180,"./ReactServerRendering":183,"./findDOMNode":216,"./onlyChild":243,"_process":1}],128:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -8583,7 +8583,7 @@ var ReactBrowserComponentMixin = {
 
 module.exports = ReactBrowserComponentMixin;
 
-},{"./findDOMNode":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/findDOMNode.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactBrowserEventEmitter.js":[function(require,module,exports){
+},{"./findDOMNode":216}],129:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -8936,7 +8936,7 @@ var ReactBrowserEventEmitter = assign({}, ReactEventEmitterMixin, {
 
 module.exports = ReactBrowserEventEmitter;
 
-},{"./EventConstants":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventConstants.js","./EventPluginHub":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventPluginHub.js","./EventPluginRegistry":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventPluginRegistry.js","./Object.assign":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Object.assign.js","./ReactEventEmitterMixin":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactEventEmitterMixin.js","./ViewportMetrics":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ViewportMetrics.js","./isEventSupported":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/isEventSupported.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactChildReconciler.js":[function(require,module,exports){
+},{"./EventConstants":113,"./EventPluginHub":115,"./EventPluginRegistry":116,"./Object.assign":125,"./ReactEventEmitterMixin":160,"./ViewportMetrics":203,"./isEventSupported":235}],130:[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -9063,7 +9063,7 @@ var ReactChildReconciler = {
 
 module.exports = ReactChildReconciler;
 
-},{"./ReactReconciler":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactReconciler.js","./flattenChildren":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/flattenChildren.js","./instantiateReactComponent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/instantiateReactComponent.js","./shouldUpdateReactComponent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/shouldUpdateReactComponent.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactChildren.js":[function(require,module,exports){
+},{"./ReactReconciler":180,"./flattenChildren":217,"./instantiateReactComponent":233,"./shouldUpdateReactComponent":250}],131:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -9216,7 +9216,7 @@ var ReactChildren = {
 module.exports = ReactChildren;
 
 }).call(this,require('_process'))
-},{"./PooledClass":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/PooledClass.js","./ReactFragment":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactFragment.js","./traverseAllChildren":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/traverseAllChildren.js","./warning":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/warning.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactClass.js":[function(require,module,exports){
+},{"./PooledClass":126,"./ReactFragment":162,"./traverseAllChildren":252,"./warning":253,"_process":1}],132:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -10162,7 +10162,7 @@ var ReactClass = {
 module.exports = ReactClass;
 
 }).call(this,require('_process'))
-},{"./Object.assign":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Object.assign.js","./ReactComponent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactComponent.js","./ReactCurrentOwner":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactCurrentOwner.js","./ReactElement":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElement.js","./ReactErrorUtils":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactErrorUtils.js","./ReactInstanceMap":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactInstanceMap.js","./ReactLifeCycle":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactLifeCycle.js","./ReactPropTypeLocationNames":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactPropTypeLocationNames.js","./ReactPropTypeLocations":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactPropTypeLocations.js","./ReactUpdateQueue":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactUpdateQueue.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","./keyMirror":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/keyMirror.js","./keyOf":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/keyOf.js","./warning":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/warning.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactComponent.js":[function(require,module,exports){
+},{"./Object.assign":125,"./ReactComponent":133,"./ReactCurrentOwner":138,"./ReactElement":156,"./ReactErrorUtils":159,"./ReactInstanceMap":166,"./ReactLifeCycle":167,"./ReactPropTypeLocationNames":175,"./ReactPropTypeLocations":176,"./ReactUpdateQueue":185,"./invariant":234,"./keyMirror":239,"./keyOf":240,"./warning":253,"_process":1}],133:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -10316,7 +10316,7 @@ if ("production" !== process.env.NODE_ENV) {
 module.exports = ReactComponent;
 
 }).call(this,require('_process'))
-},{"./ReactUpdateQueue":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactUpdateQueue.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","./warning":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/warning.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactComponentBrowserEnvironment.js":[function(require,module,exports){
+},{"./ReactUpdateQueue":185,"./invariant":234,"./warning":253,"_process":1}],134:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -10363,7 +10363,7 @@ var ReactComponentBrowserEnvironment = {
 
 module.exports = ReactComponentBrowserEnvironment;
 
-},{"./ReactDOMIDOperations":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOMIDOperations.js","./ReactMount":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactMount.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactComponentEnvironment.js":[function(require,module,exports){
+},{"./ReactDOMIDOperations":143,"./ReactMount":169}],135:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -10424,7 +10424,7 @@ var ReactComponentEnvironment = {
 module.exports = ReactComponentEnvironment;
 
 }).call(this,require('_process'))
-},{"./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactCompositeComponent.js":[function(require,module,exports){
+},{"./invariant":234,"_process":1}],136:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -11337,7 +11337,7 @@ var ReactCompositeComponent = {
 module.exports = ReactCompositeComponent;
 
 }).call(this,require('_process'))
-},{"./Object.assign":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Object.assign.js","./ReactComponentEnvironment":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactComponentEnvironment.js","./ReactContext":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactContext.js","./ReactCurrentOwner":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactCurrentOwner.js","./ReactElement":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElement.js","./ReactElementValidator":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElementValidator.js","./ReactInstanceMap":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactInstanceMap.js","./ReactLifeCycle":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactLifeCycle.js","./ReactNativeComponent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactNativeComponent.js","./ReactPerf":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactPerf.js","./ReactPropTypeLocationNames":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactPropTypeLocationNames.js","./ReactPropTypeLocations":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactPropTypeLocations.js","./ReactReconciler":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactReconciler.js","./ReactUpdates":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactUpdates.js","./emptyObject":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/emptyObject.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","./shouldUpdateReactComponent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/shouldUpdateReactComponent.js","./warning":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/warning.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactContext.js":[function(require,module,exports){
+},{"./Object.assign":125,"./ReactComponentEnvironment":135,"./ReactContext":137,"./ReactCurrentOwner":138,"./ReactElement":156,"./ReactElementValidator":157,"./ReactInstanceMap":166,"./ReactLifeCycle":167,"./ReactNativeComponent":172,"./ReactPerf":174,"./ReactPropTypeLocationNames":175,"./ReactPropTypeLocations":176,"./ReactReconciler":180,"./ReactUpdates":186,"./emptyObject":214,"./invariant":234,"./shouldUpdateReactComponent":250,"./warning":253,"_process":1}],137:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -11415,7 +11415,7 @@ var ReactContext = {
 module.exports = ReactContext;
 
 }).call(this,require('_process'))
-},{"./Object.assign":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Object.assign.js","./emptyObject":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/emptyObject.js","./warning":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/warning.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactCurrentOwner.js":[function(require,module,exports){
+},{"./Object.assign":125,"./emptyObject":214,"./warning":253,"_process":1}],138:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -11449,7 +11449,7 @@ var ReactCurrentOwner = {
 
 module.exports = ReactCurrentOwner;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOM.js":[function(require,module,exports){
+},{}],139:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -11628,7 +11628,7 @@ var ReactDOM = mapObject({
 module.exports = ReactDOM;
 
 }).call(this,require('_process'))
-},{"./ReactElement":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElement.js","./ReactElementValidator":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElementValidator.js","./mapObject":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/mapObject.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOMButton.js":[function(require,module,exports){
+},{"./ReactElement":156,"./ReactElementValidator":157,"./mapObject":241,"_process":1}],140:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -11692,7 +11692,7 @@ var ReactDOMButton = ReactClass.createClass({
 
 module.exports = ReactDOMButton;
 
-},{"./AutoFocusMixin":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/AutoFocusMixin.js","./ReactBrowserComponentMixin":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactClass":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactClass.js","./ReactElement":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElement.js","./keyMirror":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/keyMirror.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOMComponent.js":[function(require,module,exports){
+},{"./AutoFocusMixin":100,"./ReactBrowserComponentMixin":128,"./ReactClass":132,"./ReactElement":156,"./keyMirror":239}],141:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -12202,7 +12202,7 @@ ReactDOMComponent.injection = {
 module.exports = ReactDOMComponent;
 
 }).call(this,require('_process'))
-},{"./CSSPropertyOperations":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/CSSPropertyOperations.js","./DOMProperty":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/DOMProperty.js","./DOMPropertyOperations":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/DOMPropertyOperations.js","./Object.assign":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Object.assign.js","./ReactBrowserEventEmitter":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactBrowserEventEmitter.js","./ReactComponentBrowserEnvironment":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactComponentBrowserEnvironment.js","./ReactMount":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactMount.js","./ReactMultiChild":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactMultiChild.js","./ReactPerf":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactPerf.js","./escapeTextContentForBrowser":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/escapeTextContentForBrowser.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","./isEventSupported":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/isEventSupported.js","./keyOf":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/keyOf.js","./warning":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/warning.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOMForm.js":[function(require,module,exports){
+},{"./CSSPropertyOperations":103,"./DOMProperty":108,"./DOMPropertyOperations":109,"./Object.assign":125,"./ReactBrowserEventEmitter":129,"./ReactComponentBrowserEnvironment":134,"./ReactMount":169,"./ReactMultiChild":170,"./ReactPerf":174,"./escapeTextContentForBrowser":215,"./invariant":234,"./isEventSupported":235,"./keyOf":240,"./warning":253,"_process":1}],142:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -12251,7 +12251,7 @@ var ReactDOMForm = ReactClass.createClass({
 
 module.exports = ReactDOMForm;
 
-},{"./EventConstants":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventConstants.js","./LocalEventTrapMixin":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/LocalEventTrapMixin.js","./ReactBrowserComponentMixin":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactClass":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactClass.js","./ReactElement":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElement.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOMIDOperations.js":[function(require,module,exports){
+},{"./EventConstants":113,"./LocalEventTrapMixin":123,"./ReactBrowserComponentMixin":128,"./ReactClass":132,"./ReactElement":156}],143:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -12419,7 +12419,7 @@ ReactPerf.measureMethods(ReactDOMIDOperations, 'ReactDOMIDOperations', {
 module.exports = ReactDOMIDOperations;
 
 }).call(this,require('_process'))
-},{"./CSSPropertyOperations":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/CSSPropertyOperations.js","./DOMChildrenOperations":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/DOMChildrenOperations.js","./DOMPropertyOperations":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/DOMPropertyOperations.js","./ReactMount":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactMount.js","./ReactPerf":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactPerf.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","./setInnerHTML":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/setInnerHTML.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOMIframe.js":[function(require,module,exports){
+},{"./CSSPropertyOperations":103,"./DOMChildrenOperations":107,"./DOMPropertyOperations":109,"./ReactMount":169,"./ReactPerf":174,"./invariant":234,"./setInnerHTML":247,"_process":1}],144:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -12464,7 +12464,7 @@ var ReactDOMIframe = ReactClass.createClass({
 
 module.exports = ReactDOMIframe;
 
-},{"./EventConstants":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventConstants.js","./LocalEventTrapMixin":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/LocalEventTrapMixin.js","./ReactBrowserComponentMixin":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactClass":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactClass.js","./ReactElement":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElement.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOMImg.js":[function(require,module,exports){
+},{"./EventConstants":113,"./LocalEventTrapMixin":123,"./ReactBrowserComponentMixin":128,"./ReactClass":132,"./ReactElement":156}],145:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -12510,7 +12510,7 @@ var ReactDOMImg = ReactClass.createClass({
 
 module.exports = ReactDOMImg;
 
-},{"./EventConstants":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventConstants.js","./LocalEventTrapMixin":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/LocalEventTrapMixin.js","./ReactBrowserComponentMixin":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactClass":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactClass.js","./ReactElement":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElement.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOMInput.js":[function(require,module,exports){
+},{"./EventConstants":113,"./LocalEventTrapMixin":123,"./ReactBrowserComponentMixin":128,"./ReactClass":132,"./ReactElement":156}],146:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -12687,7 +12687,7 @@ var ReactDOMInput = ReactClass.createClass({
 module.exports = ReactDOMInput;
 
 }).call(this,require('_process'))
-},{"./AutoFocusMixin":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/AutoFocusMixin.js","./DOMPropertyOperations":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/DOMPropertyOperations.js","./LinkedValueUtils":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/LinkedValueUtils.js","./Object.assign":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Object.assign.js","./ReactBrowserComponentMixin":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactClass":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactClass.js","./ReactElement":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElement.js","./ReactMount":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactMount.js","./ReactUpdates":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactUpdates.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOMOption.js":[function(require,module,exports){
+},{"./AutoFocusMixin":100,"./DOMPropertyOperations":109,"./LinkedValueUtils":122,"./Object.assign":125,"./ReactBrowserComponentMixin":128,"./ReactClass":132,"./ReactElement":156,"./ReactMount":169,"./ReactUpdates":186,"./invariant":234,"_process":1}],147:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -12739,7 +12739,7 @@ var ReactDOMOption = ReactClass.createClass({
 module.exports = ReactDOMOption;
 
 }).call(this,require('_process'))
-},{"./ReactBrowserComponentMixin":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactClass":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactClass.js","./ReactElement":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElement.js","./warning":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/warning.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOMSelect.js":[function(require,module,exports){
+},{"./ReactBrowserComponentMixin":128,"./ReactClass":132,"./ReactElement":156,"./warning":253,"_process":1}],148:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -12917,7 +12917,7 @@ var ReactDOMSelect = ReactClass.createClass({
 
 module.exports = ReactDOMSelect;
 
-},{"./AutoFocusMixin":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/AutoFocusMixin.js","./LinkedValueUtils":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/LinkedValueUtils.js","./Object.assign":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Object.assign.js","./ReactBrowserComponentMixin":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactClass":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactClass.js","./ReactElement":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElement.js","./ReactUpdates":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactUpdates.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOMSelection.js":[function(require,module,exports){
+},{"./AutoFocusMixin":100,"./LinkedValueUtils":122,"./Object.assign":125,"./ReactBrowserComponentMixin":128,"./ReactClass":132,"./ReactElement":156,"./ReactUpdates":186}],149:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -13130,7 +13130,7 @@ var ReactDOMSelection = {
 
 module.exports = ReactDOMSelection;
 
-},{"./ExecutionEnvironment":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ExecutionEnvironment.js","./getNodeForCharacterOffset":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getNodeForCharacterOffset.js","./getTextContentAccessor":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getTextContentAccessor.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOMTextComponent.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":119,"./getNodeForCharacterOffset":227,"./getTextContentAccessor":229}],150:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -13247,7 +13247,7 @@ assign(ReactDOMTextComponent.prototype, {
 
 module.exports = ReactDOMTextComponent;
 
-},{"./DOMPropertyOperations":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/DOMPropertyOperations.js","./Object.assign":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Object.assign.js","./ReactComponentBrowserEnvironment":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactComponentBrowserEnvironment.js","./ReactDOMComponent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOMComponent.js","./escapeTextContentForBrowser":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/escapeTextContentForBrowser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOMTextarea.js":[function(require,module,exports){
+},{"./DOMPropertyOperations":109,"./Object.assign":125,"./ReactComponentBrowserEnvironment":134,"./ReactDOMComponent":141,"./escapeTextContentForBrowser":215}],151:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -13387,7 +13387,7 @@ var ReactDOMTextarea = ReactClass.createClass({
 module.exports = ReactDOMTextarea;
 
 }).call(this,require('_process'))
-},{"./AutoFocusMixin":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/AutoFocusMixin.js","./DOMPropertyOperations":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/DOMPropertyOperations.js","./LinkedValueUtils":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/LinkedValueUtils.js","./Object.assign":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Object.assign.js","./ReactBrowserComponentMixin":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactClass":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactClass.js","./ReactElement":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElement.js","./ReactUpdates":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactUpdates.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","./warning":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/warning.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDefaultBatchingStrategy.js":[function(require,module,exports){
+},{"./AutoFocusMixin":100,"./DOMPropertyOperations":109,"./LinkedValueUtils":122,"./Object.assign":125,"./ReactBrowserComponentMixin":128,"./ReactClass":132,"./ReactElement":156,"./ReactUpdates":186,"./invariant":234,"./warning":253,"_process":1}],152:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -13460,7 +13460,7 @@ var ReactDefaultBatchingStrategy = {
 
 module.exports = ReactDefaultBatchingStrategy;
 
-},{"./Object.assign":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Object.assign.js","./ReactUpdates":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactUpdates.js","./Transaction":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Transaction.js","./emptyFunction":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/emptyFunction.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDefaultInjection.js":[function(require,module,exports){
+},{"./Object.assign":125,"./ReactUpdates":186,"./Transaction":202,"./emptyFunction":213}],153:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -13619,7 +13619,7 @@ module.exports = {
 };
 
 }).call(this,require('_process'))
-},{"./BeforeInputEventPlugin":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/BeforeInputEventPlugin.js","./ChangeEventPlugin":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ChangeEventPlugin.js","./ClientReactRootIndex":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ClientReactRootIndex.js","./DefaultEventPluginOrder":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/DefaultEventPluginOrder.js","./EnterLeaveEventPlugin":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EnterLeaveEventPlugin.js","./ExecutionEnvironment":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ExecutionEnvironment.js","./HTMLDOMPropertyConfig":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/HTMLDOMPropertyConfig.js","./MobileSafariClickEventPlugin":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/MobileSafariClickEventPlugin.js","./ReactBrowserComponentMixin":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactBrowserComponentMixin.js","./ReactClass":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactClass.js","./ReactComponentBrowserEnvironment":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactComponentBrowserEnvironment.js","./ReactDOMButton":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOMButton.js","./ReactDOMComponent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOMComponent.js","./ReactDOMForm":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOMForm.js","./ReactDOMIDOperations":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOMIDOperations.js","./ReactDOMIframe":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOMIframe.js","./ReactDOMImg":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOMImg.js","./ReactDOMInput":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOMInput.js","./ReactDOMOption":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOMOption.js","./ReactDOMSelect":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOMSelect.js","./ReactDOMTextComponent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOMTextComponent.js","./ReactDOMTextarea":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOMTextarea.js","./ReactDefaultBatchingStrategy":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDefaultBatchingStrategy.js","./ReactDefaultPerf":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDefaultPerf.js","./ReactElement":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElement.js","./ReactEventListener":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactEventListener.js","./ReactInjection":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactInjection.js","./ReactInstanceHandles":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactInstanceHandles.js","./ReactMount":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactMount.js","./ReactReconcileTransaction":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactReconcileTransaction.js","./SVGDOMPropertyConfig":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SVGDOMPropertyConfig.js","./SelectEventPlugin":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SelectEventPlugin.js","./ServerReactRootIndex":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ServerReactRootIndex.js","./SimpleEventPlugin":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SimpleEventPlugin.js","./createFullPageComponent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/createFullPageComponent.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDefaultPerf.js":[function(require,module,exports){
+},{"./BeforeInputEventPlugin":101,"./ChangeEventPlugin":105,"./ClientReactRootIndex":106,"./DefaultEventPluginOrder":111,"./EnterLeaveEventPlugin":112,"./ExecutionEnvironment":119,"./HTMLDOMPropertyConfig":121,"./MobileSafariClickEventPlugin":124,"./ReactBrowserComponentMixin":128,"./ReactClass":132,"./ReactComponentBrowserEnvironment":134,"./ReactDOMButton":140,"./ReactDOMComponent":141,"./ReactDOMForm":142,"./ReactDOMIDOperations":143,"./ReactDOMIframe":144,"./ReactDOMImg":145,"./ReactDOMInput":146,"./ReactDOMOption":147,"./ReactDOMSelect":148,"./ReactDOMTextComponent":150,"./ReactDOMTextarea":151,"./ReactDefaultBatchingStrategy":152,"./ReactDefaultPerf":154,"./ReactElement":156,"./ReactEventListener":161,"./ReactInjection":163,"./ReactInstanceHandles":165,"./ReactMount":169,"./ReactReconcileTransaction":179,"./SVGDOMPropertyConfig":187,"./SelectEventPlugin":188,"./ServerReactRootIndex":189,"./SimpleEventPlugin":190,"./createFullPageComponent":210,"_process":1}],154:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -13885,7 +13885,7 @@ var ReactDefaultPerf = {
 
 module.exports = ReactDefaultPerf;
 
-},{"./DOMProperty":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/DOMProperty.js","./ReactDefaultPerfAnalysis":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDefaultPerfAnalysis.js","./ReactMount":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactMount.js","./ReactPerf":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactPerf.js","./performanceNow":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/performanceNow.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDefaultPerfAnalysis.js":[function(require,module,exports){
+},{"./DOMProperty":108,"./ReactDefaultPerfAnalysis":155,"./ReactMount":169,"./ReactPerf":174,"./performanceNow":245}],155:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -14091,7 +14091,7 @@ var ReactDefaultPerfAnalysis = {
 
 module.exports = ReactDefaultPerfAnalysis;
 
-},{"./Object.assign":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Object.assign.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElement.js":[function(require,module,exports){
+},{"./Object.assign":125}],156:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -14399,7 +14399,7 @@ ReactElement.isValidElement = function(object) {
 module.exports = ReactElement;
 
 }).call(this,require('_process'))
-},{"./Object.assign":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Object.assign.js","./ReactContext":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactContext.js","./ReactCurrentOwner":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactCurrentOwner.js","./warning":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/warning.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElementValidator.js":[function(require,module,exports){
+},{"./Object.assign":125,"./ReactContext":137,"./ReactCurrentOwner":138,"./warning":253,"_process":1}],157:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -14864,7 +14864,7 @@ var ReactElementValidator = {
 module.exports = ReactElementValidator;
 
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactCurrentOwner.js","./ReactElement":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElement.js","./ReactFragment":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactFragment.js","./ReactNativeComponent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactNativeComponent.js","./ReactPropTypeLocationNames":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactPropTypeLocationNames.js","./ReactPropTypeLocations":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactPropTypeLocations.js","./getIteratorFn":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getIteratorFn.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","./warning":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/warning.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactEmptyComponent.js":[function(require,module,exports){
+},{"./ReactCurrentOwner":138,"./ReactElement":156,"./ReactFragment":162,"./ReactNativeComponent":172,"./ReactPropTypeLocationNames":175,"./ReactPropTypeLocations":176,"./getIteratorFn":225,"./invariant":234,"./warning":253,"_process":1}],158:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -14959,7 +14959,7 @@ var ReactEmptyComponent = {
 module.exports = ReactEmptyComponent;
 
 }).call(this,require('_process'))
-},{"./ReactElement":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElement.js","./ReactInstanceMap":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactInstanceMap.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactErrorUtils.js":[function(require,module,exports){
+},{"./ReactElement":156,"./ReactInstanceMap":166,"./invariant":234,"_process":1}],159:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -14991,7 +14991,7 @@ var ReactErrorUtils = {
 
 module.exports = ReactErrorUtils;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactEventEmitterMixin.js":[function(require,module,exports){
+},{}],160:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -15041,7 +15041,7 @@ var ReactEventEmitterMixin = {
 
 module.exports = ReactEventEmitterMixin;
 
-},{"./EventPluginHub":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventPluginHub.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactEventListener.js":[function(require,module,exports){
+},{"./EventPluginHub":115}],161:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -15224,7 +15224,7 @@ var ReactEventListener = {
 
 module.exports = ReactEventListener;
 
-},{"./EventListener":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventListener.js","./ExecutionEnvironment":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ExecutionEnvironment.js","./Object.assign":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Object.assign.js","./PooledClass":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/PooledClass.js","./ReactInstanceHandles":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactInstanceHandles.js","./ReactMount":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactMount.js","./ReactUpdates":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactUpdates.js","./getEventTarget":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getEventTarget.js","./getUnboundedScrollPosition":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getUnboundedScrollPosition.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactFragment.js":[function(require,module,exports){
+},{"./EventListener":114,"./ExecutionEnvironment":119,"./Object.assign":125,"./PooledClass":126,"./ReactInstanceHandles":165,"./ReactMount":169,"./ReactUpdates":186,"./getEventTarget":224,"./getUnboundedScrollPosition":230}],162:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015, Facebook, Inc.
@@ -15409,7 +15409,7 @@ var ReactFragment = {
 module.exports = ReactFragment;
 
 }).call(this,require('_process'))
-},{"./ReactElement":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElement.js","./warning":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/warning.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactInjection.js":[function(require,module,exports){
+},{"./ReactElement":156,"./warning":253,"_process":1}],163:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -15451,7 +15451,7 @@ var ReactInjection = {
 
 module.exports = ReactInjection;
 
-},{"./DOMProperty":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/DOMProperty.js","./EventPluginHub":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventPluginHub.js","./ReactBrowserEventEmitter":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactBrowserEventEmitter.js","./ReactClass":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactClass.js","./ReactComponentEnvironment":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactComponentEnvironment.js","./ReactDOMComponent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOMComponent.js","./ReactEmptyComponent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactEmptyComponent.js","./ReactNativeComponent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactNativeComponent.js","./ReactPerf":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactPerf.js","./ReactRootIndex":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactRootIndex.js","./ReactUpdates":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactUpdates.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactInputSelection.js":[function(require,module,exports){
+},{"./DOMProperty":108,"./EventPluginHub":115,"./ReactBrowserEventEmitter":129,"./ReactClass":132,"./ReactComponentEnvironment":135,"./ReactDOMComponent":141,"./ReactEmptyComponent":158,"./ReactNativeComponent":172,"./ReactPerf":174,"./ReactRootIndex":182,"./ReactUpdates":186}],164:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -15586,7 +15586,7 @@ var ReactInputSelection = {
 
 module.exports = ReactInputSelection;
 
-},{"./ReactDOMSelection":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactDOMSelection.js","./containsNode":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/containsNode.js","./focusNode":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/focusNode.js","./getActiveElement":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getActiveElement.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactInstanceHandles.js":[function(require,module,exports){
+},{"./ReactDOMSelection":149,"./containsNode":208,"./focusNode":218,"./getActiveElement":220}],165:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -15922,7 +15922,7 @@ var ReactInstanceHandles = {
 module.exports = ReactInstanceHandles;
 
 }).call(this,require('_process'))
-},{"./ReactRootIndex":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactRootIndex.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactInstanceMap.js":[function(require,module,exports){
+},{"./ReactRootIndex":182,"./invariant":234,"_process":1}],166:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -15971,7 +15971,7 @@ var ReactInstanceMap = {
 
 module.exports = ReactInstanceMap;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactLifeCycle.js":[function(require,module,exports){
+},{}],167:[function(require,module,exports){
 /**
  * Copyright 2015, Facebook, Inc.
  * All rights reserved.
@@ -16008,7 +16008,7 @@ var ReactLifeCycle = {
 
 module.exports = ReactLifeCycle;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactMarkupChecksum.js":[function(require,module,exports){
+},{}],168:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -16056,7 +16056,7 @@ var ReactMarkupChecksum = {
 
 module.exports = ReactMarkupChecksum;
 
-},{"./adler32":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/adler32.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactMount.js":[function(require,module,exports){
+},{"./adler32":205}],169:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -16947,7 +16947,7 @@ ReactPerf.measureMethods(ReactMount, 'ReactMount', {
 module.exports = ReactMount;
 
 }).call(this,require('_process'))
-},{"./DOMProperty":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/DOMProperty.js","./ReactBrowserEventEmitter":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactBrowserEventEmitter.js","./ReactCurrentOwner":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactCurrentOwner.js","./ReactElement":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElement.js","./ReactElementValidator":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElementValidator.js","./ReactEmptyComponent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactEmptyComponent.js","./ReactInstanceHandles":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactInstanceHandles.js","./ReactInstanceMap":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactInstanceMap.js","./ReactMarkupChecksum":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactMarkupChecksum.js","./ReactPerf":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactPerf.js","./ReactReconciler":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactReconciler.js","./ReactUpdateQueue":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactUpdateQueue.js","./ReactUpdates":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactUpdates.js","./containsNode":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/containsNode.js","./emptyObject":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/emptyObject.js","./getReactRootElementInContainer":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getReactRootElementInContainer.js","./instantiateReactComponent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/instantiateReactComponent.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","./setInnerHTML":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/setInnerHTML.js","./shouldUpdateReactComponent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/shouldUpdateReactComponent.js","./warning":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/warning.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactMultiChild.js":[function(require,module,exports){
+},{"./DOMProperty":108,"./ReactBrowserEventEmitter":129,"./ReactCurrentOwner":138,"./ReactElement":156,"./ReactElementValidator":157,"./ReactEmptyComponent":158,"./ReactInstanceHandles":165,"./ReactInstanceMap":166,"./ReactMarkupChecksum":168,"./ReactPerf":174,"./ReactReconciler":180,"./ReactUpdateQueue":185,"./ReactUpdates":186,"./containsNode":208,"./emptyObject":214,"./getReactRootElementInContainer":228,"./instantiateReactComponent":233,"./invariant":234,"./setInnerHTML":247,"./shouldUpdateReactComponent":250,"./warning":253,"_process":1}],170:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -17377,7 +17377,7 @@ var ReactMultiChild = {
 
 module.exports = ReactMultiChild;
 
-},{"./ReactChildReconciler":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactChildReconciler.js","./ReactComponentEnvironment":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactComponentEnvironment.js","./ReactMultiChildUpdateTypes":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactMultiChildUpdateTypes.js","./ReactReconciler":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactReconciler.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactMultiChildUpdateTypes.js":[function(require,module,exports){
+},{"./ReactChildReconciler":130,"./ReactComponentEnvironment":135,"./ReactMultiChildUpdateTypes":171,"./ReactReconciler":180}],171:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -17410,7 +17410,7 @@ var ReactMultiChildUpdateTypes = keyMirror({
 
 module.exports = ReactMultiChildUpdateTypes;
 
-},{"./keyMirror":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/keyMirror.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactNativeComponent.js":[function(require,module,exports){
+},{"./keyMirror":239}],172:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -17517,7 +17517,7 @@ var ReactNativeComponent = {
 module.exports = ReactNativeComponent;
 
 }).call(this,require('_process'))
-},{"./Object.assign":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Object.assign.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactOwner.js":[function(require,module,exports){
+},{"./Object.assign":125,"./invariant":234,"_process":1}],173:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -17629,7 +17629,7 @@ var ReactOwner = {
 module.exports = ReactOwner;
 
 }).call(this,require('_process'))
-},{"./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactPerf.js":[function(require,module,exports){
+},{"./invariant":234,"_process":1}],174:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -17733,7 +17733,7 @@ function _noMeasure(objName, fnName, func) {
 module.exports = ReactPerf;
 
 }).call(this,require('_process'))
-},{"_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactPropTypeLocationNames.js":[function(require,module,exports){
+},{"_process":1}],175:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -17761,7 +17761,7 @@ if ("production" !== process.env.NODE_ENV) {
 module.exports = ReactPropTypeLocationNames;
 
 }).call(this,require('_process'))
-},{"_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactPropTypeLocations.js":[function(require,module,exports){
+},{"_process":1}],176:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -17785,7 +17785,7 @@ var ReactPropTypeLocations = keyMirror({
 
 module.exports = ReactPropTypeLocations;
 
-},{"./keyMirror":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/keyMirror.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactPropTypes.js":[function(require,module,exports){
+},{"./keyMirror":239}],177:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -18134,7 +18134,7 @@ function getPreciseType(propValue) {
 
 module.exports = ReactPropTypes;
 
-},{"./ReactElement":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElement.js","./ReactFragment":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactFragment.js","./ReactPropTypeLocationNames":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactPropTypeLocationNames.js","./emptyFunction":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/emptyFunction.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactPutListenerQueue.js":[function(require,module,exports){
+},{"./ReactElement":156,"./ReactFragment":162,"./ReactPropTypeLocationNames":175,"./emptyFunction":213}],178:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -18190,7 +18190,7 @@ PooledClass.addPoolingTo(ReactPutListenerQueue);
 
 module.exports = ReactPutListenerQueue;
 
-},{"./Object.assign":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Object.assign.js","./PooledClass":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/PooledClass.js","./ReactBrowserEventEmitter":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactBrowserEventEmitter.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactReconcileTransaction.js":[function(require,module,exports){
+},{"./Object.assign":125,"./PooledClass":126,"./ReactBrowserEventEmitter":129}],179:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -18366,7 +18366,7 @@ PooledClass.addPoolingTo(ReactReconcileTransaction);
 
 module.exports = ReactReconcileTransaction;
 
-},{"./CallbackQueue":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/CallbackQueue.js","./Object.assign":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Object.assign.js","./PooledClass":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/PooledClass.js","./ReactBrowserEventEmitter":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactBrowserEventEmitter.js","./ReactInputSelection":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactInputSelection.js","./ReactPutListenerQueue":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactPutListenerQueue.js","./Transaction":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Transaction.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactReconciler.js":[function(require,module,exports){
+},{"./CallbackQueue":104,"./Object.assign":125,"./PooledClass":126,"./ReactBrowserEventEmitter":129,"./ReactInputSelection":164,"./ReactPutListenerQueue":178,"./Transaction":202}],180:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -18490,7 +18490,7 @@ var ReactReconciler = {
 module.exports = ReactReconciler;
 
 }).call(this,require('_process'))
-},{"./ReactElementValidator":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElementValidator.js","./ReactRef":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactRef.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactRef.js":[function(require,module,exports){
+},{"./ReactElementValidator":157,"./ReactRef":181,"_process":1}],181:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -18561,7 +18561,7 @@ ReactRef.detachRefs = function(instance, element) {
 
 module.exports = ReactRef;
 
-},{"./ReactOwner":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactOwner.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactRootIndex.js":[function(require,module,exports){
+},{"./ReactOwner":173}],182:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -18592,7 +18592,7 @@ var ReactRootIndex = {
 
 module.exports = ReactRootIndex;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactServerRendering.js":[function(require,module,exports){
+},{}],183:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -18674,7 +18674,7 @@ module.exports = {
 };
 
 }).call(this,require('_process'))
-},{"./ReactElement":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElement.js","./ReactInstanceHandles":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactInstanceHandles.js","./ReactMarkupChecksum":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactMarkupChecksum.js","./ReactServerRenderingTransaction":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactServerRenderingTransaction.js","./emptyObject":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/emptyObject.js","./instantiateReactComponent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/instantiateReactComponent.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactServerRenderingTransaction.js":[function(require,module,exports){
+},{"./ReactElement":156,"./ReactInstanceHandles":165,"./ReactMarkupChecksum":168,"./ReactServerRenderingTransaction":184,"./emptyObject":214,"./instantiateReactComponent":233,"./invariant":234,"_process":1}],184:[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -18787,7 +18787,7 @@ PooledClass.addPoolingTo(ReactServerRenderingTransaction);
 
 module.exports = ReactServerRenderingTransaction;
 
-},{"./CallbackQueue":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/CallbackQueue.js","./Object.assign":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Object.assign.js","./PooledClass":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/PooledClass.js","./ReactPutListenerQueue":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactPutListenerQueue.js","./Transaction":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Transaction.js","./emptyFunction":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/emptyFunction.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactUpdateQueue.js":[function(require,module,exports){
+},{"./CallbackQueue":104,"./Object.assign":125,"./PooledClass":126,"./ReactPutListenerQueue":178,"./Transaction":202,"./emptyFunction":213}],185:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015, Facebook, Inc.
@@ -19086,7 +19086,7 @@ var ReactUpdateQueue = {
 module.exports = ReactUpdateQueue;
 
 }).call(this,require('_process'))
-},{"./Object.assign":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Object.assign.js","./ReactCurrentOwner":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactCurrentOwner.js","./ReactElement":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElement.js","./ReactInstanceMap":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactInstanceMap.js","./ReactLifeCycle":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactLifeCycle.js","./ReactUpdates":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactUpdates.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","./warning":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/warning.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactUpdates.js":[function(require,module,exports){
+},{"./Object.assign":125,"./ReactCurrentOwner":138,"./ReactElement":156,"./ReactInstanceMap":166,"./ReactLifeCycle":167,"./ReactUpdates":186,"./invariant":234,"./warning":253,"_process":1}],186:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -19368,7 +19368,7 @@ var ReactUpdates = {
 module.exports = ReactUpdates;
 
 }).call(this,require('_process'))
-},{"./CallbackQueue":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/CallbackQueue.js","./Object.assign":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Object.assign.js","./PooledClass":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/PooledClass.js","./ReactCurrentOwner":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactCurrentOwner.js","./ReactPerf":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactPerf.js","./ReactReconciler":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactReconciler.js","./Transaction":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Transaction.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","./warning":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/warning.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SVGDOMPropertyConfig.js":[function(require,module,exports){
+},{"./CallbackQueue":104,"./Object.assign":125,"./PooledClass":126,"./ReactCurrentOwner":138,"./ReactPerf":174,"./ReactReconciler":180,"./Transaction":202,"./invariant":234,"./warning":253,"_process":1}],187:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -19462,7 +19462,7 @@ var SVGDOMPropertyConfig = {
 
 module.exports = SVGDOMPropertyConfig;
 
-},{"./DOMProperty":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/DOMProperty.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SelectEventPlugin.js":[function(require,module,exports){
+},{"./DOMProperty":108}],188:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -19657,7 +19657,7 @@ var SelectEventPlugin = {
 
 module.exports = SelectEventPlugin;
 
-},{"./EventConstants":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventConstants.js","./EventPropagators":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventPropagators.js","./ReactInputSelection":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactInputSelection.js","./SyntheticEvent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticEvent.js","./getActiveElement":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getActiveElement.js","./isTextInputElement":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/isTextInputElement.js","./keyOf":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/keyOf.js","./shallowEqual":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/shallowEqual.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ServerReactRootIndex.js":[function(require,module,exports){
+},{"./EventConstants":113,"./EventPropagators":118,"./ReactInputSelection":164,"./SyntheticEvent":194,"./getActiveElement":220,"./isTextInputElement":237,"./keyOf":240,"./shallowEqual":249}],189:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -19688,7 +19688,7 @@ var ServerReactRootIndex = {
 
 module.exports = ServerReactRootIndex;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SimpleEventPlugin.js":[function(require,module,exports){
+},{}],190:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -20116,7 +20116,7 @@ var SimpleEventPlugin = {
 module.exports = SimpleEventPlugin;
 
 }).call(this,require('_process'))
-},{"./EventConstants":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventConstants.js","./EventPluginUtils":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventPluginUtils.js","./EventPropagators":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/EventPropagators.js","./SyntheticClipboardEvent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticClipboardEvent.js","./SyntheticDragEvent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticDragEvent.js","./SyntheticEvent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticEvent.js","./SyntheticFocusEvent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticFocusEvent.js","./SyntheticKeyboardEvent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticKeyboardEvent.js","./SyntheticMouseEvent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticMouseEvent.js","./SyntheticTouchEvent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticTouchEvent.js","./SyntheticUIEvent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticUIEvent.js","./SyntheticWheelEvent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticWheelEvent.js","./getEventCharCode":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getEventCharCode.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","./keyOf":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/keyOf.js","./warning":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/warning.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticClipboardEvent.js":[function(require,module,exports){
+},{"./EventConstants":113,"./EventPluginUtils":117,"./EventPropagators":118,"./SyntheticClipboardEvent":191,"./SyntheticDragEvent":193,"./SyntheticEvent":194,"./SyntheticFocusEvent":195,"./SyntheticKeyboardEvent":197,"./SyntheticMouseEvent":198,"./SyntheticTouchEvent":199,"./SyntheticUIEvent":200,"./SyntheticWheelEvent":201,"./getEventCharCode":221,"./invariant":234,"./keyOf":240,"./warning":253,"_process":1}],191:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -20161,7 +20161,7 @@ SyntheticEvent.augmentClass(SyntheticClipboardEvent, ClipboardEventInterface);
 
 module.exports = SyntheticClipboardEvent;
 
-},{"./SyntheticEvent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticEvent.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticCompositionEvent.js":[function(require,module,exports){
+},{"./SyntheticEvent":194}],192:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -20206,7 +20206,7 @@ SyntheticEvent.augmentClass(
 
 module.exports = SyntheticCompositionEvent;
 
-},{"./SyntheticEvent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticEvent.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticDragEvent.js":[function(require,module,exports){
+},{"./SyntheticEvent":194}],193:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -20245,7 +20245,7 @@ SyntheticMouseEvent.augmentClass(SyntheticDragEvent, DragEventInterface);
 
 module.exports = SyntheticDragEvent;
 
-},{"./SyntheticMouseEvent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticMouseEvent.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticEvent.js":[function(require,module,exports){
+},{"./SyntheticMouseEvent":198}],194:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -20411,7 +20411,7 @@ PooledClass.addPoolingTo(SyntheticEvent, PooledClass.threeArgumentPooler);
 
 module.exports = SyntheticEvent;
 
-},{"./Object.assign":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Object.assign.js","./PooledClass":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/PooledClass.js","./emptyFunction":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/emptyFunction.js","./getEventTarget":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getEventTarget.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticFocusEvent.js":[function(require,module,exports){
+},{"./Object.assign":125,"./PooledClass":126,"./emptyFunction":213,"./getEventTarget":224}],195:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -20450,7 +20450,7 @@ SyntheticUIEvent.augmentClass(SyntheticFocusEvent, FocusEventInterface);
 
 module.exports = SyntheticFocusEvent;
 
-},{"./SyntheticUIEvent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticUIEvent.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticInputEvent.js":[function(require,module,exports){
+},{"./SyntheticUIEvent":200}],196:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -20496,7 +20496,7 @@ SyntheticEvent.augmentClass(
 
 module.exports = SyntheticInputEvent;
 
-},{"./SyntheticEvent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticEvent.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticKeyboardEvent.js":[function(require,module,exports){
+},{"./SyntheticEvent":194}],197:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -20583,7 +20583,7 @@ SyntheticUIEvent.augmentClass(SyntheticKeyboardEvent, KeyboardEventInterface);
 
 module.exports = SyntheticKeyboardEvent;
 
-},{"./SyntheticUIEvent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticUIEvent.js","./getEventCharCode":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getEventCharCode.js","./getEventKey":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getEventKey.js","./getEventModifierState":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getEventModifierState.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticMouseEvent.js":[function(require,module,exports){
+},{"./SyntheticUIEvent":200,"./getEventCharCode":221,"./getEventKey":222,"./getEventModifierState":223}],198:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -20664,7 +20664,7 @@ SyntheticUIEvent.augmentClass(SyntheticMouseEvent, MouseEventInterface);
 
 module.exports = SyntheticMouseEvent;
 
-},{"./SyntheticUIEvent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticUIEvent.js","./ViewportMetrics":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ViewportMetrics.js","./getEventModifierState":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getEventModifierState.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticTouchEvent.js":[function(require,module,exports){
+},{"./SyntheticUIEvent":200,"./ViewportMetrics":203,"./getEventModifierState":223}],199:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -20712,7 +20712,7 @@ SyntheticUIEvent.augmentClass(SyntheticTouchEvent, TouchEventInterface);
 
 module.exports = SyntheticTouchEvent;
 
-},{"./SyntheticUIEvent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticUIEvent.js","./getEventModifierState":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getEventModifierState.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticUIEvent.js":[function(require,module,exports){
+},{"./SyntheticUIEvent":200,"./getEventModifierState":223}],200:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -20774,7 +20774,7 @@ SyntheticEvent.augmentClass(SyntheticUIEvent, UIEventInterface);
 
 module.exports = SyntheticUIEvent;
 
-},{"./SyntheticEvent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticEvent.js","./getEventTarget":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getEventTarget.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticWheelEvent.js":[function(require,module,exports){
+},{"./SyntheticEvent":194,"./getEventTarget":224}],201:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -20835,7 +20835,7 @@ SyntheticMouseEvent.augmentClass(SyntheticWheelEvent, WheelEventInterface);
 
 module.exports = SyntheticWheelEvent;
 
-},{"./SyntheticMouseEvent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/SyntheticMouseEvent.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Transaction.js":[function(require,module,exports){
+},{"./SyntheticMouseEvent":198}],202:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -21076,7 +21076,7 @@ var Transaction = {
 module.exports = Transaction;
 
 }).call(this,require('_process'))
-},{"./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ViewportMetrics.js":[function(require,module,exports){
+},{"./invariant":234,"_process":1}],203:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -21105,7 +21105,7 @@ var ViewportMetrics = {
 
 module.exports = ViewportMetrics;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/accumulateInto.js":[function(require,module,exports){
+},{}],204:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -21171,7 +21171,7 @@ function accumulateInto(current, next) {
 module.exports = accumulateInto;
 
 }).call(this,require('_process'))
-},{"./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/adler32.js":[function(require,module,exports){
+},{"./invariant":234,"_process":1}],205:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -21205,7 +21205,7 @@ function adler32(data) {
 
 module.exports = adler32;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/camelize.js":[function(require,module,exports){
+},{}],206:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -21237,7 +21237,7 @@ function camelize(string) {
 
 module.exports = camelize;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/camelizeStyleName.js":[function(require,module,exports){
+},{}],207:[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -21279,7 +21279,7 @@ function camelizeStyleName(string) {
 
 module.exports = camelizeStyleName;
 
-},{"./camelize":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/camelize.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/containsNode.js":[function(require,module,exports){
+},{"./camelize":206}],208:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -21323,7 +21323,7 @@ function containsNode(outerNode, innerNode) {
 
 module.exports = containsNode;
 
-},{"./isTextNode":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/isTextNode.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/createArrayFromMixed.js":[function(require,module,exports){
+},{"./isTextNode":238}],209:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -21409,7 +21409,7 @@ function createArrayFromMixed(obj) {
 
 module.exports = createArrayFromMixed;
 
-},{"./toArray":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/toArray.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/createFullPageComponent.js":[function(require,module,exports){
+},{"./toArray":251}],210:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -21471,7 +21471,7 @@ function createFullPageComponent(tag) {
 module.exports = createFullPageComponent;
 
 }).call(this,require('_process'))
-},{"./ReactClass":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactClass.js","./ReactElement":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElement.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/createNodesFromMarkup.js":[function(require,module,exports){
+},{"./ReactClass":132,"./ReactElement":156,"./invariant":234,"_process":1}],211:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -21561,7 +21561,7 @@ function createNodesFromMarkup(markup, handleScript) {
 module.exports = createNodesFromMarkup;
 
 }).call(this,require('_process'))
-},{"./ExecutionEnvironment":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ExecutionEnvironment.js","./createArrayFromMixed":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/createArrayFromMixed.js","./getMarkupWrap":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getMarkupWrap.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/dangerousStyleValue.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":119,"./createArrayFromMixed":209,"./getMarkupWrap":226,"./invariant":234,"_process":1}],212:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -21619,7 +21619,7 @@ function dangerousStyleValue(name, value) {
 
 module.exports = dangerousStyleValue;
 
-},{"./CSSProperty":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/CSSProperty.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/emptyFunction.js":[function(require,module,exports){
+},{"./CSSProperty":102}],213:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -21653,7 +21653,7 @@ emptyFunction.thatReturnsArgument = function(arg) { return arg; };
 
 module.exports = emptyFunction;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/emptyObject.js":[function(require,module,exports){
+},{}],214:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -21677,7 +21677,7 @@ if ("production" !== process.env.NODE_ENV) {
 module.exports = emptyObject;
 
 }).call(this,require('_process'))
-},{"_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/escapeTextContentForBrowser.js":[function(require,module,exports){
+},{"_process":1}],215:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -21717,7 +21717,7 @@ function escapeTextContentForBrowser(text) {
 
 module.exports = escapeTextContentForBrowser;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/findDOMNode.js":[function(require,module,exports){
+},{}],216:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -21790,7 +21790,7 @@ function findDOMNode(componentOrElement) {
 module.exports = findDOMNode;
 
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactCurrentOwner.js","./ReactInstanceMap":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactInstanceMap.js","./ReactMount":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactMount.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","./isNode":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/isNode.js","./warning":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/warning.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/flattenChildren.js":[function(require,module,exports){
+},{"./ReactCurrentOwner":138,"./ReactInstanceMap":166,"./ReactMount":169,"./invariant":234,"./isNode":236,"./warning":253,"_process":1}],217:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -21848,7 +21848,7 @@ function flattenChildren(children) {
 module.exports = flattenChildren;
 
 }).call(this,require('_process'))
-},{"./traverseAllChildren":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/traverseAllChildren.js","./warning":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/warning.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/focusNode.js":[function(require,module,exports){
+},{"./traverseAllChildren":252,"./warning":253,"_process":1}],218:[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -21877,7 +21877,7 @@ function focusNode(node) {
 
 module.exports = focusNode;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/forEachAccumulated.js":[function(require,module,exports){
+},{}],219:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -21908,7 +21908,7 @@ var forEachAccumulated = function(arr, cb, scope) {
 
 module.exports = forEachAccumulated;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getActiveElement.js":[function(require,module,exports){
+},{}],220:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -21937,7 +21937,7 @@ function getActiveElement() /*?DOMElement*/ {
 
 module.exports = getActiveElement;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getEventCharCode.js":[function(require,module,exports){
+},{}],221:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -21989,7 +21989,7 @@ function getEventCharCode(nativeEvent) {
 
 module.exports = getEventCharCode;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getEventKey.js":[function(require,module,exports){
+},{}],222:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -22094,7 +22094,7 @@ function getEventKey(nativeEvent) {
 
 module.exports = getEventKey;
 
-},{"./getEventCharCode":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getEventCharCode.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getEventModifierState.js":[function(require,module,exports){
+},{"./getEventCharCode":221}],223:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -22141,7 +22141,7 @@ function getEventModifierState(nativeEvent) {
 
 module.exports = getEventModifierState;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getEventTarget.js":[function(require,module,exports){
+},{}],224:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -22172,7 +22172,7 @@ function getEventTarget(nativeEvent) {
 
 module.exports = getEventTarget;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getIteratorFn.js":[function(require,module,exports){
+},{}],225:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -22216,7 +22216,7 @@ function getIteratorFn(maybeIterable) {
 
 module.exports = getIteratorFn;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getMarkupWrap.js":[function(require,module,exports){
+},{}],226:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -22335,7 +22335,7 @@ function getMarkupWrap(nodeName) {
 module.exports = getMarkupWrap;
 
 }).call(this,require('_process'))
-},{"./ExecutionEnvironment":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ExecutionEnvironment.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getNodeForCharacterOffset.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":119,"./invariant":234,"_process":1}],227:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -22410,7 +22410,7 @@ function getNodeForCharacterOffset(root, offset) {
 
 module.exports = getNodeForCharacterOffset;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getReactRootElementInContainer.js":[function(require,module,exports){
+},{}],228:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -22445,7 +22445,7 @@ function getReactRootElementInContainer(container) {
 
 module.exports = getReactRootElementInContainer;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getTextContentAccessor.js":[function(require,module,exports){
+},{}],229:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -22482,7 +22482,7 @@ function getTextContentAccessor() {
 
 module.exports = getTextContentAccessor;
 
-},{"./ExecutionEnvironment":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ExecutionEnvironment.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getUnboundedScrollPosition.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":119}],230:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -22522,7 +22522,7 @@ function getUnboundedScrollPosition(scrollable) {
 
 module.exports = getUnboundedScrollPosition;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/hyphenate.js":[function(require,module,exports){
+},{}],231:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -22555,7 +22555,7 @@ function hyphenate(string) {
 
 module.exports = hyphenate;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/hyphenateStyleName.js":[function(require,module,exports){
+},{}],232:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -22596,7 +22596,7 @@ function hyphenateStyleName(string) {
 
 module.exports = hyphenateStyleName;
 
-},{"./hyphenate":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/hyphenate.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/instantiateReactComponent.js":[function(require,module,exports){
+},{"./hyphenate":231}],233:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -22734,7 +22734,7 @@ function instantiateReactComponent(node, parentCompositeType) {
 module.exports = instantiateReactComponent;
 
 }).call(this,require('_process'))
-},{"./Object.assign":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/Object.assign.js","./ReactCompositeComponent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactCompositeComponent.js","./ReactEmptyComponent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactEmptyComponent.js","./ReactNativeComponent":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactNativeComponent.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","./warning":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/warning.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js":[function(require,module,exports){
+},{"./Object.assign":125,"./ReactCompositeComponent":136,"./ReactEmptyComponent":158,"./ReactNativeComponent":172,"./invariant":234,"./warning":253,"_process":1}],234:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -22791,7 +22791,7 @@ var invariant = function(condition, format, a, b, c, d, e, f) {
 module.exports = invariant;
 
 }).call(this,require('_process'))
-},{"_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/isEventSupported.js":[function(require,module,exports){
+},{"_process":1}],235:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -22856,7 +22856,7 @@ function isEventSupported(eventNameSuffix, capture) {
 
 module.exports = isEventSupported;
 
-},{"./ExecutionEnvironment":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ExecutionEnvironment.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/isNode.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":119}],236:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -22883,7 +22883,7 @@ function isNode(object) {
 
 module.exports = isNode;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/isTextInputElement.js":[function(require,module,exports){
+},{}],237:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -22926,7 +22926,7 @@ function isTextInputElement(elem) {
 
 module.exports = isTextInputElement;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/isTextNode.js":[function(require,module,exports){
+},{}],238:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -22951,7 +22951,7 @@ function isTextNode(object) {
 
 module.exports = isTextNode;
 
-},{"./isNode":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/isNode.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/keyMirror.js":[function(require,module,exports){
+},{"./isNode":236}],239:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -23006,7 +23006,7 @@ var keyMirror = function(obj) {
 module.exports = keyMirror;
 
 }).call(this,require('_process'))
-},{"./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/keyOf.js":[function(require,module,exports){
+},{"./invariant":234,"_process":1}],240:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -23042,7 +23042,7 @@ var keyOf = function(oneKeyObj) {
 
 module.exports = keyOf;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/mapObject.js":[function(require,module,exports){
+},{}],241:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -23095,7 +23095,7 @@ function mapObject(object, callback, context) {
 
 module.exports = mapObject;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/memoizeStringOnly.js":[function(require,module,exports){
+},{}],242:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -23128,7 +23128,7 @@ function memoizeStringOnly(callback) {
 
 module.exports = memoizeStringOnly;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/onlyChild.js":[function(require,module,exports){
+},{}],243:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -23168,7 +23168,7 @@ function onlyChild(children) {
 module.exports = onlyChild;
 
 }).call(this,require('_process'))
-},{"./ReactElement":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElement.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/performance.js":[function(require,module,exports){
+},{"./ReactElement":156,"./invariant":234,"_process":1}],244:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -23196,7 +23196,7 @@ if (ExecutionEnvironment.canUseDOM) {
 
 module.exports = performance || {};
 
-},{"./ExecutionEnvironment":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ExecutionEnvironment.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/performanceNow.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":119}],245:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -23224,7 +23224,7 @@ var performanceNow = performance.now.bind(performance);
 
 module.exports = performanceNow;
 
-},{"./performance":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/performance.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/quoteAttributeValueForBrowser.js":[function(require,module,exports){
+},{"./performance":244}],246:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -23252,7 +23252,7 @@ function quoteAttributeValueForBrowser(value) {
 
 module.exports = quoteAttributeValueForBrowser;
 
-},{"./escapeTextContentForBrowser":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/escapeTextContentForBrowser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/setInnerHTML.js":[function(require,module,exports){
+},{"./escapeTextContentForBrowser":215}],247:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -23341,7 +23341,7 @@ if (ExecutionEnvironment.canUseDOM) {
 
 module.exports = setInnerHTML;
 
-},{"./ExecutionEnvironment":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ExecutionEnvironment.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/setTextContent.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":119}],248:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -23383,7 +23383,7 @@ if (ExecutionEnvironment.canUseDOM) {
 
 module.exports = setTextContent;
 
-},{"./ExecutionEnvironment":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ExecutionEnvironment.js","./escapeTextContentForBrowser":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/escapeTextContentForBrowser.js","./setInnerHTML":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/setInnerHTML.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/shallowEqual.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":119,"./escapeTextContentForBrowser":215,"./setInnerHTML":247}],249:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -23427,7 +23427,7 @@ function shallowEqual(objA, objB) {
 
 module.exports = shallowEqual;
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/shouldUpdateReactComponent.js":[function(require,module,exports){
+},{}],250:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -23531,7 +23531,7 @@ function shouldUpdateReactComponent(prevElement, nextElement) {
 module.exports = shouldUpdateReactComponent;
 
 }).call(this,require('_process'))
-},{"./warning":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/warning.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/toArray.js":[function(require,module,exports){
+},{"./warning":253,"_process":1}],251:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -23603,7 +23603,7 @@ function toArray(obj) {
 module.exports = toArray;
 
 }).call(this,require('_process'))
-},{"./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/traverseAllChildren.js":[function(require,module,exports){
+},{"./invariant":234,"_process":1}],252:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -23856,7 +23856,7 @@ function traverseAllChildren(children, callback, traverseContext) {
 module.exports = traverseAllChildren;
 
 }).call(this,require('_process'))
-},{"./ReactElement":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactElement.js","./ReactFragment":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactFragment.js","./ReactInstanceHandles":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/ReactInstanceHandles.js","./getIteratorFn":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/getIteratorFn.js","./invariant":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/invariant.js","./warning":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/warning.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/warning.js":[function(require,module,exports){
+},{"./ReactElement":156,"./ReactFragment":162,"./ReactInstanceHandles":165,"./getIteratorFn":225,"./invariant":234,"./warning":253,"_process":1}],253:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -23919,10 +23919,10 @@ if ("production" !== process.env.NODE_ENV) {
 module.exports = warning;
 
 }).call(this,require('_process'))
-},{"./emptyFunction":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/emptyFunction.js","_process":"/home/dolphin/Desktop/daisywheeljs/node_modules/browserify/node_modules/process/browser.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/react/react.js":[function(require,module,exports){
+},{"./emptyFunction":213,"_process":1}],254:[function(require,module,exports){
 module.exports = require('./lib/React');
 
-},{"./lib/React":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/lib/React.js"}],"/home/dolphin/Desktop/daisywheeljs/node_modules/underscore/underscore.js":[function(require,module,exports){
+},{"./lib/React":127}],255:[function(require,module,exports){
 //     Underscore.js 1.8.3
 //     http://underscorejs.org
 //     (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -25472,68 +25472,67 @@ module.exports = require('./lib/React');
   }
 }.call(this));
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/src/js/Utils.js":[function(require,module,exports){
+},{}],256:[function(require,module,exports){
 module.exports={setCursor:function(e,t){var e="string"==typeof e||e instanceof String?document.getElementById(e):e;if(!e)return!1;if(e.createTextRange){t+="";var n=e.createTextRange();return n.collapse(!0),n.moveEnd(t),n.moveStart(t),n.select(),!0}return e.setSelectionRange?(e.setSelectionRange(t,t),!0):!1},getCursor:function(e){if(e.selectionStart)return e.selectionStart;if(document.selection){e.focus();var t=document.selection.createRange();if(null==t)return 0;var n=e.createTextRange(),r=n.duplicate();return n.moveToBookmark(t.getBookmark()),r.setEndPoint("EndToStart",n),r.text.length}return 0}};
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/src/js/actions.js":[function(require,module,exports){
+},{}],257:[function(require,module,exports){
 var constants=require("./constants.js");module.exports={unload:function(t){t&&"daisywheel-input"===t.target.id||this.dispatch(constants.UNLOAD)},load:function(t){this.dispatch(constants.LOAD,t)},loadDefault:function(){this.dispatch(constants.LOAD_DEFAULT)},attachInput:function(t){this.dispatch(constants.ATTACH_INPUT,t)},clickCloseAttached:function(){this.dispatch(constants.CLICK_CLOSE_ATTACHED)},clickCloseDetached:function(){this.dispatch(constants.CLICK_CLOSE_DETACHED)},setInputValue:function(t){this.dispatch(constants.SET_INPUT_VALUE,t)},setInputCursor:function(t){this.dispatch(constants.SET_INPUT_CURSOR,t)},showWarning:function(){this.dispatch(constants.SHOW_WARNING)},hideWarning:function(){this.dispatch(constants.HIDE_WARNING)},selectSymbol:function(t){this.dispatch(constants.SELECT_SYMBOL,t)},setSymbols:function(t){_.isString(t)&&(t=t.split("")),this.dispatch(constants.SELECT_SYMBOL,t)},gamepadEvent:function(t){this.dispatch(constants.GAMEPAD_EVENT,t)}};
 
-},{"./constants.js":"/home/dolphin/Desktop/daisywheeljs/src/js/constants.js"}],"/home/dolphin/Desktop/daisywheeljs/src/js/constants.js":[function(require,module,exports){
+},{"./constants.js":258}],258:[function(require,module,exports){
 module.exports={UNLOAD:"UNLOAD",LOAD:"LOAD",LOAD_DEFAULT:"LOAD_DEFAULT",CLICK_CLOSE_ATTACHED:"CLICK_CLOSE_ATTACHED",CLICK_CLOSE_DETACHED:"CLICK_CLOSE_DETACHED",ATTACH_INPUT:"ATTACH_INPUT",SET_INPUT_CURSOR:"SET_INPUT_CURSOR",SET_INPUT_VALUE:"SET_INPUT_VALUE",SELECT_SYMBOL:"SELECT_SYMBOL",SET_SYMBOLS:"SET_SYMBOLS",SHOW_WARNING:"SHOW_WARNING",HIDE_WARNING:"HIDE_WARNING",GAMEPAD_EVENT:"GAMEPAD_EVENT"};
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/src/js/jsx/Button.js":[function(require,module,exports){
+},{}],259:[function(require,module,exports){
 var React=require("react"),_=require("underscore"),Fluxxor=require("fluxxor"),FluxMixin=Fluxxor.FluxMixin(React),StoreWatchMixin=Fluxxor.StoreWatchMixin;module.exports=React.createClass({displayName:"Button",mixins:[FluxMixin,StoreWatchMixin("SymbolsStore")],propTypes:{position:React.PropTypes.string.isRequired,symbol:React.PropTypes.oneOfType([React.PropTypes.string,React.PropTypes.shape({font:React.PropTypes.string.isRequired,symbol:React.PropTypes.string.isRequired})])},getStateFromFlux:function(){var e=this.getFlux().store("SymbolsStore").getState();return{selectedSymbol:e.selectedSymbol}},render:function(){var e,t,r,o=this.props.position,s=this.props.symbol,i=this.state.selectedSymbol===s?"pressed":"";return s?e=1:(s="",e=.5),t={fontFamily:s.font||"",opacity:e},r=s.symbol||s,React.createElement("div",{className:"button button-"+o+" "+i,style:t},r)}});
 
-},{"fluxxor":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/index.js","react":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/react.js","underscore":"/home/dolphin/Desktop/daisywheeljs/node_modules/underscore/underscore.js"}],"/home/dolphin/Desktop/daisywheeljs/src/js/jsx/Controls.js":[function(require,module,exports){
+},{"fluxxor":2,"react":254,"underscore":255}],260:[function(require,module,exports){
 var React=require("react"),_=require("underscore"),Fluxxor=require("fluxxor"),FluxMixin=Fluxxor.FluxMixin(React),StoreWatchMixin=Fluxxor.StoreWatchMixin;module.exports=React.createClass({displayName:"Controls",mixins:[FluxMixin,StoreWatchMixin("ControlsStore")],uiElements:["left-bumper","left-analog","right-bumper","left-trigger","right-trigger"],getStateFromFlux:function(){var e=this.getFlux().store("ControlsStore").getState();return{uiLabels:e}},render:function(){var e=this.state.uiLabels,t=_.map(this.uiElements,function(t,r){var i=e[t];return React.createElement("div",{id:"daisywheel-"+t+"-ui",className:"control-ui cf",key:r},React.createElement("div",{className:"control-ui-icon"}),React.createElement("div",{className:"control-ui-label",title:i},i))});return React.createElement("div",{id:"daisywheel-controls-ui"},t)}});
 
-},{"fluxxor":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/index.js","react":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/react.js","underscore":"/home/dolphin/Desktop/daisywheeljs/node_modules/underscore/underscore.js"}],"/home/dolphin/Desktop/daisywheeljs/src/js/jsx/Flower.js":[function(require,module,exports){
+},{"fluxxor":2,"react":254,"underscore":255}],261:[function(require,module,exports){
 var React=require("react"),_=require("underscore"),Fluxxor=require("fluxxor"),FluxMixin=Fluxxor.FluxMixin(React),StoreWatchMixin=Fluxxor.StoreWatchMixin,Petal=require("./Petal.js"),SetupFlowerStyles=require("../units/SetupFlowerStyles.js");module.exports=React.createClass({displayName:"Flower",mixins:[FluxMixin,StoreWatchMixin("SymbolsStore","WheelStore")],getStateFromFlux:function(){var e=this.getFlux().store("SymbolsStore").getState(),t=this.getFlux().store("WheelStore").getState(),l=e.symbolSets[e.selectedSetIndex];return{symbolSet:l,numOfPetals:t.numOfPetals,selectedPetal:t.selectedPetal}},componentDidMount:function(){SetupFlowerStyles(this.state.numOfPetals)},render:function(){var e=this.state.symbolSet,t=this.state.selectedPetal,l=_.times(this.state.numOfPetals,function(l){var r=4*l,s=e.slice(r,r+4),a=t===l+1;return React.createElement(Petal,{symbols:s,selected:a,key:l})});return React.createElement("div",{id:"daisywheel-flower"},l)}});
 
-},{"../units/SetupFlowerStyles.js":"/home/dolphin/Desktop/daisywheeljs/src/js/units/SetupFlowerStyles.js","./Petal.js":"/home/dolphin/Desktop/daisywheeljs/src/js/jsx/Petal.js","fluxxor":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/index.js","react":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/react.js","underscore":"/home/dolphin/Desktop/daisywheeljs/node_modules/underscore/underscore.js"}],"/home/dolphin/Desktop/daisywheeljs/src/js/jsx/Input.js":[function(require,module,exports){
+},{"../units/SetupFlowerStyles.js":276,"./Petal.js":264,"fluxxor":2,"react":254,"underscore":255}],262:[function(require,module,exports){
 var React=require("react"),Fluxxor=require("fluxxor"),FluxMixin=Fluxxor.FluxMixin(React),StoreWatchMixin=Fluxxor.StoreWatchMixin,Utils=require("../Utils.js");module.exports=React.createClass({displayName:"Input",mixins:[FluxMixin,StoreWatchMixin("InputStore")],getStateFromFlux:function(){var t=this.getFlux().store("InputStore").getState();return{cursor:t.cursor,value:t.value}},componentDidUpdate:function(){var t=this.refs.input.getDOMNode();Utils.setCursor(t,this.state.cursor),t.scrollLeft=t.scrollWidth},componentWillMount:function(){document.addEventListener("mousedown",this.onInputMouseDown)},componentDidUnmout:function(){document.removeEventListener("mousedown",this.onInputMouseDown)},onInputChange:function(){var t=this.refs.input.getDOMNode(),e=t.value;flux.actions.setInputValue(e),this.onInputMouseDown()},onInputMouseDown:function(){var t=this.refs.input.getDOMNode();flux.actions.setInputCursor(Utils.getCursor(t))},render:function(){var t=this.state.value;return React.createElement("div",{id:"daisywheel-input-container"},React.createElement("input",{ref:"input",id:"daisywheel-input",value:t,onChange:this.onInputChange,type:"text"}))}});
 
-},{"../Utils.js":"/home/dolphin/Desktop/daisywheeljs/src/js/Utils.js","fluxxor":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/index.js","react":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/react.js"}],"/home/dolphin/Desktop/daisywheeljs/src/js/jsx/Modal.js":[function(require,module,exports){
+},{"../Utils.js":256,"fluxxor":2,"react":254}],263:[function(require,module,exports){
 var React=require("react"),Warning=require("./Warning.js"),Wheel=require("./Wheel.js"),_=require("underscore");module.exports=React.createClass({displayName:"Modal",getInitialState:function(){return{scale:1}},setupSize:_.throttle(function(){var e=window.innerWidth<window.innerHeight?window.innerWidth:window.innerHeight,t=25,n=100,i=1e3,r=Math.floor(n*(e/(i+2*t)))/n;this.setState({scale:r})},100),componentDidMount:function(){this.setupSize()},componentWillMount:function(){window.addEventListener("resize",_.bind(this.setupSize,this))},componentWillUnmount:function(){window.removeEventListener("resize",_.bind(this.setupSize,this))},render:function(){var e="scale("+this.state.scale+")",t={WebkitTransform:e,msTransform:e,transform:e};return React.createElement("div",{id:"daisywheel-modal-overlay"},React.createElement("div",{id:"daisywheel-modal-container"},React.createElement("div",{id:"daisywheel-modal",style:t},React.createElement(Warning,{flux:window.flux}),React.createElement(Wheel,{flux:window.flux}))))}});
 
-},{"./Warning.js":"/home/dolphin/Desktop/daisywheeljs/src/js/jsx/Warning.js","./Wheel.js":"/home/dolphin/Desktop/daisywheeljs/src/js/jsx/Wheel.js","react":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/react.js","underscore":"/home/dolphin/Desktop/daisywheeljs/node_modules/underscore/underscore.js"}],"/home/dolphin/Desktop/daisywheeljs/src/js/jsx/Petal.js":[function(require,module,exports){
+},{"./Warning.js":266,"./Wheel.js":267,"react":254,"underscore":255}],264:[function(require,module,exports){
 var React=require("react"),_=require("underscore"),Button=require("./Button.js");module.exports=React.createClass({displayName:"Petal",propTypes:{symbols:React.PropTypes.array.isRequired,selected:React.PropTypes.bool},render:function(){var e=this.props.symbols,t=["left","top","right","bottom"],a=_.map(t,function(t,a){return React.createElement(Button,{position:t,symbol:e[a],flux:window.flux,key:a})}),r=this.props.selected?"selected":"";return React.createElement("div",{className:"petal-container "+r},React.createElement("div",{className:"petal "},React.createElement("div",{className:"petal-inner"},React.createElement("div",{className:"buttons"},a))))}});
 
-},{"./Button.js":"/home/dolphin/Desktop/daisywheeljs/src/js/jsx/Button.js","react":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/react.js","underscore":"/home/dolphin/Desktop/daisywheeljs/node_modules/underscore/underscore.js"}],"/home/dolphin/Desktop/daisywheeljs/src/js/jsx/View.js":[function(require,module,exports){
+},{"./Button.js":259,"react":254,"underscore":255}],265:[function(require,module,exports){
 var React=require("react"),Fluxxor=require("fluxxor"),Modal=require("../jsx/Modal.js"),_=require("underscore"),FluxMixin=Fluxxor.FluxMixin(React),StoreWatchMixin=Fluxxor.StoreWatchMixin;module.exports=React.createClass({displayName:"View",mixins:[FluxMixin,StoreWatchMixin("WheelStore")],getStateFromFlux:function(){var e=this.getFlux().store("WheelStore").getState();return{loaded:e.loaded}},componentDidMount:function(){var e="http://fonts.googleapis.com/css?family=Montserrat",t=document.createElement("link");t.rel="stylesheet",t.type="text/css",t.href=e,document.head.appendChild(t),this.refs.daisywheel.getDOMNode().addEventListener("click",this.onClickClose)},componentWillMount:function(){document.addEventListener("focus",this.onFocus,!0),window.addEventListener("keyup",_.bind(this.onKeyboardClose,this))},componentWillUnmount:function(){document.removeEventListener("focus",this.onFocus,!0),window.removeEventListener("keyup",_.bind(this.onKeyboardClose,this)),this.refs.daisywheel.getDOMNode().removeEventListener("click",this.onClickClose)},onClickClose:function(e){var t=e.target;this.state.loaded&&"daisywheel-input"!==t.id&&flux.actions.unload()},onKeyboardClose:function(e){27===e.which&&this.state.loaded&&flux.actions.unload()},onFocus:function(e){var t=e.target;t.classList&&t.classList.contains("daisywheel")&&!this.state.loaded&&(e.preventDefault(),flux.actions.attachInput(t),flux.actions.loadDefault())},render:function(){var e=this.state.loaded,t=e?"visible":"hidden",i=e?1:0,o={visibility:t,opacity:i};return React.createElement("div",{ref:"daisywheel",id:"daisywheel-js",style:o},React.createElement(Modal,null))}});
 
-},{"../jsx/Modal.js":"/home/dolphin/Desktop/daisywheeljs/src/js/jsx/Modal.js","fluxxor":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/index.js","react":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/react.js","underscore":"/home/dolphin/Desktop/daisywheeljs/node_modules/underscore/underscore.js"}],"/home/dolphin/Desktop/daisywheeljs/src/js/jsx/Warning.js":[function(require,module,exports){
+},{"../jsx/Modal.js":263,"fluxxor":2,"react":254,"underscore":255}],266:[function(require,module,exports){
 var React=require("react"),Fluxxor=require("fluxxor"),FluxMixin=Fluxxor.FluxMixin(React),StoreWatchMixin=Fluxxor.StoreWatchMixin,Utils=require("../Utils.js");module.exports=React.createClass({displayName:"Warning",mixins:[FluxMixin,StoreWatchMixin("WheelStore","GamepadStore")],getStateFromFlux:function(){var e=this.getFlux(),t=e.store("WheelStore").getState(),a=e.store("GamepadStore").getState();return{showWarning:t.showWarning,gamepadSupported:a.gamepadSupported}},render:function(){var e,t={},a=this.state.showWarning?1:0,r={opacity:a};return e=this.state.gamepadSupported?'Connect a gamepad controller to use the <a target="_blank" href="http://daisywheeljs.org">Daisywheel</a>':'This browser does not support the Gamepad API. Check <a target="_blank" href="http://caniuse.com/#feat=gamepad">this list</a> for support',t.__html=e,React.createElement("div",{id:"daisywheel-controller-warning",style:r,dangerouslySetInnerHTML:t})}});
 
-},{"../Utils.js":"/home/dolphin/Desktop/daisywheeljs/src/js/Utils.js","fluxxor":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/index.js","react":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/react.js"}],"/home/dolphin/Desktop/daisywheeljs/src/js/jsx/Wheel.js":[function(require,module,exports){
+},{"../Utils.js":256,"fluxxor":2,"react":254}],267:[function(require,module,exports){
 var React=require("react"),Fluxxor=require("fluxxor"),Input=require("./Input.js"),Flower=require("./Flower.js"),Controls=require("./Controls.js"),FluxMixin=Fluxxor.FluxMixin(React),StoreWatchMixin=Fluxxor.StoreWatchMixin;module.exports=React.createClass({displayName:"Wheel",mixins:[FluxMixin,StoreWatchMixin("WheelStore")],getStateFromFlux:function(){var e=this.getFlux().store("WheelStore").getState();return{showWarning:e.showWarning}},render:function(){var e={opacity:this.state.showWarning?0:1};return React.createElement("div",{id:"daisywheel",style:e},React.createElement(Input,null),React.createElement(Flower,{flux:window.flux}),React.createElement(Controls,null))}});
 
-},{"./Controls.js":"/home/dolphin/Desktop/daisywheeljs/src/js/jsx/Controls.js","./Flower.js":"/home/dolphin/Desktop/daisywheeljs/src/js/jsx/Flower.js","./Input.js":"/home/dolphin/Desktop/daisywheeljs/src/js/jsx/Input.js","fluxxor":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/index.js","react":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/react.js"}],"/home/dolphin/Desktop/daisywheeljs/src/js/main.js":[function(require,module,exports){
+},{"./Controls.js":260,"./Flower.js":261,"./Input.js":262,"fluxxor":2,"react":254}],268:[function(require,module,exports){
 var Polyfills=require("./polyfills.js"),actions=require("./actions.js"),View=require("./jsx/View.js"),Fluxxor=require("fluxxor"),React=require("react"),app,daisywheelDebug=daisywheelDebug||!1;window&&document&&Polyfills.init();var SymbolsStore=require("./stores/symbols.js"),WheelStore=require("./stores/wheel.js"),InputStore=require("./stores/input.js"),GamepadStore=require("./stores/gamepad.js"),ControlsStore=require("./stores/controls.js"),stores={InputStore:new InputStore,SymbolsStore:new SymbolsStore,WheelStore:new WheelStore,GamepadStore:new GamepadStore,ControlsStore:new ControlsStore},flux=new Fluxxor.Flux(stores,actions);window.flux=flux,flux.on("dispatch",function(e,o){console&&console.log&&daisywheelDebug&&console.log("[Dispatch]",e,o)}),app=document.createElement("div"),document.body.appendChild(app),React.render(React.createElement(View,{flux:window.flux}),app),module.exports={symbols:flux.actions.setSymbols,load:flux.actions.load,unload:flux.actions.unload};
 
-},{"./actions.js":"/home/dolphin/Desktop/daisywheeljs/src/js/actions.js","./jsx/View.js":"/home/dolphin/Desktop/daisywheeljs/src/js/jsx/View.js","./polyfills.js":"/home/dolphin/Desktop/daisywheeljs/src/js/polyfills.js","./stores/controls.js":"/home/dolphin/Desktop/daisywheeljs/src/js/stores/controls.js","./stores/gamepad.js":"/home/dolphin/Desktop/daisywheeljs/src/js/stores/gamepad.js","./stores/input.js":"/home/dolphin/Desktop/daisywheeljs/src/js/stores/input.js","./stores/symbols.js":"/home/dolphin/Desktop/daisywheeljs/src/js/stores/symbols.js","./stores/wheel.js":"/home/dolphin/Desktop/daisywheeljs/src/js/stores/wheel.js","fluxxor":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/index.js","react":"/home/dolphin/Desktop/daisywheeljs/node_modules/react/react.js"}],"/home/dolphin/Desktop/daisywheeljs/src/js/polyfills.js":[function(require,module,exports){
+},{"./actions.js":257,"./jsx/View.js":265,"./polyfills.js":269,"./stores/controls.js":270,"./stores/gamepad.js":271,"./stores/input.js":272,"./stores/symbols.js":273,"./stores/wheel.js":274,"fluxxor":2,"react":254}],269:[function(require,module,exports){
 module.exports={init:function(){!function(t,n){function e(t){var e=n[t];n[t]=function(t){return o(e(t))}}function i(n,e,i){return(i=this).attachEvent("on"+n,function(n){var n=n||t.event;n.preventDefault=n.preventDefault||function(){n.returnValue=!1},n.stopPropagation=n.stopPropagation||function(){n.cancelBubble=!0},e.call(i,n)})}function o(t,n){if(n=t.length)for(;n--;)t[n].addEventListener=i;else t.addEventListener=i;return t}t.addEventListener||(o([n,t]),"Element"in t?t.Element.prototype.addEventListener=i:(n.attachEvent("onreadystatechange",function(){o(n.all)}),e("getElementsByTagName"),e("getElementById"),e("createElement"),o(n.all)))}(window,document),function(){function t(t){this.el=t;for(var n=t.className.replace(/^\s+|\s+$/g,"").split(/\s+/),e=0;e<n.length;e++)i.call(this,n[e])}function n(t,n,e){Object.defineProperty?Object.defineProperty(t,n,{get:e}):t.__defineGetter__(n,e)}if(!("undefined"==typeof window.Element||"classList"in document.documentElement)){var e=Array.prototype,i=e.push,o=e.splice,s=e.join;t.prototype={add:function(t){this.contains(t)||(i.call(this,t),this.el.className=this.toString())},contains:function(t){return-1!=this.el.className.indexOf(t)},item:function(t){return this[t]||null},remove:function(t){if(this.contains(t)){for(var n=0;n<this.length&&this[n]!=t;n++);o.call(this,n,1),this.el.className=this.toString()}},toString:function(){return s.call(this," ")},toggle:function(t){return this.contains(t)?this.remove(t):this.add(t),this.contains(t)}},window.DOMTokenList=t,n(Element.prototype,"classList",function(){return new t(this)})}}()}};
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/src/js/stores/controls.js":[function(require,module,exports){
+},{}],270:[function(require,module,exports){
 var constants=require("../constants"),_=require("underscore"),Fluxxor=require("fluxxor");module.exports=Fluxxor.createStore({initialize:function(){this.resetState(),this.bindActions(constants.SET_SYMBOLS,this.onSetSymbols)},resetState:function(){this["left-bumper"]="Backspace",this["left-analog"]="Select Petal",this["left-trigger"]="Numbers",this["right-trigger"]="Caps",this["right-bumper"]="Space"},getState:function(){return{"left-bumper":this["left-bumper"],"left-analog":this["left-analog"],"right-bumper":this["right-bumper"],"left-trigger":this["left-trigger"],"right-trigger":this["right-trigger"]}},onSetSymbols:function(){this.waitFor(["SymbolsStore"],_.bind(function(t){var e=t.getState().customTitles;_.map(e,_.bind(function(t,e){this[e]=t},this)),this.emit("change")},this))}});
 
-},{"../constants":"/home/dolphin/Desktop/daisywheeljs/src/js/constants.js","fluxxor":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/index.js","underscore":"/home/dolphin/Desktop/daisywheeljs/node_modules/underscore/underscore.js"}],"/home/dolphin/Desktop/daisywheeljs/src/js/stores/gamepad.js":[function(require,module,exports){
+},{"../constants":258,"fluxxor":2,"underscore":255}],271:[function(require,module,exports){
 var constants=require("../constants"),Fluxxor=require("fluxxor"),_=require("underscore"),BetweenNums=require("../units/BetweenNums.js"),GamepadMicro=require("gamepad-micro");module.exports=Fluxxor.createStore({actionButtonMapping:{actionWest:1,actionNorth:2,actionEast:3,actionSouth:4},initialize:function(){this.resetState(),delete this._GamepadMicro,this._GamepadMicro=new GamepadMicro,this.gamepadSupported=!!this._GamepadMicro.gamepadSupported,this._GamepadMicro.onUpdate(_.debounce(_.bind(this.onGamepadUpdate,this),0)),this.bindActions(constants.GAMEPAD_EVENT,this.onGamepadEvent)},resetState:function(){this.gamepadConnected=!1,this.stickDirection=!1,this.lastButton=!1,this.dPadDirection=!1,this.actionButton=!1},getState:function(){return{gamepadConnected:this.gamepadConnected,gamepadSupported:this.gamepadSupported,stickDirection:this.stickDirection,lastButton:this.lastButton,dPadDirection:this.dPadDirection,actionButton:this.actionButton,actionButtonMapping:this.actionButtonMapping}},onGamepadUpdate:function(t){var e=flux.store("WheelStore").getState();this.gamepadConnected=this._GamepadMicro.gamepadConnected,e.loaded&&(this.gamepadConnected?_.map(t,function(t){t&&flux.actions.gamepadEvent(t)}):e.showWarning&&flux.actions.hideWarning()),this.emit("change")},onGamepadEvent:function(t){this.setDirection(t.leftStick),this.setButtons(t.buttons)},setDirection:function(t){var e=flux.store("WheelStore").getState().numOfPetals;this.stickDirection=this.getDirectionFromAxes(t.x,t.y,1/e*360/100),this.emit("change")},getDirectionFromAxes:function(t,e,i){var n=!1,a=BetweenNums(e,0,.1)&&BetweenNums(t,0,.1),o=0===t&&0===e;return a||o?!1:(t>i?n=BetweenNums(e,0,i)?"east":i>e?"northeast":"southeast":BetweenNums(t,0,i)?i>e?n="north":e>i&&(n="south"):n=BetweenNums(e,0,i)?"west":i>e?"northwest":"southwest",n)},setButtons:function(t){this.actionButton=!1,this.dPadDirection=!1,this.lastButton=!1,_.map(t,function(t,e){if(t)switch(this.lastButton={name:e,released:t.released,held:t.held},e){case"actionSouth":case"actionNorth":case"actionEast":case"actionWest":this.setActionButton(e);break;case"dPadUp":case"dPadRight":case"dPadDown":case"dPadLeft":this.setDPadDirection(e)}}.bind(this)),this.emit("change")},setDPadDirection:function(t){this.dPadDirection=t||!1,this.emit("change")},setActionButton:function(t){this.actionButton=t||!1,this.emit("change")}});
 
-},{"../constants":"/home/dolphin/Desktop/daisywheeljs/src/js/constants.js","../units/BetweenNums.js":"/home/dolphin/Desktop/daisywheeljs/src/js/units/BetweenNums.js","fluxxor":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/index.js","gamepad-micro":"/home/dolphin/Desktop/daisywheeljs/node_modules/gamepad-micro/dist/gamepad-micro.min.js","underscore":"/home/dolphin/Desktop/daisywheeljs/node_modules/underscore/underscore.js"}],"/home/dolphin/Desktop/daisywheeljs/src/js/stores/input.js":[function(require,module,exports){
+},{"../constants":258,"../units/BetweenNums.js":275,"fluxxor":2,"gamepad-micro":99,"underscore":255}],272:[function(require,module,exports){
 var constants=require("../constants.js"),Utils=require("../Utils.js"),Fluxxor=require("fluxxor"),_=require("underscore");module.exports=Fluxxor.createStore({symbolSelectionCallback:!1,initialize:function(){this.resetState(),this.bindActions(constants.UNLOAD,this.onUnload,constants.LOAD,this.onLoad,constants.LOAD_DEFAULT,this.onLoad,constants.ATTACH_INPUT,this.onAttachInput,constants.SET_INPUT_CURSOR,this.onSetInputCursor,constants.SET_INPUT_VALUE,this.onSetInputValue,constants.SELECT_SYMBOL,this.onSelectSymbol,constants.GAMEPAD_EVENT,this.onGamepadEvent)},resetState:function(){this.originalEl={},this.value="",this.cursor=0,this.emit("change")},getState:function(){return{originalEl:this.originalEl,value:this.value,cursor:this.cursor}},onSetInputValue:function(t){this.value=t,this.emit("change")},onSetInputCursor:function(t){this.cursor=t,this.emit("change")},onAttachInput:function(t){this.originalEl=t,this.emit("change")},onUnload:function(){this.originalEl.value=this.value,this.originalEl.readOnly=!1,Utils.setCursor(this.originalEl,this.cursor),this.emit("change")},onLoad:function(t){this.value=this.originalEl.value,this.cursor=Utils.getCursor(this.originalEl),this.originalEl.readOnly=!0,this.originalEl.blur(),t&&(this.symbolSelectionCallback=t),this.emit("change")},onSelectSymbol:function(t){this.waitFor(["SymbolsStore"],_.bind(function(i){i.defaultSymbolSelection&&this.addSymbolToValue(t)},this))},getValueDivision:function(){var t=this.value+"",i=t.substring(0,this.cursor),s=t.substring(this.cursor,t.length);return{start:i,end:s}},addSymbolToValue:function(t){var i=this.getValueDivision();this.value=i.start+t+i.end,this.cursor++,this.emit("change")},onGamepadEvent:function(){this.waitFor(["GamepadStore","SymbolsStore"],_.bind(function(t,i){var s=t.getState(),e=i.getState(),n=e.selectedSymbol,o=e.defaultSymbolSelection,a=s.dPadDirection,r=s.lastButton;switch(a){case"dPadUp":this.cursor=0;break;case"dPadDown":this.cursor=this.value.length;break;case"dPadLeft":this.cursor--;break;case"dPadRight":this.cursor++}if(r)switch(r.name){case"leftBumper":this.onBackspace();break;case"rightBumper":this.onSpace()}n&&(o?this.addSymbolToValue(n):this.symbolSelectionCallback(n)),this.emit("change")},this))},onBackspace:function(){var t=this.getValueDivision(),i=t.start;i=i.substring(0,i.length-1),this.value=i+t.end,this.cursor>0&&this.cursor--,this.emit("change")},onSpace:function(){this.addSymbolToValue(" ")}});
 
-},{"../Utils.js":"/home/dolphin/Desktop/daisywheeljs/src/js/Utils.js","../constants.js":"/home/dolphin/Desktop/daisywheeljs/src/js/constants.js","fluxxor":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/index.js","underscore":"/home/dolphin/Desktop/daisywheeljs/node_modules/underscore/underscore.js"}],"/home/dolphin/Desktop/daisywheeljs/src/js/stores/symbols.js":[function(require,module,exports){
+},{"../Utils.js":256,"../constants.js":258,"fluxxor":2,"underscore":255}],273:[function(require,module,exports){
 var Fluxxor=require("fluxxor"),constants=require("../constants.js"),Utils=require("../Utils.js"),_=require("underscore");module.exports=Fluxxor.createStore({initialize:function(){this.resetState(),this.bindActions(constants.LOAD,this.onLoad,constants.LOAD_DEFAULT,this.onLoadDefault,constants.SET_SYMBOLS,this.onSetSymbols,constants.GAMEPAD_EVENT,this.onGamepadEvent)},resetState:function(){this.symbolSets=["abcdefghijklmnopqrstuvwxyz?!;\\&-".split(""),"ABCDEFGHIJKLMNOPQRSTUVWXYZ+.@#$%".split(""),"0123456789*,_=\"'()[]{}:~^<>|".split("")],this.selectedSetIndex=0,this.selectedSymbol="",this.defaultSymbolSelection=!0,this.customTitles={}},getState:function(){return{symbolSets:this.symbolSets,selectedSetIndex:this.selectedSetIndex,selectedSymbol:this.selectedSymbol,defaultSymbolSelection:this.defaultSymbolSelection,customTitles:this.customTitles}},onLoadDefault:function(){this.defaultSymbolSelection=!0,this.emit("change")},onLoad:function(e){e&&(this.defaultSymbolSelection=!1,this.emit("change"))},onSetSymbols:function(e){for(var t=2,s=3,i=0;i<e.length;i++){var l=e[i],o=l.set,n=l.override;if(n&&t>-1){if(this.symbolSets.unshift(o),this.symbolSets[t]=null,l.title)switch(t){case 2:this.customTitles["left-trigger"]=l.title;break;case 3:this.customTitles["right-trigger"]=l.title}else console.error("Custom sets with `override` must also have the `title` property defined.");t-=1}else this.symbolSets[s]=o,s++}s>3&&(this.customTitles["left-trigger"]="Reset",this.customTitles["right-trigger"]="Cycle"),this.emit("change")},onGamepadEvent:function(){this.waitFor(["GamepadStore","WheelStore"],_.bind(function(e,t){var s=e.getState(),i=t.getState().selectedPetal,l=s.lastButton,o=s.actionButton,n=this.symbolSets.length<4,h=s.actionButtonMapping[o],c=this.symbolSets[this.selectedSetIndex];if(l)switch(l.name){case"leftTrigger":n?l.held?this.selectedSetIndex=2:l.released&&(this.selectedSetIndex=0):l.released&&this.resetSymbols();break;case"rightTrigger":n?l.held?this.selectedSetIndex=1:l.released&&(this.selectedSetIndex=0):l.released&&this.cycleSymbols()}if(o&&"none"!==i){var r=4*i-4,a=r+h-1;this.selectedSymbol=c[a]}else this.selectedSymbol=!1;this.emit("change")},this))},cycleSymbols:function(){this.selectedSetIndex>this.symbolSets.length-1?this.selectedSetIndex++:this.selectedSetIndex=0,this.emit("change")},resetSymbols:function(){this.selectedSetIndex=0,this.emit("change")}});
 
-},{"../Utils.js":"/home/dolphin/Desktop/daisywheeljs/src/js/Utils.js","../constants.js":"/home/dolphin/Desktop/daisywheeljs/src/js/constants.js","fluxxor":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/index.js","underscore":"/home/dolphin/Desktop/daisywheeljs/node_modules/underscore/underscore.js"}],"/home/dolphin/Desktop/daisywheeljs/src/js/stores/wheel.js":[function(require,module,exports){
+},{"../Utils.js":256,"../constants.js":258,"fluxxor":2,"underscore":255}],274:[function(require,module,exports){
 var constants=require("../constants.js"),Fluxxor=require("fluxxor"),_=require("underscore");module.exports=Fluxxor.createStore({numOfPetals:8,petalDirections:["north","northeast","east","southeast","south","southwest","west","northwest"],initialize:function(){this.resetState(),this.bindActions(constants.LOAD,this.onLoad,constants.LOAD_DEFAULT,this.onLoad,constants.UNLOAD,this.onUnload,constants.CLICK_CLOSE_ATTACHED,this.onClickCloseAttached,constants.CLICK_CLOSE_DETACHED,this.onClickCloseDetached,constants.SHOW_WARNING,this.onShowWarning,constants.HIDE_WARNING,this.onHideWarning,constants.GAMEPAD_EVENT,this.onGamepadEvent)},resetState:function(){this.loaded=!1,this.clickCloseAttached=!1,this.showWarning=!0,this.selectedPetal="none"},getState:function(){return{loaded:this.loaded,clickCloseAttached:this.clickCloseAttached,showWarning:this.showWarning,numOfPetals:this.numOfPetals,selectedPetal:this.selectedPetal}},onLoad:function(){this.loaded=!0,this.emit("change")},onUnload:function(){this.loaded=!1,this.emit("change")},onClickCloseAttached:function(){this.clickCloseAttached=!0,this.emit("changed")},onClickCloseDetached:function(){this.clickCloseAttached=!1,this.emit("changed")},onShowWarning:function(){this.showWarning=!0,this.emit("change")},onHideWarning:function(){this.showWarning=!1,this.emit("change")},onGamepadEvent:function(){this.waitFor(["GamepadStore"],_.bind(function(t){var n=t.getState(),e=n.stickDirection,s=n.gamepadConnected;this.showWarning=!s,e?_.map(this.petalDirections,_.bind(function(t,n){t===e&&(this.selectedPetal=n+1)},this)):this.selectedPetal="none",this.emit("change")},this))}});
 
-},{"../constants.js":"/home/dolphin/Desktop/daisywheeljs/src/js/constants.js","fluxxor":"/home/dolphin/Desktop/daisywheeljs/node_modules/fluxxor/index.js","underscore":"/home/dolphin/Desktop/daisywheeljs/node_modules/underscore/underscore.js"}],"/home/dolphin/Desktop/daisywheeljs/src/js/units/BetweenNums.js":[function(require,module,exports){
+},{"../constants.js":258,"fluxxor":2,"underscore":255}],275:[function(require,module,exports){
 module.exports=function(e,n,o){return e>=n-o&&n+o>=e};
 
-},{}],"/home/dolphin/Desktop/daisywheeljs/src/js/units/SetupFlowerStyles.js":[function(require,module,exports){
+},{}],276:[function(require,module,exports){
 module.exports=function(t){for(var e=document.createElement("style"),a="",o=208,r=160,n=640,s=640,d=2*Math.PI/t,h=2*-d,i=0;t>i;i++){var m=Math.round(n/2+o*Math.cos(h)-r/2),f=Math.round(s/2+o*Math.sin(h)-r/2),p=180*h/Math.PI+135;a+=["#daisywheel-js .petal-container:nth-of-type("+(i+1)+") {","top: "+f+"px;","left: "+m+"px;","transform: rotate("+p+"deg);","-ms-transform: rotate("+p+"deg);","-webkit-transform: rotate("+p+"deg);","} "].join(""),a+=["#daisywheel-js .petal-container:nth-of-type("+(i+1)+") .buttons {","transform: rotate("+-p+"deg);","-ms-transform: rotate("+-p+"deg);","-webkit-transform: rotate("+-p+"deg);","} "].join(""),h+=d}e.innerHTML=a,document.head.appendChild(e)};
 
-},{}]},{},["/home/dolphin/Desktop/daisywheeljs/src/js/main.js"])("/home/dolphin/Desktop/daisywheeljs/src/js/main.js")
-});
+},{}]},{},[268]);

@@ -54,14 +54,19 @@ gulp.task('build', function(){
     browserify({
         entries: [paths.ENTRY_POINT],
         transform: [reactify, uglifyify],
-        standalone: 'Daisywheel',
-        debug: false,
-        cache: {}, packageCache: {}, fullPaths: true
+        standalone: 'Daisywheel'
     })
         .bundle()
         .pipe(source(paths.MINIFIED_OUT))
         .pipe(gulp.dest(paths.DIST))
-        .pipe(rename('index.js'))
+        .pipe(rename('index.js'));
+
+    browserify({
+        entries: [paths.ENTRY_POINT],
+        transform: [reactify, uglifyify]
+    })
+        .bundle()
+        .pipe(source('index.js'))
         .pipe(gulp.dest('.'));
 
     gulp.start('css');
