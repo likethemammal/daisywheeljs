@@ -19,18 +19,20 @@
   "private": false,
   "devDependencies": {
     "browserify": "^10.2.4",
-    "fluxxor": "^1.6.0",
-    "gamepad-micro": "^0.1.1",
     "gulp": "^3.9.0",
     "gulp-html-replace": "^1.5.1",
     "gulp-less": "^2.0.1",
     "gulp-react": "^3.0.1",
     "gulp-rename": "^1.2.0",
-    "react": "^0.13.3",
     "reactify": "^1.1.1",
     "uglifyify": "^3.0.1",
-    "underscore": "^1.8.3",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.2.3"
+  },
+  "dependencies": {
+    "fluxxor": "^1.7.1",
+    "gamepad-micro": "^0.1.6",
+    "react": "^0.13.3",
+    "underscore": "^1.8.3"
   }
 }
