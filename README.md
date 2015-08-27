@@ -10,96 +10,24 @@ This interface is something every game with text input needs. Not a single game 
 
 A live demo can be found [here](http://daisywheeljs.org)
 
-###Controls
- + **Left Analog Stick**: Select group/petal.
- + **Face Buttons**: Select symbol from group/petal.
- + **Right Shoulder Button**: Toggle capital letters.
- + **Left Shoulder Button**: Toggle numbers.
- 
-###Setup
-Daisywheel's setup is simple and easily extendable. The most straightforward way to get started is by including the `daisywheel.js` library and its dependencies in script tags, including the `daisywheel.css` file on the page or in the build process, and then adding the daisywheel CSS class to whatever input or textarea tag the tool will provide input for.
+###Setup/Install/Documentation
 
-```html
+Instructions on use can be found at [daisywheeljs.org](http://daisywheeljs.org).
 
+There you'll find:
 
-<link rel="stylesheet" type="text/css" href="css/lib/daisywheel.css">
+ + [How-to](http://daisywheeljs.org/#how-it-works)
+ + [Setup](http://daisywheeljs.org/#docs)
+ + [Documentation](http://daisywheeljs.org/#docs)
+ + [Troubleshooting](http://daisywheeljs.org/#troubleshooting)
 
-...
+###Patreon
 
-<input class="daisywheel">
+####[https://patreon.com/daisywheeljs](https://www.patreon.com/daisywheeljs)####
 
-...
+![Support on Patreon!](https://s3.amazonaws.com/patreon_public_assets/toolbox/patreon_logo.png)
 
-<script src="js/lib/underscore-min.js"></script>
-<script src="js/lib/gamepad-mod.js"></script>
-
-<script src="js/lib/daisywheel.js"></script>
-
-```
-
-That's it! Whenever the 'focus' event for that input is fired the Daisywheel UI will automatically appear, allowing the user to enter text with their gamepad without having to switch to their keyboard.
-
-####Dependencies
-
- + [Underscore](http://underscorejs.org/underscore-min.js), common javascript utility belt.
- + [Gamepad-mod.js](https://raw.githubusercontent.com/likethemammal/daisywheeljs/master/gamepad-mod.js), library that interfaces with the Gamepad API and feeds Daisywheel its data.
-
-####Options and Extensions
-
-#####Manually loading and unloading
-
-Daisywheel can be manually loaded and unloaded by calling `load` and `unload` respectively on the global `Daisywheel` object. The `load` function expects a single callback parameter which will return the symbols, as they're selected, to be used as needed.
-
-```js
-
-//When the Daisywheel should appear
-Daisywheel.load(function(symbol) {
-  console.log(symbol);
-});
-
-
-//When the Daisywheel should close
-Daisywheel.unload();
-
-```
-
-#####Custom symbol sets
-
-A custom set of symbols can be sent into Daisywheel to add support for multiple languages, emojis, etc. The `symbols` function expects an array of objects, each with a `set` and an `override` attribute.
-
-```js
-
-//Adding Japanese Katakana alphabet
-Daisywheel.symbols([{
-  set: ["あ", "い", "う", "え", "お", "か", "き", "く", "け", ....],
-  override: true,
-  title: 'Japanese (Katakana)'
-}]);
-
-
-//Adding Emoji support
-Daisywheel.symbols([{
-  set: [
-    {
-      symbol: '&#x1F344;'
-      font: 'EmojiSymbols'
-    },
-    {
-      symbol: '&#x1F31E;'
-      font: 'EmojiSymbols'
-    },
-  ],
-  override: true,
-  title: 'Emoji Symbols'
-}]);
-
-```
-
-The `set` property is the array of symbols (a string or an object) that will be displayed. For symbols that are a single character each a single concatinated string can be used. If the symbol is not supported by utf-8 (i.e. emojis) then the `font` attribute within the symbol's object should be set to the `font-family` of the desired font (remember to include the font file if it is not support by default).
-
-The `override` property is a boolean that determines whether the symbol set will 'override' one of the default sets or not, meaning if more than 3 symbol sets have an override property of `true` the defaults will not be shown at all.
-
-The `title` property is required if the `override` property is set. It's the string that's used to label the control for its corresponding symbol set.
+This project is funded through [Patreon](https://www.patreon.com), an ongoing crowd-funding site. [Check it out](https://www.patreon.com/daisywheeljs), and consider supporting Daisywheel's development. There you can find out more about the current status of the project through developer posts and community discussion. Pledging allows you to vote on **controller support** and **feature requests**, and gives access to **small-group chat** and **beta testing**.
 
 ###Contributing
 
@@ -126,7 +54,6 @@ This is licensed under the [MIT Open-source License](https://github.com/likethem
 ---------------------
 
 ####todo
- + switch trigger buttons to be 'hold down' instead of toggles.
  + multilanguage support
  + controller brand specific button images
  + complex actions (attach to a text editor like [Atom](https://atom.io/) or [Light Table](http://www.lighttable.com/))
