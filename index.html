@@ -148,28 +148,39 @@
 
             <h3 id="docs">Docs</h3>
             <h4>Setup</h4>
-            <p>Daisywheel's setup is simple and easily extendable. The most straightforward way to get started is by first including the <a href="http://github.com/likethemammal/daisywheeljs">daisywheel.min.js library</a> and its <a href="#dependencies" title="Dependencies">dependencies</a> in script tags. Then include the <span class="code-chars">daisywheel.min.css</span> file on the page or in the build process (both can be found in the <a href="https://github.com/likethemammal/daisywheeljs/tree/master/dist" title="Github Repo Distribution Directory"><span class="code-chars">dist</span> directory of the Daisywheeljs repo</a>), and add the <span class="code-chars">daisywheel</span> CSS class to whatever input or textarea tag the tool will provide input for.</p>
+
+            <p>Setup for Daisywheel is simple and easily extendabled. It uses the UMD, meaning it supports install and usage through CommonJS, AMD, and globals. There is an <a>npm package</a> and the script can be found in the <a href="https://github.com/likethemammal/daisywheeljs/tree/master/dist" title="Github Repo Distribution Directory"><span class="code-chars">dist</span> directory of the Daisywheeljs repo</a>.</p>
+
+            <h5>CommonJS</h5>
+
+            <code class="code-block">
+                <pre><span class="pl-k rich-diff-level-one">var</span> Daisywheel <span class="pl-k rich-diff-level-one">=</span> <span class="pl-c1 rich-diff-level-one">require</span>(<span class="red"><span class="pl-pds">'</span>daisywheeljs<span class="pl-pds">'</span></span>);
+</pre>
+            </code>
+
+            <h5>AMD</h5>
+            <code class="code-block">
+                <pre><span class="pl-c1 rich-diff-level-one">define</span>([<span class="red"><span class="pl-pds">'</span>daisywheeljs<span class="pl-pds">'</span></span>], <span class="pl-k rich-diff-level-one">function</span>(<span class="pl-smi rich-diff-level-one">Daisywheel</span>) {
+    ...
+});</pre>
+            </code>
+
+            <h5>Global</h5>
+            <code class="code-block">
+                <pre><span class="green">&lt;script </span><span class="blue">src=</span><span class="yellow">"js/lib/daisywheel.min.js"</span><span class="green">&gt;&lt;/script&gt;</span></pre>
+            </code>
+
+            <p>Now all that's needed is to <a href="https://github.com/likethemammal/daisywheeljs/tree/master/dist/daisywheel.min.css">daisywheel.min.css</a> file, and to add the <span class="code-chars">daisywheel</span> CSS class to whatever input or textarea tag the tool will provide input for.</p>
 
             <code class="code-block">
                 <pre><span class="green">&lt;link</span> <span class="blue">rel=</span><span class="yellow">"stylesheet"</span> <span class="blue">type=</span><span class="yellow">"text/css"</span> <span class="blue">href=</span><span class="yellow">"css/lib/daisywheel.min.css"</span><span class="green">&gt;</span>
 
 ...
 
-<span class="green">&lt;input</span> <span class="blue">class=</span><span class="yellow">"daisywheel"</span><span class="green">&gt;</span>
-
-...
-
-<span class="green">&lt;script </span><span class="blue">src=</span><span class="yellow">"js/lib/underscore-min.js"</span><span class="green">&gt;&lt;/script&gt;</span>
-<span class="green">&lt;script </span><span class="blue">src=</span><span class="yellow">"js/lib/gamepad-mod.js"</span><span class="green">&gt;&lt;/script&gt;</span>
-
-<span class="green">&lt;script </span><span class="blue">src=</span><span class="yellow">"js/lib/daisywheel.min.js"</span><span class="green">&gt;&lt;/script&gt;</span></pre>
+<span class="green">&lt;input</span> <span class="blue">class=</span><span class="yellow">"daisywheel"</span><span class="green">&gt;</span></pre>
             </code>
 
             <p>That's it! Whenever the 'focus' event for that input is fired the Daisywheel UI will automatically appear, allowing the user to enter text with their gamepad without having to switch to their keyboard.</p>
-
-            <h4 id="dependencies">Dependencies</h4>
-            <p><a href="http://underscorejs.org/underscore-min.js" title="Underscore Library Download">Underscore</a>, common javascript utility belt.</p>
-            <p><a href="https://github.com/likethemammal/gamepad-mod.js" title="Gamepad-mod.js Github Repo">Gamepad-mod.js</a>, library that interfaces with the Gamepad API and feeds Daisywheel its data.</p>
 
             <h4 id="options-and-extensions">Options and Extensions</h4>
             <h5>Manually loading and unloading</h5>
