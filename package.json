@@ -2,7 +2,6 @@
   "name": "daisywheeljs-site",
   "version": "0.1.0",
   "description": "The site for DaisywheelJS",
-  "main": "index.js",
   "dependencies": {
     "react": "^0.13.3",
     "underscore": "^1.8.3",
@@ -18,7 +17,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": " browserify -t reactify -t uglifyify js/main.js > build/scripts.js"
+    "build": "browserify -t reactify -t uglifyify js/main.js > build/scripts.js"
   },
   "repository": {
     "type": "git",
