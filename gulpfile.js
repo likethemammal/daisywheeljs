@@ -53,21 +53,12 @@ gulp.task('default', ['watch', 'css']);
 gulp.task('build', function(){
     browserify({
         entries: [paths.ENTRY_POINT],
-        transform: [reactify, uglifyify],
+        transform: [reactify],
         standalone: 'Daisywheel'
     })
         .bundle()
         .pipe(source(paths.MINIFIED_OUT))
-        .pipe(gulp.dest(paths.DIST))
-        .pipe(rename('index.js'));
-
-    browserify({
-        entries: [paths.ENTRY_POINT],
-        transform: [reactify, uglifyify]
-    })
-        .bundle()
-        .pipe(source('index.js'))
-        .pipe(gulp.dest('.'));
+        .pipe(gulp.dest(paths.DIST));
 
     gulp.start('css');
 });
