@@ -1,5 +1,6 @@
 var React = require('react');
 var Troubleshooting = require('./jsx/Troubleshooting');
+var Daisywheel = require('daisywheel');
 
 var Redux = require('redux');
 var ReactRedux = require('react-redux');
