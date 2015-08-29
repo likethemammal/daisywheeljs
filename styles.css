@@ -435,7 +435,93 @@ code pre {
     font-style: italic;
 }
 
-/*Community*/
+/* Tabs */
+
+.tabNavs {
+    text-align: center;
+}
+
+.tabNav {
+    float: left;
+    width: 33%;
+    padding: 0 22px;
+    font-size: 22px;
+    line-height: 33px;
+    font-weight: bold;
+    text-shadow: 0 1px rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.3);
+}
+
+.tabNav:focus, .tabNav:active,
+.tabNav.active, .tabNav:hover {
+    background: rgba(0,0,0,0.1);
+}
+
+.tabNav:hover {
+    cursor: pointer;
+}
+
+
+/* Troubleshooting Table */
+
+.troubleshootingTable {
+    width: 100%;
+    padding-top: 22px;
+}
+
+.troubleshootingTable th {
+    text-align: center;
+}
+
+.controllerTableName, .controllerTableCell {
+    padding: 0 11px;
+    line-height: 33px;
+    font-size: 18px;
+    background: rgba(0,0,0,0.3);
+}
+
+.controllerTableCell {
+    text-align: center;
+    border-top: 1px solid rgba(0,0,0,0.3);
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    cursor: pointer;
+}
+
+.controllerTableCell:hover {
+    opacity: 0.8;
+}
+
+.controllerTableCell.supported {
+    background: rgba(70, 255, 60, 0.79);
+}
+
+.tableEmptySpace {
+
+}
+
+/* More Info */
+
+.moreInfo {
+    min-height: 55px;
+    padding: 11px;
+}
+
+.moreInfo h4 {
+    padding: 0;
+}
+
+/* Empty Pane */
+
+.emptyPane {
+    margin-top: 22px;
+    background: rgba(0,0,0,0.3);
+    min-height: 55px;
+    line-height: 55px;
+    text-align: center;
+}
+
+
+/*Community, Creator: Dan Harmon*/
 
 .community-cards {
     text-align: center;

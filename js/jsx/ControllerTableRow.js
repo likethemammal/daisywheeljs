@@ -24,7 +24,7 @@ module.exports = React.createClass({
 
         return (
 			<tr className="controllerTableRow">
-                <td>{this.props.name}</td>
+                <td className="controllerTableName">{this.props.name}</td>
                 {cells}
             </tr>
         );

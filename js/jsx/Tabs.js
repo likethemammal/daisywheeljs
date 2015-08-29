@@ -29,7 +29,7 @@ module.exports = React.createClass({
             var activeClass = (index === currentIndex) ? 'active' : '';
 
             return (
-                <div className={"tabNav " + activeClass} key={index} onClick={selectTabFunc.bind(null, index)} tabIndex={index}>
+                <div className={"tabNav " + activeClass} key={index} onClick={selectTabFunc.bind(null, index)} onFocus={selectTabFunc.bind(null, index)} tabIndex={index + 1}>
                     {title}
                 </div>
             );
@@ -41,7 +41,7 @@ module.exports = React.createClass({
 
         return (
 			<div className="tabs">
-                <div className="tabNavs">
+                <div className="tabNavs clearfix">
                     {navs}
                 </div>
                 <div className="tabPane">

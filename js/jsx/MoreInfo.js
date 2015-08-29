@@ -11,8 +11,13 @@ module.exports = React.createClass({
         var html = {
             __html: info
         };
+        if (info === info + '') {
+            info = (<p>{info}</p>);
+        }
+
         return (
-			<div className="moreInfo">
+			<div className={"moreInfo "}>
+                <h4>More Info</h4>
                 {this.props.controller}
                 {info}
             </div>

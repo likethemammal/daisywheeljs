@@ -47,9 +47,9 @@ module.exports = React.createClass({
 
             if (!_.isEmpty(listOfBrowsers)) {
                 renderedComponent = (
-                    <table key={index}>
+                    <table className="troubleshootingTable" key={index}>
                         <tr>
-                            <td></td>
+                            <td className="tableEmptySpace"></td>
                             {browserRow}
                             </tr>
                         {rows}
