@@ -8,9 +8,6 @@ module.exports = React.createClass({
     },
     render: function() {
         var info = this.props.info || 'No extra info';
-        var html = {
-            __html: info
-        };
         if (info === info + '') {
             info = (<p>{info}</p>);
         }

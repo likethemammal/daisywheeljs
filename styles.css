@@ -91,7 +91,7 @@ h2 {
 /*  Banner  */
 
 .banner {
-    height: 444px;
+    height: 455px;
     position: relative;
     overflow: hidden;
     background: #1D303E;
@@ -437,6 +437,10 @@ code pre {
 
 /* Tabs */
 
+.tabs {
+    padding-top: 22px;
+}
+
 .tabNavs {
     text-align: center;
 }
@@ -503,12 +507,25 @@ code pre {
 
 .moreInfo {
     min-height: 55px;
-    padding: 11px;
+    margin: 11px 0;
 }
 
-.moreInfo h4 {
+.otherTips, .moreInfo {
+    padding: 0 22px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 2px;
+    border: 1px solid rgba(0,0,0,0.5);
+}
+
+.otherTips h4, .moreInfo h4 {
+    margin-top: 22px;
     padding: 0;
 }
+
+.otherTips li {
+    font-size: 14px;
+}
+
 
 /* Empty Pane */
 

@@ -5,7 +5,7 @@ module.exports = React.createClass({
     render: function() {
         return (
 			<div className="emptyPane">
-                TBD
+                No controller support testing
             </div>
         );
     }
