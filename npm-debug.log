@@ -1,0 +1,25 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/home/dolphin/local/bin/npm', 'version', 'patch' ]
+2 info using npm@1.4.17
+3 info using node@v0.10.29
+4 error Error: Git working directory not clean.
+4 error M dist/daisywheel.min.js
+4 error M  gulpfile.js
+4 error D  index.js
+4 error M  package.json
+4 error     at /home/dolphin/local/lib/node_modules/npm/lib/version.js:88:33
+4 error     at ChildProcess.exithandler (child_process.js:645:7)
+4 error     at ChildProcess.emit (events.js:98:17)
+4 error     at maybeClose (child_process.js:755:16)
+4 error     at Socket.<anonymous> (child_process.js:968:11)
+4 error     at Socket.emit (events.js:95:17)
+4 error     at Pipe.close (net.js:465:12)
+5 error If you need help, you may report this *entire* log,
+5 error including the npm and node versions, at:
+5 error     <http://github.com/npm/npm/issues>
+6 error System Linux 3.13.0-24-generic
+7 error command "node" "/home/dolphin/local/bin/npm" "version" "patch"
+8 error cwd /home/dolphin/Desktop/daisywheeljs
+9 error node -v v0.10.29
+10 error npm -v 1.4.17
+11 verbose exit [ 1, true ]

@@ -24,11 +24,6 @@ var paths = {
     ENTRY_POINT: './src/js/main.js'
 };
 
-gulp.task('copy', function(){
-    gulp.src(paths.HTML)
-        .pipe(gulp.dest(paths.DIST));
-});
-
 gulp.task('watch', function() {
     var watcher  = watchify(browserify({
         entries: [paths.ENTRY_POINT],
@@ -53,7 +48,7 @@ gulp.task('default', ['watch', 'css']);
 gulp.task('build', function(){
     browserify({
         entries: [paths.ENTRY_POINT],
-        transform: [reactify],
+        transform: [reactify, uglifyify],
         standalone: 'Daisywheel'
     })
         .bundle()
