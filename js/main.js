@@ -1,4 +1,3 @@
-var Daisywheel = require('daisywheel');
 var React = require('react');
 var Troubleshooting = require('./jsx/Troubleshooting');
 
