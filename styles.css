@@ -190,7 +190,7 @@ h2 {
     text-align: center;
 }
 
-.download-link {
+.download-link, .support-link {
     display: inline-block;
     height: 40px;
     line-height: 40px;
@@ -206,9 +206,14 @@ h2 {
     font-weight: normal;
 }
 
-.download-link:hover {
+.download-link:hover, .support-link:hover {
     color: white;
     opacity: 0.75;
+}
+
+.support-link {
+    margin-left: 11px;
+    background: rgb(229, 69, 25);
 }
 
 /*  Container  */
