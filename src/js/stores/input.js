@@ -63,7 +63,7 @@ module.exports = Fluxxor.createStore({
 
     onLoad: function(callback) {
         this.value = this.originalEl.value;
-        this.cursor = Utils.getCursor(this.originalEl);
+        this.cursor = this.value.length; //Theres a bug in chrome where getCursor returns 0 onFocus, so just set it to the end of the string: http://stackoverflow.com/questions/14974913/selectionstart-of-textarea-returns-wrong-value
         this.originalEl.readOnly = true;
         this.originalEl.blur();
 

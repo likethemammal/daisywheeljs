@@ -21,6 +21,7 @@ module.exports = React.createClass({
         var input = this.refs.input.getDOMNode();
         Utils.setCursor(input, this.state.cursor);
         input.scrollLeft = input.scrollWidth;
+        input.focus();
     },
 
     componentWillMount: function() {
