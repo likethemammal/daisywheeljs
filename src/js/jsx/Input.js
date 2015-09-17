@@ -3,6 +3,7 @@ var Fluxxor = require('fluxxor');
 var FluxMixin = Fluxxor.FluxMixin(React),
     StoreWatchMixin = Fluxxor.StoreWatchMixin;
 var Utils = require('../Utils.js');
+console.log('this is a test yo.');
 
 module.exports = React.createClass({
     displayName: "Input",
@@ -29,7 +30,7 @@ module.exports = React.createClass({
         document.addEventListener('mousedown', this.onInputMouseDown);
     },
 
-    componentDidUnmout: function() {
+    componentWillUnmount: function() {
         document.removeEventListener('mousedown', this.onInputMouseDown);
     },
 
