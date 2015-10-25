@@ -28,14 +28,14 @@ module.exports = {
     setInputCursor: function(cursorPos) {
         this.dispatch(constants.SET_INPUT_CURSOR, cursorPos)
     },
+    changeInputScroll: function(scrollWidth) {
+        this.dispatch(constants.CHANGE_INPUT_SCROLL, scrollWidth)
+    },
     showWarning: function() {
         this.dispatch(constants.SHOW_WARNING);
     },
     hideWarning: function() {
         this.dispatch(constants.HIDE_WARNING);
-    },
-    selectSymbol: function(symbol) {
-        this.dispatch(constants.SELECT_SYMBOL, symbol);
     },
     setSymbols: function(symbols) {
         if (_.isString(symbols)) {

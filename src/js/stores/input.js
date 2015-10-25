@@ -18,8 +18,8 @@ module.exports = Fluxxor.createStore({
             constants.ATTACH_INPUT, this.onAttachInput,
             constants.SET_INPUT_CURSOR, this.onSetInputCursor,
             constants.SET_INPUT_VALUE, this.onSetInputValue,
+            constants.CHANGE_INPUT_SCROLL, this.onChangeInputScroll,
 
-            constants.SELECT_SYMBOL, this.onSelectSymbol,
             constants.GAMEPAD_EVENT, this.onGamepadEvent
 		);
 	},
@@ -28,6 +28,9 @@ module.exports = Fluxxor.createStore({
         this.originalEl = {};
         this.value = '';
         this.cursor = 0;
+        this.latestCharacter = '';
+        this.latestCharacterChanged = false;
+        this.scrollDirection = 1;
         this.emit('change');
 	},
 
@@ -35,7 +38,10 @@ module.exports = Fluxxor.createStore({
 		return {
             originalEl: this.originalEl,
             value: this.value,
-            cursor: this.cursor
+            cursor: this.cursor,
+            latestCharacter: this.latestCharacter,
+            latestCharacterChanged: this.latestCharacterChanged,
+            scrollDirection: this.scrollDirection
         }
 	},
 
@@ -74,12 +80,11 @@ module.exports = Fluxxor.createStore({
         this.emit('change');
     },
 
-    onSelectSymbol: function(symbol) {
-        this.waitFor(['SymbolsStore'], _.bind(function(SymbolsStore) {
-            if (SymbolsStore.defaultSymbolSelection) {
-                this.addSymbolToValue(symbol);
-            }
-        }, this));
+    onChangeInputScroll: function() {
+        if (this.latestCharacterChanged) {
+            this.latestCharacterChanged = false;
+            this.emit('change');
+        }
     },
 
     getValueDivision: function() {
@@ -97,7 +102,9 @@ module.exports = Fluxxor.createStore({
         var valueParts = this.getValueDivision();
         this.value = valueParts.start + symbol + valueParts.end;
         this.cursor++;
-        this.emit('change');
+        this.scrollDirection = 1;
+        this.latestCharacter = symbol;
+        this.latestCharacterChanged = true;
     },
 
     onGamepadEvent: function() {
@@ -117,10 +124,10 @@ module.exports = Fluxxor.createStore({
                     this.cursor = this.value.length;
                     break;
                 case 'dPadLeft':
-                    this.cursor--;
+                    this._decrementCursor();
                     break;
                 case 'dPadRight':
-                    this.cursor++;
+                    this._incrementCursor();
                     break;
             }
 
@@ -155,13 +162,21 @@ module.exports = Fluxxor.createStore({
         start = start.substring(0, start.length - 1);
 
         this.value = start + valueParts.end;
-        if (this.cursor > 0) {
-            this.cursor--;
-        }
-        this.emit('change');
     },
 
     onSpace: function() {
         this.addSymbolToValue(' ');
+    },
+
+    _decrementCursor: function() {
+        this.scrollDirection = -1;
+        if (this.cursor > 0) {
+            this.cursor--;
+        }
+    },
+
+    _incrementCursor: function() {
+        this.scrollDirection = 1;
+        this.cursor++;
     }
 });

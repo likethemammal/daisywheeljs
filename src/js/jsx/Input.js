@@ -1,5 +1,6 @@
 var React = require('react');
 var Fluxxor = require('fluxxor');
+var SimulatorInput = require('./SimulatorInput');
 var FluxMixin = Fluxxor.FluxMixin(React),
     StoreWatchMixin = Fluxxor.StoreWatchMixin;
 var Utils = require('../Utils.js');
@@ -14,14 +15,17 @@ module.exports = React.createClass({
 
         return {
             cursor: inputState.cursor,
-            value: inputState.value
+            value: inputState.value,
+            scrollLeft: inputState.scrollLeft
         };
     },
 
     componentDidUpdate: function() {
         var input = this.refs.input.getDOMNode();
+
         Utils.setCursor(input, this.state.cursor);
-        input.scrollLeft = input.scrollWidth;
+        input.scrollLeft = this.state.scrollLeft;
+
         input.focus();
     },
 
@@ -52,6 +56,7 @@ module.exports = React.createClass({
         return (
             <div id='daisywheel-input-container'>
                 <input ref="input" id='daisywheel-input' value={inputValue} onChange={this.onInputChange} type="text"/>
+                <SimulatorInput />
             </div>
         );
     }

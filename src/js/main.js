@@ -14,11 +14,13 @@ if (window && document) {
 var SymbolsStore = require('./stores/symbols.js');
 var WheelStore = require('./stores/wheel.js');
 var InputStore = require('./stores/input.js');
+var OffsetStore = require('./stores/cursor-offset.js');
 var GamepadStore = require('./stores/gamepad.js');
 var ControlsStore = require('./stores/controls.js');
 
 var stores = {
     InputStore: new InputStore(),
+    OffsetStore: new OffsetStore(),
     SymbolsStore: new SymbolsStore(),
     WheelStore: new WheelStore(),
     GamepadStore: new GamepadStore(),

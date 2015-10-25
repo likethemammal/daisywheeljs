@@ -260,6 +260,9 @@
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
+#daisywheel-js #simulator-input {
+  display: none;
+}
 #daisywheel-js .petal-container {
   position: absolute;
   height: 160px;
