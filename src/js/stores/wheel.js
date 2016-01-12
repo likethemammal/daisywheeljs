@@ -1,5 +1,6 @@
 var constants = require('../constants.js');
 var Fluxxor = require('fluxxor');
+var Howl = require('howler').Howl;
 var _ = require('underscore');
 
 module.exports = Fluxxor.createStore({
@@ -15,6 +16,13 @@ module.exports = Fluxxor.createStore({
         'west',
         'northwest'
     ],
+
+    sound: new Howl({
+        urls: [
+            'https://cdn.rawgit.com/likethemammal/daisywheeljs/master/src/assets/sounds/navigate.mp3',
+            'https://cdn.rawgit.com/likethemammal/daisywheeljs/master/src/assets/sounds/navigate.ogg'
+        ]
+    }),
 
 	initialize: function() {
 		this.resetState();
@@ -90,14 +98,24 @@ module.exports = Fluxxor.createStore({
             if (direction) {
                 _.map(this.petalDirections, _.bind(function(petalDirection, index) {
                     if (petalDirection === direction) {
-                        this.selectedPetal = index + 1;
+                        this.selectPetal(index);
                     }
                 }, this));
             } else {
-                this.selectedPetal = 'none';
+                this.deselectPetal();
             }
 
-            this.emit('change');
         }, this));
+    },
+
+    selectPetal: function(index) {
+        this.selectedPetal = index + 1;
+        this.sound.play();
+        this.emit('change');
+    },
+
+    deselectPetal: function() {
+        this.selectedPetal = 'none';
+        this.emit('change');
     }
 });

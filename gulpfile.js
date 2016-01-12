@@ -3,7 +3,6 @@ var rename = require('gulp-rename');
 var less = require('gulp-less');
 var path = require('path');
 var react = require('gulp-react');
-var htmlreplace = require('gulp-html-replace');
 var source = require('vinyl-source-stream');
 var browserify = require('browserify');
 var uglifyify = require('uglifyify');
