@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "description": "The site for DaisywheelJS",
   "dependencies": {
-    "react": "^0.13.3",
+    "react": "0.13.3",
     "underscore": "^1.8.3",
-    "daisywheel": "^0.1.11",
-    "react-redux": "^1.0.1",
-    "redux": "^1.0.1"
+    "daisywheel": "^0.1.16",
+    "react-redux": "1.0.1",
+    "redux": "1.0.1"
   },
   "devDependencies": {
     "browserify": "^10.2.6",
