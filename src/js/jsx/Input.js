@@ -50,7 +50,7 @@ module.exports = React.createClass({
 
         return (
             <div id='daisywheel-input-container'>
-                <input ref="input" id='daisywheel-input' value={inputValue} onChange={this.onInputChange} type="text"/>
+                <textarea ref="input" id='daisywheel-input' value={inputValue} onChange={this.onInputChange} maxLength="81"/>
             </div>
         );
     }
