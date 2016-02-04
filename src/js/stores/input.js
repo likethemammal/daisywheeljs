@@ -94,7 +94,7 @@ module.exports = Fluxxor.createStore({
     },
 
     addSymbolToValue: function(symbol) {
-        if (this.value.length >- 81) {
+        if (this.value.length >= 81) {
             return;
         }
 

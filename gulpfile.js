@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var rename = require('gulp-rename');
 var less = require('gulp-less');
+var derequire = require('gulp-derequire');
 var path = require('path');
 var watch = require('gulp-watch');
 var source = require('vinyl-source-stream');
@@ -42,6 +43,7 @@ gulp.task('build', function(){
     })
         .bundle()
         .pipe(source(paths.MINIFIED_OUT))
+        .pipe(derequire())
         .pipe(gulp.dest(paths.DIST));
 
     gulp.start('build-dev');
@@ -58,6 +60,7 @@ gulp.task('build-dev', function(){
     })
         .bundle()
         .pipe(source(paths.OUT))
+        .pipe(derequire())
         .pipe(gulp.dest(paths.DIST));
 });
 
