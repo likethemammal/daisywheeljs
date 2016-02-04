@@ -18,7 +18,7 @@ module.exports = React.createClass({
     },
 
     componentDidUpdate: function() {
-        var input = this.refs.input.getDOMNode();
+        var input = this.refs.input;
         Utils.setCursor(input, this.state.cursor);
         input.scrollLeft = input.scrollWidth;
         input.focus();
@@ -34,14 +34,14 @@ module.exports = React.createClass({
     },
 
     onInputChange: function() {
-        var inputEl = this.refs.input.getDOMNode();
+        var inputEl = this.refs.input;
         var value = inputEl.value;
         flux.actions.setInputValue(value);
         this.onInputMouseDown();
     },
 
     onInputMouseDown: function() {
-        var inputEl = this.refs.input.getDOMNode();
+        var inputEl = this.refs.input;
         flux.actions.setInputCursor(Utils.getCursor(inputEl));
     },
 

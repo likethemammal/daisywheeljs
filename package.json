@@ -13,6 +13,7 @@
     "daisywheeljs",
     "gamepad",
     "gamepad api",
+    "virtual keyboard",
     "on-screen keyboard"
   ],
   "license": "MIT",
@@ -21,7 +22,6 @@
     "browserify": "^10.2.4",
     "gulp": "^3.9.0",
     "gulp-less": "^2.0.1",
-    "gulp-react": "^3.0.1",
     "gulp-rename": "^1.2.0",
     "gulp-watch": "^4.3.5",
     "lessify": "^1.0.1",
@@ -29,17 +29,12 @@
     "uglifyify": "^3.0.1",
     "vinyl-source-stream": "^1.1.0"
   },
-  "browserify": {
-    "transform": [
-      "reactify",
-      "uglifyify"
-    ]
-  },
   "dependencies": {
-    "fluxxor": "^1.7.1",
+    "fluxxor": "^1.7.3",
     "gamepad-micro": "^0.1.6",
     "howler": "^1.1.28",
-    "react": "^0.13.3",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
     "underscore": "^1.8.3"
   }
 }

@@ -26,7 +26,7 @@ module.exports = React.createClass({
         link.href = fontLinkStr;
 
         document.head.appendChild(link);
-        this.refs.daisywheel.getDOMNode().addEventListener('click', this.onClickClose);
+        this.refs.daisywheel.addEventListener('click', this.onClickClose);
     },
 
     componentWillMount: function() {
@@ -37,7 +37,7 @@ module.exports = React.createClass({
     componentWillUnmount: function() {
         document.removeEventListener('focus', this.onFocus, true);
         window.removeEventListener('keyup', _.bind(this.onKeyboardClose, this));
-        this.refs.daisywheel.getDOMNode().removeEventListener('click', this.onClickClose);
+        this.refs.daisywheel.removeEventListener('click', this.onClickClose);
     },
 
     onClickClose: function(ev) {

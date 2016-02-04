@@ -2,7 +2,6 @@ var gulp = require('gulp');
 var rename = require('gulp-rename');
 var less = require('gulp-less');
 var path = require('path');
-var react = require('gulp-react');
 var watch = require('gulp-watch');
 var source = require('vinyl-source-stream');
 var browserify = require('browserify');
@@ -38,11 +37,11 @@ gulp.task('watch', function() {
 gulp.task('build', function(){
     browserify({
         entries: [paths.MAIN],
-        transform: [reactify],
+        transform: [reactify, uglifyify],
         standalone: 'Daisywheel'
     })
         .bundle()
-        .pipe(source(paths.OUT))
+        .pipe(source(paths.MINIFIED_OUT))
         .pipe(gulp.dest(paths.DIST));
 
     gulp.start('build-dev');
@@ -52,13 +51,13 @@ gulp.task('build', function(){
 gulp.task('build-dev', function(){
     browserify({
         entries: [paths.MAIN],
-        transform: [reactify, uglifyify],
+        transform: [reactify],
         standalone: 'Daisywheel',
         debug: true,
         cache: {}, packageCache: {}, fullPaths: true
     })
         .bundle()
-        .pipe(source(paths.MINIFIED_OUT))
+        .pipe(source(paths.OUT))
         .pipe(gulp.dest(paths.DIST));
 });
 

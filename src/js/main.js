@@ -4,6 +4,7 @@
     var View = require('./jsx/View.js');
     var Fluxxor = require('fluxxor');
     var React = require('react');
+    var ReactDOM = require('react-dom');
     var app;
     var debugMode = false;
 
@@ -47,7 +48,7 @@
 
     document.body.appendChild(app);
 
-    React.render(React.createElement(View, {flux: window.flux}), app);
+    ReactDOM.render(React.createElement(View, {flux: window.flux}), app);
 })();
 
 module.exports = {
