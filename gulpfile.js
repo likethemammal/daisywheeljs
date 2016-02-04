@@ -15,17 +15,15 @@ var lessFiles = [
 ];
 
 var paths = {
-    ALL: ['src/js/*.js', 'src/js/**/*.js', 'src/example/index.html'],
-    JS: ['src/js/*.js', 'src/js/**/*.js'],
-    MINIFIED_OUT: 'daisywheel.min.js',
     DIST: 'dist',
+    MINIFIED_OUT: 'daisywheel.min.js',
     OUT: 'daisywheel.js',
-    ENTRY_POINT: './src/js/main.js'
+    MAIN: './src/js/main.js'
 };
 
 gulp.task('watch', function() {
     var watcher  = watchify(browserify({
-        entries: [paths.ENTRY_POINT],
+        entries: [paths.MAIN],
         transform: [reactify],
         standalone: 'Daisywheel',
         debug: true,
@@ -46,7 +44,7 @@ gulp.task('default', ['watch', 'css']);
 
 gulp.task('build', function(){
     browserify({
-        entries: [paths.ENTRY_POINT],
+        entries: [paths.MAIN],
         transform: [reactify, uglifyify],
         standalone: 'Daisywheel'
     })
