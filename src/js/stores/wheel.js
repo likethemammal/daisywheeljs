@@ -31,6 +31,7 @@ module.exports = Fluxxor.createStore({
             constants.LOAD, this.onLoad,
             constants.LOAD_DEFAULT, this.onLoad,
             constants.UNLOAD, this.onUnload,
+            constants.DEBUG, this.onDebug,
             constants.CLICK_CLOSE_ATTACHED, this.onClickCloseAttached,
             constants.CLICK_CLOSE_DETACHED, this.onClickCloseDetached,
 
@@ -64,6 +65,12 @@ module.exports = Fluxxor.createStore({
 
     onUnload: function() {
         this.loaded = false;
+        this.emit('change');
+    },
+
+    onDebug: function() {
+        this.loaded = true;
+        this.showWarning = false;
         this.emit('change');
     },
 

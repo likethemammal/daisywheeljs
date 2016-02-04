@@ -10,6 +10,9 @@ module.exports = {
     load: function(symbolSelection) {
         this.dispatch(constants.LOAD, symbolSelection);
     },
+    debug: function() {
+        this.dispatch(constants.DEBUG);
+    },
     loadDefault: function() {
         this.dispatch(constants.LOAD_DEFAULT);
     },

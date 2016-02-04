@@ -22,7 +22,8 @@ module.exports = Fluxxor.createStore({
         this._GamepadMicro.onUpdate(_.debounce(_.bind(this.onGamepadUpdate, this), 0));
 
         this.bindActions(
-            constants.GAMEPAD_EVENT, this.onGamepadEvent
+            constants.GAMEPAD_EVENT, this.onGamepadEvent,
+            constants.DEBUG, this.onDebug
 		);
 	},
 
@@ -70,6 +71,11 @@ module.exports = Fluxxor.createStore({
     onGamepadEvent: function(gamepad) {
         this.setDirection(gamepad.leftStick);
         this.setButtons(gamepad.buttons);
+    },
+
+    onDebug: function() {
+        this.gamepadConnected = true;
+        this.emit('change');
     },
 
     setDirection: function(leftStick) {
