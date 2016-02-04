@@ -7,7 +7,7 @@
     "type": "git",
     "url": "https://github.com/likethemammal/daisywheeljs.git"
   },
-  "main": "src/js/main.js",
+  "main": "dist/daisywheel.min.js",
   "keywords": [
     "daisywheel",
     "daisywheeljs",
