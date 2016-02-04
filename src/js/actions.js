@@ -10,8 +10,19 @@ module.exports = {
     load: function(symbolSelection) {
         this.dispatch(constants.LOAD, symbolSelection);
     },
-    debug: function() {
-        this.dispatch(constants.DEBUG);
+    debug: function(off) {
+        var storage = typeof(Storage) !== "undefined";
+
+        if (off) {
+            if (storage) {
+                localStorage.setItem('debug', false);
+            }
+        } else {
+            if (storage) {
+                localStorage.setItem('debug', true);
+            }
+            this.dispatch(constants.DEBUG);
+        }
     },
     loadDefault: function() {
         this.dispatch(constants.LOAD_DEFAULT);

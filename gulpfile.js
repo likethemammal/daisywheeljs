@@ -3,10 +3,10 @@ var rename = require('gulp-rename');
 var less = require('gulp-less');
 var path = require('path');
 var react = require('gulp-react');
+var watch = require('gulp-watch');
 var source = require('vinyl-source-stream');
 var browserify = require('browserify');
 var uglifyify = require('uglifyify');
-var watchify = require('watchify');
 var reactify = require('reactify');
 
 var lessFiles = [
@@ -22,37 +22,44 @@ var paths = {
 };
 
 gulp.task('watch', function() {
-    var watcher  = watchify(browserify({
-        entries: [paths.MAIN],
-        transform: [reactify],
-        standalone: 'Daisywheel',
-        debug: true,
-        cache: {}, packageCache: {}, fullPaths: true
-    }));
+    gulp.start('build-dev');
+    gulp.start('css');
 
-    return watcher.on('update', function () {
-        watcher.bundle()
-            .pipe(source(paths.OUT))
-            .pipe(gulp.dest(paths.DIST));
-    })
-        .bundle()
-        .pipe(source(paths.OUT))
-        .pipe(gulp.dest(paths.DIST));
+    //watch the less directory run the css task
+    watch('src/less/**/*.less', function () {
+        gulp.start('css');
+    });
+    //watch the js directory to run babel
+    watch('src/js/**/*.js', function () {
+        gulp.start('build-dev');
+    });
 });
-
-gulp.task('default', ['watch', 'css']);
 
 gulp.task('build', function(){
     browserify({
         entries: [paths.MAIN],
-        transform: [reactify, uglifyify],
+        transform: [reactify],
         standalone: 'Daisywheel'
+    })
+        .bundle()
+        .pipe(source(paths.OUT))
+        .pipe(gulp.dest(paths.DIST));
+
+    gulp.start('build-dev');
+    gulp.start('css');
+});
+
+gulp.task('build-dev', function(){
+    browserify({
+        entries: [paths.MAIN],
+        transform: [reactify, uglifyify],
+        standalone: 'Daisywheel',
+        debug: true,
+        cache: {}, packageCache: {}, fullPaths: true
     })
         .bundle()
         .pipe(source(paths.MINIFIED_OUT))
         .pipe(gulp.dest(paths.DIST));
-
-    gulp.start('css');
 });
 
 gulp.task('css', function () {
@@ -62,5 +69,4 @@ gulp.task('css', function () {
         }))
         .pipe(rename('daisywheel.min.css'))
         .pipe(gulp.dest(paths.DIST));
-
 });

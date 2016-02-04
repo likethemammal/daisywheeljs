@@ -7,10 +7,6 @@
     "type": "git",
     "url": "https://github.com/likethemammal/daisywheeljs.git"
   },
-  "scripts": {
-      "build": "browserify -t reactify -t uglyifyify -s Daisywheel",
-      "watch": "watchify -t reactify -t uglyifyify -s Daisywheel"
-  },
   "main": "src/js/main.js",
   "keywords": [
     "daisywheel",
@@ -27,10 +23,11 @@
     "gulp-less": "^2.0.1",
     "gulp-react": "^3.0.1",
     "gulp-rename": "^1.2.0",
+    "gulp-watch": "^4.3.5",
+    "lessify": "^1.0.1",
     "reactify": "^1.1.1",
     "uglifyify": "^3.0.1",
-    "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.2.3"
+    "vinyl-source-stream": "^1.1.0"
   },
   "browserify": {
     "transform": [
