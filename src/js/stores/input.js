@@ -94,6 +94,10 @@ module.exports = Fluxxor.createStore({
     },
 
     addSymbolToValue: function(symbol) {
+        if (this.value.length >- 81) {
+            return;
+        }
+
         var valueParts = this.getValueDivision();
         this.value = valueParts.start + symbol + valueParts.end;
         this.cursor++;

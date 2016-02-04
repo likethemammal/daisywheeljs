@@ -18,6 +18,7 @@ module.exports = Fluxxor.createStore({
     ],
 
     sound: new Howl({
+        volume: 0.2,
         urls: [
             'https://cdn.rawgit.com/likethemammal/daisywheeljs/master/src/assets/sounds/navigate.mp3',
             'https://cdn.rawgit.com/likethemammal/daisywheeljs/master/src/assets/sounds/navigate.ogg'
@@ -115,11 +116,17 @@ module.exports = Fluxxor.createStore({
         }, this));
     },
 
-    selectPetal: function(index) {
-        this.selectedPetal = index + 1;
-        this.sound.play();
+    selectPetal: _.throttle(function(index) {
+        var newIndex = index + 1;
+
+        //conditional to compensate for noise in controller axis
+        if (this.selectedPetal !== newIndex && this.selectedPetal !== 'none') {
+            this.sound.play();
+        }
+
+        this.selectedPetal = newIndex;
         this.emit('change');
-    },
+    }, 10),
 
     deselectPetal: function() {
         this.selectedPetal = 'none';

@@ -1,4 +1,5 @@
 var React = require('react');
+var ReactDOM = require('react-dom');
 var Fluxxor = require('fluxxor');
 var FluxMixin = Fluxxor.FluxMixin(React),
     StoreWatchMixin = Fluxxor.StoreWatchMixin;
@@ -18,7 +19,7 @@ module.exports = React.createClass({
     },
 
     componentDidUpdate: function() {
-        var input = this.refs.input;
+        var input = ReactDOM.findDOMNode(this.refs.input);
         Utils.setCursor(input, this.state.cursor);
         input.scrollLeft = input.scrollWidth;
         input.focus();
@@ -50,7 +51,7 @@ module.exports = React.createClass({
 
         return (
             <div id='daisywheel-input-container'>
-                <textarea ref="input" id='daisywheel-input' value={inputValue} onChange={this.onInputChange} maxLength="81"/>
+                <textarea ref="input" id='daisywheel-input' value={inputValue} onChange={this.onInputChange}></textarea>
             </div>
         );
     }
