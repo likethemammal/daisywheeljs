@@ -13,6 +13,11 @@ module.exports =  {
             textRange.moveEnd(pos);
             textRange.moveStart(pos);
             textRange.select();
+
+            if (node.setSelectionRange) {
+                node.setSelectionRange(pos,pos);
+            }
+
             return true;
         }else if(node.setSelectionRange){
             node.setSelectionRange(pos,pos);
