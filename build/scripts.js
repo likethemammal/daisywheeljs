@@ -15304,6 +15304,10 @@ var ReactEmptyComponentInjection = {
   }
 };
 
+function registerNullComponentID() {
+  ReactEmptyComponentRegistry.registerNullComponentID(this._rootNodeID);
+}
+
 var ReactEmptyComponent = function (instantiate) {
   this._currentElement = null;
   this._rootNodeID = null;
@@ -15312,7 +15316,7 @@ var ReactEmptyComponent = function (instantiate) {
 assign(ReactEmptyComponent.prototype, {
   construct: function (element) {},
   mountComponent: function (rootID, transaction, context) {
-    ReactEmptyComponentRegistry.registerNullComponentID(rootID);
+    transaction.getReactMountReady().enqueue(registerNullComponentID, this);
     this._rootNodeID = rootID;
     return ReactReconciler.mountComponent(this._renderedComponent, rootID, transaction, context);
   },
@@ -19618,7 +19622,7 @@ module.exports = ReactUpdates;
 
 'use strict';
 
-module.exports = '0.14.7';
+module.exports = '0.14.8';
 },{}],186:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -26175,7 +26179,7 @@ module.exports = _dereq_('./lib/React');
 }.call(this));
 
 },{}],259:[function(_dereq_,module,exports){
-module.exports={setCursor:function(e,t){var e="string"==typeof e||e instanceof String?document.getElementById(e):e;if(!e)return!1;if(e.createTextRange){t+="";var n=e.createTextRange();return n.collapse(!0),n.moveEnd(t),n.moveStart(t),n.select(),!0}return e.setSelectionRange?(e.setSelectionRange(t,t),!0):!1},getCursor:function(e){if(e.selectionStart)return e.selectionStart;if(document.selection){e.focus();var t=document.selection.createRange();if(null==t)return 0;var n=e.createTextRange(),r=n.duplicate();return n.moveToBookmark(t.getBookmark()),r.setEndPoint("EndToStart",n),r.text.length}return 0}};
+module.exports={setCursor:function(e,t){var e="string"==typeof e||e instanceof String?document.getElementById(e):e;if(!e)return!1;if(e.createTextRange){t+="";var n=e.createTextRange();return n.collapse(!0),n.moveEnd(t),n.moveStart(t),n.select(),e.setSelectionRange&&e.setSelectionRange(t,t),!0}return e.setSelectionRange?(e.setSelectionRange(t,t),!0):!1},getCursor:function(e){if(e.selectionStart)return e.selectionStart;if(document.selection){e.focus();var t=document.selection.createRange();if(null==t)return 0;var n=e.createTextRange(),r=n.duplicate();return n.moveToBookmark(t.getBookmark()),r.setEndPoint("EndToStart",n),r.text.length}return 0}};
 
 },{}],260:[function(_dereq_,module,exports){
 var constants=_dereq_("./constants.js");module.exports={unload:function(t){t&&"daisywheel-input"===t.target.id||this.dispatch(constants.UNLOAD)},load:function(t){this.dispatch(constants.LOAD,t)},debug:function(t){var s="undefined"!=typeof Storage;t?s&&localStorage.setItem("debug",!1):(s&&localStorage.setItem("debug",!0),this.dispatch(constants.DEBUG))},loadDefault:function(){this.dispatch(constants.LOAD_DEFAULT)},attachInput:function(t){this.dispatch(constants.ATTACH_INPUT,t)},clickCloseAttached:function(){this.dispatch(constants.CLICK_CLOSE_ATTACHED)},clickCloseDetached:function(){this.dispatch(constants.CLICK_CLOSE_DETACHED)},setInputValue:function(t){this.dispatch(constants.SET_INPUT_VALUE,t)},setInputCursor:function(t){this.dispatch(constants.SET_INPUT_CURSOR,t)},showWarning:function(){this.dispatch(constants.SHOW_WARNING)},hideWarning:function(){this.dispatch(constants.HIDE_WARNING)},selectSymbol:function(t){this.dispatch(constants.SELECT_SYMBOL,t)},setSymbols:function(t){_.isString(t)&&(t=t.split("")),this.dispatch(constants.SELECT_SYMBOL,t)},gamepadEvent:function(t){this.dispatch(constants.GAMEPAD_EVENT,t)}};
