@@ -5,7 +5,7 @@
   "dependencies": {
     "react": "0.13.3",
     "underscore": "^1.8.3",
-    "daisywheel": "^0.1.20",
+    "daisywheel": "0.1.21",
     "react-redux": "1.0.1",
     "redux": "1.0.1"
   },
