@@ -22,7 +22,7 @@
     "browserify": "^10.2.4",
     "gulp": "^3.9.0",
     "gulp-derequire": "^2.1.0",
-    "gulp-less": "^2.0.1",
+    "gulp-less": "2.0.1",
     "gulp-rename": "^1.2.0",
     "gulp-watch": "^4.3.5",
     "lessify": "^1.0.1",
@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "fluxxor": "^1.7.3",
-    "gamepad-micro": "^0.1.11",
+    "gamepad-micro": "0.1.12",
     "howler": "^1.1.28",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
