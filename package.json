@@ -1,6 +1,6 @@
 {
   "name": "daisywheel",
-  "version": "0.1.22",
+  "version": "0.1.23",
   "author": "Chris Dolphin <dolphin@likethemammal.com>",
   "description": "The Steam 'Big Picture' Daisywheel ported to JS and CSS. Supports Gamepad API.",
   "repository": {
@@ -8,7 +8,9 @@
     "url": "https://github.com/likethemammal/daisywheeljs.git"
   },
   "main": "dist/daisywheel.min.js",
-  "files": ["dist/"],
+  "files": [
+    "dist/"
+  ],
   "keywords": [
     "daisywheel",
     "daisywheeljs",
