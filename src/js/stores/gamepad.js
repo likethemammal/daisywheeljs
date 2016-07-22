@@ -30,7 +30,7 @@ module.exports = Fluxxor.createStore({
 	resetState: function() {
         this.gamepadConnected = false;
         this.stickDirection = false;
-        this.lastButton = false;
+        this.otherButtons = {};
         this.dPadDirection = false;
         this.actionButton = false;
     },
@@ -40,7 +40,7 @@ module.exports = Fluxxor.createStore({
             gamepadConnected: this.gamepadConnected,
             gamepadSupported: this.gamepadSupported,
             stickDirection: this.stickDirection,
-            lastButton: this.lastButton,
+            otherButtons: this.otherButtons,
             dPadDirection: this.dPadDirection,
             actionButton: this.actionButton,
             actionButtonMapping: this.actionButtonMapping
@@ -86,7 +86,8 @@ module.exports = Fluxxor.createStore({
 
     getDirectionFromAxes: function(xAxis, yAxis, ratio) {
         var direction = false;
-        var isNoise = BetweenNums(yAxis, 0,  0.1) && BetweenNums(xAxis, 0, 0.1);
+        var assumedNoise = 0.24;
+        var isNoise = BetweenNums(yAxis, 0, assumedNoise) && BetweenNums(xAxis, 0, assumedNoise);
         var isStill = xAxis === 0 && yAxis === 0;
 
         if (isNoise || isStill) {
@@ -129,43 +130,39 @@ module.exports = Fluxxor.createStore({
     setButtons: function(buttons) {
         this.actionButton = false;
         this.dPadDirection = false;
-        this.lastButton = false;
+        this.otherButtons = {};
         _.map(buttons, function(state, button) {
             if (!state) {
                 return;
             }
-
-            this.lastButton = {
-                name: button,
-                released: state.released,
-                held: state.held
-            };
 
             switch (button) {
                 case 'actionSouth':
                 case 'actionNorth':
                 case 'actionEast':
                 case 'actionWest':
-                    this.setActionButton(button);
+                    this.actionButton = button || false;
+                    return;
                     break;
                 case 'dPadUp':
                 case 'dPadRight':
                 case 'dPadDown':
                 case 'dPadLeft':
                     this.setDPadDirection(button);
+                    return;
                     break;
             }
+
+            this.otherButtons[button] = {
+                released: state.released,
+                held: state.held
+            };
         }.bind(this));
         this.emit('change');
     },
 
     setDPadDirection: function(button) {
         this.dPadDirection = button || false;
-        this.emit('change');
-    },
-
-    setActionButton: function(button) {
-        this.actionButton = button || false;
         this.emit('change');
     }
 });

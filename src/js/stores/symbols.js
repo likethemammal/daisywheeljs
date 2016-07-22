@@ -94,42 +94,43 @@ module.exports = Fluxxor.createStore({
         this.waitFor(['GamepadStore', 'WheelStore'], _.bind(function(GamepadStore, WheelStore) {
             var gamepadState = GamepadStore.getState();
             var selectedPetal = WheelStore.getState().selectedPetal;
-            var lastButton = gamepadState.lastButton;
+            var otherButtons = gamepadState.otherButtons;
             var actionButton = gamepadState.actionButton;
             var shouldToggle = this.symbolSets.length < 4;
             var actionButtonMapped = gamepadState.actionButtonMapping[actionButton];
             var currentSymbolSet = this.symbolSets[this.selectedSetIndex];
 
-            if (lastButton) {
-                switch (lastButton.name) {
+            _.map(otherButtons, _.bind(function(button, name) {
+                switch (name) {
                     case 'leftTrigger':
                         if (shouldToggle) {
-                            if (lastButton.held) {
+                            if (button.held) {
                                 this.selectedSetIndex = 2;
-                            } else if (lastButton.released) {
+                            } else if (button.released) {
                                 this.selectedSetIndex = 0;
                             }
                         } else {
-                            if (lastButton.released) {
+                            if (button.released) {
                                 this.resetSymbols();
                             }
                         }
                         break;
                     case 'rightTrigger':
                         if (shouldToggle) {
-                            if (lastButton.held) {
+                            if (button.held) {
                                 this.selectedSetIndex = 1;
-                            } else if (lastButton.released) {
+                            } else if (button.released) {
                                 this.selectedSetIndex = 0;
                             }
                         } else {
-                            if (lastButton.released) {
+                            if (button.released) {
                                 this.cycleSymbols();
                             }
                         }
                         break;
                 }
-            }
+            }, this));
+
 
             if (actionButton && selectedPetal !== 'none') {
                 var selectedPetalGroupIndex = selectedPetal * 4 - 4;

@@ -111,7 +111,7 @@ module.exports = Fluxxor.createStore({
             var selectedSymbol = symbolsState.selectedSymbol;
             var defaultSymbolSelection = symbolsState.defaultSymbolSelection;
             var dPadDirection = gamepadState.dPadDirection;
-            var lastButton = gamepadState.lastButton;
+            var otherButtons = gamepadState.otherButtons;
 
             switch (dPadDirection) {
                 case 'dPadUp':
@@ -128,8 +128,8 @@ module.exports = Fluxxor.createStore({
                     break;
             }
 
-            if (lastButton) {
-                switch (lastButton.name) {
+            _.map(otherButtons, _.bind(function(button, name) {
+                switch (name) {
                     case 'leftBumper':
                         this.onBackspace();
                         break;
@@ -137,7 +137,7 @@ module.exports = Fluxxor.createStore({
                         this.onSpace();
                         break;
                 }
-            }
+            }, this));
 
 
             if (selectedSymbol) {

@@ -19,15 +19,7 @@ There you'll find:
  + [How-to](http://daisywheeljs.org/#how-it-works)
  + [Setup](http://daisywheeljs.org/#docs)
  + [Documentation](http://daisywheeljs.org/#docs)
- + [Troubleshooting](http://daisywheeljs.org/#troubleshooting)
-
-### Patreon
-
-#### [https://patreon.com/daisywheeljs](https://www.patreon.com/daisywheeljs) ####
-
-![Support on Patreon!](https://s3.amazonaws.com/patreon_public_assets/toolbox/patreon_logo.png)
-
-This project is funded through [Patreon](https://www.patreon.com), an ongoing crowd-funding site. [Check it out](https://www.patreon.com/daisywheeljs), and consider supporting Daisywheel's development. There you can find out more about the current status of the project through developer posts and community discussion. Pledging allows you to vote on **controller support** and **feature requests**, and gives access to **small-group chat** and **beta testing**.
+ + [Troubleshooting](https://github.com/likethemammal/daisywheeljs/wiki)
 
 ### Contributing
 

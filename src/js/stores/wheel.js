@@ -110,9 +110,10 @@ module.exports = Fluxxor.createStore({
                     }
                 }, this));
             } else {
-                this.deselectPetal();
+                this.selectedPetal = 'none';
             }
 
+            this.emit('change');
         }, this));
     },
 
@@ -128,8 +129,4 @@ module.exports = Fluxxor.createStore({
         this.emit('change');
     }, 10),
 
-    deselectPetal: function() {
-        this.selectedPetal = 'none';
-        this.emit('change');
-    }
 });
