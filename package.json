@@ -8,6 +8,7 @@
     "url": "https://github.com/likethemammal/daisywheeljs.git"
   },
   "main": "dist/daisywheel.min.js",
+  "files": ["dist/"],
   "keywords": [
     "daisywheel",
     "daisywheeljs",
