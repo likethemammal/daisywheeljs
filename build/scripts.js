@@ -20,10 +20,10 @@ var React=require("react");module.exports=React.createClass({displayName:"MoreIn
 var React=require("react"),_=require("underscore");module.exports=React.createClass({displayName:"Tabs",propTypes:{titles:React.PropTypes.arrayOf([React.PropTypes.string]).isRequired,panes:React.PropTypes.arrayOf([React.PropTypes.element]).isRequired},getInitialState:function(){return{currentTabIndex:0}},selectTab:function(e){this.setState({currentTabIndex:e})},getTabNavs:function(){var e=this.state.currentTabIndex,t=this.selectTab;return _.map(this.props.titles,function(a,r){var s=r===e?"active":"";return React.createElement("div",{className:"tabNav "+s,key:r,onClick:t.bind(null,r),onFocus:t.bind(null,r),tabIndex:r+1},a)})},render:function(){var e=this.getTabNavs(),t=this.props.panes[this.state.currentTabIndex];return React.createElement("div",{className:"tabs"},React.createElement("div",{className:"tabNavs clearfix"},e),React.createElement("div",{className:"tabPane"},t))}});
 
 },{"react":175,"underscore":185}],8:[function(require,module,exports){
-var React=require("react"),_=require("underscore"),controllerSupport=require("../json/controller-support"),ControllerTableRow=require("./ControllerTableRow"),EmptyPane=require("./EmptyPane"),Tabs=require("./Tabs"),MoreInfo=require("./MoreInfo");module.exports=React.createClass({displayName:"Troubleshooting",propTypes:{info:React.PropTypes.string,controller:React.PropTypes.string,onPopulateMoreInfo:React.PropTypes.func},render:function(){var e=this.props.onPopulateMoreInfo,t=["Windows","Linux","OSX"],a=_.map(t,function(t,a){var r,o=t.toLowerCase(),n={};_.map(controllerSupport,function(e){var t=e[o];t&&_.map(t,function(e,t){n[t]=!0})});var l=_.map(n,function(e,t){return React.createElement("th",{key:t},t)}),s=_.map(controllerSupport,function(t,a){var r=t[o];return r?React.createElement(ControllerTableRow,{name:a,browserNames:n,support:r,key:a,moreInfoFunc:e}):void 0});return r=_.isEmpty(n)?React.createElement(EmptyPane,null):React.createElement("table",{className:"troubleshootingTable",key:a},React.createElement("tr",null,React.createElement("td",{className:"tableEmptySpace"}),l),s)});return React.createElement("div",{className:"troubleshooting"},React.createElement("p",null,"The ",React.createElement("a",{target:"_blank",href:"https://w3c.github.io/gamepad/"},"HTML5 Gamepad API")," is the cutting-edge web technology that makes DaisywheelJS possible. Because the technology is still very experimental, controller support varies greatly, across controller brand and operating system. You can test your setup at either ",React.createElement("a",{target:"_blank",href:"http://html5gamepad.com/"},"http://html5gamepad.com/")," or with the ",React.createElement("a",{target:"_blank",href:"http://www.html5rocks.com/en/tutorials/doodles/gamepad/gamepad-tester/tester.html"},"“HTML5 Rocks” Gamepad tester"),"."),React.createElement("p",null,"Below is a table of support for each controller type. There is also more information that will direct you to installation and setup."),React.createElement("p",null,React.createElement("em",null,"**DaisywheelJS is not liable for any potential damage to property caused by any of the drivers or software mentioned. Using gamepads with traditional computing devices is a very young endeavor. There are many less than savory programs out there. Be smart. Do your research.**")),React.createElement(Tabs,{titles:t,panes:a}),React.createElement(MoreInfo,{info:this.props.info,controller:this.props.controller}),React.createElement("div",{className:"otherTips"},React.createElement("h4",null,"Other Tips"),React.createElement("p",null,"Why isn't my gamepad showing up?"),React.createElement("ul",null,React.createElement("li",null,"Is the device plugged in / connected via bluetooth"),React.createElement("li",null,"Press some buttons. On some devices, only certain buttons will wake up the gamepad API (the shapes on PS3 controllers, for instance)"),React.createElement("li",null,"Close other apps that may be using the gamepad"),React.createElement("li",null,"Restart your web browser"))))}});
+var React=require("react"),_=require("underscore"),controllerSupport=require("../json/controller-support"),ControllerTableRow=require("./ControllerTableRow"),EmptyPane=require("./EmptyPane"),Tabs=require("./Tabs"),MoreInfo=require("./MoreInfo");module.exports=React.createClass({displayName:"Troubleshooting",propTypes:{info:React.PropTypes.string,controller:React.PropTypes.string,onPopulateMoreInfo:React.PropTypes.func},render:function(){var e=this.props.onPopulateMoreInfo,t=["Windows","Linux","OSX"],a=_.map(t,function(t,a){var r,o=t.toLowerCase(),n={};_.map(controllerSupport,function(e){var t=e[o];t&&_.map(t,function(e,t){n[t]=!0})});var l=_.map(n,function(e,t){return React.createElement("th",{key:t},t)}),s=_.map(controllerSupport,function(t,a){var r=t[o];if(r)return React.createElement(ControllerTableRow,{name:a,browserNames:n,support:r,key:a,moreInfoFunc:e})});return r=_.isEmpty(n)?React.createElement(EmptyPane,null):React.createElement("table",{className:"troubleshootingTable",key:a},React.createElement("tr",null,React.createElement("td",{className:"tableEmptySpace"}),l),s)});return React.createElement("div",{className:"troubleshooting"},React.createElement("p",null,"The ",React.createElement("a",{target:"_blank",href:"https://w3c.github.io/gamepad/"},"HTML5 Gamepad API")," is the cutting-edge web technology that makes DaisywheelJS possible. Because the technology is still very experimental, controller support varies greatly, across controller brand and operating system. You can test your setup at either ",React.createElement("a",{target:"_blank",href:"http://html5gamepad.com/"},"http://html5gamepad.com/")," or with the ",React.createElement("a",{target:"_blank",href:"http://www.html5rocks.com/en/tutorials/doodles/gamepad/gamepad-tester/tester.html"},"“HTML5 Rocks” Gamepad tester"),"."),React.createElement("p",null,"Below is a table of support for each controller type. There is also more information that will direct you to installation and setup."),React.createElement("p",null,React.createElement("em",null,"**DaisywheelJS is not liable for any potential damage to property caused by any of the drivers or software mentioned. Using gamepads with traditional computing devices is a very young endeavor. There are many less than savory programs out there. Be smart. Do your research.**")),React.createElement(Tabs,{titles:t,panes:a}),React.createElement(MoreInfo,{info:this.props.info,controller:this.props.controller}),React.createElement("div",{className:"otherTips"},React.createElement("h4",null,"Other Tips"),React.createElement("p",null,"Why isn't my gamepad showing up?"),React.createElement("ul",null,React.createElement("li",null,"Is the device plugged in / connected via bluetooth"),React.createElement("li",null,"Press some buttons. On some devices, only certain buttons will wake up the gamepad API (the shapes on PS3 controllers, for instance)"),React.createElement("li",null,"Close other apps that may be using the gamepad"),React.createElement("li",null,"Restart your web browser"))))}});
 
 },{"../json/controller-support":2,"./ControllerTableRow":4,"./EmptyPane":5,"./MoreInfo":6,"./Tabs":7,"react":175,"underscore":185}],9:[function(require,module,exports){
-function mapStateToProps(e){return{info:e.info,controller:e.controller}}function mapDispatchToProps(e){return{onPopulateMoreInfo:function(o,r){e(actions.populateMoreInfo(o,r))}}}function infoStore(e,o){return"undefined"==typeof e?e={info:"Click 'Support' for any controller to see more info...",controller:""}:o&&(e={info:o.info,controller:o.controller}),e}var React=require("react"),Troubleshooting=require("./jsx/Troubleshooting"),Daisywheel=require("daisywheel"),Redux=require("redux"),ReactRedux=require("react-redux"),createStore=Redux.createStore,Provider=ReactRedux.Provider,connect=ReactRedux.connect,actions=require("./actions"),App=connect(mapStateToProps,mapDispatchToProps)(Troubleshooting),store=createStore(infoStore);React.render(React.createElement(Provider,{store:store},function(){return React.createElement(App,null)}),document.getElementById("troubleshooting-container"));
+function mapStateToProps(e){return{info:e.info,controller:e.controller}}function mapDispatchToProps(e){return{onPopulateMoreInfo:function(o,r){e(actions.populateMoreInfo(o,r))}}}function infoStore(e,o){return"undefined"==typeof e?e={info:"Click 'Support' for any controller to see more info...",controller:""}:o&&(e={info:o.info,controller:o.controller}),e}var React=require("react"),Troubleshooting=require("./jsx/Troubleshooting"),Daisywheel=require("daisywheel"),Redux=require("redux"),ReactRedux=require("react-redux"),createStore=Redux.createStore,Provider=ReactRedux.Provider,connect=ReactRedux.connect,actions=require("./actions"),App=connect(mapStateToProps,mapDispatchToProps)(Troubleshooting);
 
 },{"./actions":1,"./jsx/Troubleshooting":8,"daisywheel":10,"react":175,"react-redux":16,"redux":177}],10:[function(require,module,exports){
 (function (global){
@@ -26210,12 +26210,40 @@ module.exports = invariant;
 // shim for using process in browser
 
 var process = module.exports = {};
+
+// cached from whatever global is present so that test runners that stub it
+// don't break things.  But we need to wrap it in a try catch in case it is
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+// function because try/catches deoptimize in certain engines.
+
+var cachedSetTimeout;
+var cachedClearTimeout;
+
+(function () {
+  try {
+    cachedSetTimeout = setTimeout;
+  } catch (e) {
+    cachedSetTimeout = function () {
+      throw new Error('setTimeout is not defined');
+    }
+  }
+  try {
+    cachedClearTimeout = clearTimeout;
+  } catch (e) {
+    cachedClearTimeout = function () {
+      throw new Error('clearTimeout is not defined');
+    }
+  }
+} ())
 var queue = [];
 var draining = false;
 var currentQueue;
 var queueIndex = -1;
 
 function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
     draining = false;
     if (currentQueue.length) {
         queue = currentQueue.concat(queue);
@@ -26231,7 +26259,7 @@ function drainQueue() {
     if (draining) {
         return;
     }
-    var timeout = setTimeout(cleanUpNextTick);
+    var timeout = cachedSetTimeout(cleanUpNextTick);
     draining = true;
 
     var len = queue.length;
@@ -26248,7 +26276,7 @@ function drainQueue() {
     }
     currentQueue = null;
     draining = false;
-    clearTimeout(timeout);
+    cachedClearTimeout(timeout);
 }
 
 process.nextTick = function (fun) {
@@ -26260,7 +26288,7 @@ process.nextTick = function (fun) {
     }
     queue.push(new Item(fun, args));
     if (queue.length === 1 && !draining) {
-        setTimeout(drainQueue, 0);
+        cachedSetTimeout(drainQueue, 0);
     }
 };
 

@@ -45,14 +45,3 @@ function infoStore(state, action) {
 
     return state;
 }
-
-var store = createStore(infoStore);
-
-React.render(
-    React.createElement(Provider, {store: store},
-        function(){
-            return React.createElement(App, null)
-        }
-    ),
-    document.getElementById('troubleshooting-container')
-);
