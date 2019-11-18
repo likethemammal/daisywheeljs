@@ -8,17 +8,17 @@ This interface is something every game with text input needs. Not a single game 
 
 ![DaisywheelJS Screenshot](http://imgur.com/087i4Rp.png)
 
-A live demo can be found [here](http://daisywheeljs.org)
+A live demo can be found [here](http://likethemammal.github.io/daisywheeljs/)
 
 ### Setup/Install/Documentation
 
-Instructions on use can be found at [daisywheeljs.org](http://daisywheeljs.org).
+Instructions on use can be found at [daisywheeljs.org](http://likethemammal.github.io/daisywheeljs/).
 
 There you'll find:
 
- + [How-to](http://daisywheeljs.org/#how-it-works)
- + [Setup](http://daisywheeljs.org/#docs)
- + [Documentation](http://daisywheeljs.org/#docs)
+ + [How-to](http://likethemammal.github.io/daisywheeljs/#how-it-works)
+ + [Setup](http://likethemammal.github.io/daisywheeljs/#docs)
+ + [Documentation](http://likethemammal.github.io/daisywheeljs/#docs)
  + [Troubleshooting](https://github.com/likethemammal/daisywheeljs/wiki)
 
 ### Contributing
