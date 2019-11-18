@@ -12,7 +12,7 @@ A live demo can be found [here](http://likethemammal.github.io/daisywheeljs/)
 
 ### Setup/Install/Documentation
 
-Instructions on use can be found at [daisywheeljs.org](http://likethemammal.github.io/daisywheeljs/).
+Instructions on use can be found at [http://likethemammal.github.io/daisywheeljs/](http://likethemammal.github.io/daisywheeljs/).
 
 There you'll find:
 
